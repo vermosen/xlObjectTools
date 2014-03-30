@@ -1,0 +1,69 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QuantLibExtended", "..\QuantLibExtended\QuantLibExtended.vcxproj", "{964C7C99-EE9D-4A4D-B840-163D9FEB4B69}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xlObjectTools", "xlObjectTools.vcxproj", "{B225AFF0-E0EC-42EF-A998-0494CA3C0F7F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AD0A27DA-91DA-46A2-ACBD-296C419ED3AA} = {AD0A27DA-91DA-46A2-ACBD-296C419ED3AA}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QuantLib", "..\..\..\GitHub\quantlib\QuantLib\QuantLib_vc11.vcxproj", "{AD0A27DA-91DA-46A2-ACBD-296C419ED3AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug (static runtime)|Win32 = Debug (static runtime)|Win32
+		Debug (static runtime)|x64 = Debug (static runtime)|x64
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release (static runtime)|Win32 = Release (static runtime)|Win32
+		Release (static runtime)|x64 = Release (static runtime)|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{964C7C99-EE9D-4A4D-B840-163D9FEB4B69}.Debug (static runtime)|Win32.ActiveCfg = Debug|Win32
+		{964C7C99-EE9D-4A4D-B840-163D9FEB4B69}.Debug (static runtime)|Win32.Build.0 = Debug|Win32
+		{964C7C99-EE9D-4A4D-B840-163D9FEB4B69}.Debug (static runtime)|x64.ActiveCfg = Debug|Win32
+		{964C7C99-EE9D-4A4D-B840-163D9FEB4B69}.Debug|Win32.ActiveCfg = Debug|Win32
+		{964C7C99-EE9D-4A4D-B840-163D9FEB4B69}.Debug|x64.ActiveCfg = Debug|Win32
+		{964C7C99-EE9D-4A4D-B840-163D9FEB4B69}.Release (static runtime)|Win32.ActiveCfg = Release|Win32
+		{964C7C99-EE9D-4A4D-B840-163D9FEB4B69}.Release (static runtime)|Win32.Build.0 = Release|Win32
+		{964C7C99-EE9D-4A4D-B840-163D9FEB4B69}.Release (static runtime)|x64.ActiveCfg = Release|Win32
+		{964C7C99-EE9D-4A4D-B840-163D9FEB4B69}.Release|Win32.ActiveCfg = Release|Win32
+		{964C7C99-EE9D-4A4D-B840-163D9FEB4B69}.Release|x64.ActiveCfg = Release|Win32
+		{B225AFF0-E0EC-42EF-A998-0494CA3C0F7F}.Debug (static runtime)|Win32.ActiveCfg = Debug|Win32
+		{B225AFF0-E0EC-42EF-A998-0494CA3C0F7F}.Debug (static runtime)|Win32.Build.0 = Debug|Win32
+		{B225AFF0-E0EC-42EF-A998-0494CA3C0F7F}.Debug (static runtime)|x64.ActiveCfg = Debug|Win32
+		{B225AFF0-E0EC-42EF-A998-0494CA3C0F7F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B225AFF0-E0EC-42EF-A998-0494CA3C0F7F}.Debug|Win32.Build.0 = Debug|Win32
+		{B225AFF0-E0EC-42EF-A998-0494CA3C0F7F}.Debug|x64.ActiveCfg = Debug|Win32
+		{B225AFF0-E0EC-42EF-A998-0494CA3C0F7F}.Release (static runtime)|Win32.ActiveCfg = Release|Win32
+		{B225AFF0-E0EC-42EF-A998-0494CA3C0F7F}.Release (static runtime)|Win32.Build.0 = Release|Win32
+		{B225AFF0-E0EC-42EF-A998-0494CA3C0F7F}.Release (static runtime)|x64.ActiveCfg = Release|Win32
+		{B225AFF0-E0EC-42EF-A998-0494CA3C0F7F}.Release|Win32.ActiveCfg = Release|Win32
+		{B225AFF0-E0EC-42EF-A998-0494CA3C0F7F}.Release|Win32.Build.0 = Release|Win32
+		{B225AFF0-E0EC-42EF-A998-0494CA3C0F7F}.Release|x64.ActiveCfg = Release|Win32
+		{AD0A27DA-91DA-46A2-ACBD-296C419ED3AA}.Debug (static runtime)|Win32.ActiveCfg = Debug (static runtime)|Win32
+		{AD0A27DA-91DA-46A2-ACBD-296C419ED3AA}.Debug (static runtime)|Win32.Build.0 = Debug (static runtime)|Win32
+		{AD0A27DA-91DA-46A2-ACBD-296C419ED3AA}.Debug (static runtime)|x64.ActiveCfg = Debug (static runtime)|x64
+		{AD0A27DA-91DA-46A2-ACBD-296C419ED3AA}.Debug (static runtime)|x64.Build.0 = Debug (static runtime)|x64
+		{AD0A27DA-91DA-46A2-ACBD-296C419ED3AA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AD0A27DA-91DA-46A2-ACBD-296C419ED3AA}.Debug|Win32.Build.0 = Debug|Win32
+		{AD0A27DA-91DA-46A2-ACBD-296C419ED3AA}.Debug|x64.ActiveCfg = Debug|x64
+		{AD0A27DA-91DA-46A2-ACBD-296C419ED3AA}.Debug|x64.Build.0 = Debug|x64
+		{AD0A27DA-91DA-46A2-ACBD-296C419ED3AA}.Release (static runtime)|Win32.ActiveCfg = Release (static runtime)|Win32
+		{AD0A27DA-91DA-46A2-ACBD-296C419ED3AA}.Release (static runtime)|Win32.Build.0 = Release (static runtime)|Win32
+		{AD0A27DA-91DA-46A2-ACBD-296C419ED3AA}.Release (static runtime)|x64.ActiveCfg = Release (static runtime)|x64
+		{AD0A27DA-91DA-46A2-ACBD-296C419ED3AA}.Release (static runtime)|x64.Build.0 = Release (static runtime)|x64
+		{AD0A27DA-91DA-46A2-ACBD-296C419ED3AA}.Release|Win32.ActiveCfg = Release|Win32
+		{AD0A27DA-91DA-46A2-ACBD-296C419ED3AA}.Release|Win32.Build.0 = Release|Win32
+		{AD0A27DA-91DA-46A2-ACBD-296C419ED3AA}.Release|x64.ActiveCfg = Release|x64
+		{AD0A27DA-91DA-46A2-ACBD-296C419ED3AA}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

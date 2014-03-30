@@ -1,0 +1,1635 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="xlFunction">
+      <UniqueIdentifier>{c4cd89f9-6dcb-420c-aaf8-f81443c7ae4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xlObjectTools">
+      <UniqueIdentifier>{011f01fc-347f-4758-b959-9ef8291277f7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="bot\curve\bootstrapHelper\bondBootstrapHelper\bondBootstrapHelperObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\curve\bootstrapHelper\bondBootstrapHelper\bondBootstrapHelperValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\curve\bootstrapHelper\depositBootstrapHelper\depositBootstrapHelperObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\curve\bootstrapHelper\depositBootstrapHelper\depositBootstrapHelperValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\curve\bootstrapHelper\depositFutureBootstrapHelper\depositFutureBootstrapHelperObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\curve\bootstrapHelper\depositFutureBootstrapHelper\depositFutureBootstrapHelperValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\curve\bootstrapHelper\interestRateSwapBootstrapHelper\interestRateSwapBootstrapHelperObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\curve\bootstrapHelper\interestRateSwapBootstrapHelper\interestRateSwapBootstrapHelperValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\curve\bootstrapHelper\interestRateSwapBootstrapHelper2\interestRateSwapBootstrapHelperObject2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\curve\bootstrapHelper\interestRateSwapBootstrapHelper2\interestRateSwapBootstrapHelperValueObject2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\curve\bootstrapHelper\overnightIndexedSwapBootstrapHelper\overnightIndexedSwapBootstrapHelperObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\curve\bootstrapHelper\overnightIndexedSwapBootstrapHelper\overnightIndexedSwapBootstrapHelperValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\curve\curveShift\curveShiftObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\curve\curveShift\curveShiftValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\curve\fittedBondDiscountCurve\fittedBondDiscountCurveObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\curve\fittedBondDiscountCurve\fittedBondDiscountCurveValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\curve\interpolatedCurve\interpolatedCurveObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\curve\interpolatedCurve\interpolatedCurveValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\curve\interpolatedZeroSpreadedTermStructure\interpolatedZeroSpreadedTermStructureObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\curve\interpolatedZeroSpreadedTermStructure\interpolatedZeroSpreadedTermStructureValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\curve\swapCurve\swapCurveObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\curve\swapCurve\swapCurveValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\curve\swapCurveAustralia\swapCurveAustraliaObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\curve\swapCurveAustralia\swapCurveAustraliaValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\curve\swapCurveUnitedStates\swapCurveUnitedStatesObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\curve\swapCurveUnitedStates\swapCurveUnitedStatesValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\factory\bondSelectionRule\bondSelectionRuleFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\factory\bondSelectionRule\register_bondSelectionRule.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\factory\businessDayConvention\businessDayConventionFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\factory\businessDayConvention\register_businessDayConvention.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\factory\calendar\calendarFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\factory\calendar\register_calendars.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\factory\compounding\compoundingFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\factory\compounding\register_compounding.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\factory\constraint\constraintFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\factory\constraint\register_constraint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\factory\currency\currencyFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\factory\currency\register_currency.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\factory\daycounter\daycountFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\factory\daycounter\register_daycounter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\factory\duration\durationFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\factory\duration\register_duration.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\factory\frequency\frequencyFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\factory\frequency\register_frequency.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\factory\period\periodFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\factory\period\register_period.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\index\iborIndex\iborIndexObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\index\iborIndex\iborIndexValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\index\inflationIndex\inflationIndexObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\index\inflationIndex\inflationIndexValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\index\overnightIndex\overnightIndexObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\index\overnightIndex\overnightIndexValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\instruments\bond\aussieBill\aussieBillObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\instruments\bond\aussieBill\aussieBillValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\instruments\bond\btan\btanObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\instruments\bond\btan\btanValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\instruments\bond\btf\btfObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\instruments\bond\btf\btfValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\instruments\bond\buBill\buBillObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\instruments\bond\buBill\buBillValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\instruments\bond\buNote\buNoteObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\instruments\bond\buNote\buNoteValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\instruments\bond\kangarooBond\kangarooBondObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\instruments\bond\kangarooBond\kangarooBondValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\instruments\bond\oat\oatObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\instruments\bond\oat\oatValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\instruments\bond\treasuryBill\treasuryBillObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\instruments\bond\treasuryBill\treasuryBillValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\instruments\bond\treasuryNote\treasuryNoteObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\instruments\bond\treasuryNote\treasuryNoteValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\instruments\bond\yankeeBond\yankeeBondObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\instruments\bond\yankeeBond\yankeeBondValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\instruments\deposit\depositObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\instruments\deposit\depositValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\instruments\depositFuture\depositFutureObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\instruments\depositFuture\depositFutureValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\leg\fixedLegAustralia\fixedLegAustraliaObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\leg\fixedLegAustralia\fixedLegAustraliaValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\leg\fixedLegUnitedStates\fixedLegUnitedstatesObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\leg\fixedLegUnitedStates\fixedLegUnitedStatesValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\leg\floatLegAustralia\floatLegAustraliaObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\leg\floatLegAustralia\floatLegAustraliaValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\leg\floatLegUnitedStates\floatLegUnitedStatesObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\leg\floatLegUnitedStates\floatLegUnitedStatesValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\math\covarianceEWMA\covarianceEWMA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\math\fittingMethod\stochasticFitting\stochasticFittingHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\math\fittingMethod\stochasticFitting\stochasticFittingObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\math\fittingMethod\stochasticFitting\stochasticFittingValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\math\meanEWMA\meanEWMA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\serialization\create\create_leg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\serialization\create\create_swap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\serialization\register\serialization_leg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\serialization\processor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\serialization\register_creator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\serialization\serializationFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\swap\interestRateSwap\interestRateSwapObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\swap\interestRateSwap\interestRateSwapValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\swap\zeroCouponInflationSwapUnitedStates\zeroCouponInflationSwapUnitedStatesObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\swap\zeroCouponInflationSwapUnitedStates\zeroCouponInflationSwapUnitedStatesValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\tools\interestRateConvention\interestRateConvention.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\tools\interestRateConvention\interestRateConventionObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\tools\interestRateConvention\interestRateConventionValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\tools\timeSeries\timeSeriesValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\addin\xlPricingDate\xlPricingDate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\addin\xlRetrieveError\xlRetrieveError.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\bond\xlGetCashFlowDates\xlGetCashFlowDates.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\bond\xlInstrumentAccruedAmount\xlInstrumentAccruedAmount.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\bond\xlInstrumentCarry\xlInstrumentCarry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\bond\xlInstrumentConvexity\xlInstrumentConvexity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\bond\xlInstrumentCostOfCarry\xlInstrumentCostOfCarry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\bond\xlInstrumentDuration\xlInstrumentDuration.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\bond\xlInstrumentDV01\xlInstrumentDV01.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\bond\xlInstrumentFlowCount\xlInstrumentFlowCount.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\bond\xlInstrumentNextCashFlowAmount\xlInstrumentNextCashFlowAmount.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\bond\xlInstrumentNextCashFlowDate\xlInstrumentNextCashFlowDate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\bond\xlInstrumentPreviousCashFlowAmount\xlInstrumentPreviousCashFlowAmount.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\bond\xlInstrumentPreviousCashFlowDate\xlInstrumentPreviousCashFlowDate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\bond\xlInstrumentPrice\xlInstrumentPrice.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\bond\xlInstrumentRollDown\xlInstrumentRollDown.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\bond\xlInstrumentSettlementDate\xlInstrumentSettlementDate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\bond\xlInstrumentYield\xlInstrumentYield.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\bond\xlIsActiveInstrument\xlIsActiveInstrument.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\bond\xlPriceFromZSpread\xlPriceFromZSpread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\bond\xlZSpreadFromPrice\xlZSpreadFromPrice.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\calendar\xlCalendarBusinessDate\xlCalendarBusinessDate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\calendar\xlCalendarDaycount\xlCalendarDaycount.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\calendar\xlCalendarIMMDate\xlCalendarIMMDate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\calendar\xlCalendarNextIMMCode\xlCalendarNextIMMCode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\calendar\xlCalendarPeriodCount\xlCalendarPeriodCount.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\curve\xlCurveForwardRate\xlCurveForwardRate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\curve\xlCurveReferenceDate\xlCurveReferenceDate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\curve\xlCurveZeroRate\xlCurveZeroRate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\curve\xlFittingRSquare\xlFittingRSquare.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\curve\xlRecoverFittingParameters\xlRecoverFittingParameters.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\experimental\xlEfficientConstrainedFrontier\xlEfficientConstrainedFrontier.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\experimental\xlInitiateSwapCurve\xlInitiateSwapCurve.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\math\statistics\xlKalmanFilter\xlKalmanFilter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\math\xlCorrelationMatrixEWMA\xlCorrelationMatrixEWMA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\math\xlCovarianceMatrixEWMA\xlCovarianceMatrixEWMA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\math\xlGaussianRandom\xlGaussianRandom.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\math\xlMeanEWMA\xlMeanEWMA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\math\xlSchurEigenVector\xlSchurEigenVector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\math\xlSchurForm\xlSchurForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\math\xlVolatilityEWMA\xlVolatilityEWMA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\math\xlZScoreEWMA\xlZScoreEWMA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\curve\helpers\xlInitiateBondBootstrapHelper\xlInitiateBondBootstrapHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\curve\helpers\xlInitiateDepositBootstrapHelper\xlInitiateDepositBootstrapHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\curve\helpers\xlInitiateDepositBootstrapHelper2\xlInitiateDepositBootstrapHelper2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\curve\helpers\xlInitiateDepositFutureBootstrapHelper\xlInitiateDepositFutureBootstrapHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\curve\helpers\xlInitiateInterestRateSwapBootstrapHelper\xlInitiateInterestRateSwapBootstrapHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\curve\helpers\xlInitiateInterestRateSwapBootstrapHelper2\xlInitiateInterestRateSwapBootstrapHelper2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\curve\helpers\xlInitiateOvernightIndexedBootstrapHelper\xlInitiateOvernightIndexedBootstrapHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\curve\xlInitiateDepositBootstrapHelper\xlInitiateDepositBootstrapHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\curve\xlInitiateDepositBootstrapHelper2\xlInitiateDepositBootstrapHelper2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\curve\xlInitiateDepositFutureBootstrapHelper\xlInitiateDepositFutureBootstrapHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\curve\xlInitiateFittedBondCurve\xlInitiateFittedBondCurve.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\curve\xlInitiateFittedBondDiscountCurve\xlInitiateFittedBondDiscountCurve.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\curve\xlInitiateInterestRateSwapBootstrapHelper\xlInitiateInterestRateSwapBootstrapHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\curve\xlInitiateInterestRateSwapBootstrapHelper2\xlInitiateInterestRateSwapBootstrapHelper2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\curve\xlInitiateInterpolatedCurve\xlInitiateInterpolatedCurve.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\curve\xlInitiateOvernightIndexedBootstrapHelper\xlInitiateOvernightIndexedBootstrapHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\curve\xlInitiateShiftedCurve\xlInitiateShiftedCurve.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\curve\xlInitiateSwapCurveAustralia\xlInitiateSwapCurveAustralia.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\curve\xlInitiateSwapCurveUnitedStates\xlInitiateSwapCurveUnitedStates.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\curveTransform\xlInitiateCurveShift\xlInitiateCurveShift.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\fittingMethod\xlInitiateNelsonSiegelModel\xlInitiateNelsonSiegelModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\fittingMethod\xlInitiateSvenssonModel\xlInitiateSvenssonModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\index\xlInitiateIborIndex\xlInitiateIborIndex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\index\xlInitiateOvernightIndex\xlInitiateOvernightIndex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\instrument\xlInitiateAussieBill\xlInitiateAussieBill.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\instrument\xlInitiateAussieNote\xlInitiateAussieNote.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\instrument\xlInitiateBtan\xlInitiateBtan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\instrument\xlInitiateBtf\xlInitiateBtf.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\instrument\xlInitiateBuBill\xlInitiateBuBill.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\instrument\xlInitiateBuNote\xlInitiateBuNote.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\instrument\xlInitiateDeposit\xlInitiateDeposit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\instrument\xlInitiateDepositFuture\xlInitiateDepositFuture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\instrument\xlInitiateKangarooBond\xlInitiateKangarooBond.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\instrument\xlInitiateOat\xlInitiateOat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\instrument\xlInitiateTreasuryBill\xlInitiateTreasuryBill.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\instrument\xlInitiateTreasuryNote\xlInitiateTreasuryNote.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\instrument\xlInitiateYankeeBond\xlInitiateYankeeBond.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\interestRateConvention\xlInitiateInterestRate\xlInitiateInterestRate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\leg\xlInitiateFixedLegAustralia\xlInitiateFixedLegAustralia.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\leg\xlInitiateFixedLegUnitedStates\xlInitiateFixedLegUnitedStates.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\leg\xlInitiateFloatLegAustralia\xlInitiateFloatLegAustralia.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\leg\xlInitiateFloatLegUnitedStates\xlInitiateFloatLegUnitedStates.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\math\xlInitiateTimeSeries\xlInitiateTimeSeries.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\swap\xlInitiateInterestRateSwap\xlInitiateInterestRateSwap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\swap\xlInitiateZeroCouponInflationSwapUnitedStates\xlInitiateZeroCouponInflationSwapUnitedStates.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\swap\xlSwapAccruedAmount\xlSwapAccruedAmount.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\swap\xlSwapConvexity\xlSwapConvexity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\swap\xlSwapCurrentFixing\xlSwapCurrentFixing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\swap\xlSwapDV01\xlSwapDV01.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\swap\xlSwapFairFixedRate\xlSwapFairFixedRate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\swap\xlSwapFlowsNPV\xlSwapFlowsNPV.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\swap\xlSwapNPV\xlSwapNPV.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\swap\xlSwapRollDown\xlSwapRollDown.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\instruments\bond\australianTreasuryNote\australianTreasuryNoteObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\instruments\bond\australianTreasuryNote\australianTreasuryNoteValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\object\math\xlInitiateMatrix\xlInitiateMatrix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\math\matrix\matrixObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot\math\matrix\matrixValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="bot\curve\bootstrapHelper\bondBootstrapHelper\bondBootstrapHelperObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\curve\bootstrapHelper\bondBootstrapHelper\bondBootstrapHelperValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\curve\bootstrapHelper\depositBootstrapHelper\depositBootstrapHelperObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\curve\bootstrapHelper\depositBootstrapHelper\depositBootstrapHelperValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\curve\bootstrapHelper\depositFutureBootstrapHelper\depositFutureBootstrapHelperObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\curve\bootstrapHelper\depositFutureBootstrapHelper\depositFutureBootstrapHelperValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\curve\bootstrapHelper\interestRateSwapBootstrapHelper\interestRateSwapBootstrapHelperObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\curve\bootstrapHelper\interestRateSwapBootstrapHelper\interestRateSwapBootstrapHelperValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\curve\bootstrapHelper\interestRateSwapBootstrapHelper2\interestRateSwapBootstrapHelperObject2.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\curve\bootstrapHelper\interestRateSwapBootstrapHelper2\interestRateSwapBootstrapHelperValueObject2.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\curve\bootstrapHelper\overnightIndexedSwapBootstrapHelper\overnightIndexedSwapBootstrapHelperObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\curve\bootstrapHelper\overnightIndexedSwapBootstrapHelper\overnightIndexedSwapBootstrapHelperValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\curve\bootstrapHelper\activeBootstrapHelper.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\curve\curveShift\curveShiftObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\curve\curveShift\curveShiftValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\curve\fittedBondDiscountCurve\fittedBondDiscountCurveObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\curve\fittedBondDiscountCurve\fittedBondDiscountCurveValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\curve\interpolatedCurve\interpolatedCurveObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\curve\interpolatedCurve\interpolatedCurveValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\curve\interpolatedZeroSpreadedTermStructure\interpolatedZeroSpreadedTermStructureObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\curve\interpolatedZeroSpreadedTermStructure\interpolatedZeroSpreadedTermStructureValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\curve\swapCurve\swapCurveObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\curve\swapCurve\swapCurveValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\curve\swapCurveAustralia\swapCurveAustraliaObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\curve\swapCurveAustralia\swapCurveAustraliaValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\curve\swapCurveUnitedStates\swapCurveUnitedStatesObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\curve\swapCurveUnitedStates\swapCurveUnitedStatesValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\curve\activeCurves.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\factory\bondSelectionRule\bondSelectionRuleFactory.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\factory\bondSelectionRule\register_bondSelectionRule.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\factory\businessDayConvention\businessDayConventionFactory.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\factory\businessDayConvention\register_businessDayConvention.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\factory\calendar\calendarFactory.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\factory\calendar\register_calendars.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\factory\compounding\compoundingFactory.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\factory\compounding\register_compounding.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\factory\constraint\constraintFactory.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\factory\constraint\register_constraint.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\factory\currency\currencyFactory.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\factory\currency\register_currency.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\factory\daycounter\daycountFactory.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\factory\daycounter\register_daycounter.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\factory\duration\durationFactory.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\factory\duration\register_duration.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\factory\frequency\frequencyFactory.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\factory\frequency\register_frequency.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\factory\period\periodFactory.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\factory\period\register_period.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\factory\activeFactory.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\index\iborIndex\iborIndexObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\index\iborIndex\iborIndexValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\index\inflationIndex\inflationIndexObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\index\inflationIndex\inflationIndexValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\index\overnightIndex\overnightIndexObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\index\overnightIndex\overnightIndexValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\instruments\bond\aussieBill\aussieBillObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\instruments\bond\aussieBill\aussieBillValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\instruments\bond\btan\btanObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\instruments\bond\btan\btanValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\instruments\bond\btf\btfObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\instruments\bond\btf\btfValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\instruments\bond\buBill\buBillObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\instruments\bond\buBill\buBillValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\instruments\bond\buNote\buNoteObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\instruments\bond\buNote\buNoteValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\instruments\bond\kangarooBond\kangarooBondObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\instruments\bond\kangarooBond\kangarooBondValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\instruments\bond\oat\oatObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\instruments\bond\oat\oatValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\instruments\bond\treasuryBill\treasuryBillObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\instruments\bond\treasuryBill\treasuryBillValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\instruments\bond\treasuryNote\treasuryNoteObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\instruments\bond\treasuryNote\treasuryNoteValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\instruments\bond\yankeeBond\yankeeBondObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\instruments\bond\yankeeBond\yankeeBondValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\instruments\deposit\depositObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\instruments\deposit\depositValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\instruments\depositFuture\depositFutureObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\instruments\depositFuture\depositFutureValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\instruments\activeInstrument.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\leg\fixedLegAustralia\fixedLegAustraliaObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\leg\fixedLegAustralia\fixedLegAustraliaValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\leg\fixedLegUnitedStates\fixedLegUnitedstatesObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\leg\fixedLegUnitedStates\fixedLegUnitedStatesValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\leg\floatLegAustralia\floatLegAustraliaObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\leg\floatLegAustralia\floatLegAustraliaValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\leg\floatLegUnitedStates\floatLegUnitedStatesObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\leg\floatLegUnitedStates\floatLegUnitedStatesValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\leg\activeLeg.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\math\conversion\ublasMatrixToOper.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\math\covarianceEWMA\covarianceEWMA.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\math\fittingMethod\stochasticFitting\stochasticFittingHelper.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\math\fittingMethod\stochasticFitting\stochasticFittingObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\math\fittingMethod\stochasticFitting\stochasticFittingValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\math\meanEWMA\meanEWMA.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\math\ublasMatrixToOper\ublasMatrixToOper.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\serialization\create\create_all.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\serialization\create\create_leg.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\serialization\create\create_swap.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\serialization\register\serialization_all.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\serialization\register\serialization_leg.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\serialization\register\serialization_register.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\serialization\processor.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\serialization\serializationFactory.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\swap\interestRateSwap\interestRateSwapObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\swap\interestRateSwap\interestRateSwapValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\swap\zeroCouponInflationSwapUnitedStates\zeroCouponInflationSwapUnitedStatesObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\swap\zeroCouponInflationSwapUnitedStates\zeroCouponInflationSwapUnitedStatesValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\swap\activeSwap.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\tools\interestRateConvention\interestRateConvention.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\tools\interestRateConvention\interestRateConventionObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\tools\interestRateConvention\interestRateConventionValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\tools\stringToType\stringtoType.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\tools\timeSeries\timeSeriesObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\tools\timeSeries\timeSeriesValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\addin\xlPricingDate\register_xlPricingDate.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\addin\xlPricingDate\xlPricingDate.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\addin\xlRetrieveError\register_xlRetrieveError.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\addin\xlRetrieveError\xlRetrieveError.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\addin\register_addin.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlGetCashFlowDates\register_xlGetCashFlowDates.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlGetCashFlowDates\xlGetCashFlowDates.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlInstrumentAccruedAmount\register_xlInstrumentAccruedAmount.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlInstrumentAccruedAmount\xlInstrumentAccruedAmount.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlInstrumentCarry\register_xlInstrumentCarry.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlInstrumentCarry\xlInstrumentCarry.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlInstrumentConvexity\register_xlInstrumentConvexity.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlInstrumentConvexity\xlInstrumentConvexity.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlInstrumentCostOfCarry\register_xlInstrumentCostOfCarry.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlInstrumentCostOfCarry\xlInstrumentCostOfCarry.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlInstrumentDuration\register_xlInstrumentDuration.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlInstrumentDuration\xlInstrumentDuration.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlInstrumentDV01\register_xlInstrumentDV01.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlInstrumentDV01\xlInstrumentDV01.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlInstrumentFlowCount\register_xlInstrumentFlowCount.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlInstrumentFlowCount\xlInstrumentFlowCount.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlInstrumentNextCashFlowAmount\register_xlInstrumentNextCashFlowAmount.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlInstrumentNextCashFlowAmount\xlInstrumentNextCashFlowAmount.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlInstrumentNextCashFlowDate\register_xlInstrumentNextCashFlowDate.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlInstrumentNextCashFlowDate\xlInstrumentNextCashFlowDate.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlInstrumentPreviousCashFlowAmount\register_xlInstrumentPreviousCashFlowAmount.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlInstrumentPreviousCashFlowAmount\xlInstrumentPreviousCashFlowAmount.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlInstrumentPreviousCashFlowDate\register_xlInstrumentPreviousCashFlowDate.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlInstrumentPreviousCashFlowDate\xlInstrumentPreviousCashFlowDate.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlInstrumentPrice\register_xlInstrumentPrice.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlInstrumentPrice\xlInstrumentPrice.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlInstrumentRollDown\register_xlInstrumentRollDown.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlInstrumentRollDown\xlInstrumentRollDown.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlInstrumentSettlementDate\register_xlInstrumentSettlementDate.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlInstrumentSettlementDate\xlInstrumentSettlementDate.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlInstrumentYield\register_xlInstrumentYield.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlInstrumentYield\xlInstrumentYield.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlIsActiveInstrument\register_xlIsActiveInstrument.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlIsActiveInstrument\xlIsActiveInstrument.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlPriceFromZSpread\register_xlPriceFromZSpread.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlPriceFromZSpread\xlPriceFromZSpread.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlZSpreadFromPrice\register_xlZSpreadFromPrice.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\xlZSpreadFromPrice\xlZSpreadFromPrice.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\bond\register_bond.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\calendar\xlCalendarBusinessDate\register_xlCalendarBusinessDate.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\calendar\xlCalendarBusinessDate\xlCalendarBusinessDate.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\calendar\xlCalendarDaycount\register_xlCalendarDaycount.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\calendar\xlCalendarDaycount\xlCalendarDaycount.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\calendar\xlCalendarIMMDate\register_xlCalendarIMMDate.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\calendar\xlCalendarIMMDate\xlCalendarIMMDate.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\calendar\xlCalendarNextIMMCode\register_xlCalendarNextIMMCode.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\calendar\xlCalendarNextIMMCode\xlCalendarNextIMMCode.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\calendar\xlCalendarPeriodCount\register_xlCalendarPeriodCount.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\calendar\xlCalendarPeriodCount\xlCalendarPeriodCount.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\calendar\register_calendar.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\curve\xlCurveForwardRate\register_xlCurveForwardRate.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\curve\xlCurveForwardRate\xlCurveForwardRate.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\curve\xlCurveReferenceDate\register_xlCurveReferenceDate.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\curve\xlCurveReferenceDate\xlCurveReferenceDate.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\curve\xlCurveZeroRate\register_xlCurveZeroRate.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\curve\xlCurveZeroRate\xlCurveZeroRate.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\curve\xlFittingRSquare\register_xlFittingRSquare.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\curve\xlFittingRSquare\xlFittingRSquare.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\curve\xlRecoverFittingParameters\register_xlRecoverFittingParameters.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\curve\xlRecoverFittingParameters\xlRecoverFittingParameters.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\curve\register_curve.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\experimental\xlEfficientConstrainedFrontier\register_xlEfficientConstrainedFrontier.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\experimental\xlEfficientConstrainedFrontier\xlEfficientConstrainedFrontier.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\experimental\xlInitiateSwapCurve\register_xlInitiateSwapCurve.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\experimental\xlInitiateSwapCurve\xlInitiateSwapCurve.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\experimental\register_experimental.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\math\statistics\xlKalmanFilter\register_xlKalmanFilter.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\math\statistics\xlKalmanFilter\xlKalmanFilter.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\math\statistics\register_statistics.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\math\xlCorrelationMatrixEWMA\register_xlCorrelationMatrixEWMA.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\math\xlCorrelationMatrixEWMA\xlCorrelationMatrixEWMA.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\math\xlCovarianceMatrixEWMA\register_xlCovarianceMatrixEWMA.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\math\xlCovarianceMatrixEWMA\xlCovarianceMatrixEWMA.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\math\xlGaussianRandom\register_xlGaussianRandom.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\math\xlGaussianRandom\xlGaussianRandom.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\math\xlMeanEWMA\register_xlMeanEWMA.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\math\xlMeanEWMA\xlMeanEWMA.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\math\xlSchurEigenVector\register_xlSchurEigenVector.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\math\xlSchurEigenVector\xlSchurEigenVector.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\math\xlSchurForm\register_xlSchurForm.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\math\xlSchurForm\xlSchurForm.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\math\xlVolatilityEWMA\register_xlVolatilityEWMA.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\math\xlVolatilityEWMA\xlVolatilityEWMA.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\math\xlZScoreEWMA\register_xlZScoreEWMA.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\math\xlZScoreEWMA\xlZScoreEWMA.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\math\register_math.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\helpers\xlInitiateBondBootstrapHelper\register_xlInitiateBondBootstrapHelper.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\helpers\xlInitiateBondBootstrapHelper\xlInitiateBondBootstrapHelper.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\helpers\xlInitiateDepositBootstrapHelper\register_xlInitiateDepositBootstrapHelper.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\helpers\xlInitiateDepositBootstrapHelper\xlInitiateDepositBootstrapHelper.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\helpers\xlInitiateDepositBootstrapHelper2\register_xlInitiateDepositBootstrapHelper2.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\helpers\xlInitiateDepositBootstrapHelper2\xlInitiateDepositBootstrapHelper2.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\helpers\xlInitiateDepositFutureBootstrapHelper\register_xlInitiateDepositFutureBootstrapHelper.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\helpers\xlInitiateDepositFutureBootstrapHelper\xlInitiateDepositFutureBootstrapHelper.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\helpers\xlInitiateInterestRateSwapBootstrapHelper\register_xlInitiateInterestRateSwapBootstrapHelper.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\helpers\xlInitiateInterestRateSwapBootstrapHelper\xlInitiateInterestRateSwapBootstrapHelper.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\helpers\xlInitiateInterestRateSwapBootstrapHelper2\register_xlInitiateInterestRateSwapBootstrapHelper2.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\helpers\xlInitiateInterestRateSwapBootstrapHelper2\xlInitiateInterestRateSwapBootstrapHelper2.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\helpers\xlInitiateOvernightIndexedBootstrapHelper\register_xlInitiateOvernightIndexedBootstrapHelper.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\helpers\xlInitiateOvernightIndexedBootstrapHelper\xlInitiateOvernightIndexedBootstrapHelper.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\xlInitiateDepositBootstrapHelper\register_xlInitiateDepositBootstrapHelper.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\xlInitiateDepositBootstrapHelper\xlInitiateDepositBootstrapHelper.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\xlInitiateDepositBootstrapHelper2\register_xlInitiateDepositBootstrapHelper2.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\xlInitiateDepositBootstrapHelper2\xlInitiateDepositBootstrapHelper2.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\xlInitiateDepositFutureBootstrapHelper\register_xlInitiateDepositFutureBootstrapHelper.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\xlInitiateDepositFutureBootstrapHelper\xlInitiateDepositFutureBootstrapHelper.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\xlInitiateFittedBondCurve\register_xlInitiateFittedBondCurve.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\xlInitiateFittedBondCurve\xlInitiateFittedBondCurve.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\xlInitiateFittedBondDiscountCurve\register_xlInitiateFittedBondDiscountCurve.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\xlInitiateFittedBondDiscountCurve\xlInitiateFittedBondDiscountCurve.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\xlInitiateInterestRateSwapBootstrapHelper\register_xlInitiateInterestRateSwapBootstrapHelper.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\xlInitiateInterestRateSwapBootstrapHelper\xlInitiateInterestRateSwapBootstrapHelper.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\xlInitiateInterestRateSwapBootstrapHelper2\register_xlInitiateInterestRateSwapBootstrapHelper2.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\xlInitiateInterestRateSwapBootstrapHelper2\xlInitiateInterestRateSwapBootstrapHelper2.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\xlInitiateInterpolatedCurve\register_xlInitiateInterpolatedCurve.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\xlInitiateInterpolatedCurve\xlInitiateInterpolatedCurve.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\xlInitiateOvernightIndexedBootstrapHelper\register_xlInitiateOvernightIndexedBootstrapHelper.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\xlInitiateOvernightIndexedBootstrapHelper\xlInitiateOvernightIndexedBootstrapHelper.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\xlInitiateShiftedCurve\register_xlInitiateShiftedCurve.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\xlInitiateShiftedCurve\xlInitiateShiftedCurve.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\xlInitiateSwapCurveAustralia\register_xlInitiateSwapCurveAustralia.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\xlInitiateSwapCurveAustralia\xlInitiateSwapCurveAustralia.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\xlInitiateSwapCurveUnitedStates\register_xlInitiateSwapCurveUnitedStates.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\xlInitiateSwapCurveUnitedStates\xlInitiateSwapCurveUnitedStates.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curve\register_curveObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curveTransform\xlInitiateCurveShift\register_xlInitiateCurveShift.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curveTransform\xlInitiateCurveShift\xlInitiateCurveShift.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\curveTransform\register_curveTransform.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\fittingMethod\xlInitiateNelsonSiegelModel\register_xlInitiateNelsonSiegelModel.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\fittingMethod\xlInitiateNelsonSiegelModel\xlInitiateNelsonSiegelModel.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\fittingMethod\xlInitiateSvenssonModel\register_xlInitiateSvenssonModel.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\fittingMethod\xlInitiateSvenssonModel\xlInitiateSvenssonModel.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\fittingMethod\register_fittingMethod.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\index\xlInitiateIborIndex\register_xlInitiateIborIndex.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\index\xlInitiateIborIndex\xlInitiateIborIndex.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\index\xlInitiateOvernightIndex\register_xlInitiateOvernightIndex.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\index\xlInitiateOvernightIndex\xlInitiateOvernightIndex.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\index\register_index.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateAussieBill\register_xlInitiateAussieBill.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateAussieBill\xlInitiateAussieBill.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateAussieNote\register_xlInitiateAussieNote.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateAussieNote\xlInitiateAussieNote.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateBtan\register_xlInitiateBtan.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateBtan\xlInitiateBtan.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateBtf\register_xlInitiateBtf.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateBtf\xlInitiateBtf.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateBuBill\register_xlInitiateBuBill.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateBuBill\xlInitiateBuBill.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateBuNote\register_xlInitiateBuNote.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateBuNote\xlInitiateBuNote.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateDeposit\register_xlInitiateDeposit.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateDeposit\xlInitiateDeposit.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateDepositFuture\register_xlInitiateDepositFuture.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateDepositFuture\xlInitiateDepositFuture.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateKangarooBond\register_xlInitiateKangarooBond.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateKangarooBond\xlInitiateKangarooBond.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateOat\register_xlInitiateOat.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateOat\xlInitiateOat.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateTreasuryBill\register_xlInitiateTreasuryBill.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateTreasuryBill\xlInitiateTreasuryBill.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateTreasuryNote\register_xlInitiateTreasuryNote.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateTreasuryNote\xlInitiateTreasuryNote.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateYankeeBond\register_xlInitiateYankeeBond.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateYankeeBond\xlInitiateYankeeBond.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\instrument\register_instrument.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\interestRateConvention\xlInitiateInterestRate\register_xlInitiateInterestRate.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\interestRateConvention\xlInitiateInterestRate\xlInitiateInterestRate.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\interestRateConvention\register_interestRateConvention.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\leg\xlInitiateFixedLegAustralia\register_xlInitiateFixedLegAustralia.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\leg\xlInitiateFixedLegAustralia\xlInitiateFixedLegAustralia.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\leg\xlInitiateFixedLegUnitedStates\register_xlInitiateFixedLegUnitedStates.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\leg\xlInitiateFixedLegUnitedStates\xlInitiateFixedLegUnitedStates.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\leg\xlInitiateFloatLegAustralia\register_xlInitiateFloatLegAustralia.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\leg\xlInitiateFloatLegAustralia\xlInitiateFloatLegAustralia.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\leg\xlInitiateFloatLegUnitedStates\register_xlInitiateFloatLegUnitedStates.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\leg\xlInitiateFloatLegUnitedStates\xlInitiateFloatLegUnitedStates.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\leg\register_leg.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\math\xlInitiateTimeSeries\register_xlInitiateTimeSeries.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\math\xlInitiateTimeSeries\xlInitiateTimeSeries.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\math\register_mathObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\swap\xlInitiateInterestRateSwap\register_xlInitiateInterestRateSwap.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\swap\xlInitiateInterestRateSwap\xlInitiateInterestRateSwap.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\swap\xlInitiateZeroCouponInflationSwapUnitedStates\register_xlInitiateZeroCouponInflationSwapUnitedStates.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\swap\xlInitiateZeroCouponInflationSwapUnitedStates\xlInitiateZeroCouponInflationSwapUnitedStates.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\swap\register_swapObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\register_object.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\swap\xlSwapAccruedAmount\register_xlSwapAccruedAmount.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\swap\xlSwapAccruedAmount\xlSwapAccruedAmount.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\swap\xlSwapConvexity\register_xlSwapConvexity.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\swap\xlSwapConvexity\xlSwapConvexity.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\swap\xlSwapCurrentFixing\register_xlSwapCurrentFixing.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\swap\xlSwapCurrentFixing\xlSwapCurrentFixing.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\swap\xlSwapDV01\register_xlSwapDV01.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\swap\xlSwapDV01\xlSwapDV01.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\swap\xlSwapFairFixedRate\register_xlSwapFairFixedRate.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\swap\xlSwapFairFixedRate\xlSwapFairFixedRate.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\swap\xlSwapFlowsNPV\register_xlSwapFlowsNPV.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\swap\xlSwapFlowsNPV\xlSwapFlowsNPV.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\swap\xlSwapNPV\register_xlSwapNPV.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\swap\xlSwapNPV\xlSwapNPV.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\swap\xlSwapRollDown\register_xlSwapRollDown.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\swap\xlSwapRollDown\xlSwapRollDown.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\swap\register_swap.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\Main.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\register_all.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\instruments\bond\australianTreasuryNote\australianTreasuryNoteObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\instruments\bond\australianTreasuryNote\australianTreasuryNoteValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\math\xlInitiateMatrix\xlInitiateMatrix.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\math\xlInitiateMatrix\register_xlInitiateMatrix.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\math\matrix\matrixObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\math\matrix\matrixValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\math\operToMatrix\operToMatrix.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

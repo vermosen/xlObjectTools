@@ -1,0 +1,666 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B225AFF0-E0EC-42EF-A998-0494CA3C0F7F}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>xlObjectTools</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(IncludePath);C:\Users\vermosen\Documents\GitHub\quantlib\QuantLib;C:\Users\vermosen\Documents\GitHub\quantlib\ObjectHandler;C:\Users\vermosen\Documents\GitHub\quantlib\QuantLibAddin;.</IncludePath>
+    <LibraryPath>C:\Users\vermosen\Documents\GitHub\quantlib\ObjectHandler\lib;$(LibraryPath);C:\Users\vermosen\Documents\GitHub\quantlib\QuantLib\lib;C:\Users\vermosen\Documents\GitHub\quantlib\QuantLibAddin\lib</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(IncludePath);C:\Users\vermosen\Documents\GitHub\quantlib\QuantLib;C:\Users\vermosen\Documents\GitHub\quantlib\ObjectHandler;C:\Users\vermosen\Documents\GitHub\quantlib\QuantLibAddin;.</IncludePath>
+    <LibraryPath>C:\Users\vermosen\Documents\GitHub\quantlib\ObjectHandler\lib;$(LibraryPath);C:\Users\vermosen\Documents\GitHub\quantlib\QuantLib\lib;C:\Users\vermosen\Documents\GitHub\quantlib\QuantLibAddin\lib</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;XLOBJECTTOOLS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;XLOBJECTTOOLS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="bot\curve\bootstrapHelper\bondBootstrapHelper\bondBootstrapHelperObject.cpp" />
+    <ClCompile Include="bot\curve\bootstrapHelper\bondBootstrapHelper\bondBootstrapHelperValueObject.cpp" />
+    <ClCompile Include="bot\curve\bootstrapHelper\depositBootstrapHelper\depositBootstrapHelperObject.cpp" />
+    <ClCompile Include="bot\curve\bootstrapHelper\depositBootstrapHelper\depositBootstrapHelperValueObject.cpp" />
+    <ClCompile Include="bot\curve\bootstrapHelper\depositFutureBootstrapHelper\depositFutureBootstrapHelperObject.cpp" />
+    <ClCompile Include="bot\curve\bootstrapHelper\depositFutureBootstrapHelper\depositFutureBootstrapHelperValueObject.cpp" />
+    <ClCompile Include="bot\curve\bootstrapHelper\interestRateSwapBootstrapHelper2\interestRateSwapBootstrapHelperObject2.cpp" />
+    <ClCompile Include="bot\curve\bootstrapHelper\interestRateSwapBootstrapHelper2\interestRateSwapBootstrapHelperValueObject2.cpp" />
+    <ClCompile Include="bot\curve\bootstrapHelper\interestRateSwapBootstrapHelper\interestRateSwapBootstrapHelperObject.cpp" />
+    <ClCompile Include="bot\curve\bootstrapHelper\interestRateSwapBootstrapHelper\interestRateSwapBootstrapHelperValueObject.cpp" />
+    <ClCompile Include="bot\curve\bootstrapHelper\overnightIndexedSwapBootstrapHelper\overnightIndexedSwapBootstrapHelperObject.cpp" />
+    <ClCompile Include="bot\curve\bootstrapHelper\overnightIndexedSwapBootstrapHelper\overnightIndexedSwapBootstrapHelperValueObject.cpp" />
+    <ClCompile Include="bot\curve\curveShift\curveShiftObject.cpp" />
+    <ClCompile Include="bot\curve\curveShift\curveShiftValueObject.cpp" />
+    <ClCompile Include="bot\curve\fittedBondDiscountCurve\fittedBondDiscountCurveObject.cpp" />
+    <ClCompile Include="bot\curve\fittedBondDiscountCurve\fittedBondDiscountCurveValueObject.cpp" />
+    <ClCompile Include="bot\curve\interpolatedCurve\interpolatedCurveObject.cpp" />
+    <ClCompile Include="bot\curve\interpolatedCurve\interpolatedCurveValueObject.cpp" />
+    <ClCompile Include="bot\curve\interpolatedZeroSpreadedTermStructure\interpolatedZeroSpreadedTermStructureObject.cpp" />
+    <ClCompile Include="bot\curve\interpolatedZeroSpreadedTermStructure\interpolatedZeroSpreadedTermStructureValueObject.cpp" />
+    <ClCompile Include="bot\curve\swapCurveAustralia\swapCurveAustraliaObject.cpp" />
+    <ClCompile Include="bot\curve\swapCurveAustralia\swapCurveAustraliaValueObject.cpp" />
+    <ClCompile Include="bot\curve\swapCurveUnitedStates\swapCurveUnitedStatesObject.cpp" />
+    <ClCompile Include="bot\curve\swapCurveUnitedStates\swapCurveUnitedStatesValueObject.cpp" />
+    <ClCompile Include="bot\curve\swapCurve\swapCurveObject.cpp" />
+    <ClCompile Include="bot\curve\swapCurve\swapCurveValueObject.cpp" />
+    <ClCompile Include="bot\factory\bondSelectionRule\bondSelectionRuleFactory.cpp" />
+    <ClCompile Include="bot\factory\bondSelectionRule\register_bondSelectionRule.cpp" />
+    <ClCompile Include="bot\factory\businessDayConvention\businessDayConventionFactory.cpp" />
+    <ClCompile Include="bot\factory\businessDayConvention\register_businessDayConvention.cpp" />
+    <ClCompile Include="bot\factory\calendar\calendarFactory.cpp" />
+    <ClCompile Include="bot\factory\calendar\register_calendars.cpp" />
+    <ClCompile Include="bot\factory\compounding\compoundingFactory.cpp" />
+    <ClCompile Include="bot\factory\compounding\register_compounding.cpp" />
+    <ClCompile Include="bot\factory\constraint\constraintFactory.cpp" />
+    <ClCompile Include="bot\factory\constraint\register_constraint.cpp" />
+    <ClCompile Include="bot\factory\currency\currencyFactory.cpp" />
+    <ClCompile Include="bot\factory\currency\register_currency.cpp" />
+    <ClCompile Include="bot\factory\daycounter\daycountFactory.cpp" />
+    <ClCompile Include="bot\factory\daycounter\register_daycounter.cpp" />
+    <ClCompile Include="bot\factory\duration\durationFactory.cpp" />
+    <ClCompile Include="bot\factory\duration\register_duration.cpp" />
+    <ClCompile Include="bot\factory\frequency\frequencyFactory.cpp" />
+    <ClCompile Include="bot\factory\frequency\register_frequency.cpp" />
+    <ClCompile Include="bot\factory\period\periodFactory.cpp" />
+    <ClCompile Include="bot\factory\period\register_period.cpp" />
+    <ClCompile Include="bot\index\iborIndex\iborIndexObject.cpp" />
+    <ClCompile Include="bot\index\iborIndex\iborIndexValueObject.cpp" />
+    <ClCompile Include="bot\index\inflationIndex\inflationIndexObject.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="bot\index\inflationIndex\inflationIndexValueObject.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="bot\index\overnightIndex\overnightIndexObject.cpp" />
+    <ClCompile Include="bot\index\overnightIndex\overnightIndexValueObject.cpp" />
+    <ClCompile Include="bot\instruments\bond\aussieBill\aussieBillObject.cpp" />
+    <ClCompile Include="bot\instruments\bond\aussieBill\aussieBillValueObject.cpp" />
+    <ClCompile Include="bot\instruments\bond\australianTreasuryNote\australianTreasuryNoteObject.cpp" />
+    <ClCompile Include="bot\instruments\bond\australianTreasuryNote\australianTreasuryNoteValueObject.cpp" />
+    <ClCompile Include="bot\instruments\bond\btan\btanObject.cpp" />
+    <ClCompile Include="bot\instruments\bond\btan\btanValueObject.cpp" />
+    <ClCompile Include="bot\instruments\bond\btf\btfObject.cpp" />
+    <ClCompile Include="bot\instruments\bond\btf\btfValueObject.cpp" />
+    <ClCompile Include="bot\instruments\bond\buBill\buBillObject.cpp" />
+    <ClCompile Include="bot\instruments\bond\buBill\buBillValueObject.cpp" />
+    <ClCompile Include="bot\instruments\bond\buNote\buNoteObject.cpp" />
+    <ClCompile Include="bot\instruments\bond\buNote\buNoteValueObject.cpp" />
+    <ClCompile Include="bot\instruments\bond\kangarooBond\kangarooBondObject.cpp" />
+    <ClCompile Include="bot\instruments\bond\kangarooBond\kangarooBondValueObject.cpp" />
+    <ClCompile Include="bot\instruments\bond\oat\oatObject.cpp" />
+    <ClCompile Include="bot\instruments\bond\oat\oatValueObject.cpp" />
+    <ClCompile Include="bot\instruments\bond\treasuryBill\treasuryBillObject.cpp" />
+    <ClCompile Include="bot\instruments\bond\treasuryBill\treasuryBillValueObject.cpp" />
+    <ClCompile Include="bot\instruments\bond\treasuryNote\treasuryNoteObject.cpp" />
+    <ClCompile Include="bot\instruments\bond\treasuryNote\treasuryNoteValueObject.cpp" />
+    <ClCompile Include="bot\instruments\bond\yankeeBond\yankeeBondObject.cpp" />
+    <ClCompile Include="bot\instruments\bond\yankeeBond\yankeeBondValueObject.cpp" />
+    <ClCompile Include="bot\instruments\depositFuture\depositFutureObject.cpp" />
+    <ClCompile Include="bot\instruments\depositFuture\depositFutureValueObject.cpp" />
+    <ClCompile Include="bot\instruments\deposit\depositObject.cpp" />
+    <ClCompile Include="bot\instruments\deposit\depositValueObject.cpp" />
+    <ClCompile Include="bot\leg\fixedLegAustralia\fixedLegAustraliaObject.cpp" />
+    <ClCompile Include="bot\leg\fixedLegAustralia\fixedLegAustraliaValueObject.cpp" />
+    <ClCompile Include="bot\leg\fixedLegUnitedStates\fixedLegUnitedstatesObject.cpp" />
+    <ClCompile Include="bot\leg\fixedLegUnitedStates\fixedLegUnitedStatesValueObject.cpp" />
+    <ClCompile Include="bot\leg\floatLegAustralia\floatLegAustraliaObject.cpp" />
+    <ClCompile Include="bot\leg\floatLegAustralia\floatLegAustraliaValueObject.cpp" />
+    <ClCompile Include="bot\leg\floatLegUnitedStates\floatLegUnitedStatesObject.cpp" />
+    <ClCompile Include="bot\leg\floatLegUnitedStates\floatLegUnitedStatesValueObject.cpp" />
+    <ClCompile Include="bot\math\covarianceEWMA\covarianceEWMA.cpp" />
+    <ClCompile Include="bot\math\fittingMethod\stochasticFitting\stochasticFittingHelper.cpp" />
+    <ClCompile Include="bot\math\fittingMethod\stochasticFitting\stochasticFittingObject.cpp" />
+    <ClCompile Include="bot\math\fittingMethod\stochasticFitting\stochasticFittingValueObject.cpp" />
+    <ClCompile Include="bot\math\meanEWMA\meanEWMA.cpp" />
+    <ClCompile Include="bot\math\matrix\matrixObject.cpp" />
+    <ClCompile Include="bot\math\matrix\matrixValueObject.cpp" />
+    <ClCompile Include="bot\serialization\create\create_leg.cpp" />
+    <ClCompile Include="bot\serialization\create\create_swap.cpp" />
+    <ClCompile Include="bot\serialization\processor.cpp" />
+    <ClCompile Include="bot\serialization\register\serialization_leg.cpp" />
+    <ClCompile Include="bot\serialization\register_creator.cpp" />
+    <ClCompile Include="bot\serialization\serializationFactory.cpp" />
+    <ClCompile Include="bot\swap\interestRateSwap\interestRateSwapObject.cpp" />
+    <ClCompile Include="bot\swap\interestRateSwap\interestRateSwapValueObject.cpp" />
+    <ClCompile Include="bot\swap\zeroCouponInflationSwapUnitedStates\zeroCouponInflationSwapUnitedStatesObject.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="bot\swap\zeroCouponInflationSwapUnitedStates\zeroCouponInflationSwapUnitedStatesValueObject.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="bot\tools\interestRateConvention\interestRateConvention.cpp" />
+    <ClCompile Include="bot\tools\interestRateConvention\interestRateConventionObject.cpp" />
+    <ClCompile Include="bot\tools\interestRateConvention\interestRateConventionValueObject.cpp" />
+    <ClCompile Include="bot\tools\timeSeries\timeSeriesValueObject.cpp" />
+    <ClCompile Include="xlFunction\addin\xlPricingDate\xlPricingDate.cpp" />
+    <ClCompile Include="xlFunction\addin\xlRetrieveError\xlRetrieveError.cpp" />
+    <ClCompile Include="xlFunction\bond\xlGetCashFlowDates\xlGetCashFlowDates.cpp" />
+    <ClCompile Include="xlFunction\bond\xlInstrumentAccruedAmount\xlInstrumentAccruedAmount.cpp" />
+    <ClCompile Include="xlFunction\bond\xlInstrumentCarry\xlInstrumentCarry.cpp" />
+    <ClCompile Include="xlFunction\bond\xlInstrumentConvexity\xlInstrumentConvexity.cpp" />
+    <ClCompile Include="xlFunction\bond\xlInstrumentCostOfCarry\xlInstrumentCostOfCarry.cpp" />
+    <ClCompile Include="xlFunction\bond\xlInstrumentDuration\xlInstrumentDuration.cpp" />
+    <ClCompile Include="xlFunction\bond\xlInstrumentDV01\xlInstrumentDV01.cpp" />
+    <ClCompile Include="xlFunction\bond\xlInstrumentFlowCount\xlInstrumentFlowCount.cpp" />
+    <ClCompile Include="xlFunction\bond\xlInstrumentNextCashFlowAmount\xlInstrumentNextCashFlowAmount.cpp" />
+    <ClCompile Include="xlFunction\bond\xlInstrumentNextCashFlowDate\xlInstrumentNextCashFlowDate.cpp" />
+    <ClCompile Include="xlFunction\bond\xlInstrumentPreviousCashFlowAmount\xlInstrumentPreviousCashFlowAmount.cpp" />
+    <ClCompile Include="xlFunction\bond\xlInstrumentPreviousCashFlowDate\xlInstrumentPreviousCashFlowDate.cpp" />
+    <ClCompile Include="xlFunction\bond\xlInstrumentPrice\xlInstrumentPrice.cpp" />
+    <ClCompile Include="xlFunction\bond\xlInstrumentRollDown\xlInstrumentRollDown.cpp" />
+    <ClCompile Include="xlFunction\bond\xlInstrumentSettlementDate\xlInstrumentSettlementDate.cpp" />
+    <ClCompile Include="xlFunction\bond\xlInstrumentYield\xlInstrumentYield.cpp" />
+    <ClCompile Include="xlFunction\bond\xlIsActiveInstrument\xlIsActiveInstrument.cpp" />
+    <ClCompile Include="xlFunction\bond\xlPriceFromZSpread\xlPriceFromZSpread.cpp" />
+    <ClCompile Include="xlFunction\bond\xlZSpreadFromPrice\xlZSpreadFromPrice.cpp" />
+    <ClCompile Include="xlFunction\calendar\xlCalendarBusinessDate\xlCalendarBusinessDate.cpp" />
+    <ClCompile Include="xlFunction\calendar\xlCalendarDaycount\xlCalendarDaycount.cpp" />
+    <ClCompile Include="xlFunction\calendar\xlCalendarIMMDate\xlCalendarIMMDate.cpp" />
+    <ClCompile Include="xlFunction\calendar\xlCalendarNextIMMCode\xlCalendarNextIMMCode.cpp" />
+    <ClCompile Include="xlFunction\calendar\xlCalendarPeriodCount\xlCalendarPeriodCount.cpp" />
+    <ClCompile Include="xlFunction\curve\xlCurveForwardRate\xlCurveForwardRate.cpp" />
+    <ClCompile Include="xlFunction\curve\xlCurveReferenceDate\xlCurveReferenceDate.cpp" />
+    <ClCompile Include="xlFunction\curve\xlCurveZeroRate\xlCurveZeroRate.cpp" />
+    <ClCompile Include="xlFunction\curve\xlFittingRSquare\xlFittingRSquare.cpp" />
+    <ClCompile Include="xlFunction\curve\xlRecoverFittingParameters\xlRecoverFittingParameters.cpp" />
+    <ClCompile Include="xlFunction\experimental\xlEfficientConstrainedFrontier\xlEfficientConstrainedFrontier.cpp" />
+    <ClCompile Include="xlFunction\experimental\xlInitiateSwapCurve\xlInitiateSwapCurve.cpp" />
+    <ClCompile Include="xlFunction\Main.cpp" />
+    <ClCompile Include="xlFunction\math\statistics\xlKalmanFilter\xlKalmanFilter.cpp" />
+    <ClCompile Include="xlFunction\math\xlCorrelationMatrixEWMA\xlCorrelationMatrixEWMA.cpp" />
+    <ClCompile Include="xlFunction\math\xlCovarianceMatrixEWMA\xlCovarianceMatrixEWMA.cpp" />
+    <ClCompile Include="xlFunction\math\xlGaussianRandom\xlGaussianRandom.cpp" />
+    <ClCompile Include="xlFunction\math\xlMeanEWMA\xlMeanEWMA.cpp" />
+    <ClCompile Include="xlFunction\math\xlSchurEigenVector\xlSchurEigenVector.cpp" />
+    <ClCompile Include="xlFunction\math\xlSchurForm\xlSchurForm.cpp" />
+    <ClCompile Include="xlFunction\math\xlVolatilityEWMA\xlVolatilityEWMA.cpp" />
+    <ClCompile Include="xlFunction\math\xlZScoreEWMA\xlZScoreEWMA.cpp" />
+    <ClCompile Include="xlFunction\object\curveTransform\xlInitiateCurveShift\xlInitiateCurveShift.cpp" />
+    <ClCompile Include="xlFunction\object\curve\helpers\xlInitiateBondBootstrapHelper\xlInitiateBondBootstrapHelper.cpp" />
+    <ClCompile Include="xlFunction\object\curve\helpers\xlInitiateDepositBootstrapHelper2\xlInitiateDepositBootstrapHelper2.cpp" />
+    <ClCompile Include="xlFunction\object\curve\helpers\xlInitiateDepositBootstrapHelper\xlInitiateDepositBootstrapHelper.cpp" />
+    <ClCompile Include="xlFunction\object\curve\helpers\xlInitiateDepositFutureBootstrapHelper\xlInitiateDepositFutureBootstrapHelper.cpp" />
+    <ClCompile Include="xlFunction\object\curve\helpers\xlInitiateInterestRateSwapBootstrapHelper2\xlInitiateInterestRateSwapBootstrapHelper2.cpp" />
+    <ClCompile Include="xlFunction\object\curve\helpers\xlInitiateInterestRateSwapBootstrapHelper\xlInitiateInterestRateSwapBootstrapHelper.cpp" />
+    <ClCompile Include="xlFunction\object\curve\helpers\xlInitiateOvernightIndexedBootstrapHelper\xlInitiateOvernightIndexedBootstrapHelper.cpp" />
+    <ClCompile Include="xlFunction\object\curve\xlInitiateDepositBootstrapHelper2\xlInitiateDepositBootstrapHelper2.cpp" />
+    <ClCompile Include="xlFunction\object\curve\xlInitiateDepositBootstrapHelper\xlInitiateDepositBootstrapHelper.cpp" />
+    <ClCompile Include="xlFunction\object\curve\xlInitiateDepositFutureBootstrapHelper\xlInitiateDepositFutureBootstrapHelper.cpp" />
+    <ClCompile Include="xlFunction\object\curve\xlInitiateFittedBondCurve\xlInitiateFittedBondCurve.cpp" />
+    <ClCompile Include="xlFunction\object\curve\xlInitiateFittedBondDiscountCurve\xlInitiateFittedBondDiscountCurve.cpp" />
+    <ClCompile Include="xlFunction\object\curve\xlInitiateInterestRateSwapBootstrapHelper2\xlInitiateInterestRateSwapBootstrapHelper2.cpp" />
+    <ClCompile Include="xlFunction\object\curve\xlInitiateInterestRateSwapBootstrapHelper\xlInitiateInterestRateSwapBootstrapHelper.cpp" />
+    <ClCompile Include="xlFunction\object\curve\xlInitiateInterpolatedCurve\xlInitiateInterpolatedCurve.cpp" />
+    <ClCompile Include="xlFunction\object\curve\xlInitiateOvernightIndexedBootstrapHelper\xlInitiateOvernightIndexedBootstrapHelper.cpp" />
+    <ClCompile Include="xlFunction\object\curve\xlInitiateShiftedCurve\xlInitiateShiftedCurve.cpp" />
+    <ClCompile Include="xlFunction\object\curve\xlInitiateSwapCurveAustralia\xlInitiateSwapCurveAustralia.cpp" />
+    <ClCompile Include="xlFunction\object\curve\xlInitiateSwapCurveUnitedStates\xlInitiateSwapCurveUnitedStates.cpp" />
+    <ClCompile Include="xlFunction\object\fittingMethod\xlInitiateNelsonSiegelModel\xlInitiateNelsonSiegelModel.cpp" />
+    <ClCompile Include="xlFunction\object\fittingMethod\xlInitiateSvenssonModel\xlInitiateSvenssonModel.cpp" />
+    <ClCompile Include="xlFunction\object\index\xlInitiateIborIndex\xlInitiateIborIndex.cpp" />
+    <ClCompile Include="xlFunction\object\index\xlInitiateOvernightIndex\xlInitiateOvernightIndex.cpp" />
+    <ClCompile Include="xlFunction\object\instrument\xlInitiateAussieBill\xlInitiateAussieBill.cpp" />
+    <ClCompile Include="xlFunction\object\instrument\xlInitiateAussieNote\xlInitiateAussieNote.cpp" />
+    <ClCompile Include="xlFunction\object\instrument\xlInitiateBtan\xlInitiateBtan.cpp" />
+    <ClCompile Include="xlFunction\object\instrument\xlInitiateBtf\xlInitiateBtf.cpp" />
+    <ClCompile Include="xlFunction\object\instrument\xlInitiateBuBill\xlInitiateBuBill.cpp" />
+    <ClCompile Include="xlFunction\object\instrument\xlInitiateBuNote\xlInitiateBuNote.cpp" />
+    <ClCompile Include="xlFunction\object\instrument\xlInitiateDepositFuture\xlInitiateDepositFuture.cpp" />
+    <ClCompile Include="xlFunction\object\instrument\xlInitiateDeposit\xlInitiateDeposit.cpp" />
+    <ClCompile Include="xlFunction\object\instrument\xlInitiateKangarooBond\xlInitiateKangarooBond.cpp" />
+    <ClCompile Include="xlFunction\object\instrument\xlInitiateOat\xlInitiateOat.cpp" />
+    <ClCompile Include="xlFunction\object\instrument\xlInitiateTreasuryBill\xlInitiateTreasuryBill.cpp" />
+    <ClCompile Include="xlFunction\object\instrument\xlInitiateTreasuryNote\xlInitiateTreasuryNote.cpp" />
+    <ClCompile Include="xlFunction\object\instrument\xlInitiateYankeeBond\xlInitiateYankeeBond.cpp" />
+    <ClCompile Include="xlFunction\object\interestRateConvention\xlInitiateInterestRate\xlInitiateInterestRate.cpp" />
+    <ClCompile Include="xlFunction\object\leg\xlInitiateFixedLegAustralia\xlInitiateFixedLegAustralia.cpp" />
+    <ClCompile Include="xlFunction\object\leg\xlInitiateFixedLegUnitedStates\xlInitiateFixedLegUnitedStates.cpp" />
+    <ClCompile Include="xlFunction\object\leg\xlInitiateFloatLegAustralia\xlInitiateFloatLegAustralia.cpp" />
+    <ClCompile Include="xlFunction\object\leg\xlInitiateFloatLegUnitedStates\xlInitiateFloatLegUnitedStates.cpp" />
+    <ClCompile Include="xlFunction\object\math\xlInitiateTimeSeries\xlInitiateTimeSeries.cpp" />
+    <ClCompile Include="xlFunction\object\math\xlInitiateMatrix\xlInitiateMatrix.cpp" />
+    <ClCompile Include="xlFunction\object\swap\xlInitiateInterestRateSwap\xlInitiateInterestRateSwap.cpp" />
+    <ClCompile Include="xlFunction\object\swap\xlInitiateZeroCouponInflationSwapUnitedStates\xlInitiateZeroCouponInflationSwapUnitedStates.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="xlFunction\swap\xlSwapAccruedAmount\xlSwapAccruedAmount.cpp" />
+    <ClCompile Include="xlFunction\swap\xlSwapConvexity\xlSwapConvexity.cpp" />
+    <ClCompile Include="xlFunction\swap\xlSwapCurrentFixing\xlSwapCurrentFixing.cpp" />
+    <ClCompile Include="xlFunction\swap\xlSwapDV01\xlSwapDV01.cpp" />
+    <ClCompile Include="xlFunction\swap\xlSwapFairFixedRate\xlSwapFairFixedRate.cpp" />
+    <ClCompile Include="xlFunction\swap\xlSwapFlowsNPV\xlSwapFlowsNPV.cpp" />
+    <ClCompile Include="xlFunction\swap\xlSwapNPV\xlSwapNPV.cpp" />
+    <ClCompile Include="xlFunction\swap\xlSwapRollDown\xlSwapRollDown.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="bot\curve\activeCurves.hpp" />
+    <ClInclude Include="bot\curve\bootstrapHelper\activeBootstrapHelper.hpp" />
+    <ClInclude Include="bot\curve\bootstrapHelper\bondBootstrapHelper\bondBootstrapHelperObject.hpp" />
+    <ClInclude Include="bot\curve\bootstrapHelper\bondBootstrapHelper\bondBootstrapHelperValueObject.hpp" />
+    <ClInclude Include="bot\curve\bootstrapHelper\depositBootstrapHelper\depositBootstrapHelperObject.hpp" />
+    <ClInclude Include="bot\curve\bootstrapHelper\depositBootstrapHelper\depositBootstrapHelperValueObject.hpp" />
+    <ClInclude Include="bot\curve\bootstrapHelper\depositFutureBootstrapHelper\depositFutureBootstrapHelperObject.hpp" />
+    <ClInclude Include="bot\curve\bootstrapHelper\depositFutureBootstrapHelper\depositFutureBootstrapHelperValueObject.hpp" />
+    <ClInclude Include="bot\curve\bootstrapHelper\interestRateSwapBootstrapHelper2\interestRateSwapBootstrapHelperObject2.hpp" />
+    <ClInclude Include="bot\curve\bootstrapHelper\interestRateSwapBootstrapHelper2\interestRateSwapBootstrapHelperValueObject2.hpp" />
+    <ClInclude Include="bot\curve\bootstrapHelper\interestRateSwapBootstrapHelper\interestRateSwapBootstrapHelperObject.hpp" />
+    <ClInclude Include="bot\curve\bootstrapHelper\interestRateSwapBootstrapHelper\interestRateSwapBootstrapHelperValueObject.hpp" />
+    <ClInclude Include="bot\curve\bootstrapHelper\overnightIndexedSwapBootstrapHelper\overnightIndexedSwapBootstrapHelperObject.hpp" />
+    <ClInclude Include="bot\curve\bootstrapHelper\overnightIndexedSwapBootstrapHelper\overnightIndexedSwapBootstrapHelperValueObject.hpp" />
+    <ClInclude Include="bot\curve\curveShift\curveShiftObject.hpp" />
+    <ClInclude Include="bot\curve\curveShift\curveShiftValueObject.hpp" />
+    <ClInclude Include="bot\curve\fittedBondDiscountCurve\fittedBondDiscountCurveObject.hpp" />
+    <ClInclude Include="bot\curve\fittedBondDiscountCurve\fittedBondDiscountCurveValueObject.hpp" />
+    <ClInclude Include="bot\curve\interpolatedCurve\interpolatedCurveObject.hpp" />
+    <ClInclude Include="bot\curve\interpolatedCurve\interpolatedCurveValueObject.hpp" />
+    <ClInclude Include="bot\curve\interpolatedZeroSpreadedTermStructure\interpolatedZeroSpreadedTermStructureObject.hpp" />
+    <ClInclude Include="bot\curve\interpolatedZeroSpreadedTermStructure\interpolatedZeroSpreadedTermStructureValueObject.hpp" />
+    <ClInclude Include="bot\curve\swapCurveAustralia\swapCurveAustraliaObject.hpp" />
+    <ClInclude Include="bot\curve\swapCurveAustralia\swapCurveAustraliaValueObject.hpp" />
+    <ClInclude Include="bot\curve\swapCurveUnitedStates\swapCurveUnitedStatesObject.hpp" />
+    <ClInclude Include="bot\curve\swapCurveUnitedStates\swapCurveUnitedStatesValueObject.hpp" />
+    <ClInclude Include="bot\curve\swapCurve\swapCurveObject.hpp" />
+    <ClInclude Include="bot\curve\swapCurve\swapCurveValueObject.hpp" />
+    <ClInclude Include="bot\factory\activeFactory.hpp" />
+    <ClInclude Include="bot\factory\bondSelectionRule\bondSelectionRuleFactory.hpp" />
+    <ClInclude Include="bot\factory\bondSelectionRule\register_bondSelectionRule.hpp" />
+    <ClInclude Include="bot\factory\businessDayConvention\businessDayConventionFactory.hpp" />
+    <ClInclude Include="bot\factory\businessDayConvention\register_businessDayConvention.hpp" />
+    <ClInclude Include="bot\factory\calendar\calendarFactory.hpp" />
+    <ClInclude Include="bot\factory\calendar\register_calendars.hpp" />
+    <ClInclude Include="bot\factory\compounding\compoundingFactory.hpp" />
+    <ClInclude Include="bot\factory\compounding\register_compounding.hpp" />
+    <ClInclude Include="bot\factory\constraint\constraintFactory.hpp" />
+    <ClInclude Include="bot\factory\constraint\register_constraint.hpp" />
+    <ClInclude Include="bot\factory\currency\currencyFactory.hpp" />
+    <ClInclude Include="bot\factory\currency\register_currency.hpp" />
+    <ClInclude Include="bot\factory\daycounter\daycountFactory.hpp" />
+    <ClInclude Include="bot\factory\daycounter\register_daycounter.hpp" />
+    <ClInclude Include="bot\factory\duration\durationFactory.hpp" />
+    <ClInclude Include="bot\factory\duration\register_duration.hpp" />
+    <ClInclude Include="bot\factory\frequency\frequencyFactory.hpp" />
+    <ClInclude Include="bot\factory\frequency\register_frequency.hpp" />
+    <ClInclude Include="bot\factory\period\periodFactory.hpp" />
+    <ClInclude Include="bot\factory\period\register_period.hpp" />
+    <ClInclude Include="bot\index\iborIndex\iborIndexObject.hpp" />
+    <ClInclude Include="bot\index\iborIndex\iborIndexValueObject.hpp" />
+    <ClInclude Include="bot\index\inflationIndex\inflationIndexObject.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="bot\index\inflationIndex\inflationIndexValueObject.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="bot\index\overnightIndex\overnightIndexObject.hpp" />
+    <ClInclude Include="bot\index\overnightIndex\overnightIndexValueObject.hpp" />
+    <ClInclude Include="bot\instruments\activeInstrument.hpp" />
+    <ClInclude Include="bot\instruments\bond\aussieBill\aussieBillObject.hpp" />
+    <ClInclude Include="bot\instruments\bond\aussieBill\aussieBillValueObject.hpp" />
+    <ClInclude Include="bot\instruments\bond\australianTreasuryNote\australianTreasuryNoteObject.hpp" />
+    <ClInclude Include="bot\instruments\bond\australianTreasuryNote\australianTreasuryNoteValueObject.hpp" />
+    <ClInclude Include="bot\instruments\bond\btan\btanObject.hpp" />
+    <ClInclude Include="bot\instruments\bond\btan\btanValueObject.hpp" />
+    <ClInclude Include="bot\instruments\bond\btf\btfObject.hpp" />
+    <ClInclude Include="bot\instruments\bond\btf\btfValueObject.hpp" />
+    <ClInclude Include="bot\instruments\bond\buBill\buBillObject.hpp" />
+    <ClInclude Include="bot\instruments\bond\buBill\buBillValueObject.hpp" />
+    <ClInclude Include="bot\instruments\bond\buNote\buNoteObject.hpp" />
+    <ClInclude Include="bot\instruments\bond\buNote\buNoteValueObject.hpp" />
+    <ClInclude Include="bot\instruments\bond\kangarooBond\kangarooBondObject.hpp" />
+    <ClInclude Include="bot\instruments\bond\kangarooBond\kangarooBondValueObject.hpp" />
+    <ClInclude Include="bot\instruments\bond\oat\oatObject.hpp" />
+    <ClInclude Include="bot\instruments\bond\oat\oatValueObject.hpp" />
+    <ClInclude Include="bot\instruments\bond\treasuryBill\treasuryBillObject.hpp" />
+    <ClInclude Include="bot\instruments\bond\treasuryBill\treasuryBillValueObject.hpp" />
+    <ClInclude Include="bot\instruments\bond\treasuryNote\treasuryNoteObject.hpp" />
+    <ClInclude Include="bot\instruments\bond\treasuryNote\treasuryNoteValueObject.hpp" />
+    <ClInclude Include="bot\instruments\bond\yankeeBond\yankeeBondObject.hpp" />
+    <ClInclude Include="bot\instruments\bond\yankeeBond\yankeeBondValueObject.hpp" />
+    <ClInclude Include="bot\instruments\depositFuture\depositFutureObject.hpp" />
+    <ClInclude Include="bot\instruments\depositFuture\depositFutureValueObject.hpp" />
+    <ClInclude Include="bot\instruments\deposit\depositObject.hpp" />
+    <ClInclude Include="bot\instruments\deposit\depositValueObject.hpp" />
+    <ClInclude Include="bot\leg\activeLeg.hpp" />
+    <ClInclude Include="bot\leg\fixedLegAustralia\fixedLegAustraliaObject.hpp" />
+    <ClInclude Include="bot\leg\fixedLegAustralia\fixedLegAustraliaValueObject.hpp" />
+    <ClInclude Include="bot\leg\fixedLegUnitedStates\fixedLegUnitedstatesObject.hpp" />
+    <ClInclude Include="bot\leg\fixedLegUnitedStates\fixedLegUnitedStatesValueObject.hpp" />
+    <ClInclude Include="bot\leg\floatLegAustralia\floatLegAustraliaObject.hpp" />
+    <ClInclude Include="bot\leg\floatLegAustralia\floatLegAustraliaValueObject.hpp" />
+    <ClInclude Include="bot\leg\floatLegUnitedStates\floatLegUnitedStatesObject.hpp" />
+    <ClInclude Include="bot\leg\floatLegUnitedStates\floatLegUnitedStatesValueObject.hpp" />
+    <ClInclude Include="bot\math\conversion\ublasMatrixToOper.hpp" />
+    <ClInclude Include="bot\math\covarianceEWMA\covarianceEWMA.hpp" />
+    <ClInclude Include="bot\math\fittingMethod\stochasticFitting\stochasticFittingHelper.hpp" />
+    <ClInclude Include="bot\math\fittingMethod\stochasticFitting\stochasticFittingObject.hpp" />
+    <ClInclude Include="bot\math\fittingMethod\stochasticFitting\stochasticFittingValueObject.hpp" />
+    <ClInclude Include="bot\math\meanEWMA\meanEWMA.hpp" />
+    <ClInclude Include="bot\math\operToMatrix\operToMatrix.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="bot\math\ublasMatrixToOper\ublasMatrixToOper.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="bot\math\matrix\matrixObject.hpp" />
+    <ClInclude Include="bot\math\matrix\matrixValueObject.hpp" />
+    <ClInclude Include="bot\serialization\create\create_all.hpp" />
+    <ClInclude Include="bot\serialization\create\create_leg.hpp" />
+    <ClInclude Include="bot\serialization\create\create_swap.hpp" />
+    <ClInclude Include="bot\serialization\processor.hpp" />
+    <ClInclude Include="bot\serialization\register\serialization_all.hpp" />
+    <ClInclude Include="bot\serialization\register\serialization_leg.hpp" />
+    <ClInclude Include="bot\serialization\register\serialization_register.hpp" />
+    <ClInclude Include="bot\serialization\serializationFactory.hpp" />
+    <ClInclude Include="bot\swap\activeSwap.hpp" />
+    <ClInclude Include="bot\swap\interestRateSwap\interestRateSwapObject.hpp" />
+    <ClInclude Include="bot\swap\interestRateSwap\interestRateSwapValueObject.hpp" />
+    <ClInclude Include="bot\swap\zeroCouponInflationSwapUnitedStates\zeroCouponInflationSwapUnitedStatesObject.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="bot\swap\zeroCouponInflationSwapUnitedStates\zeroCouponInflationSwapUnitedStatesValueObject.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="bot\tools\interestRateConvention\interestRateConvention.hpp" />
+    <ClInclude Include="bot\tools\interestRateConvention\interestRateConventionObject.hpp" />
+    <ClInclude Include="bot\tools\interestRateConvention\interestRateConventionValueObject.hpp" />
+    <ClInclude Include="bot\tools\stringToType\stringtoType.hpp" />
+    <ClInclude Include="bot\tools\timeSeries\timeSeriesObject.hpp" />
+    <ClInclude Include="bot\tools\timeSeries\timeSeriesValueObject.hpp" />
+    <ClInclude Include="xlFunction\addin\register_addin.hpp" />
+    <ClInclude Include="xlFunction\addin\xlPricingDate\register_xlPricingDate.hpp" />
+    <ClInclude Include="xlFunction\addin\xlPricingDate\xlPricingDate.hpp" />
+    <ClInclude Include="xlFunction\addin\xlRetrieveError\register_xlRetrieveError.hpp" />
+    <ClInclude Include="xlFunction\addin\xlRetrieveError\xlRetrieveError.hpp" />
+    <ClInclude Include="xlFunction\bond\register_bond.hpp" />
+    <ClInclude Include="xlFunction\bond\xlGetCashFlowDates\register_xlGetCashFlowDates.hpp" />
+    <ClInclude Include="xlFunction\bond\xlGetCashFlowDates\xlGetCashFlowDates.hpp" />
+    <ClInclude Include="xlFunction\bond\xlInstrumentAccruedAmount\register_xlInstrumentAccruedAmount.hpp" />
+    <ClInclude Include="xlFunction\bond\xlInstrumentAccruedAmount\xlInstrumentAccruedAmount.hpp" />
+    <ClInclude Include="xlFunction\bond\xlInstrumentCarry\register_xlInstrumentCarry.hpp" />
+    <ClInclude Include="xlFunction\bond\xlInstrumentCarry\xlInstrumentCarry.hpp" />
+    <ClInclude Include="xlFunction\bond\xlInstrumentConvexity\register_xlInstrumentConvexity.hpp" />
+    <ClInclude Include="xlFunction\bond\xlInstrumentConvexity\xlInstrumentConvexity.hpp" />
+    <ClInclude Include="xlFunction\bond\xlInstrumentCostOfCarry\register_xlInstrumentCostOfCarry.hpp" />
+    <ClInclude Include="xlFunction\bond\xlInstrumentCostOfCarry\xlInstrumentCostOfCarry.hpp" />
+    <ClInclude Include="xlFunction\bond\xlInstrumentDuration\register_xlInstrumentDuration.hpp" />
+    <ClInclude Include="xlFunction\bond\xlInstrumentDuration\xlInstrumentDuration.hpp" />
+    <ClInclude Include="xlFunction\bond\xlInstrumentDV01\register_xlInstrumentDV01.hpp" />
+    <ClInclude Include="xlFunction\bond\xlInstrumentDV01\xlInstrumentDV01.hpp" />
+    <ClInclude Include="xlFunction\bond\xlInstrumentFlowCount\register_xlInstrumentFlowCount.hpp" />
+    <ClInclude Include="xlFunction\bond\xlInstrumentFlowCount\xlInstrumentFlowCount.hpp" />
+    <ClInclude Include="xlFunction\bond\xlInstrumentNextCashFlowAmount\register_xlInstrumentNextCashFlowAmount.hpp" />
+    <ClInclude Include="xlFunction\bond\xlInstrumentNextCashFlowAmount\xlInstrumentNextCashFlowAmount.hpp" />
+    <ClInclude Include="xlFunction\bond\xlInstrumentNextCashFlowDate\register_xlInstrumentNextCashFlowDate.hpp" />
+    <ClInclude Include="xlFunction\bond\xlInstrumentNextCashFlowDate\xlInstrumentNextCashFlowDate.hpp" />
+    <ClInclude Include="xlFunction\bond\xlInstrumentPreviousCashFlowAmount\register_xlInstrumentPreviousCashFlowAmount.hpp" />
+    <ClInclude Include="xlFunction\bond\xlInstrumentPreviousCashFlowAmount\xlInstrumentPreviousCashFlowAmount.hpp" />
+    <ClInclude Include="xlFunction\bond\xlInstrumentPreviousCashFlowDate\register_xlInstrumentPreviousCashFlowDate.hpp" />
+    <ClInclude Include="xlFunction\bond\xlInstrumentPreviousCashFlowDate\xlInstrumentPreviousCashFlowDate.hpp" />
+    <ClInclude Include="xlFunction\bond\xlInstrumentPrice\register_xlInstrumentPrice.hpp" />
+    <ClInclude Include="xlFunction\bond\xlInstrumentPrice\xlInstrumentPrice.hpp" />
+    <ClInclude Include="xlFunction\bond\xlInstrumentRollDown\register_xlInstrumentRollDown.hpp" />
+    <ClInclude Include="xlFunction\bond\xlInstrumentRollDown\xlInstrumentRollDown.hpp" />
+    <ClInclude Include="xlFunction\bond\xlInstrumentSettlementDate\register_xlInstrumentSettlementDate.hpp" />
+    <ClInclude Include="xlFunction\bond\xlInstrumentSettlementDate\xlInstrumentSettlementDate.hpp" />
+    <ClInclude Include="xlFunction\bond\xlInstrumentYield\register_xlInstrumentYield.hpp" />
+    <ClInclude Include="xlFunction\bond\xlInstrumentYield\xlInstrumentYield.hpp" />
+    <ClInclude Include="xlFunction\bond\xlIsActiveInstrument\register_xlIsActiveInstrument.hpp" />
+    <ClInclude Include="xlFunction\bond\xlIsActiveInstrument\xlIsActiveInstrument.hpp" />
+    <ClInclude Include="xlFunction\bond\xlPriceFromZSpread\register_xlPriceFromZSpread.hpp" />
+    <ClInclude Include="xlFunction\bond\xlPriceFromZSpread\xlPriceFromZSpread.hpp" />
+    <ClInclude Include="xlFunction\bond\xlZSpreadFromPrice\register_xlZSpreadFromPrice.hpp" />
+    <ClInclude Include="xlFunction\bond\xlZSpreadFromPrice\xlZSpreadFromPrice.hpp" />
+    <ClInclude Include="xlFunction\calendar\register_calendar.hpp" />
+    <ClInclude Include="xlFunction\calendar\xlCalendarBusinessDate\register_xlCalendarBusinessDate.hpp" />
+    <ClInclude Include="xlFunction\calendar\xlCalendarBusinessDate\xlCalendarBusinessDate.hpp" />
+    <ClInclude Include="xlFunction\calendar\xlCalendarDaycount\register_xlCalendarDaycount.hpp" />
+    <ClInclude Include="xlFunction\calendar\xlCalendarDaycount\xlCalendarDaycount.hpp" />
+    <ClInclude Include="xlFunction\calendar\xlCalendarIMMDate\register_xlCalendarIMMDate.hpp" />
+    <ClInclude Include="xlFunction\calendar\xlCalendarIMMDate\xlCalendarIMMDate.hpp" />
+    <ClInclude Include="xlFunction\calendar\xlCalendarNextIMMCode\register_xlCalendarNextIMMCode.hpp" />
+    <ClInclude Include="xlFunction\calendar\xlCalendarNextIMMCode\xlCalendarNextIMMCode.hpp" />
+    <ClInclude Include="xlFunction\calendar\xlCalendarPeriodCount\register_xlCalendarPeriodCount.hpp" />
+    <ClInclude Include="xlFunction\calendar\xlCalendarPeriodCount\xlCalendarPeriodCount.hpp" />
+    <ClInclude Include="xlFunction\curve\register_curve.hpp" />
+    <ClInclude Include="xlFunction\curve\xlCurveForwardRate\register_xlCurveForwardRate.hpp" />
+    <ClInclude Include="xlFunction\curve\xlCurveForwardRate\xlCurveForwardRate.hpp" />
+    <ClInclude Include="xlFunction\curve\xlCurveReferenceDate\register_xlCurveReferenceDate.hpp" />
+    <ClInclude Include="xlFunction\curve\xlCurveReferenceDate\xlCurveReferenceDate.hpp" />
+    <ClInclude Include="xlFunction\curve\xlCurveZeroRate\register_xlCurveZeroRate.hpp" />
+    <ClInclude Include="xlFunction\curve\xlCurveZeroRate\xlCurveZeroRate.hpp" />
+    <ClInclude Include="xlFunction\curve\xlFittingRSquare\register_xlFittingRSquare.hpp" />
+    <ClInclude Include="xlFunction\curve\xlFittingRSquare\xlFittingRSquare.hpp" />
+    <ClInclude Include="xlFunction\curve\xlRecoverFittingParameters\register_xlRecoverFittingParameters.hpp" />
+    <ClInclude Include="xlFunction\curve\xlRecoverFittingParameters\xlRecoverFittingParameters.hpp" />
+    <ClInclude Include="xlFunction\experimental\register_experimental.hpp" />
+    <ClInclude Include="xlFunction\experimental\xlEfficientConstrainedFrontier\register_xlEfficientConstrainedFrontier.hpp" />
+    <ClInclude Include="xlFunction\experimental\xlEfficientConstrainedFrontier\xlEfficientConstrainedFrontier.hpp" />
+    <ClInclude Include="xlFunction\experimental\xlInitiateSwapCurve\register_xlInitiateSwapCurve.hpp" />
+    <ClInclude Include="xlFunction\experimental\xlInitiateSwapCurve\xlInitiateSwapCurve.hpp" />
+    <ClInclude Include="xlFunction\Main.hpp" />
+    <ClInclude Include="xlFunction\math\register_math.hpp" />
+    <ClInclude Include="xlFunction\math\statistics\register_statistics.hpp" />
+    <ClInclude Include="xlFunction\math\statistics\xlKalmanFilter\register_xlKalmanFilter.hpp" />
+    <ClInclude Include="xlFunction\math\statistics\xlKalmanFilter\xlKalmanFilter.hpp" />
+    <ClInclude Include="xlFunction\math\xlCorrelationMatrixEWMA\register_xlCorrelationMatrixEWMA.hpp" />
+    <ClInclude Include="xlFunction\math\xlCorrelationMatrixEWMA\xlCorrelationMatrixEWMA.hpp" />
+    <ClInclude Include="xlFunction\math\xlCovarianceMatrixEWMA\register_xlCovarianceMatrixEWMA.hpp" />
+    <ClInclude Include="xlFunction\math\xlCovarianceMatrixEWMA\xlCovarianceMatrixEWMA.hpp" />
+    <ClInclude Include="xlFunction\math\xlGaussianRandom\register_xlGaussianRandom.hpp" />
+    <ClInclude Include="xlFunction\math\xlGaussianRandom\xlGaussianRandom.hpp" />
+    <ClInclude Include="xlFunction\math\xlMeanEWMA\register_xlMeanEWMA.hpp" />
+    <ClInclude Include="xlFunction\math\xlMeanEWMA\xlMeanEWMA.hpp" />
+    <ClInclude Include="xlFunction\math\xlSchurEigenVector\register_xlSchurEigenVector.hpp" />
+    <ClInclude Include="xlFunction\math\xlSchurEigenVector\xlSchurEigenVector.hpp" />
+    <ClInclude Include="xlFunction\math\xlSchurForm\register_xlSchurForm.hpp" />
+    <ClInclude Include="xlFunction\math\xlSchurForm\xlSchurForm.hpp" />
+    <ClInclude Include="xlFunction\math\xlVolatilityEWMA\register_xlVolatilityEWMA.hpp" />
+    <ClInclude Include="xlFunction\math\xlVolatilityEWMA\xlVolatilityEWMA.hpp" />
+    <ClInclude Include="xlFunction\math\xlZScoreEWMA\register_xlZScoreEWMA.hpp" />
+    <ClInclude Include="xlFunction\math\xlZScoreEWMA\xlZScoreEWMA.hpp" />
+    <ClInclude Include="xlFunction\object\curveTransform\register_curveTransform.hpp" />
+    <ClInclude Include="xlFunction\object\curveTransform\xlInitiateCurveShift\register_xlInitiateCurveShift.hpp" />
+    <ClInclude Include="xlFunction\object\curveTransform\xlInitiateCurveShift\xlInitiateCurveShift.hpp" />
+    <ClInclude Include="xlFunction\object\curve\helpers\xlInitiateBondBootstrapHelper\register_xlInitiateBondBootstrapHelper.hpp" />
+    <ClInclude Include="xlFunction\object\curve\helpers\xlInitiateBondBootstrapHelper\xlInitiateBondBootstrapHelper.hpp" />
+    <ClInclude Include="xlFunction\object\curve\helpers\xlInitiateDepositBootstrapHelper2\register_xlInitiateDepositBootstrapHelper2.hpp" />
+    <ClInclude Include="xlFunction\object\curve\helpers\xlInitiateDepositBootstrapHelper2\xlInitiateDepositBootstrapHelper2.hpp" />
+    <ClInclude Include="xlFunction\object\curve\helpers\xlInitiateDepositBootstrapHelper\register_xlInitiateDepositBootstrapHelper.hpp" />
+    <ClInclude Include="xlFunction\object\curve\helpers\xlInitiateDepositBootstrapHelper\xlInitiateDepositBootstrapHelper.hpp" />
+    <ClInclude Include="xlFunction\object\curve\helpers\xlInitiateDepositFutureBootstrapHelper\register_xlInitiateDepositFutureBootstrapHelper.hpp" />
+    <ClInclude Include="xlFunction\object\curve\helpers\xlInitiateDepositFutureBootstrapHelper\xlInitiateDepositFutureBootstrapHelper.hpp" />
+    <ClInclude Include="xlFunction\object\curve\helpers\xlInitiateInterestRateSwapBootstrapHelper2\register_xlInitiateInterestRateSwapBootstrapHelper2.hpp" />
+    <ClInclude Include="xlFunction\object\curve\helpers\xlInitiateInterestRateSwapBootstrapHelper2\xlInitiateInterestRateSwapBootstrapHelper2.hpp" />
+    <ClInclude Include="xlFunction\object\curve\helpers\xlInitiateInterestRateSwapBootstrapHelper\register_xlInitiateInterestRateSwapBootstrapHelper.hpp" />
+    <ClInclude Include="xlFunction\object\curve\helpers\xlInitiateInterestRateSwapBootstrapHelper\xlInitiateInterestRateSwapBootstrapHelper.hpp" />
+    <ClInclude Include="xlFunction\object\curve\helpers\xlInitiateOvernightIndexedBootstrapHelper\register_xlInitiateOvernightIndexedBootstrapHelper.hpp" />
+    <ClInclude Include="xlFunction\object\curve\helpers\xlInitiateOvernightIndexedBootstrapHelper\xlInitiateOvernightIndexedBootstrapHelper.hpp" />
+    <ClInclude Include="xlFunction\object\curve\register_curveObject.hpp" />
+    <ClInclude Include="xlFunction\object\curve\xlInitiateDepositBootstrapHelper2\register_xlInitiateDepositBootstrapHelper2.hpp" />
+    <ClInclude Include="xlFunction\object\curve\xlInitiateDepositBootstrapHelper2\xlInitiateDepositBootstrapHelper2.hpp" />
+    <ClInclude Include="xlFunction\object\curve\xlInitiateDepositBootstrapHelper\register_xlInitiateDepositBootstrapHelper.hpp" />
+    <ClInclude Include="xlFunction\object\curve\xlInitiateDepositBootstrapHelper\xlInitiateDepositBootstrapHelper.hpp" />
+    <ClInclude Include="xlFunction\object\curve\xlInitiateDepositFutureBootstrapHelper\register_xlInitiateDepositFutureBootstrapHelper.hpp" />
+    <ClInclude Include="xlFunction\object\curve\xlInitiateDepositFutureBootstrapHelper\xlInitiateDepositFutureBootstrapHelper.hpp" />
+    <ClInclude Include="xlFunction\object\curve\xlInitiateFittedBondCurve\register_xlInitiateFittedBondCurve.hpp" />
+    <ClInclude Include="xlFunction\object\curve\xlInitiateFittedBondCurve\xlInitiateFittedBondCurve.hpp" />
+    <ClInclude Include="xlFunction\object\curve\xlInitiateFittedBondDiscountCurve\register_xlInitiateFittedBondDiscountCurve.hpp" />
+    <ClInclude Include="xlFunction\object\curve\xlInitiateFittedBondDiscountCurve\xlInitiateFittedBondDiscountCurve.hpp" />
+    <ClInclude Include="xlFunction\object\curve\xlInitiateInterestRateSwapBootstrapHelper2\register_xlInitiateInterestRateSwapBootstrapHelper2.hpp" />
+    <ClInclude Include="xlFunction\object\curve\xlInitiateInterestRateSwapBootstrapHelper2\xlInitiateInterestRateSwapBootstrapHelper2.hpp" />
+    <ClInclude Include="xlFunction\object\curve\xlInitiateInterestRateSwapBootstrapHelper\register_xlInitiateInterestRateSwapBootstrapHelper.hpp" />
+    <ClInclude Include="xlFunction\object\curve\xlInitiateInterestRateSwapBootstrapHelper\xlInitiateInterestRateSwapBootstrapHelper.hpp" />
+    <ClInclude Include="xlFunction\object\curve\xlInitiateInterpolatedCurve\register_xlInitiateInterpolatedCurve.hpp" />
+    <ClInclude Include="xlFunction\object\curve\xlInitiateInterpolatedCurve\xlInitiateInterpolatedCurve.hpp" />
+    <ClInclude Include="xlFunction\object\curve\xlInitiateOvernightIndexedBootstrapHelper\register_xlInitiateOvernightIndexedBootstrapHelper.hpp" />
+    <ClInclude Include="xlFunction\object\curve\xlInitiateOvernightIndexedBootstrapHelper\xlInitiateOvernightIndexedBootstrapHelper.hpp" />
+    <ClInclude Include="xlFunction\object\curve\xlInitiateShiftedCurve\register_xlInitiateShiftedCurve.hpp" />
+    <ClInclude Include="xlFunction\object\curve\xlInitiateShiftedCurve\xlInitiateShiftedCurve.hpp" />
+    <ClInclude Include="xlFunction\object\curve\xlInitiateSwapCurveAustralia\register_xlInitiateSwapCurveAustralia.hpp" />
+    <ClInclude Include="xlFunction\object\curve\xlInitiateSwapCurveAustralia\xlInitiateSwapCurveAustralia.hpp" />
+    <ClInclude Include="xlFunction\object\curve\xlInitiateSwapCurveUnitedStates\register_xlInitiateSwapCurveUnitedStates.hpp" />
+    <ClInclude Include="xlFunction\object\curve\xlInitiateSwapCurveUnitedStates\xlInitiateSwapCurveUnitedStates.hpp" />
+    <ClInclude Include="xlFunction\object\fittingMethod\register_fittingMethod.hpp" />
+    <ClInclude Include="xlFunction\object\fittingMethod\xlInitiateNelsonSiegelModel\register_xlInitiateNelsonSiegelModel.hpp" />
+    <ClInclude Include="xlFunction\object\fittingMethod\xlInitiateNelsonSiegelModel\xlInitiateNelsonSiegelModel.hpp" />
+    <ClInclude Include="xlFunction\object\fittingMethod\xlInitiateSvenssonModel\register_xlInitiateSvenssonModel.hpp" />
+    <ClInclude Include="xlFunction\object\fittingMethod\xlInitiateSvenssonModel\xlInitiateSvenssonModel.hpp" />
+    <ClInclude Include="xlFunction\object\index\register_index.hpp" />
+    <ClInclude Include="xlFunction\object\index\xlInitiateIborIndex\register_xlInitiateIborIndex.hpp" />
+    <ClInclude Include="xlFunction\object\index\xlInitiateIborIndex\xlInitiateIborIndex.hpp" />
+    <ClInclude Include="xlFunction\object\index\xlInitiateOvernightIndex\register_xlInitiateOvernightIndex.hpp" />
+    <ClInclude Include="xlFunction\object\index\xlInitiateOvernightIndex\xlInitiateOvernightIndex.hpp" />
+    <ClInclude Include="xlFunction\object\instrument\register_instrument.hpp" />
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateAussieBill\register_xlInitiateAussieBill.hpp" />
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateAussieBill\xlInitiateAussieBill.hpp" />
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateAussieNote\register_xlInitiateAussieNote.hpp" />
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateAussieNote\xlInitiateAussieNote.hpp" />
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateBtan\register_xlInitiateBtan.hpp" />
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateBtan\xlInitiateBtan.hpp" />
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateBtf\register_xlInitiateBtf.hpp" />
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateBtf\xlInitiateBtf.hpp" />
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateBuBill\register_xlInitiateBuBill.hpp" />
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateBuBill\xlInitiateBuBill.hpp" />
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateBuNote\register_xlInitiateBuNote.hpp" />
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateBuNote\xlInitiateBuNote.hpp" />
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateDepositFuture\register_xlInitiateDepositFuture.hpp" />
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateDepositFuture\xlInitiateDepositFuture.hpp" />
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateDeposit\register_xlInitiateDeposit.hpp" />
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateDeposit\xlInitiateDeposit.hpp" />
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateKangarooBond\register_xlInitiateKangarooBond.hpp" />
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateKangarooBond\xlInitiateKangarooBond.hpp" />
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateOat\register_xlInitiateOat.hpp" />
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateOat\xlInitiateOat.hpp" />
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateTreasuryBill\register_xlInitiateTreasuryBill.hpp" />
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateTreasuryBill\xlInitiateTreasuryBill.hpp" />
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateTreasuryNote\register_xlInitiateTreasuryNote.hpp" />
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateTreasuryNote\xlInitiateTreasuryNote.hpp" />
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateYankeeBond\register_xlInitiateYankeeBond.hpp" />
+    <ClInclude Include="xlFunction\object\instrument\xlInitiateYankeeBond\xlInitiateYankeeBond.hpp" />
+    <ClInclude Include="xlFunction\object\interestRateConvention\register_interestRateConvention.hpp" />
+    <ClInclude Include="xlFunction\object\interestRateConvention\xlInitiateInterestRate\register_xlInitiateInterestRate.hpp" />
+    <ClInclude Include="xlFunction\object\interestRateConvention\xlInitiateInterestRate\xlInitiateInterestRate.hpp" />
+    <ClInclude Include="xlFunction\object\leg\register_leg.hpp" />
+    <ClInclude Include="xlFunction\object\leg\xlInitiateFixedLegAustralia\register_xlInitiateFixedLegAustralia.hpp" />
+    <ClInclude Include="xlFunction\object\leg\xlInitiateFixedLegAustralia\xlInitiateFixedLegAustralia.hpp" />
+    <ClInclude Include="xlFunction\object\leg\xlInitiateFixedLegUnitedStates\register_xlInitiateFixedLegUnitedStates.hpp" />
+    <ClInclude Include="xlFunction\object\leg\xlInitiateFixedLegUnitedStates\xlInitiateFixedLegUnitedStates.hpp" />
+    <ClInclude Include="xlFunction\object\leg\xlInitiateFloatLegAustralia\register_xlInitiateFloatLegAustralia.hpp" />
+    <ClInclude Include="xlFunction\object\leg\xlInitiateFloatLegAustralia\xlInitiateFloatLegAustralia.hpp" />
+    <ClInclude Include="xlFunction\object\leg\xlInitiateFloatLegUnitedStates\register_xlInitiateFloatLegUnitedStates.hpp" />
+    <ClInclude Include="xlFunction\object\leg\xlInitiateFloatLegUnitedStates\xlInitiateFloatLegUnitedStates.hpp" />
+    <ClInclude Include="xlFunction\object\math\register_mathObject.hpp" />
+    <ClInclude Include="xlFunction\object\math\xlInitiateTimeSeries\register_xlInitiateTimeSeries.hpp" />
+    <ClInclude Include="xlFunction\object\math\xlInitiateTimeSeries\xlInitiateTimeSeries.hpp" />
+    <ClInclude Include="xlFunction\object\math\xlInitiateMatrix\register_xlInitiateMatrix.hpp" />
+    <ClInclude Include="xlFunction\object\math\xlInitiateMatrix\xlInitiateMatrix.hpp" />
+    <ClInclude Include="xlFunction\object\register_object.hpp" />
+    <ClInclude Include="xlFunction\object\swap\register_swapObject.hpp" />
+    <ClInclude Include="xlFunction\object\swap\xlInitiateInterestRateSwap\register_xlInitiateInterestRateSwap.hpp" />
+    <ClInclude Include="xlFunction\object\swap\xlInitiateInterestRateSwap\xlInitiateInterestRateSwap.hpp" />
+    <ClInclude Include="xlFunction\object\swap\xlInitiateZeroCouponInflationSwapUnitedStates\register_xlInitiateZeroCouponInflationSwapUnitedStates.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\swap\xlInitiateZeroCouponInflationSwapUnitedStates\xlInitiateZeroCouponInflationSwapUnitedStates.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="xlFunction\register_all.hpp" />
+    <ClInclude Include="xlFunction\swap\register_swap.hpp" />
+    <ClInclude Include="xlFunction\swap\xlSwapAccruedAmount\register_xlSwapAccruedAmount.hpp" />
+    <ClInclude Include="xlFunction\swap\xlSwapAccruedAmount\xlSwapAccruedAmount.hpp" />
+    <ClInclude Include="xlFunction\swap\xlSwapConvexity\register_xlSwapConvexity.hpp" />
+    <ClInclude Include="xlFunction\swap\xlSwapConvexity\xlSwapConvexity.hpp" />
+    <ClInclude Include="xlFunction\swap\xlSwapCurrentFixing\register_xlSwapCurrentFixing.hpp" />
+    <ClInclude Include="xlFunction\swap\xlSwapCurrentFixing\xlSwapCurrentFixing.hpp" />
+    <ClInclude Include="xlFunction\swap\xlSwapDV01\register_xlSwapDV01.hpp" />
+    <ClInclude Include="xlFunction\swap\xlSwapDV01\xlSwapDV01.hpp" />
+    <ClInclude Include="xlFunction\swap\xlSwapFairFixedRate\register_xlSwapFairFixedRate.hpp" />
+    <ClInclude Include="xlFunction\swap\xlSwapFairFixedRate\xlSwapFairFixedRate.hpp" />
+    <ClInclude Include="xlFunction\swap\xlSwapFlowsNPV\register_xlSwapFlowsNPV.hpp" />
+    <ClInclude Include="xlFunction\swap\xlSwapFlowsNPV\xlSwapFlowsNPV.hpp" />
+    <ClInclude Include="xlFunction\swap\xlSwapNPV\register_xlSwapNPV.hpp" />
+    <ClInclude Include="xlFunction\swap\xlSwapNPV\xlSwapNPV.hpp" />
+    <ClInclude Include="xlFunction\swap\xlSwapRollDown\register_xlSwapRollDown.hpp" />
+    <ClInclude Include="xlFunction\swap\xlSwapRollDown\xlSwapRollDown.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
