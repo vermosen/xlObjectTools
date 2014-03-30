@@ -41,12 +41,12 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(IncludePath);C:\Users\vermosen\Documents\GitHub\quantlib\QuantLib;C:\Users\vermosen\Documents\GitHub\quantlib\ObjectHandler;C:\Users\vermosen\Documents\GitHub\quantlib\QuantLibAddin;.</IncludePath>
+    <IncludePath>$(IncludePath);$(GITHUB)\quantlib\QuantLib;$(GITHUB)\quantlib\ObjectHandler;$(GITHUB)\quantlib\QuantLibAddin;.</IncludePath>
     <LibraryPath>C:\Users\vermosen\Documents\GitHub\quantlib\ObjectHandler\lib;$(LibraryPath);C:\Users\vermosen\Documents\GitHub\quantlib\QuantLib\lib;C:\Users\vermosen\Documents\GitHub\quantlib\QuantLibAddin\lib</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(IncludePath);C:\Users\vermosen\Documents\GitHub\quantlib\QuantLib;C:\Users\vermosen\Documents\GitHub\quantlib\ObjectHandler;C:\Users\vermosen\Documents\GitHub\quantlib\QuantLibAddin;.</IncludePath>
+    <IncludePath>$(IncludePath);$(GITHUB)\quantlib\QuantLib;$(GITHUB)\quantlib\ObjectHandler;$(GITHUB)\quantlib\QuantLibAddin;.</IncludePath>
     <LibraryPath>C:\Users\vermosen\Documents\GitHub\quantlib\ObjectHandler\lib;$(LibraryPath);C:\Users\vermosen\Documents\GitHub\quantlib\QuantLib\lib;C:\Users\vermosen\Documents\GitHub\quantlib\QuantLibAddin\lib</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
