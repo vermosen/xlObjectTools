@@ -7,6 +7,7 @@
  */
 
 #include <xlFunction/bond/xlInstrumentDV01/xlInstrumentDV01.hpp>
+#include <ql/interestrate.hpp>
 
     /* Fonction de calcul des prix théoriques des instruments */
 DLLEXPORT xloper * xlInstrumentDV01 (const char * instrumentId_,
@@ -29,10 +30,10 @@ DLLEXPORT xloper * xlInstrumentDV01 (const char * instrumentId_,
             ObjectHandler::validateRange(settlementDate_, "settlement Date") ;
 
                 // on récupère la convention de taux
-            OH_GET_REFERENCE(conventionPtr, 
-                             conventionId_, 
-                             QuantLibAddin::interestRateConventionObject, 
-                             QuantLib::interestRateConvention)
+			OH_GET_REFERENCE(conventionPtr,
+				conventionId_,
+				QuantLibAddin::interestRateConventionObject,
+			QuantLib::InterestRate)
 
                 // on récupère l'instrument
             OH_GET_UNDERLYING(myBond, 
@@ -56,7 +57,7 @@ DLLEXPORT xloper * xlInstrumentDV01 (const char * instrumentId_,
 
             QuantLib::Rate yield = QuantLib::BondFunctions::yield(myBond,
                                                                   * instrumentCleanPrice_,
-                                                                  conventionPtr->daycounter(), 
+                                                                  conventionPtr->dayCounter(), 
                                                                   conventionPtr->compounding(),
                                                                   conventionPtr->frequency(),
                                                                   conventionPtr->businessDayConvention(),
@@ -65,7 +66,7 @@ DLLEXPORT xloper * xlInstrumentDV01 (const char * instrumentId_,
 
             QuantLib::Real returnValue = QuantLib::BondFunctions::basisPointValue(myBond,
                                                                                   yield,
-                                                                                  conventionPtr->daycounter(), 
+                                                                                  conventionPtr->dayCounter(), 
                                                                                   conventionPtr->compounding(),
                                                                                   conventionPtr->frequency(),
                                                                                   conventionPtr->businessDayConvention(),

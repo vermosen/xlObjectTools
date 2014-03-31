@@ -32,7 +32,7 @@ namespace QuantLibAddin {
         inline QuantLib::DayCounter daycounter() const {return libraryObject_->dayCounter() ;} ;
         inline QuantLib::Compounding compounding() const {return libraryObject_->compounding() ;} ;
         inline QuantLib::Frequency frequency() const {return libraryObject_->frequency() ;} ;
-        inline QuantLib::BusinessDayConvention businessDayConvention() const {return libraryObject_->businessDayCounvention() ;} ;
+        inline QuantLib::BusinessDayConvention businessDayConvention() const {return libraryObject_->businessDayConvention() ;} ;
 
         } ;
 

@@ -7,6 +7,7 @@
  */
 
 #include <xlFunction/bond/xlInstrumentConvexity/xlInstrumentConvexity.hpp>
+#include <ql/interestrate.hpp>
 
     /* Fonction de calcul de le convexité des instruments */
 DLLEXPORT xloper * xlInstrumentConvexity (const char * instrumentId_,
@@ -32,7 +33,7 @@ DLLEXPORT xloper * xlInstrumentConvexity (const char * instrumentId_,
             OH_GET_REFERENCE(conventionPtr, 
                              conventionId_, 
                              QuantLibAddin::interestRateConventionObject, 
-                             QuantLib::interestRateConvention)
+                             QuantLib::InterestRate)
 
                 // on récupère l'instrument
             OH_GET_REFERENCE(bondPtr, 
@@ -55,7 +56,7 @@ DLLEXPORT xloper * xlInstrumentConvexity (const char * instrumentId_,
                 QuantLib::Date(static_cast<QuantLib::BigInteger>(myOper2))) ;
 
             QuantLib::Rate yield = bondPtr->yield(* instrumentCleanPrice_,
-                                                  conventionPtr->daycounter(),
+                                                  conventionPtr->dayCounter(),
                                                   conventionPtr->compounding(),
                                                   conventionPtr->frequency(),
                                                   conventionPtr->businessDayConvention(),
@@ -64,7 +65,7 @@ DLLEXPORT xloper * xlInstrumentConvexity (const char * instrumentId_,
 
             QuantLib::Real returnValue = QuantLib::BondFunctions::convexity(* bondPtr,
                                                                             yield,
-                                                                            conventionPtr->daycounter(),
+                                                                            conventionPtr->dayCounter(),
                                                                             conventionPtr->compounding(),
                                                                             conventionPtr->frequency(),
                                                                             conventionPtr->businessDayConvention(),

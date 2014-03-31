@@ -7,6 +7,7 @@
  */
 
 #include <xlFunction/bond/xlInstrumentCarry/xlInstrumentCarry.hpp>
+#include <ql/interestrate.hpp>
 
     /* Fonction de calcul du carry d'un bond */
 DLLEXPORT xloper * xlInstrumentCarry (const char * instrumentId_,
@@ -32,7 +33,7 @@ DLLEXPORT xloper * xlInstrumentCarry (const char * instrumentId_,
         OH_GET_REFERENCE(conventionPtr, 
                          conventionId_, 
                          QuantLibAddin::interestRateConventionObject,
-                         QuantLib::interestRateConvention)
+						 QuantLib::InterestRate)
 
             // on récupère l'instrument
         OH_GET_UNDERLYING(myBond, 
@@ -41,7 +42,7 @@ DLLEXPORT xloper * xlInstrumentCarry (const char * instrumentId_,
                           QuantLib::Bond)
 
         returnValue = myBond.cleanPrice(* instrumentYield_,
-                                        conventionPtr->daycounter(),
+                                        conventionPtr->dayCounter(),
                                         conventionPtr->compounding(),
                                         conventionPtr->frequency(),
                                         conventionPtr->businessDayConvention(),
@@ -49,7 +50,7 @@ DLLEXPORT xloper * xlInstrumentCarry (const char * instrumentId_,
                                             QuantLib::Date(static_cast<QuantLib::BigInteger>(* endAccruedDate_)))) ;
 
         returnValue -= myBond.cleanPrice(* instrumentYield_,
-                                         conventionPtr->daycounter(),
+                                         conventionPtr->dayCounter(),
                                          conventionPtr->compounding(),
                                          conventionPtr->frequency(),
                                          conventionPtr->businessDayConvention(),

@@ -7,6 +7,7 @@
  */
 
 #include <xlFunction/bond/xlInstrumentDuration/xlInstrumentDuration.hpp>
+#include <ql/interestRate.hpp>
 
     /* Fonction de calcul des prix théoriques des instruments */
 DLLEXPORT xloper * xlInstrumentDuration (const char * instrumentId_,
@@ -36,7 +37,7 @@ DLLEXPORT xloper * xlInstrumentDuration (const char * instrumentId_,
         OH_GET_REFERENCE(conventionPtr, 
                          conventionId_, 
                          QuantLibAddin::interestRateConventionObject,
-                         QuantLib::interestRateConvention)
+                         QuantLib::InterestRate)
 
             // on récupère l'instrument
         OH_GET_UNDERLYING(myBond, 
@@ -66,7 +67,7 @@ DLLEXPORT xloper * xlInstrumentDuration (const char * instrumentId_,
 
         QuantLib::Rate yield = QuantLib::BondFunctions::yield(myBond,
                                                               * instrumentCleanPrice_,
-                                                              conventionPtr->daycounter(), 
+                                                              conventionPtr->dayCounter(), 
                                                               conventionPtr->compounding(),
                                                               conventionPtr->frequency(),
                                                               conventionPtr->businessDayConvention(),
@@ -75,7 +76,7 @@ DLLEXPORT xloper * xlInstrumentDuration (const char * instrumentId_,
 
         returnValue = QuantLib::BondFunctions::duration(myBond,
                                                         yield,
-                                                        conventionPtr->daycounter(),
+                                                        conventionPtr->dayCounter(),
                                                         conventionPtr->compounding(),
                                                         conventionPtr->frequency(),
                                                         conventionPtr->businessDayConvention(),
