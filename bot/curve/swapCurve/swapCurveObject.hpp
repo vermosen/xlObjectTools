@@ -11,7 +11,7 @@
 #define swap_curve_object_hpp
 
 #include <qlo/termstructures.hpp>
-#include <qle/termStructure/swapCurve/swapCurve.hpp>
+#include <ql/termStructures/yield/swapCurve.hpp>
 
 #include <bot/curve/swapCurve/swapCurveValueObject.hpp>
 

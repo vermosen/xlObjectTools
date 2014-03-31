@@ -6,21 +6,21 @@
  *
  */
 
-#ifndef bons_selection_rule_factory_hpp
-#define bons_selection_rule_factory_hpp
+#ifndef bond_selection_rule_factory_hpp
+#define bond_selection_rule_factory_hpp
 
 #include <oh/enumerations/typefactory.hpp>
 
-#include <qle/termStructure/bondSelectionRule/bondSelectionRule.hpp>
+#include <ql/utilities/bondSelectionRule.hpp>
 
 namespace ObjectHandler {
 
     class bondSelectionRuleFactory :
-        private RegistryManager<QuantLibExtended::bondSelectionRule, EnumTypeRegistry> {
+        private RegistryManager<QuantLib::bondSelectionRule, EnumTypeRegistry> {
 
     public :
 
-        QuantLibExtended::bondSelectionRule operator()(const std::string & id) ; // opérateur de construction
+        QuantLib::bondSelectionRule operator()(const std::string & id) ; // opérateur de construction
         
         bondSelectionRuleFactory() ;
         

@@ -6,12 +6,12 @@
  *
  */
 
-#ifndef active_curves
-#define active_curves
+#ifndef bot_active_curves
+#define bot_active_curves
 
-#include <bot/curve/swapCurveUnitedStates/interpolatedZeroSpreadedTermStructure/interpolatedZeroSpreadedTermStructureObject.hpp>
+#include <bot/curve/interpolatedZeroSpreadedTermStructure/interpolatedZeroSpreadedTermStructureObject.hpp>
 #include <bot/curve/interpolatedCurve/interpolatedCurveObject.hpp>
 #include <bot/curve/fittedBondDiscountCurve/fittedBondDiscountCurveObject.hpp>
-#include <bot/curve/swapCurveUnitedStates/swapCurve/swapCurveObject.hpp>
+#include <bot/curve/swapCurve/swapCurveObject.hpp>
 
 #endif
