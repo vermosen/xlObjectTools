@@ -6,57 +6,38 @@
  *
  */
 
-
 #include <bot/factory/bondSelectionRule/bondSelectionRuleFactory.hpp>
-
 
 namespace ObjectHandler {
 
-
     bondSelectionRuleFactory::bondSelectionRuleFactory() {
-
 
             idObject = "" ;
 
-
         }
 
-
-    QuantLibExtended::bondSelectionRule bondSelectionRuleFactory::operator()(const std::string & id) {
-
+    QuantLib::bondSelectionRule bondSelectionRuleFactory::operator()(const std::string & id) {
 
             idObject = id ;
 
+            if (RegistryManager<QuantLib::bondSelectionRule, EnumTypeRegistry>::checkType(id)) {
 
-            if (RegistryManager<QuantLibExtended::bondSelectionRule, EnumTypeRegistry>::checkType(id)) {
-
-
-                return * (static_cast<QuantLibExtended::bondSelectionRule *>(this->getType(id))) ;
-
+                return * (static_cast<QuantLib::bondSelectionRule *>(this->getType(id))) ;
 
             } else {
 
-
                     std::ostringstream oss ;
-
                     oss << "unregistered bond selection rule : " << id ;
-
                     QL_FAIL(oss.str()) ;
-
 
                 }
 
-
         }
-
 
     void bondSelectionRuleFactory::registerType(const std::string & i, void * type) {
 
-
-            RegistryManager<QuantLibExtended::bondSelectionRule, EnumTypeRegistry>::registerType(i, type) ;
-
+            RegistryManager<QuantLib::bondSelectionRule, EnumTypeRegistry>::registerType(i, type) ;
 
         }
-
 
 }
