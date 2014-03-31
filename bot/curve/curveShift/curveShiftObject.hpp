@@ -10,8 +10,10 @@
 #define curve_shift_object_hpp
 
 #include <oh/libraryobject.hpp>
+
 #include <bot/curve/curveShift/curveShiftValueObject.hpp>
-#include <qle/quotes/gapQuote/gapQuote.hpp>
+
+#include <ql/quotes/gapQuote.hpp>
 
 namespace QuantLibAddin {
 
