@@ -256,8 +256,6 @@
     <ClCompile Include="xlFunction\object\curve\xlInitiateFittedBondDiscountCurve\xlInitiateFittedBondDiscountCurve.cpp" />
     <ClCompile Include="xlFunction\object\curve\xlInitiateInterpolatedCurve\xlInitiateInterpolatedCurve.cpp" />
     <ClCompile Include="xlFunction\object\curve\xlInitiateShiftedCurve\xlInitiateShiftedCurve.cpp" />
-    <ClCompile Include="xlFunction\object\curve\xlInitiateSwapCurveAustralia\xlInitiateSwapCurveAustralia.cpp" />
-    <ClCompile Include="xlFunction\object\curve\xlInitiateSwapCurveUnitedStates\xlInitiateSwapCurveUnitedStates.cpp" />
     <ClCompile Include="xlFunction\object\fittingMethod\xlInitiateNelsonSiegelModel\xlInitiateNelsonSiegelModel.cpp" />
     <ClCompile Include="xlFunction\object\fittingMethod\xlInitiateSvenssonModel\xlInitiateSvenssonModel.cpp" />
     <ClCompile Include="xlFunction\object\index\xlInitiateIborIndex\xlInitiateIborIndex.cpp" />
@@ -553,10 +551,6 @@
     <ClInclude Include="xlFunction\object\curve\xlInitiateInterpolatedCurve\xlInitiateInterpolatedCurve.hpp" />
     <ClInclude Include="xlFunction\object\curve\xlInitiateShiftedCurve\register_xlInitiateShiftedCurve.hpp" />
     <ClInclude Include="xlFunction\object\curve\xlInitiateShiftedCurve\xlInitiateShiftedCurve.hpp" />
-    <ClInclude Include="xlFunction\object\curve\xlInitiateSwapCurveAustralia\register_xlInitiateSwapCurveAustralia.hpp" />
-    <ClInclude Include="xlFunction\object\curve\xlInitiateSwapCurveAustralia\xlInitiateSwapCurveAustralia.hpp" />
-    <ClInclude Include="xlFunction\object\curve\xlInitiateSwapCurveUnitedStates\register_xlInitiateSwapCurveUnitedStates.hpp" />
-    <ClInclude Include="xlFunction\object\curve\xlInitiateSwapCurveUnitedStates\xlInitiateSwapCurveUnitedStates.hpp" />
     <ClInclude Include="xlFunction\object\fittingMethod\register_fittingMethod.hpp" />
     <ClInclude Include="xlFunction\object\fittingMethod\xlInitiateNelsonSiegelModel\register_xlInitiateNelsonSiegelModel.hpp" />
     <ClInclude Include="xlFunction\object\fittingMethod\xlInitiateNelsonSiegelModel\xlInitiateNelsonSiegelModel.hpp" />

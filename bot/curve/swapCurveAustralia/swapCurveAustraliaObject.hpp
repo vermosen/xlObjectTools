@@ -13,31 +13,19 @@
 
 #include <qlo/termstructures.hpp>
 
-
 #include <ql/quotes/futuresconvadjustmentquote.hpp>
-
 #include <ql/indexes/ibor/audlibor.hpp>
-
 #include <ql/termstructures/yield/ratehelpers.hpp>
-
 #include <ql/time/calendars/australia.hpp>
-
 #include <ql/time/daycounters/actual360.hpp>
-
 #include <ql/time/daycounters/thirty360.hpp>
-
 #include <ql/time/imm.hpp>
-
-
-#include <qle/quotes/futuresConvexityAdjustmentQuote/futuresConvexityAdjustmentQuote.hpp>
+#include <ql/quotes/futuresConvexityAdjustmentQuote2.hpp>
 
 #include <qle/termStructure/swapCurveAustralia/swapCurveAustralia.hpp>
 
-
 #include <bot/curve/swapCurveAustralia/swapCurveAustraliaValueObject.hpp>
-
 #include <bot/factory/period/periodFactory.hpp>
-
 
 namespace QuantLibAddin {
 

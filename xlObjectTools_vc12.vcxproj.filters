@@ -489,12 +489,6 @@
     <ClCompile Include="xlFunction\object\curve\xlInitiateShiftedCurve\xlInitiateShiftedCurve.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="xlFunction\object\curve\xlInitiateSwapCurveAustralia\xlInitiateSwapCurveAustralia.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="xlFunction\object\curve\xlInitiateSwapCurveUnitedStates\xlInitiateSwapCurveUnitedStates.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="xlFunction\object\curveTransform\xlInitiateCurveShift\xlInitiateCurveShift.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -1299,18 +1293,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="xlFunction\object\curve\xlInitiateShiftedCurve\xlInitiateShiftedCurve.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="xlFunction\object\curve\xlInitiateSwapCurveAustralia\register_xlInitiateSwapCurveAustralia.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="xlFunction\object\curve\xlInitiateSwapCurveAustralia\xlInitiateSwapCurveAustralia.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="xlFunction\object\curve\xlInitiateSwapCurveUnitedStates\register_xlInitiateSwapCurveUnitedStates.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="xlFunction\object\curve\xlInitiateSwapCurveUnitedStates\xlInitiateSwapCurveUnitedStates.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="xlFunction\object\curve\register_curveObject.hpp">
