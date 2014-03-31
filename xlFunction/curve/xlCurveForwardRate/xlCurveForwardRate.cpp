@@ -35,7 +35,7 @@ DLLEXPORT double xlCurveForwardRate (const char * curveId_,
                 OH_GET_REFERENCE(conventionPtr, 
                                  conventionId_, 
                                  QuantLibAddin::interestRateConventionObject, 
-                                 QuantLib::interestRateConvention)
+                                 QuantLib::InterestRate)
 
                     // on récupère la courbe des taux
                 OH_GET_OBJECT(CurvePtr, curveId_, ObjectHandler::Object)
@@ -47,11 +47,10 @@ DLLEXPORT double xlCurveForwardRate (const char * curveId_,
                           "invalid date !") ;
 
                 return YieldCurveLibObj->forwardRate(t1, t2,
-                                                     conventionPtr->daycounter(),
+                                                     conventionPtr->dayCounter(),
                                                      conventionPtr->compounding(),
                                                      conventionPtr->frequency(), 
                                                      false) ;
-
 
             } catch (std::exception & e) {
 

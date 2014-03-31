@@ -26,14 +26,15 @@ DLLEXPORT xloper * xlRecoverFittingParameters (const char * curveId_,
             OH_GET_REFERENCE(curveTempPtr, 
                              curveId_, 
                              QuantLibAddin::fittedBondDiscountCurveObject,
-                             QuantLibExtended::stochasticSimplexFittedBondDiscountCurve)
+                             QuantLib::stochasticSimplexFittedBondDiscountCurve)
 
                 // the parameter vector
-            boost::numeric::ublas::matrix<double> returnVector = curveTempPtr->fitResults().solution() ;
+            QuantLib::Array returnVector = curveTempPtr->fitResults().solution() ;
 
             static OPER returnOper ;
 
-            ObjectHandler::ublasMatrixToOper(returnVector, returnOper) ;
+			// todo: gerer la nouvelle conversion
+            ObjectHandler::MatrixToOper<QuantLib::Array>(returnVector, returnOper) ;
 
             return & returnOper ;
 

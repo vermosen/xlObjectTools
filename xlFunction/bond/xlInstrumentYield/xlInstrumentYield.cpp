@@ -44,7 +44,7 @@ DLLEXPORT xloper * xlInstrumentYield (const char * instrumentId_,
         OH_GET_REFERENCE(conventionPtr, 
                          conventionId_, 
                          QuantLibAddin::interestRateConventionObject,
-                         QuantLib::interestRateConvention)
+                         QuantLib::InterestRate)
 
 
         QuantLib::Date settlementDate(
@@ -54,7 +54,7 @@ DLLEXPORT xloper * xlInstrumentYield (const char * instrumentId_,
 
 
         double returnValue = myBond.yield(* price_,
-                                          conventionPtr->daycounter(),
+                                          conventionPtr->dayCounter(),
                                           conventionPtr->compounding(),
                                           conventionPtr->frequency(),
                                           conventionPtr->businessDayConvention(),

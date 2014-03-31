@@ -7,6 +7,7 @@
  */
 
 #include <xlFunction/bond/xlInstrumentRollDown/xlInstrumentRollDown.hpp>
+#include <qlo\bonds.hpp>
 
     /* Fonction de calcul des prix théoriques des instruments */
 DLLEXPORT xloper * xlInstrumentRollDown (const char * instrumentId_,
@@ -53,7 +54,7 @@ DLLEXPORT xloper * xlInstrumentRollDown (const char * instrumentId_,
 
                 /* on construit une term structure translatée à la date fwd */
             boost::shared_ptr<QuantLib::YieldTermStructure> myImpliedTermStructure(
-                new QuantLibExtended::translatedTermStructure(YieldCurveLibObj, fwdDate)) ;
+                new QuantLib::translatedTermStructure(YieldCurveLibObj, fwdDate)) ;
 
 
             #ifdef _DEBUG
@@ -123,12 +124,12 @@ DLLEXPORT xloper * xlInstrumentRollDown (const char * instrumentId_,
                     OH_GET_REFERENCE(conventionPtr,
                                      static_cast<std::string>(myOper2),
                                      QuantLibAddin::interestRateConventionObject,
-                                     QuantLib::interestRateConvention)
+                                     QuantLib::InterestRate)
 
                     fwdCleanPrice = QuantLib::BondFunctions::cleanPrice(myBond,
                                                                         myImpliedTermStructure,
                                                                         mySpread,
-                                                                        conventionPtr->daycounter(),
+                                                                        conventionPtr->dayCounter(),
                                                                         conventionPtr->compounding(),
                                                                         conventionPtr->frequency(),
                                                                         conventionPtr->businessDayConvention(),

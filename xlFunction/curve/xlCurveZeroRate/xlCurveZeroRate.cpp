@@ -19,7 +19,6 @@ DLLEXPORT double xlCurveZeroRate (const char * curveId_,
 
          try {
 
-
                 QL_ENSURE(! functionCall->calledByFunctionWizard(), "") ;
 
                     /* création de la date */
@@ -32,7 +31,7 @@ DLLEXPORT double xlCurveZeroRate (const char * curveId_,
                 OH_GET_REFERENCE(conventionPtr, 
                                  conventionId_, 
                                  QuantLibAddin::interestRateConventionObject, 
-                                 QuantLib::interestRateConvention)
+                                 QuantLib::InterestRate)
 
                     // on récupère la courbe des taux
                 OH_GET_OBJECT(CurvePtr, curveId_, ObjectHandler::Object)
@@ -44,24 +43,18 @@ DLLEXPORT double xlCurveZeroRate (const char * curveId_,
                           "invalid date !") ;
 
                 return YieldCurveLibObj->zeroRate(effectiveDate,
-                                                  conventionPtr->daycounter(),
+                                                  conventionPtr->dayCounter(),
                                                   conventionPtr->compounding(),
                                                   conventionPtr->frequency(),
                                                   true) ;
 
-
             } catch (std::exception & e) {
 
-
                     ObjectHandler::RepositoryXL::instance().logError(e.what(), functionCall) ;
-
 					std::string ss(e.what()) ;
-
 					return 0.0 ;
 
-
             }
-
 
     }
 

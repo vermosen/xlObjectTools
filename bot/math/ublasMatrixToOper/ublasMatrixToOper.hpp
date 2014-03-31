@@ -6,14 +6,13 @@
  *
  */
 
-#ifndef _matrix_to_oper_hpp
-#define _matrix_to_oper_hpp
+#ifndef ublas_matrix_to_oper_hpp
+#define ublas_matrix_to_oper_hpp
 
 #include <ohxl/conversions/scalartooper.hpp>
 
-#include <boost/numeric//matrix.hpp>
-
-#include <boost/numeric//vector.hpp>
+#include <boost/numeric/ublas/matrix.hpp>
+#include <boost/numeric/ublas/vector.hpp>
 
 namespace ObjectHandler {
 

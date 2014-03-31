@@ -89,7 +89,7 @@ DLLEXPORT xloper * xlPriceFromZSpread (const char * instrumentId_,
                         conventionPtr->dayCounter(),
                         conventionPtr->compounding(),
                         conventionPtr->frequency(),
-                        conventionPtr->businessDayCounvention(),
+                        conventionPtr->businessDayConvention(),
                         QuantLib::Date(myOper3.missing() ? 
                             instrumentPtr->settlementDate(curvePtr->referenceDate()).serialNumber() :
                             static_cast<QuantLib::BigInteger>(myOper3))) ;       

@@ -79,7 +79,7 @@ DLLEXPORT xloper * xlZSpreadFromPrice (const char * instrumentId_,
 														           conventionPtr->dayCounter(),
 														           conventionPtr->compounding(),
 														           conventionPtr->frequency(),
-                                                                   conventionPtr->businessDayCounvention(),
+                                                                   conventionPtr->businessDayConvention(),
 														           settlementDate,
 														           1e-8, 100, 1.0) ;
                     

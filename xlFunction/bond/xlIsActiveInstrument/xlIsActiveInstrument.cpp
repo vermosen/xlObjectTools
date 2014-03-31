@@ -7,6 +7,7 @@
  */
 
 #include <xlFunction/bond/xlIsActiveInstrument/xlIsActiveInstrument.hpp>
+#include <qlo/bonds.hpp>
 
         /* Fonction qui détermine si un instrument est actif à une date donnée */
 DLLEXPORT xloper * xlIsActiveInstrument (const char * instrumentId_,
@@ -31,9 +32,9 @@ DLLEXPORT xloper * xlIsActiveInstrument (const char * instrumentId_,
 
 			bool returnValue = false ;
 
-            QuantLibExtended::bondSelectionRule myRule =
+            QuantLib::bondSelectionRule myRule =
 				(myOper2.missing() ?
-				 QuantLibExtended::activeRule() :
+				 QuantLib::activeRule() :
 				 ObjectHandler::bondSelectionRuleFactory()(
 				     static_cast<std::string>(myOper2))) ;
       
