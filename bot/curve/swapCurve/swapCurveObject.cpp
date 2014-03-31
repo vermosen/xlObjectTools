@@ -21,10 +21,10 @@ namespace QuantLibAddin {
 
         YieldTermStructure(valueObject, permanent) {
 
-				libraryObject_ = boost::shared_ptr<QuantLibExtended::swapCurve> (new
-					QuantLibExtended::swapCurve(calculationDate,
-												instruments,
-												accuracy)) ;
+				libraryObject_ = boost::shared_ptr<QuantLib::swapCurve> (new
+					QuantLib::swapCurve(calculationDate,
+										instruments,
+										accuracy)) ;
 
 		}
 
