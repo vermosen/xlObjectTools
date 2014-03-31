@@ -27,7 +27,7 @@ namespace QuantLibAddin {
                                                          const bool & permanent) : Leg(valueObject, permanent) {
 
                 libraryObject_ = boost::shared_ptr<QuantLib::Leg>(
-                    new QuantLib::Leg(QuantLibExtended::floatLegAustralia(effectiveDate, 
+                    new QuantLib::Leg(QuantLib::floatLegAustralia(effectiveDate, 
                                                                           firstCouponDate,
                                                                           lastCouponDate,
                                                                           maturityDate,

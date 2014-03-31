@@ -7,6 +7,7 @@
  */
 
 #include <bot/instruments/bond/oat/oatObject.hpp>
+#include <ql/currencies/europe.hpp>
 
 namespace QuantLibAddin {
 
@@ -17,15 +18,15 @@ namespace QuantLibAddin {
                              const QuantLib::Date & lastCouponDate,
                              const QuantLib::Date & maturityDate,
                              const QuantLib::Rate & couponRate,
-                             const bool permanent) : Bond(valueObject, permanent) {
+                             const bool permanent) : Bond(valueObject, std::string("french treasury bond"), QuantLib::EURCurrency(), permanent) {
         
-            libraryObject_ = boost::shared_ptr<QuantLibExtended::oat> (new
-                QuantLibExtended::oat(issueDate, 
-                                             effectiveDate,
-                                             firstCouponDate,
-                                             lastCouponDate,
-                                             maturityDate,
-                                             couponRate)) ;
+            libraryObject_ = boost::shared_ptr<QuantLib::oat> (new
+                QuantLib::oat(issueDate, 
+							  effectiveDate,
+                              firstCouponDate,
+                              lastCouponDate,
+                              maturityDate,
+                              couponRate)) ;
 
         } ;
             

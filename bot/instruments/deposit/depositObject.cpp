@@ -17,10 +17,10 @@ depositObject::depositObject(boost::shared_ptr<QuantLibAddin::ValueObjects::depo
                              const QuantLib::Natural & settlementDays,
                              const QuantLib::BusinessDayConvention & paymentConvention,
                              const bool & endOfMonth,
-                             const bool permanent) : Bond(valueObject, permanent) {
+                             const bool permanent) : Bond(valueObject, std::string("currency deposit"), QuantLib::Currency(), permanent) {// undefined CCY
         
-            libraryObject_ = boost::shared_ptr<QuantLibExtended::deposit> (new
-                QuantLibExtended::deposit(startDate,
+            libraryObject_ = boost::shared_ptr<QuantLib::deposit> (new
+                QuantLib::deposit(startDate,
 										  maturityDate,
 										  calendar,
 										  settlementDays,

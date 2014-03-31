@@ -12,7 +12,7 @@
 
 #include <qlo/baseinstruments.hpp>
 
-#include <qle/instruments/depositFuture/depositFuture.hpp>
+#include <ql/instruments/depositFuture.hpp>
 
 #include <bot/instruments/depositFuture/depositFutureValueObject.hpp>
 
@@ -22,8 +22,9 @@ namespace QuantLibAddin {
 
     public :
 
-            depositFutureObject::depositFutureObject(boost::shared_ptr<QuantLibAddin::ValueObjects::depositFutureValueObject> & valueObject,
-                                                     const bool permanent = true) ;
+            depositFutureObject::depositFutureObject(
+				boost::shared_ptr<QuantLibAddin::ValueObjects::depositFutureValueObject> & valueObject,
+                const bool permanent = true) ;
 
         } ;
 

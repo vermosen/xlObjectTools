@@ -13,10 +13,8 @@
 #include <qlo/bonds.hpp>
 
 #include <ql/instruments/bond.hpp>
-
 #include <ql/time/daycounters/actual360.hpp>
-
-#include <qle/instruments/deposit/deposit.hpp>
+#include <ql/instruments/bonds/deposit.hpp>
 
 #include <bot/instruments/deposit/depositValueObject.hpp>
 
