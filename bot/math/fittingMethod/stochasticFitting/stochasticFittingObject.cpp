@@ -15,9 +15,9 @@ namespace QuantLibAddin {
 
         stochasticFittingObject::stochasticFittingObject(
                         const boost::shared_ptr<QuantLibAddin::ValueObjects::stochasticFittingValueObject> & valueObject,
-                        const boost::shared_ptr<QuantLibExtended::stochasticSimplexFittedBondDiscountCurve::fittingMethod> & fitting,
-                        const boost::numeric::::matrix<double> initialVector,
-                        const boost::numeric::::matrix<double> randomMatrix,
+                        const boost::shared_ptr<QuantLib::stochasticSimplexFittedBondDiscountCurve::fittingMethod> & fitting,
+                        const QuantLib::Array & initialVector,
+                        const QuantLib::Matrix & randomMatrix,
                         const QuantLib::Natural cyclesPerThread,
                         const QuantLib::Natural cycles,
                         const QuantLib::Natural maxEvaluationPerCycle,
@@ -25,20 +25,17 @@ namespace QuantLibAddin {
                         const bool & permanent) :
     
 
-        ObjectHandler::LibraryObject<QuantLibExtended::stochasticFittingHelper>(valueObject, permanent) {
+        ObjectHandler::LibraryObject<QuantLib::stochasticFittingHelper>(valueObject, permanent) {
         
-
-                libraryObject_ = boost::shared_ptr<QuantLibExtended::stochasticFittingHelper> (new
-                    QuantLibExtended::stochasticFittingHelper(fitting,
-                                                                      initialVector,
-                                                                      randomMatrix,
-                                                                      cyclesPerThread,
-                                                                      cycles,
-                                                                      maxEvaluationPerCycle,
-                                                                      accuracy)) ;
-
-
+				libraryObject_ = boost::shared_ptr<QuantLib::stochasticFittingHelper> (new
+                    QuantLib::stochasticFittingHelper(fitting,
+                                                      initialVector,
+                                                      randomMatrix,
+                                                      cyclesPerThread,
+                                                      cycles,
+                                                      maxEvaluationPerCycle,
+                                                      accuracy)) ;
+				
     } ;
      
-
 }

@@ -41,8 +41,8 @@ namespace QuantLibAddin {
                     legs[0],
                     legs[1],
                     (payer[0] == true ? 
-                    QuantLibExtended::interestRateSwap::Receiver : 
-                    QuantLibExtended::interestRateSwap::Payer),
+                    QuantLib::vanillaSwap2::Receiver : 
+                    QuantLib::vanillaSwap2::Payer),
                     permanent)) ;
 
 

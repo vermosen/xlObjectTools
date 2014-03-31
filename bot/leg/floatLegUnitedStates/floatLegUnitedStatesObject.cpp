@@ -28,19 +28,19 @@ namespace QuantLibAddin {
                                            const bool & permanent) : Leg(valueObject, permanent) {
 
                 libraryObject_ = boost::shared_ptr<QuantLib::Leg>(
-                    new QuantLib::Leg(QuantLibExtended::floatLegUnitedStates(effectiveDate, 
-                                                                             firstCouponDate,
-                                                                             lastCouponDate,
-                                                                             maturityDate,
-                                                                             index,
-                                                                             fixingDays,
-                                                                             legFrequency,
-                                                                             legDaycounter,
-                                                                             notional,
-                                                                             spread,
-                                                                             paymentConvention,
-                                                                             terminationPaymentConvention,
-                                                                             endOfMonth))) ;
+                    new QuantLib::Leg(QuantLib::floatLegUnitedStates(effectiveDate, 
+                                                                     firstCouponDate,
+                                                                     lastCouponDate,
+                                                                     maturityDate,
+                                                                     index,
+                                                                     fixingDays,
+                                                                     legFrequency,
+                                                                     legDaycounter,
+                                                                     notional,
+                                                                     spread,
+                                                                     paymentConvention,
+                                                                     terminationPaymentConvention,
+                                                                     endOfMonth))) ;
 
             } ;
 
@@ -72,7 +72,7 @@ namespace QuantLibAddin {
                         boost::shared_ptr<QuantLib::IborCoupon> fc = 
                             boost::dynamic_pointer_cast<QuantLib::IborCoupon>(* Jt) ;
 
-                        if (fc) fc->iborIndex()->forwardingTermStructure().linkTo(* index_, false) ;
+                        //if (fc) fc->iborIndex()->forwardingTermStructure().linkTo(* index_, false) ;
         
                     }
 

@@ -76,7 +76,7 @@ namespace QuantLibAddin {
                         if (fc) {
 
 
-                                fc->iborIndex()->forwardingTermStructure().linkTo(* index_, false) ;
+                                //fc->iborIndex()->forwardingTermStructure().linkTo(* index_, false) ;
 
 
                             }

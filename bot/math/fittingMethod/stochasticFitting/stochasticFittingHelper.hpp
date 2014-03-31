@@ -9,19 +9,13 @@
 #ifndef stochastic_svensson_fitting_helper_hpp
 #define stochastic_svensson_fitting_helper_hpp
 
-
-#include <boost/numeric//matrix.hpp>
-
-
 #include <ql/types.hpp>
 
-
-#include <qle/math/fittingMethod/stochasticSvenssonFitting/stochasticSvenssonFitting.hpp>
-
-#include <qle/math/fittingMethod/stochasticNelsonSiegelFitting/stochasticNelsonSiegelFitting.hpp>
+#include <ql/experimental/math/fittingMethod/stochasticSvenssonFitting/stochasticSvenssonFitting.hpp>
+#include <ql/experimental/math/fittingMethod/stochasticNelsonSiegelFitting/stochasticNelsonSiegelFitting.hpp>
 
 
-namespace QuantLibExtended {
+namespace QuantLib {
 
         class stochasticFittingHelper {
 
@@ -29,49 +23,35 @@ namespace QuantLibExtended {
 
                 stochasticFittingHelper(
                     const boost::shared_ptr<stochasticSimplexFittedBondDiscountCurve::fittingMethod> & fittingMethod,
-                    const boost::numeric::::matrix<double> & initialVector,
-                    const boost::numeric::::matrix<double> & randomMatrix,
-                    const QuantLib::Natural & cyclesPerThread = 100,
-                    const QuantLib::Natural & cycles = 10,
-                    const QuantLib::Natural & maxEvaluationPerCycle = 5000,
-                    const QuantLib::Real & accuracy = 10e-8) ;
+                    const Array & initialVector,
+                    const Matrix & randomMatrix,
+                    const Natural & cyclesPerThread = 100,
+                    const Natural & cycles = 10,
+                    const Natural & maxEvaluationPerCycle = 5000,
+                    const Real & accuracy = 10e-8) ;
 
 
                 boost::shared_ptr<stochasticSimplexFittedBondDiscountCurve::fittingMethod> fittingMethod() ;
 
-                boost::numeric::::matrix<double> initialVector() ;
-
-                boost::numeric::::matrix<double> randomMatrix() ;
-
-                QuantLib::Natural cyclesPerThread() ;
-
-                QuantLib::Natural cycles() ;
-
-                QuantLib::Natural maxEvaluationPercycle() ;
-
-                QuantLib::Real accuracy() ;
-
+                Array initialVector() ;
+                Matrix randomMatrix() ;
+                Natural cyclesPerThread() ;
+                Natural cycles() ;
+                Natural maxEvaluationPercycle() ;
+                Real accuracy() ;
 
             private :
 
-
                 boost::shared_ptr<stochasticSimplexFittedBondDiscountCurve::fittingMethod> fittingMethod_  ;
 
-                boost::numeric::::matrix<double> initialVector_ ;
-
-                boost::numeric::::matrix<double> randomMatrix_ ;
-
-                QuantLib::Natural cyclesPerThread_ ;
-
-                QuantLib::Natural cycles_ ;
-
-                QuantLib::Natural maxEvaluationPerCycle_ ;
-
-                QuantLib::Real accuracy_ ;
-
+                Array initialVector_ ;
+				Matrix randomMatrix_ ;
+                Natural cyclesPerThread_ ;
+                Natural cycles_ ;
+                Natural maxEvaluationPerCycle_ ;
+                Real accuracy_ ;
 
             } ;
-
 
     } ;
 

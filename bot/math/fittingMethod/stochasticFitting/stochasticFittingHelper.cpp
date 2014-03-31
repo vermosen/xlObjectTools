@@ -8,16 +8,16 @@
 
 #include <bot/math/fittingMethod/stochasticFitting/stochasticFittingHelper.hpp>
 
-namespace QuantLibExtended {
+namespace QuantLib {
 
         stochasticFittingHelper::stochasticFittingHelper(
                                const boost::shared_ptr<stochasticSimplexFittedBondDiscountCurve::fittingMethod> & fittingMethod,
-                               const boost::numeric::::matrix<double> & initialVector,
-                               const boost::numeric::::matrix<double> & randomMatrix,
-                               const QuantLib::Natural & cyclesPerThread,
-                               const QuantLib::Natural & cycles,
-                               const QuantLib::Natural & maxEvaluationPerCycle,
-                               const QuantLib::Real & accuracy) :
+                               const Array & initialVector,
+                               const Matrix & randomMatrix,
+                               const Natural & cyclesPerThread,
+                               const Natural & cycles,
+                               const Natural & maxEvaluationPerCycle,
+                               const Real & accuracy) :
 
                 fittingMethod_(fittingMethod),
                 initialVector_(initialVector),
@@ -36,7 +36,7 @@ namespace QuantLibExtended {
             }
 
 
-        boost::numeric::::matrix<double> stochasticFittingHelper::initialVector() {
+        Array stochasticFittingHelper::initialVector() {
                     
                         
                 return initialVector_ ;
@@ -45,7 +45,7 @@ namespace QuantLibExtended {
             }
 
 
-        boost::numeric::::matrix<double> stochasticFittingHelper::randomMatrix() {
+        Matrix stochasticFittingHelper::randomMatrix() {
                     
                         
                 return randomMatrix_ ;
@@ -53,7 +53,7 @@ namespace QuantLibExtended {
 
             }
 
-        QuantLib::Natural stochasticFittingHelper::cyclesPerThread() {
+        Natural stochasticFittingHelper::cyclesPerThread() {
                     
                         
                 return cyclesPerThread_ ;
@@ -62,7 +62,7 @@ namespace QuantLibExtended {
             }
 
 
-        QuantLib::Natural stochasticFittingHelper::cycles() {
+        Natural stochasticFittingHelper::cycles() {
                     
                         
                 return cycles_ ;
@@ -70,7 +70,7 @@ namespace QuantLibExtended {
 
             }
 
-        QuantLib::Natural stochasticFittingHelper::maxEvaluationPercycle() {
+        Natural stochasticFittingHelper::maxEvaluationPercycle() {
                     
                         
                 return maxEvaluationPerCycle_ ;
@@ -78,7 +78,7 @@ namespace QuantLibExtended {
 
             }
 
-        QuantLib::Real stochasticFittingHelper::accuracy() {
+        Real stochasticFittingHelper::accuracy() {
                     
                         
                 return accuracy_ ;

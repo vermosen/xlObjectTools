@@ -8,7 +8,7 @@
 
 #include <xlsdk/xlsdkdefines.hpp>
 
-inline void registerxlInitiatMatrix(const XLOPER & xDll) {
+inline void registerxlInitiateMatrix(const XLOPER & xDll) {
 
              // Enregistre la fonction xlInitiateUblasMatrix
         Excel(xlfRegister, 0, 13, & xDll,

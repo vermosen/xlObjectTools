@@ -15,7 +15,7 @@ namespace QuantLibAddin {
             boost::shared_ptr<ValueObjects::interestRateSwapValueObject> & valueObject,
             boost::shared_ptr<Leg> & fixedLeg,
             boost::shared_ptr<Leg> & floatLeg,
-            const QuantLibExtended::interestRateSwap::Type & type,
+            const QuantLib::vanillaSwap2::Type & type,
             const bool & permanent) :
 
                 Instrument(valueObject, permanent) {
@@ -30,9 +30,9 @@ namespace QuantLibAddin {
                     floatLeg->getLibraryObject(floLeg) ;
 
                     libraryObject_ = boost::shared_ptr<QuantLib::Instrument>(new
-                        QuantLibExtended::interestRateSwap(* fxdLeg, 
-                                                           * floLeg, 
-                                                           type)) ;
+                        QuantLib::vanillaSwap2(* fxdLeg, 
+                                               * floLeg, 
+                                               type)) ;
                 
 
                 } ;
