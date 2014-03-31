@@ -10,10 +10,9 @@
 #define register_constraint_hpp
 
 #include <ql/math/optimization/constraint.hpp>
+#include <ql/experimental/math/fittingMethod/stochasticSvenssonFitting/stochasticSvenssonFittingConstraint.hpp>
 
 #include <bot/factory/constraint/constraintFactory.hpp>
-
-#include <qle/math/fittingMethod/stochasticSvenssonFitting/stochasticSvenssonFittingConstraint.hpp>
 
 void registerConstraint() ;
 

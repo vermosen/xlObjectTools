@@ -9,7 +9,7 @@
 #ifndef register_bond_selection_rule_hpp
 #define register_bond_selection_rule_hpp
 
-#include <ql/utilities/bondSelectionRule.hpp>
+//#include <ql/utilities/bondSelectionRule.hpp>
 
 #include <bot/factory/bondSelectionRule/bondSelectionRuleFactory.hpp>
 

@@ -15,14 +15,10 @@ void registerBondSelectionRule() {
 
         ObjectHandler::bondSelectionRuleFactory createBondSelectionRule ;
 
-
-        createBondSelectionRule.registerType("active Rule", new QuantLibExtended::activeRule()) ;
-
-        createBondSelectionRule.registerType("on-the-run 10 Rule", new QuantLibExtended::onTheRun10Rule()) ;
-
-		createBondSelectionRule.registerType("on-the-run 30 Rule", new QuantLibExtended::onTheRun30Rule()) ;
-
-		createBondSelectionRule.registerType("off-the-run 10 Rule", new QuantLibExtended::offTheRun10Rule()) ;
+        createBondSelectionRule.registerType("active Rule", new QuantLib::activeRule()) ;
+        createBondSelectionRule.registerType("on-the-run 10 Rule", new QuantLib::onTheRun10Rule()) ;
+		createBondSelectionRule.registerType("on-the-run 30 Rule", new QuantLib::onTheRun30Rule()) ;
+		createBondSelectionRule.registerType("off-the-run 10 Rule", new QuantLib::offTheRun10Rule()) ;
 
 
     }

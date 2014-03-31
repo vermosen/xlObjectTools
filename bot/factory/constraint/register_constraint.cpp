@@ -14,10 +14,8 @@ void registerConstraint() {
         ObjectHandler::constraintFactory createConstraint ;
 
         createConstraint.registerType("No Constraint", new QuantLib::NoConstraint()) ;
-
         createConstraint.registerType("Positive Constraint", new QuantLib::PositiveConstraint()) ;
-
-        createConstraint.registerType("NSS Constraint", new QuantLibExtended::stochasticSvenssonConstraint()) ;
+        createConstraint.registerType("NSS Constraint", new QuantLib::stochasticSvenssonConstraint()) ;
 
 
     }

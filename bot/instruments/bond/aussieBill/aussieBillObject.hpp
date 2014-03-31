@@ -12,7 +12,7 @@
 
 #include <qlo/bonds.hpp>
 
-#include <ql/instruments/bonds/australianTreasuryBill.hpp>
+#include <ql/instruments/bonds/aussieBill.hpp>
 #include <ql/currencies/oceania.hpp>
 
 #include <bot/instruments/bond/aussieBill/aussieBillValueObject.hpp>
