@@ -7,6 +7,7 @@
  */
 
 #include <xlFunction/bond/xlInstrumentPrice/xlInstrumentPrice.hpp>
+#include <ql/interestRate.hpp>
 
             /* Fonction de conversion yield -> prix pour la convention de l'instrument */
 DLLEXPORT xloper * xlInstrumentPrice (const char * instrumentId_,
@@ -66,10 +67,10 @@ DLLEXPORT xloper * xlInstrumentPrice (const char * instrumentId_,
                     OH_GET_REFERENCE(conventionPtr, 
                                      static_cast<std::string>(myOper2),
                                      QuantLibAddin::interestRateConventionObject, 
-                                     QuantLib::interestRateConvention)
+                                     QuantLib::InterestRate)
                    
                     returnValue = myBond.cleanPrice(* yield_,
-                                                    conventionPtr->daycounter(),
+                                                    conventionPtr->dayCounter(),
                                                     conventionPtr->compounding(),
                                                     conventionPtr->frequency(),
                                                     conventionPtr->businessDayConvention(),

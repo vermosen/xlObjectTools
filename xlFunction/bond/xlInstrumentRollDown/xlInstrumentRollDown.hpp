@@ -23,7 +23,7 @@
 
 #include <bot/tools/interestRateConvention/interestRateConventionObject.hpp>
 
-#include <qle/termStructure/translatedTermStructure/translatedTermStructure.hpp>
+#include <ql/termStructures/yield/translatedTermStructure.hpp>
 
         /* Fonction de calcul du roll-down d'un bond. Le but de la 
            procédure est d'établir l'effet du temps sur l'appréciation 
