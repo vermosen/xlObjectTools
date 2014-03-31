@@ -87,18 +87,6 @@
     <ClCompile Include="bot\curve\swapCurve\swapCurveValueObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="bot\curve\swapCurveAustralia\swapCurveAustraliaObject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="bot\curve\swapCurveAustralia\swapCurveAustraliaValueObject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="bot\curve\swapCurveUnitedStates\swapCurveUnitedStatesObject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="bot\curve\swapCurveUnitedStates\swapCurveUnitedStatesValueObject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="bot\factory\bondSelectionRule\bondSelectionRuleFactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -678,18 +666,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="bot\curve\swapCurve\swapCurveValueObject.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="bot\curve\swapCurveAustralia\swapCurveAustraliaObject.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="bot\curve\swapCurveAustralia\swapCurveAustraliaValueObject.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="bot\curve\swapCurveUnitedStates\swapCurveUnitedStatesObject.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="bot\curve\swapCurveUnitedStates\swapCurveUnitedStatesValueObject.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="bot\curve\activeCurves.hpp">

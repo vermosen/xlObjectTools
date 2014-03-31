@@ -102,10 +102,6 @@
     <ClCompile Include="bot\curve\interpolatedCurve\interpolatedCurveValueObject.cpp" />
     <ClCompile Include="bot\curve\interpolatedZeroSpreadedTermStructure\interpolatedZeroSpreadedTermStructureObject.cpp" />
     <ClCompile Include="bot\curve\interpolatedZeroSpreadedTermStructure\interpolatedZeroSpreadedTermStructureValueObject.cpp" />
-    <ClCompile Include="bot\curve\swapCurveAustralia\swapCurveAustraliaObject.cpp" />
-    <ClCompile Include="bot\curve\swapCurveAustralia\swapCurveAustraliaValueObject.cpp" />
-    <ClCompile Include="bot\curve\swapCurveUnitedStates\swapCurveUnitedStatesObject.cpp" />
-    <ClCompile Include="bot\curve\swapCurveUnitedStates\swapCurveUnitedStatesValueObject.cpp" />
     <ClCompile Include="bot\curve\swapCurve\swapCurveObject.cpp" />
     <ClCompile Include="bot\curve\swapCurve\swapCurveValueObject.cpp" />
     <ClCompile Include="bot\factory\bondSelectionRule\bondSelectionRuleFactory.cpp" />
@@ -317,10 +313,6 @@
     <ClInclude Include="bot\curve\interpolatedCurve\interpolatedCurveValueObject.hpp" />
     <ClInclude Include="bot\curve\interpolatedZeroSpreadedTermStructure\interpolatedZeroSpreadedTermStructureObject.hpp" />
     <ClInclude Include="bot\curve\interpolatedZeroSpreadedTermStructure\interpolatedZeroSpreadedTermStructureValueObject.hpp" />
-    <ClInclude Include="bot\curve\swapCurveAustralia\swapCurveAustraliaObject.hpp" />
-    <ClInclude Include="bot\curve\swapCurveAustralia\swapCurveAustraliaValueObject.hpp" />
-    <ClInclude Include="bot\curve\swapCurveUnitedStates\swapCurveUnitedStatesObject.hpp" />
-    <ClInclude Include="bot\curve\swapCurveUnitedStates\swapCurveUnitedStatesValueObject.hpp" />
     <ClInclude Include="bot\curve\swapCurve\swapCurveObject.hpp" />
     <ClInclude Include="bot\curve\swapCurve\swapCurveValueObject.hpp" />
     <ClInclude Include="bot\factory\activeFactory.hpp" />
