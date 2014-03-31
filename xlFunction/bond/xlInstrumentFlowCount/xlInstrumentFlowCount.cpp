@@ -38,7 +38,13 @@ DLLEXPORT xloper * xlInstrumentFlowCount (const char * instrumentId_,
                     QuantLib::Date() : 
                     QuantLib::Date(static_cast<QuantLib::BigInteger>(myOper))) ;
 
-            QuantLib::Natural returnValue = myBond.flowCount(settlementDate) ;
+			QuantLib::Natural returnValue = 0;
+
+				// increments
+			for (std::vector<boost::shared_ptr<QuantLib::CashFlow> >::const_reverse_iterator It = myBond.cashflows().cend;
+				It != myBond.cashflows().cbegin; It++)
+			
+				(It->get()->date() > settlementDate ? returnValue++ : returnValue);
 
             static XLOPER returnOper ;
             ObjectHandler::scalarToOper(static_cast<double>(returnValue), returnOper) ;
