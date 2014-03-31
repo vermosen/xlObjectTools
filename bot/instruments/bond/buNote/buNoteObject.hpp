@@ -12,7 +12,7 @@
 
 #include <qlo/bonds.hpp>
 
-#include <qle/instruments/buNote/buNote.hpp>
+#include <ql/instruments/bonds/buNote.hpp>
 
 #include <bot/instruments/bond/buNote/buNoteValueObject.hpp>
 

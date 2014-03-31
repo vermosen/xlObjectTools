@@ -7,6 +7,7 @@
  */
 
 #include <bot/instruments/bond/btan/btanObject.hpp>
+#include <ql/currencies/europe.hpp>
 
 namespace QuantLibAddin {
 
@@ -17,10 +18,10 @@ namespace QuantLibAddin {
                              const QuantLib::Date & lastCouponDate,
                              const QuantLib::Date & maturityDate,
                              const QuantLib::Rate & couponRate,
-                             const bool permanent) : Bond(valueObject, permanent) {
+                             const bool permanent) : Bond(valueObject, std::string("french medium term note"), QuantLib::EURCurrency(), true) {
         
-            libraryObject_ = boost::shared_ptr<QuantLibExtended::btan> (new
-                QuantLibExtended::btan(issueDate, 
+            libraryObject_ = boost::shared_ptr<QuantLib::btan> (new
+                QuantLib::btan(issueDate, 
                                        effectiveDate,
                                        firstCouponDate,
                                        lastCouponDate,

@@ -7,17 +7,18 @@
  */
 
 #include <bot/instruments/bond/buBill/buBillObject.hpp>
+#include <ql/currencies/europe.hpp>
 
 namespace QuantLibAddin {
 
     buBillObject::buBillObject(boost::shared_ptr<QuantLibAddin::ValueObjects::buBillValueObject> & valueObject,
                                        const QuantLib::Date & maturityDate,
                                        const QuantLib::Date & issueDate,
-                                       const bool permanent) : Bond(valueObject, permanent) {
+									   const bool permanent) : Bond(valueObject, std::string("german treasury bill"), QuantLib::EURCurrency(), permanent) {
         
-            libraryObject_ = boost::shared_ptr<QuantLibExtended::buBill> (new
-                QuantLibExtended::buBill(maturityDate, 
-                                         issueDate)) ;
+            libraryObject_ = boost::shared_ptr<QuantLib::buBill> (new
+                QuantLib::buBill(maturityDate, 
+                                 issueDate)) ;
 
         } ;
             

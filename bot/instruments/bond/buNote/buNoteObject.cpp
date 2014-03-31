@@ -7,6 +7,7 @@
  */
 
 #include <bot/instruments/bond/buNote/buNoteObject.hpp>
+#include <ql/currencies/europe.hpp>
 
 namespace QuantLibAddin {
 
@@ -17,10 +18,10 @@ namespace QuantLibAddin {
                              const QuantLib::Date & lastCouponDate,
                              const QuantLib::Date & maturityDate,
                              const QuantLib::Rate & couponRate,
-                             const bool permanent) : Bond(valueObject, permanent) {
+							 const bool permanent) : Bond(valueObject, std::string("german note"), QuantLib::EURCurrency(), true) {
         
-            libraryObject_ = boost::shared_ptr<QuantLibExtended::buNote> (new
-                QuantLibExtended::buNote(issueDate, 
+            libraryObject_ = boost::shared_ptr<QuantLib::buNote> (new
+                QuantLib::buNote(issueDate, 
                                              effectiveDate,
                                              firstCouponDate,
                                              lastCouponDate,

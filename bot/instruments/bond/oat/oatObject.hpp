@@ -12,7 +12,7 @@
 
 #include <qlo/bonds.hpp>
 
-#include <qle/instruments/oat/oat.hpp>
+#include <ql/instruments/bonds/oat.hpp>
 
 #include <bot/instruments/bond/oat/oatValueObject.hpp>
 

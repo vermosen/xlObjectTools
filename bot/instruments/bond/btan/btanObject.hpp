@@ -12,7 +12,7 @@
 
 #include <qlo/bonds.hpp>
 
-#include <qle/instruments/btan/btan.hpp>
+#include <ql/instruments/bonds/btan.hpp>
 
 #include <bot/instruments/bond/btan/btanValueObject.hpp>
 

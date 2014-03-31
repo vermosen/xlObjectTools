@@ -7,6 +7,7 @@
  */
 
 #include <bot/instruments/bond/aussieBill/aussieBillObject.hpp>
+#include <ql/currencies/oceania.hpp>
 
 namespace QuantLibAddin {
 
@@ -14,12 +15,12 @@ namespace QuantLibAddin {
                                        const QuantLib::Date & maturityDate,
                                        const QuantLib::Date & issueDate,
                                        const QuantLib::Natural & settlementDays,
-                                       const bool permanent) : Bond(valueObject, permanent) {
+                                       const bool permanent) : Bond(valueObject, std::string("australian treasury note"), QuantLib::AUDCurrency(), permanent) {
         
-            libraryObject_ = boost::shared_ptr<QuantLibExtended::aussieBill> (new
-                QuantLibExtended::aussieBill(maturityDate, 
-                                             issueDate,
-                                             settlementDays)) ;
+            libraryObject_ = boost::shared_ptr<QuantLib::aussieBill> (new
+                QuantLib::aussieBill(maturityDate, 
+                                     issueDate,
+                                     settlementDays)) ;
 
         } ;
             

@@ -7,6 +7,7 @@
  */
 
 #include <bot/instruments/bond/yankeeBond/yankeeBondObject.hpp>
+#include <ql/currencies/america.hpp>
 
 namespace QuantLibAddin {
 
@@ -21,12 +22,10 @@ yankeeBondObject::yankeeBondObject(boost::shared_ptr<QuantLibAddin::ValueObjects
                                    const QuantLib::Date & lastCouponDate,
                                    const QuantLib::Natural & settleDays,
                                    const bool & endOfMonth,
-                                   const bool permanent)
+                                   const bool permanent) : Bond(valueObject, std::string("corporate bonds in dollar"), QuantLib::USDCurrency(), permanent) {
 
-            : Bond(valueObject, permanent) {
-
-            libraryObject_ = boost::shared_ptr<QuantLibExtended::yankeeBond> (new
-                QuantLibExtended::yankeeBond(issueDate,
+            libraryObject_ = boost::shared_ptr<QuantLib::yankeeBond> (new
+                QuantLib::yankeeBond(issueDate,
                                              maturityDate,
                                              frequency,
                                              daycounter,

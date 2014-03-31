@@ -12,7 +12,7 @@
 
 #include <qlo/bonds.hpp>
 
-#include <qle/instruments/btf/btf.hpp>
+#include <ql/instruments/bonds/btf.hpp>
 
 #include <bot/instruments/bond/btf/btfValueObject.hpp>
 

@@ -12,7 +12,7 @@
 
 #include <qlo/bonds.hpp>
 
-#include <qle/instruments/buBill/buBill.hpp>
+#include <ql/instruments/bonds/buBill.hpp>
 
 #include <bot/instruments/bond/buBill/buBillValueObject.hpp>
 
