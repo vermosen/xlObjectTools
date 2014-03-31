@@ -11,9 +11,7 @@
 
 #include <qlo/ratehelpers.hpp>
 
-#include <qle/instruments/interestRateSwap/interestRateSwap.hpp>
-#include <qle/termStructure/bootstrapHelper/interestRateSwapBootstrapHelper/interestRateSwapBootstrapHelper.hpp>
-
+#include <ql/termStructures/bootstrapHelper.hpp>
 #include <ql/termstructures/yield/ratehelpers.hpp>
 
 #include <bot/swap/interestRateSwap/interestRateSwapObject.hpp>

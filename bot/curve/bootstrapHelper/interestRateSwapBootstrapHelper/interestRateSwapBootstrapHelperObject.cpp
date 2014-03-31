@@ -11,17 +11,18 @@
 
 namespace QuantLibAddin {
 
-        interestRateSwapBootstrapHelperObject::interestRateSwapBootstrapHelperObject(boost::shared_ptr<QuantLibAddin::ValueObjects::interestRateSwapBootstrapHelperValueObject> & valueObject,
-                                                                                     const QuantLib::Handle<QuantLib::Quote> & swapRate,
-                                                                                     const boost::shared_ptr<QuantLibExtended::interestRateSwap> & swap,
-                                                                                     const QuantLib::Handle<QuantLib::YieldTermStructure> & discount,
-                                                                                     const bool permanent) : RateHelper(valueObject, permanent) {
+        interestRateSwapBootstrapHelperObject::interestRateSwapBootstrapHelperObject(
+			boost::shared_ptr<QuantLibAddin::ValueObjects::interestRateSwapBootstrapHelperValueObject> & valueObject,
+            const QuantLib::Handle<QuantLib::Quote> & swapRate,
+            const boost::shared_ptr<QuantLib::vanillaSwap2> & swap,
+            const QuantLib::Handle<QuantLib::YieldTermStructure> & discount,
+            const bool permanent) : RateHelper(valueObject, permanent) {
             
 
                 libraryObject_ = boost::shared_ptr<QuantLib::RateHelper>(new
-                    QuantLibExtended::interestRateSwapBootstrapHelper(swapRate,
-                                                                      swap,
-                                                                      discount)) ;
+                    QuantLib::interestRateSwapBootstrapHelper(swapRate,
+                                                              swap,
+                                                              discount)) ;
 
 
             }

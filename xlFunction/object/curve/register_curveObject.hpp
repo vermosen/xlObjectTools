@@ -46,10 +46,12 @@ inline void register_curve(const XLOPER & xDll) {
     } ;
 
 inline void unregister_curve(const XLOPER & xDll) {
-
             
+			/**/
 			unregisterxlInitiateSwapCurveUnitedStates(xDll) ;
             unregisterxlInitiateSwapCurveAustralia(xDll) ;
+			/**/
+			
 			unregisterxlInitiateShiftedCurve(xDll) ;
             unregisterxlInitiateFittedBondDiscountCurve(xDll) ;
             unregisterxlInitiateDepositBootstrapHelper(xDll) ;

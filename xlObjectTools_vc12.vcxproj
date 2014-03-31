@@ -47,7 +47,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>$(IncludePath);$(GITHUB)\quantlib\QuantLib;$(GITHUB)\quantlib\ObjectHandler;$(GITHUB)\quantlib\QuantLibAddin;.</IncludePath>
-    <LibraryPath>C:\Users\vermosen\Documents\GitHub\quantlib\ObjectHandler\lib;$(LibraryPath);C:\Users\vermosen\Documents\GitHub\quantlib\QuantLib\lib;C:\Users\vermosen\Documents\GitHub\quantlib\QuantLibAddin\lib</LibraryPath>
+    <LibraryPath>$(GITHUB)\quantlib\ObjectHandler\lib;$(LibraryPath);$(GITHUB)\quantlib\QuantLib\lib;$(GITHUB)\quantlib\QuantLibAddin\lib</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -252,15 +252,9 @@
     <ClCompile Include="xlFunction\object\curve\helpers\xlInitiateInterestRateSwapBootstrapHelper2\xlInitiateInterestRateSwapBootstrapHelper2.cpp" />
     <ClCompile Include="xlFunction\object\curve\helpers\xlInitiateInterestRateSwapBootstrapHelper\xlInitiateInterestRateSwapBootstrapHelper.cpp" />
     <ClCompile Include="xlFunction\object\curve\helpers\xlInitiateOvernightIndexedBootstrapHelper\xlInitiateOvernightIndexedBootstrapHelper.cpp" />
-    <ClCompile Include="xlFunction\object\curve\xlInitiateDepositBootstrapHelper2\xlInitiateDepositBootstrapHelper2.cpp" />
-    <ClCompile Include="xlFunction\object\curve\xlInitiateDepositBootstrapHelper\xlInitiateDepositBootstrapHelper.cpp" />
-    <ClCompile Include="xlFunction\object\curve\xlInitiateDepositFutureBootstrapHelper\xlInitiateDepositFutureBootstrapHelper.cpp" />
     <ClCompile Include="xlFunction\object\curve\xlInitiateFittedBondCurve\xlInitiateFittedBondCurve.cpp" />
     <ClCompile Include="xlFunction\object\curve\xlInitiateFittedBondDiscountCurve\xlInitiateFittedBondDiscountCurve.cpp" />
-    <ClCompile Include="xlFunction\object\curve\xlInitiateInterestRateSwapBootstrapHelper2\xlInitiateInterestRateSwapBootstrapHelper2.cpp" />
-    <ClCompile Include="xlFunction\object\curve\xlInitiateInterestRateSwapBootstrapHelper\xlInitiateInterestRateSwapBootstrapHelper.cpp" />
     <ClCompile Include="xlFunction\object\curve\xlInitiateInterpolatedCurve\xlInitiateInterpolatedCurve.cpp" />
-    <ClCompile Include="xlFunction\object\curve\xlInitiateOvernightIndexedBootstrapHelper\xlInitiateOvernightIndexedBootstrapHelper.cpp" />
     <ClCompile Include="xlFunction\object\curve\xlInitiateShiftedCurve\xlInitiateShiftedCurve.cpp" />
     <ClCompile Include="xlFunction\object\curve\xlInitiateSwapCurveAustralia\xlInitiateSwapCurveAustralia.cpp" />
     <ClCompile Include="xlFunction\object\curve\xlInitiateSwapCurveUnitedStates\xlInitiateSwapCurveUnitedStates.cpp" />
@@ -551,24 +545,12 @@
     <ClInclude Include="xlFunction\object\curve\helpers\xlInitiateOvernightIndexedBootstrapHelper\register_xlInitiateOvernightIndexedBootstrapHelper.hpp" />
     <ClInclude Include="xlFunction\object\curve\helpers\xlInitiateOvernightIndexedBootstrapHelper\xlInitiateOvernightIndexedBootstrapHelper.hpp" />
     <ClInclude Include="xlFunction\object\curve\register_curveObject.hpp" />
-    <ClInclude Include="xlFunction\object\curve\xlInitiateDepositBootstrapHelper2\register_xlInitiateDepositBootstrapHelper2.hpp" />
-    <ClInclude Include="xlFunction\object\curve\xlInitiateDepositBootstrapHelper2\xlInitiateDepositBootstrapHelper2.hpp" />
-    <ClInclude Include="xlFunction\object\curve\xlInitiateDepositBootstrapHelper\register_xlInitiateDepositBootstrapHelper.hpp" />
-    <ClInclude Include="xlFunction\object\curve\xlInitiateDepositBootstrapHelper\xlInitiateDepositBootstrapHelper.hpp" />
-    <ClInclude Include="xlFunction\object\curve\xlInitiateDepositFutureBootstrapHelper\register_xlInitiateDepositFutureBootstrapHelper.hpp" />
-    <ClInclude Include="xlFunction\object\curve\xlInitiateDepositFutureBootstrapHelper\xlInitiateDepositFutureBootstrapHelper.hpp" />
     <ClInclude Include="xlFunction\object\curve\xlInitiateFittedBondCurve\register_xlInitiateFittedBondCurve.hpp" />
     <ClInclude Include="xlFunction\object\curve\xlInitiateFittedBondCurve\xlInitiateFittedBondCurve.hpp" />
     <ClInclude Include="xlFunction\object\curve\xlInitiateFittedBondDiscountCurve\register_xlInitiateFittedBondDiscountCurve.hpp" />
     <ClInclude Include="xlFunction\object\curve\xlInitiateFittedBondDiscountCurve\xlInitiateFittedBondDiscountCurve.hpp" />
-    <ClInclude Include="xlFunction\object\curve\xlInitiateInterestRateSwapBootstrapHelper2\register_xlInitiateInterestRateSwapBootstrapHelper2.hpp" />
-    <ClInclude Include="xlFunction\object\curve\xlInitiateInterestRateSwapBootstrapHelper2\xlInitiateInterestRateSwapBootstrapHelper2.hpp" />
-    <ClInclude Include="xlFunction\object\curve\xlInitiateInterestRateSwapBootstrapHelper\register_xlInitiateInterestRateSwapBootstrapHelper.hpp" />
-    <ClInclude Include="xlFunction\object\curve\xlInitiateInterestRateSwapBootstrapHelper\xlInitiateInterestRateSwapBootstrapHelper.hpp" />
     <ClInclude Include="xlFunction\object\curve\xlInitiateInterpolatedCurve\register_xlInitiateInterpolatedCurve.hpp" />
     <ClInclude Include="xlFunction\object\curve\xlInitiateInterpolatedCurve\xlInitiateInterpolatedCurve.hpp" />
-    <ClInclude Include="xlFunction\object\curve\xlInitiateOvernightIndexedBootstrapHelper\register_xlInitiateOvernightIndexedBootstrapHelper.hpp" />
-    <ClInclude Include="xlFunction\object\curve\xlInitiateOvernightIndexedBootstrapHelper\xlInitiateOvernightIndexedBootstrapHelper.hpp" />
     <ClInclude Include="xlFunction\object\curve\xlInitiateShiftedCurve\register_xlInitiateShiftedCurve.hpp" />
     <ClInclude Include="xlFunction\object\curve\xlInitiateShiftedCurve\xlInitiateShiftedCurve.hpp" />
     <ClInclude Include="xlFunction\object\curve\xlInitiateSwapCurveAustralia\register_xlInitiateSwapCurveAustralia.hpp" />

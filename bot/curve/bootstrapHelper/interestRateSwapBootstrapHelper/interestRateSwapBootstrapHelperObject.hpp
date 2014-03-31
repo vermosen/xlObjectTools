@@ -11,8 +11,8 @@
 
 #include <qlo/ratehelpers.hpp>
 
-#include <qle/instruments/interestRateSwap/interestRateSwap.hpp>
-#include <qle/termStructure/bootstrapHelper/interestRateSwapBootstrapHelper/interestRateSwapBootstrapHelper.hpp>
+#include <ql/instruments/vanillaSwap2.hpp>
+#include <ql/termStructures/yield/interestRateSwapBootstrapHelper.hpp>
 
 #include <bot/swap/interestRateSwap/interestRateSwapObject.hpp>
 #include <bot/curve/bootstrapHelper/interestRateSwapBootstrapHelper/interestRateSwapBootstrapHelperValueObject.hpp>
@@ -23,12 +23,12 @@ namespace QuantLibAddin {
 
             public :
 
-                interestRateSwapBootstrapHelperObject(boost::shared_ptr<QuantLibAddin::ValueObjects::interestRateSwapBootstrapHelperValueObject> & valueObject,
-                                                      const QuantLib::Handle<QuantLib::Quote> & swapRate,
-                                                      const boost::shared_ptr<QuantLibExtended::interestRateSwap> & swap,
-                                                      const QuantLib::Handle<QuantLib::YieldTermStructure> & discount = QuantLib::Handle<QuantLib::YieldTermStructure>(),
-                                                      const bool permanent = true) ;
-
+                interestRateSwapBootstrapHelperObject(
+					boost::shared_ptr<QuantLibAddin::ValueObjects::interestRateSwapBootstrapHelperValueObject> & valueObject,
+                    const QuantLib::Handle<QuantLib::Quote> & swapRate,
+                    const boost::shared_ptr<QuantLib::vanillaSwap2> & swap,
+                    const QuantLib::Handle<QuantLib::YieldTermStructure> & discount = QuantLib::Handle<QuantLib::YieldTermStructure>(),
+                    const bool permanent = true) ;
 
             } ;
 

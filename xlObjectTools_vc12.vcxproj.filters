@@ -477,31 +477,13 @@
     <ClCompile Include="xlFunction\object\curve\helpers\xlInitiateOvernightIndexedBootstrapHelper\xlInitiateOvernightIndexedBootstrapHelper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="xlFunction\object\curve\xlInitiateDepositBootstrapHelper\xlInitiateDepositBootstrapHelper.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="xlFunction\object\curve\xlInitiateDepositBootstrapHelper2\xlInitiateDepositBootstrapHelper2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="xlFunction\object\curve\xlInitiateDepositFutureBootstrapHelper\xlInitiateDepositFutureBootstrapHelper.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="xlFunction\object\curve\xlInitiateFittedBondCurve\xlInitiateFittedBondCurve.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="xlFunction\object\curve\xlInitiateFittedBondDiscountCurve\xlInitiateFittedBondDiscountCurve.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="xlFunction\object\curve\xlInitiateInterestRateSwapBootstrapHelper\xlInitiateInterestRateSwapBootstrapHelper.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="xlFunction\object\curve\xlInitiateInterestRateSwapBootstrapHelper2\xlInitiateInterestRateSwapBootstrapHelper2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="xlFunction\object\curve\xlInitiateInterpolatedCurve\xlInitiateInterpolatedCurve.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="xlFunction\object\curve\xlInitiateOvernightIndexedBootstrapHelper\xlInitiateOvernightIndexedBootstrapHelper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="xlFunction\object\curve\xlInitiateShiftedCurve\xlInitiateShiftedCurve.cpp">
@@ -1295,24 +1277,6 @@
     <ClInclude Include="xlFunction\object\curve\helpers\xlInitiateOvernightIndexedBootstrapHelper\xlInitiateOvernightIndexedBootstrapHelper.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="xlFunction\object\curve\xlInitiateDepositBootstrapHelper\register_xlInitiateDepositBootstrapHelper.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="xlFunction\object\curve\xlInitiateDepositBootstrapHelper\xlInitiateDepositBootstrapHelper.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="xlFunction\object\curve\xlInitiateDepositBootstrapHelper2\register_xlInitiateDepositBootstrapHelper2.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="xlFunction\object\curve\xlInitiateDepositBootstrapHelper2\xlInitiateDepositBootstrapHelper2.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="xlFunction\object\curve\xlInitiateDepositFutureBootstrapHelper\register_xlInitiateDepositFutureBootstrapHelper.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="xlFunction\object\curve\xlInitiateDepositFutureBootstrapHelper\xlInitiateDepositFutureBootstrapHelper.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="xlFunction\object\curve\xlInitiateFittedBondCurve\register_xlInitiateFittedBondCurve.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -1325,28 +1289,10 @@
     <ClInclude Include="xlFunction\object\curve\xlInitiateFittedBondDiscountCurve\xlInitiateFittedBondDiscountCurve.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="xlFunction\object\curve\xlInitiateInterestRateSwapBootstrapHelper\register_xlInitiateInterestRateSwapBootstrapHelper.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="xlFunction\object\curve\xlInitiateInterestRateSwapBootstrapHelper\xlInitiateInterestRateSwapBootstrapHelper.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="xlFunction\object\curve\xlInitiateInterestRateSwapBootstrapHelper2\register_xlInitiateInterestRateSwapBootstrapHelper2.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="xlFunction\object\curve\xlInitiateInterestRateSwapBootstrapHelper2\xlInitiateInterestRateSwapBootstrapHelper2.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="xlFunction\object\curve\xlInitiateInterpolatedCurve\register_xlInitiateInterpolatedCurve.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="xlFunction\object\curve\xlInitiateInterpolatedCurve\xlInitiateInterpolatedCurve.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="xlFunction\object\curve\xlInitiateOvernightIndexedBootstrapHelper\register_xlInitiateOvernightIndexedBootstrapHelper.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="xlFunction\object\curve\xlInitiateOvernightIndexedBootstrapHelper\xlInitiateOvernightIndexedBootstrapHelper.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="xlFunction\object\curve\xlInitiateShiftedCurve\register_xlInitiateShiftedCurve.hpp">
