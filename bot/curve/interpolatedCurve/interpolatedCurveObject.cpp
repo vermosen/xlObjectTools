@@ -22,11 +22,11 @@ namespace QuantLibAddin {
 
             YieldTermStructure(valueObject, permanent) {
 
-                libraryObject_ = boost::shared_ptr<QuantLib::PiecewiseYieldCurve<QuantLib::Discount, QuantLibExtended::logCubicInterpolator> > (new
-					    QuantLib::PiecewiseYieldCurve<QuantLib::Discount, QuantLibExtended::logCubicInterpolator>(calculationDate,
-												                                                                  instruments,
-                                                                                                                  QuantLib::Actual365Fixed(),
-												                                                                  accuracy)) ;
+                libraryObject_ = boost::shared_ptr<QuantLib::PiecewiseYieldCurve<QuantLib::Discount, QuantLib::logCubicInterpolator> > (new
+					    QuantLib::PiecewiseYieldCurve<QuantLib::Discount, QuantLib::logCubicInterpolator>(calculationDate,
+												                                                          instruments,
+                                                                                                          QuantLib::Actual365Fixed(),
+												                                                          accuracy)) ;
 
             }
 

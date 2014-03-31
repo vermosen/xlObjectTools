@@ -17,8 +17,8 @@ namespace QuantLibAddin {
                 const bool & permanent) : YieldTermStructure(valueObject, permanent) {
 
 
-                    libraryObject_ = boost::shared_ptr<QuantLibExtended::interpolatedZeroSpreadedTermStructure> (new
-                        QuantLibExtended::interpolatedZeroSpreadedTermStructure(baseCurve, gapQuotes)) ;
+                    libraryObject_ = boost::shared_ptr<QuantLib::interpolatedZeroSpreadedTermStructure> (new
+                        QuantLib::interpolatedZeroSpreadedTermStructure(baseCurve, gapQuotes)) ;
 
 
                 }

@@ -13,7 +13,7 @@
 
 #include <bot/curve/interpolatedZeroSpreadedTermStructure/interpolatedZeroSpreadedTermStructureValueObject.hpp>
 
-#include <qle/termStructure/interpolatedZeroSpreadedTermStructure/interpolatedZeroSpreadedTermStructure.hpp>
+#include <ql/experimental/termStructures/yield/interpolatedZeroSpreadedTermStructure.hpp>
 
 namespace QuantLibAddin {
 

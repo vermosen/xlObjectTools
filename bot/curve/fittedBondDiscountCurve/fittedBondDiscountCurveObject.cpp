@@ -11,25 +11,23 @@
 namespace QuantLibAddin {
 
         fittedBondDiscountCurveObject::fittedBondDiscountCurveObject(
-            boost::shared_ptr<QuantLibExtended::stochasticSimplexFittedBondDiscountCurve> & curveObject,
+            boost::shared_ptr<QuantLib::stochasticSimplexFittedBondDiscountCurve> & curveObject,
             boost::shared_ptr<QuantLibAddin::ValueObjects::fittedBondDiscountCurveValueObject> & valueObject,
             const bool permanent) :
 
         YieldTermStructure(valueObject, permanent) {
 
-
                 libraryObject_ = curveObject ;
-
 
             }
 
-        fittedBondDiscountCurveObject::fittedBondDiscountCurveObject(
+		fittedBondDiscountCurveObject::fittedBondDiscountCurveObject(
             boost::shared_ptr<QuantLibAddin::ValueObjects::fittedBondDiscountCurveValueObject> & valueObject,
             const QuantLib::Date & settlementDate,
             const std::vector<boost::shared_ptr<QuantLib::BondHelper> > & instruments,
-            const QuantLibExtended::stochasticSimplexFittedBondDiscountCurve::fittingMethod & fittingMethod,
-            const boost::numeric::ublas::matrix<double> & guess,
-            const boost::numeric::ublas::matrix<double> & matrixRandom,
+            const QuantLib::stochasticSimplexFittedBondDiscountCurve::fittingMethod & fittingMethod,
+            const QuantLib::Array & guess,
+			const QuantLib::Matrix & matrixRandom,
             const QuantLib::Real accuracy,
             const QuantLib::Size maxEvaluations,
             const QuantLib::Natural cyclesPerThread,
@@ -37,12 +35,10 @@ namespace QuantLibAddin {
             const QuantLib::Real simplexLambda,
             const bool & permanent) :
 
-
         YieldTermStructure(valueObject, permanent) {
 
-
-            boost::shared_ptr<QuantLibExtended::stochasticSimplexFittedBondDiscountCurve> tempCurve (new
-                QuantLibExtended::stochasticSimplexFittedBondDiscountCurve(
+            boost::shared_ptr<QuantLib::stochasticSimplexFittedBondDiscountCurve> tempCurve (new
+                QuantLib::stochasticSimplexFittedBondDiscountCurve(
                      settlementDate,
                      instruments,
                      QuantLib::Actual365Fixed(),
