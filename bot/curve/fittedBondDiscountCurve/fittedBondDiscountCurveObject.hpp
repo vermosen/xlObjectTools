@@ -11,12 +11,12 @@
 
 
 #include <ql/time/calendars/australia.hpp>
+#include <ql/termstructures/yield/nonlinearfittingmethods.hpp>
 
 #include <qlo/termstructures.hpp>
 
 #include <boost/numeric/ublas/matrix.hpp>
 
-#include <qle/math/fittingMethod/svenssonFitting/svenssonFitting.hpp>
 #include <qle/termStructure/stochasticSimplexFittedBondDiscountCurve/stochasticSimplexFittedBondDiscountCurve.hpp>
 
 #include <bot/curve/fittedBondDiscountCurve/fittedBondDiscountCurveValueObject.hpp>
