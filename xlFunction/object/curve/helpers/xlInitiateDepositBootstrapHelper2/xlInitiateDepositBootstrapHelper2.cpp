@@ -25,14 +25,10 @@ DLLEXPORT xloper * xlInitiateDepositBootstrapHelper2 (const char * objectId_,
                 QL_ENSURE(! functionCall->calledByFunctionWizard(), "") ;
 
                     // trigger pour provoquer le recalcul
-                ObjectHandler::validateRange(trigger_, "trigger") ;
-
-				ObjectHandler::validateRange(calendar_, "calendar") ;
-
+                ObjectHandler::validateRange(trigger_,        "trigger") ;
+				ObjectHandler::validateRange(calendar_,       "calendar") ;
 				ObjectHandler::validateRange(settlementDays_, "settlement days") ;
-
-				ObjectHandler::validateRange(annualBasis_, "annual basis") ;
-
+				ObjectHandler::validateRange(annualBasis_,    "annual basis") ;
 
 					/* gestion des oper */
 				ObjectHandler::ConvertOper myOper1(* calendar_),
@@ -64,8 +60,8 @@ DLLEXPORT xloper * xlInitiateDepositBootstrapHelper2 (const char * objectId_,
                     ObjectHandler::daycountFactory()(static_cast<std::string>(myOper3))) ;
 
 					// création du dépot
-				boost::shared_ptr<QuantLibExtended::deposit> myDepositPtr (
-					new QuantLibExtended::deposit(valueDate,
+				boost::shared_ptr<QuantLib::deposit> myDepositPtr (
+					new QuantLib::deposit(valueDate,
 												  calendar.advance(valueDate, ObjectHandler::periodFactory()(tenor_)),
 												  calendar,
 												  settlementDays,
@@ -96,25 +92,16 @@ DLLEXPORT xloper * xlInitiateDepositBootstrapHelper2 (const char * objectId_,
                                                                         depositBootstrapObject,
                                                                         true) ; // on force la réécriture
 
-
                 static XLOPER returnOper ;
-
                 ObjectHandler::scalarToOper(returnValue, returnOper) ;
-
                 return & returnOper ;
-
 
             } catch (std::exception & e) {
 
-
                     ObjectHandler::RepositoryXL::instance().logError(e.what(), functionCall) ;
-
                     static XLOPER returnOper ;
-
                     ObjectHandler::scalarToOper(e.what(), returnOper) ;
-
                     return & returnOper ;
-
 
             }
 
