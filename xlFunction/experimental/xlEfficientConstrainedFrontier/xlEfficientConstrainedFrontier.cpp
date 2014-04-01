@@ -26,20 +26,25 @@ DLLEXPORT xloper * xlEfficientConstrainedFrontier(const char * returnVectorId_,
                 /* acquisition du vecteur d'esperance */
 			OH_GET_UNDERLYING(tempmat,
 				returnVectorId_,
-				QuantLibAddin::MatrixObject,
+				QuantLibAddin::matrixObject,
 				QuantLib::Matrix)
 
-				/*TODO : conversion en array + check des dimensions*/
-				QuantLib::Array vec(1, 0.0);
                 /* acquisition de la matrice de variance-covariance */
             OH_GET_UNDERLYING(mat, 
                               varCovMatrixId_, 
-                              QuantLibAddin::MatrixObject,
+							  QuantLibAddin::matrixObject,
                               QuantLib::Matrix)
 
                 /* contrôles */
-            QL_REQUIRE(returnVector.size() == varCovMatrix.rows() &&
-                       varCovMatrix.rows() == varCovMatrix.columns(), "unapropriate data set") ;
+			QL_REQUIRE(tempmat.rows() == mat.rows() &&
+					   tempmat.columns() == 1 &&
+                       mat.rows() == mat.columns(), "unapropriate data set") ;
+
+				/*copy vector*/
+			QuantLib::Array returnVector(tempmat.rows(), 0.0);
+			
+			for (QuantLib::Size i = 0; i < tempmat.rows(); i++)
+				returnVector[i] = tempmat[i][0];
 
                 /* la dimension du probleme */
             QuantLib::Size problemSize = returnVector.size() ;
@@ -49,12 +54,12 @@ DLLEXPORT xloper * xlEfficientConstrainedFrontier(const char * returnVectorId_,
                 /* conversion de la contrainte : creer un scalarBondaryConstraint */
             QuantLib::efficientFrontierConstraint myConstraint(QuantLib::Array(problemSize, 1.0), // upper bound
                                                                QuantLib::Array(problemSize, 0.0), // lower bound
-															   vec, // return array
+															   returnVector, // return array
                                                                myReturnThreshold) ; // a terme : on peut implementer 2 vecteurs de contraintes
 
                 // creation du simplexe
             QuantLib::LevenbergMarquardt myLevenberg ;
-            QuantLib::meanVarianceCostFunction myCostFunction(varCovMatrix) ;
+            QuantLib::meanVarianceCostFunction myCostFunction(mat) ;
             QuantLib::Problem problem(myCostFunction, myConstraint, QuantLib::Array(problemSize, 1.0 / (problemSize + 1))) ;
             QuantLib::Natural maxStationaryStateIterations = 100 ;
             QuantLib::Natural maxIterations = 10000 ;
