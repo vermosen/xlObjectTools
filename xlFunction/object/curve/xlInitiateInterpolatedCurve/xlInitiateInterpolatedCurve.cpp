@@ -22,14 +22,11 @@ DLLEXPORT char * xlInitiateInterpolatedCurve (const char * objectID_,
 
          try {
 
-
                 QL_ENSURE(! functionCall->calledByFunctionWizard(), "") ;
 
                     /* contrôle des cellules */
-                ObjectHandler::validateRange(trigger_, "trigger") ;
-
-                ObjectHandler::validateRange(helperId_, "helper Id") ;
-
+                ObjectHandler::validateRange(trigger_,		   "trigger") ;
+                ObjectHandler::validateRange(helperId_,		   "helper Id") ;
                 ObjectHandler::validateRange(calculationDate_, "calculation Date") ;
 
                     /* conversion des xloper */
@@ -54,9 +51,7 @@ DLLEXPORT char * xlInitiateInterpolatedCurve (const char * objectID_,
                     /* le vecteur des helpers */
                 std::vector<boost::shared_ptr<QuantLib::BootstrapHelper<QuantLib::YieldTermStructure> > > helperVector ;
 
-
                 for (std::vector<std::string>::const_iterator It = helperId.begin() ; It != helperId.end() ; ++It) {
-
 
                         OH_GET_REFERENCE(helperPtr, * It, 
                                          QuantLibAddin::RateHelper, 
@@ -64,9 +59,7 @@ DLLEXPORT char * xlInitiateInterpolatedCurve (const char * objectID_,
 
                         helperVector.push_back(helperPtr) ;
 
-
                     }
-
 
                     // Construction du value object
                 boost::shared_ptr<QuantLibAddin::ValueObjects::interpolatedCurveValueObject> curveValueObject(
@@ -85,7 +78,6 @@ DLLEXPORT char * xlInitiateInterpolatedCurve (const char * objectID_,
                                                                std::vector<QuantLib::Date>(),
                                                                CURVE_DEFAULT_ACCURACY)) ;
 
-
 		            // stockage de la courbe
 	            std::string returnValue =
                     ObjectHandler::RepositoryXL::instance().storeObject(objectID_, 
@@ -93,24 +85,16 @@ DLLEXPORT char * xlInitiateInterpolatedCurve (const char * objectID_,
                                                                         true) ; // on force la réécriture
 
                 static char ret[XL_MAX_STR_LEN] ;
-
                 ObjectHandler::stringToChar(returnValue, ret) ;
-
                 return ret ;
-
 
         } catch (std::exception & e) {
 
-
                 static char ret[XL_MAX_STR_LEN] ;
-
                 ObjectHandler::RepositoryXL::instance().logError(e.what(), functionCall) ;
-
                 ObjectHandler::stringToChar(e.what(), ret) ;
-
                 return ret ;
-
 
         }
 
-    } ;
+	} ;
