@@ -13,7 +13,7 @@
 
 #include <ql/math/matrix.hpp>
 
-#include "bot/math/matrix/matrixValueObject.hpp"
+#include <bot/math/matrix/matrixValueObject.hpp>
 
 namespace QuantLibAddin {
 
