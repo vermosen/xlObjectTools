@@ -28,7 +28,7 @@ DLLEXPORT xloper * xlInitiateDepositBootstrapHelper (const char * objectId_,
                 OH_GET_REFERENCE(depositPtr,
                                  depositId_,
                                  QuantLibAddin::depositObject,
-                                 QuantLibExtended::deposit)
+                                 QuantLib::deposit)
 
 
                     // creation de la quote
