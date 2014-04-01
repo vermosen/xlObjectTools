@@ -24,52 +24,45 @@ DLLEXPORT xloper * xlEfficientConstrainedFrontier(const char * returnVectorId_,
             ObjectHandler::validateRange(trigger_, "trigger") ;
 
                 /* acquisition du vecteur d'esperance */
-            OH_GET_UNDERLYING(returnVector, 
-                              returnVectorId_, 
-                              QuantLibAddin::MatrixObject,
-                              boost::numeric::::matrix<double>)
+			OH_GET_UNDERLYING(tempmat,
+				returnVectorId_,
+				QuantLibAddin::MatrixObject,
+				QuantLib::Matrix)
 
+				/*TODO : conversion en array + check des dimensions*/
+				QuantLib::Array vec(1, 0.0);
                 /* acquisition de la matrice de variance-covariance */
-            OH_GET_UNDERLYING(varCovMatrix, 
+            OH_GET_UNDERLYING(mat, 
                               varCovMatrixId_, 
                               QuantLibAddin::MatrixObject,
-                              boost::numeric::::matrix<double>)
+                              QuantLib::Matrix)
 
                 /* contrôles */
-            QL_REQUIRE(returnVector.size1() == varCovMatrix.size2() &&
-                       varCovMatrix.size1() == varCovMatrix.size2(), "unapropriate data set") ;
+            QL_REQUIRE(returnVector.size() == varCovMatrix.rows() &&
+                       varCovMatrix.rows() == varCovMatrix.columns(), "unapropriate data set") ;
 
                 /* la dimension du probleme */
-            QuantLib::Size problemSize = returnVector.size1() ;
-
-            QuantLib::Array myReturnArray = QuantLibExtended::MatrixToArray(returnVector) ;
-
+            QuantLib::Size problemSize = returnVector.size() ;
+            QuantLib::Array myReturnArray = returnVector ;
             QuantLib::Real myReturnThreshold = * returnThreshold_ ;
 
                 /* conversion de la contrainte : creer un scalarBondaryConstraint */
-            QuantLibExtended::efficientFrontierConstraint myConstraint(QuantLib::Array(problemSize, 1.0), // upper bound
-                                                                       QuantLib::Array(problemSize, 0.0), // lower bound
-                                                                       myReturnArray, // return array
-                                                                       myReturnThreshold) ; // a terme : on peut implementer 2 vecteurs de contraintes
+            QuantLib::efficientFrontierConstraint myConstraint(QuantLib::Array(problemSize, 1.0), // upper bound
+                                                               QuantLib::Array(problemSize, 0.0), // lower bound
+															   vec, // return array
+                                                               myReturnThreshold) ; // a terme : on peut implementer 2 vecteurs de contraintes
 
                 // creation du simplexe
             QuantLib::LevenbergMarquardt myLevenberg ;
-
-            QuantLibExtended::meanVarianceCostFunction myCostFunction(varCovMatrix) ;
-
+            QuantLib::meanVarianceCostFunction myCostFunction(varCovMatrix) ;
             QuantLib::Problem problem(myCostFunction, myConstraint, QuantLib::Array(problemSize, 1.0 / (problemSize + 1))) ;
-
             QuantLib::Natural maxStationaryStateIterations = 100 ;
-
             QuantLib::Natural maxIterations = 10000 ;
-
             QuantLib::Real rootEpsilon = 10e-8 ;
-
             QuantLib::Real functionEpsilon =  10e-8 ;
-
             QuantLib::Real gradientNormEpsilon = 10e-8 ;
 
-            QuantLib::EndCriteria endCriteria(maxIterations,
+			QuantLib::EndCriteria endCriteria(maxIterations,
                                               maxStationaryStateIterations,
                                               rootEpsilon,
                                               functionEpsilon,
@@ -79,23 +72,19 @@ DLLEXPORT xloper * xlEfficientConstrainedFrontier(const char * returnVectorId_,
 
             static OPER returnOper ;
 
-            ObjectHandler::MatrixToOper(QuantLibExtended::arrayToMatrix(problem.currentValue()), returnOper) ;
+			QuantLib::Array res = problem.currentValue();
+
+            ObjectHandler::VectorToOper(res, returnOper) ;
 
             return & returnOper ;
 
             } catch (std::exception & e) {
 
-
                 ObjectHandler::RepositoryXL::instance().logError(e.what(), functionCall) ;
-
 				static XLOPER returnOper ;
-
 				returnOper.xltype = xltypeErr ;
-
 				returnOper.val.err = xlerrValue ;
-
 				return & returnOper ;
-
 
             }
 

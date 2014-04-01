@@ -6,77 +6,103 @@
  *
  */
 
-#ifndef _matrix_to_oper_hpp
-#define _matrix_to_oper_hpp
+#ifndef bot_matrix_to_oper_hpp
+#define bot_matrix_to_oper_hpp
 
 #include <ohxl/conversions/scalartooper.hpp>
 
-#include <boost/numeric//matrix.hpp>
+//#include <boost/numeric/ublas/matrix.hpp>
+//#include <boost/numeric/ublas/vector.hpp>
 
-#include <boost/numeric//vector.hpp>
+#include <ql/math/matrix.hpp>
+#include <ql/math/array.hpp>
 
 namespace ObjectHandler {
 
-        template <class T>
-        void MatrixToOper(const boost::numeric::::matrix<T> & vv, 
-                               OPER & xMatrix, 
-                               bool dllToFree = true) {
+	void MatrixToOper(QuantLib::Matrix & vv,
+		OPER & xMatrix,
+		bool dllToFree = true) {
 
+		xMatrix.val.array.rows = vv.rows();
+		xMatrix.val.array.columns = vv.columns();
+		xMatrix.val.array.lparray = new OPER[xMatrix.val.array.rows * xMatrix.val.array.columns];
 
-                xMatrix.val.array.rows = vv.size1() ;
+		xMatrix.xltype = xltypeMulti;
 
-                xMatrix.val.array.columns = vv.size2() ;
+		if (dllToFree) xMatrix.xltype |= xlbitDLLFree;
 
-                xMatrix.val.array.lparray = new OPER[xMatrix.val.array.rows * xMatrix.val.array.columns] ; 
+		for (unsigned int i = 0; i < vv.rows(); ++i) {
 
-                xMatrix.xltype = xltypeMulti ;
+			for (unsigned int j = 0; j < vv.columns(); ++j)
 
+				scalarToOper(static_cast<double>(vv[i][j]),
+				xMatrix.val.array.lparray[i * vv.columns() + j], dllToFree, false);
 
-                if (dllToFree) xMatrix.xltype |= xlbitDLLFree ;
+		}
 
-                for (unsigned int i = 0 ; i < vv.size1() ; ++i) {
+	}
 
-                        for (unsigned int j = 0 ; j < vv.size2() ; ++j) {
+	void VectorToOper(const QuantLib::Array & vv,
+		OPER & xMatrix,
+		bool dllToFree = true) {
 
-                                scalarToOper(static_cast<T>(vv(i, j)), xMatrix.val.array.lparray[i * vv.size2() + j], dllToFree, false);
+		xMatrix.val.array.rows = vv.size();
+		xMatrix.val.array.columns = 1;
+		xMatrix.val.array.lparray = new OPER[xMatrix.val.array.rows * xMatrix.val.array.columns];
+		xMatrix.xltype = xltypeMulti;
 
-                            }
+		if (dllToFree) xMatrix.xltype |= xlbitDLLFree;
 
-                    }
+		for (unsigned int i = 0; i < vv.size(); ++i)
 
-            }
+			scalarToOper(static_cast<double>(vv[i]),
+			xMatrix.val.array.lparray[i], dllToFree, false);
 
+	}
+/*
+	template <class T>
+	void MatrixToOper(const boost::numeric::::matrix<T> & vv,
+		OPER & xMatrix,
+		bool dllToFree = true) {
 
-        template <class T>
-        void VectorToOper(const boost::numeric::::vector<T> & vv, 
-                               OPER & xMatrix, 
-                               bool dllToFree = true) {
+		xMatrix.val.array.rows = vv.size1();
+		xMatrix.val.array.columns = vv.size2();
+		xMatrix.val.array.lparray = new OPER[xMatrix.val.array.rows * xMatrix.val.array.columns];
 
+		xMatrix.xltype = xltypeMulti;
 
-                xMatrix.val.array.rows = vv.size() ;
+		if (dllToFree) xMatrix.xltype |= xlbitDLLFree;
 
-                xMatrix.val.array.columns = 1 ;
+		for (unsigned int i = 0; i < vv.size1(); ++i) {
 
-                xMatrix.val.array.lparray = new OPER[xMatrix.val.array.rows * xMatrix.val.array.columns] ; 
+			for (unsigned int j = 0; j < vv.size2(); ++j)
 
-                xMatrix.xltype = xltypeMulti ;
+				scalarToOper(static_cast<T>(vv(i, j)), 
+					xMatrix.val.array.lparray[i * vv.size2() + j], dllToFree, false);
 
+		}
 
-                if (dllToFree) xMatrix.xltype |= xlbitDLLFree ;
+	}
 
-                for (unsigned int i = 0 ; j < vv.size() ; ++j) {
+	template <class T>
+	void VectorToOper(const boost::numeric::::vector<T> & vv,
+		OPER & xMatrix,
+		bool dllToFree = true) {
 
+		xMatrix.val.array.rows = vv.size();
+		xMatrix.val.array.columns = 1;
+		xMatrix.val.array.lparray = new OPER[xMatrix.val.array.rows * xMatrix.val.array.columns];
+		xMatrix.xltype = xltypeMulti;
 
-                        scalarToOper(static_cast<T>(vv(i)),
-                            xMatrix.val.array.lparray[i], dllToFree, false) ;
+		if (dllToFree) xMatrix.xltype |= xlbitDLLFree;
 
+		for (unsigned int i = 0; i < vv.size(); ++i)
 
-                    }
+			scalarToOper(static_cast<T>(vv(i)),
+				xMatrix.val.array.lparray[i], dllToFree, false);
 
+	}*/
 
-            }
-
-
-    }
+}
 
 #endif
