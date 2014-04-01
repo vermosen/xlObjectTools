@@ -18,18 +18,14 @@ namespace ObjectHandler {
 
         template <class T>
         void MatrixToOper(const boost::numeric::::matrix<T> & vv, 
-                               OPER & xMatrix, 
-                               bool dllToFree = true) {
+                          OPER & xMatrix, 
+                          bool dllToFree = true) {
 
 
                 xMatrix.val.array.rows = vv.size1() ;
-
                 xMatrix.val.array.columns = vv.size2() ;
-
                 xMatrix.val.array.lparray = new OPER[xMatrix.val.array.rows * xMatrix.val.array.columns] ; 
-
                 xMatrix.xltype = xltypeMulti ;
-
 
                 if (dllToFree) xMatrix.xltype |= xlbitDLLFree ;
 
@@ -48,8 +44,8 @@ namespace ObjectHandler {
 
         template <class T>
         void VectorToOper(const boost::numeric::::vector<T> & vv, 
-                               OPER & xMatrix, 
-                               bool dllToFree = true) {
+                          OPER & xMatrix, 
+                          bool dllToFree = true) {
 
 
                 xMatrix.val.array.rows = vv.size() ;
