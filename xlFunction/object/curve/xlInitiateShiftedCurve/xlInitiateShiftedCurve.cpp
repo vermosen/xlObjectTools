@@ -27,14 +27,6 @@ DLLEXPORT char * xlShiftedCurve (const char * shiftedCurveID_,
                 // on récupère la courbe des taux
             OH_GET_OBJECT(curveObjectPtr, curveID_, ObjectHandler::Object)
 
-                // selon l'objet récupéré
-            QL_REQUIRE(curveObjectPtr->properties()->className() == "TCurveValueObject" ||
-                       curveObjectPtr->properties()->className() == "aussieCurveValueObject" ||
-                       curveObjectPtr->properties()->className() == "swapCurveUnitedStatesValueObject" ||
-                       curveObjectPtr->properties()->className() == "swapCurveAustraliaValueObject" ||
-                       curveObjectPtr->properties()->className() == "USRepoCurveValueObject",
-                       "unknown curve object") ;
-
             QuantLib::Handle<QuantLib::YieldTermStructure> curvePtr
                 = QuantLibAddin::CoerceHandle<QuantLibAddin::YieldTermStructure, 
                         QuantLib::YieldTermStructure>()(curveObjectPtr) ;
