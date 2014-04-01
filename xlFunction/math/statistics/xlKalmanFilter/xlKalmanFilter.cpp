@@ -46,11 +46,11 @@ boost::shared_ptr<ObjectHandler::FunctionCall> functionCall(
             }
 
 			/* création de la matrice de retour */
-		boost::numeric::ublas::matrix<double> returnMatrix(1, 1, 0.0) ;
+		QuantLib::Matrix returnMatrix(1, 1, 0.0) ;
 
         static OPER returnOper ;
 
-        ObjectHandler::ublasMatrixToOper<double>(returnMatrix, returnOper) ;
+        ObjectHandler::MatrixToOper(returnMatrix, returnOper) ;
 
 		return & returnOper ;
 

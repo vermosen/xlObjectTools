@@ -15,10 +15,10 @@
 #include <ohxl/conversions/opertovector.hpp>
 #include <ohxl/conversions/validations.hpp>
 
-#include <bot/math/ublasMatrixtoOper/ublasMatrixtoOper.hpp>
+#include <bot/math/matrixToOper/matrixToOper.hpp>
 #include <bot/tools/timeSeries/TimeSeriesObject.hpp>
 
-#include <ql/quantlib.hpp>
+#include <ql/math/matrix.hpp>
 
         /* fonction de calcul de la correlation de plusieurs series */
 DLLEXPORT xloper * xlKalmanFilter(const xloper * seriesId_,
