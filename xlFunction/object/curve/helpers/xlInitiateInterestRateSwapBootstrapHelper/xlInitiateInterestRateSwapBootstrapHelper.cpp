@@ -84,27 +84,17 @@ DLLEXPORT xloper * xlInitiateInterestRateSwapBootstrapHelper (const char * objec
                                                                         mySwapHelperObject,
                                                                         true) ;
 
-
                 static XLOPER returnOper ;
-
                 ObjectHandler::scalarToOper(returnValue, returnOper) ;
-
                 return & returnOper ;
-
 
             } catch (std::exception & e) {
 
-
                     ObjectHandler::RepositoryXL::instance().logError(e.what(), functionCall) ;
-
                     static XLOPER returnOper ;
-
                     ObjectHandler::scalarToOper(e.what(), returnOper) ;
-
                     return & returnOper ;
 
-
             }
-
 
     } ;
