@@ -23,8 +23,7 @@ DLLEXPORT xloper * xlInitiateInterestRateSwapBootstrapHelper (const char * objec
                 QL_ENSURE(! functionCall->calledByFunctionWizard(), "") ;
 
                     // trigger pour provoquer le recalcul
-                ObjectHandler::validateRange(trigger_, "trigger") ;
-
+                ObjectHandler::validateRange(trigger_,		 "trigger") ;
                 ObjectHandler::validateRange(discountCurve_, "discount Curve") ;
 
                     /* gestion de la courbe de discounting */
@@ -40,11 +39,9 @@ DLLEXPORT xloper * xlInitiateInterestRateSwapBootstrapHelper (const char * objec
 
 						discountHandle = tempHandle ;
 
-					
 					}
 
 				else {
-					
 					
 						OH_GET_REFERENCE(discountPtr,
 										 static_cast<std::string>(myOper1),
@@ -56,21 +53,18 @@ DLLEXPORT xloper * xlInitiateInterestRateSwapBootstrapHelper (const char * objec
 
 						discountHandle = tempHandle ;
 						
-						
 					}
 
                     /* récupération du swap  */
                 OH_GET_REFERENCE(swapPtr,
                                  swapId_,
                                  QuantLibAddin::interestRateSwapObject,
-                                 QuantLibExtended::interestRateSwap)
-
+                                 QuantLib::vanillaSwap2)
 
                     // Construction du value object
                 boost::shared_ptr<QuantLibAddin::ValueObjects::interestRateSwapBootstrapHelperValueObject> mySwapHelperValueObject(
                     new QuantLibAddin::ValueObjects::interestRateSwapBootstrapHelperValueObject(swapId_,
                                                                                                 true)) ;
-
 
                 QuantLib::Handle<QuantLib::Quote> quoteHandle(
                     boost::shared_ptr<QuantLib::Quote>(
