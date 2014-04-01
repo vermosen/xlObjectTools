@@ -27,22 +27,18 @@ DLLEXPORT char * xlInitiateFittedBondCurve (const char * objectID_,
 
             QL_ENSURE(! functionCall->calledByFunctionWizard(), "") ;
 
-
                 /* contrôle sur les codes erreur */
-            ObjectHandler::validateRange(trigger_, "trigger") ;
-
-            ObjectHandler::validateRange(instruments_, "instruments") ;
-
-            ObjectHandler::validateRange(quote_, "quote") ;
-
+            ObjectHandler::validateRange(trigger_,           "trigger") ;
+            ObjectHandler::validateRange(instruments_,       "instruments") ;
+            ObjectHandler::validateRange(quote_,             "quote") ;
             ObjectHandler::validateRange(bondSelectionRule_, "bond selection rule") ;
 
                 /* création de la rule de sélection des bonds */
             ObjectHandler::ConvertOper myOper1(* bondSelectionRule_) ;
 
-            QuantLibExtended::bondSelectionRule myRule = 
+            QuantLib::bondSelectionRule myRule = 
 					(myOper1.missing() ?
-                     QuantLibExtended::activeRule() : 
+                     QuantLib::activeRule() : 
                      ObjectHandler::bondSelectionRuleFactory()(
                          static_cast<std::string>(myOper1))) ;
 
@@ -72,13 +68,10 @@ DLLEXPORT char * xlInitiateFittedBondCurve (const char * objectID_,
 
             std::vector<boost::shared_ptr<QuantLib::BondHelper> > instrumentsObject ;
 
-
                 // Création des helpers
             for (unsigned int i = 0 ; i < instruments.size() ; i++) {
                 
-
             try {
-
 
                     OH_GET_REFERENCE(instrumentPtr, 
                                      instruments[i], 
@@ -106,21 +99,15 @@ DLLEXPORT char * xlInitiateFittedBondCurve (const char * objectID_,
                         // copie du Helper
                     instrumentsObject.push_back(tempHelper) ;
 
-
                 } catch (std::exception & e) {
-
 
                         #ifdef _DEBUG
 
                             {
 
-
                                 std::ostringstream oss, iss ;
-
                                 oss << e.what() ;
-
                                 iss << instruments[i] ;
-
                                 std::string returnString = std::string("error with  the instrument ") + 
                                                            iss.str() + 
                                                            std::string(" : ") + 
@@ -129,17 +116,13 @@ DLLEXPORT char * xlInitiateFittedBondCurve (const char * objectID_,
 
                                 OutputDebugString(returnString.c_str()) ;
 
-
                             }
 
                         #endif
                     
-
                     }
-                 
-
+                
                 }
-
 
                 /* selecting the right fitting method */
             OH_GET_OBJECT(fittingMethodTemp, 
@@ -153,7 +136,7 @@ DLLEXPORT char * xlInitiateFittedBondCurve (const char * objectID_,
                     OH_GET_REFERENCE(fittingMethodPtr,
                                      fittingMethodId_,
                                      QuantLibAddin::stochasticFittingObject,
-                                     QuantLibExtended::stochasticFittingHelper)
+                                     QuantLib::stochasticFittingHelper)
 
                         /* Construction du value object */
                     boost::shared_ptr<QuantLibAddin::ValueObjects::fittedBondDiscountCurveValueObject> curveValueObject(
@@ -177,45 +160,31 @@ DLLEXPORT char * xlInitiateFittedBondCurve (const char * objectID_,
                             1.000,
                             true)) ;
 
-
                         /* putting object in the repository */
                     returnValue =
                         ObjectHandler::RepositoryXL::instance().storeObject(objectID_,
                                                                             myCurve,
                                                                             true) ;
 
-
                 }
 
             else {
-                
-                
+           
                     QL_FAIL("Unknown fitting method") ;
-
                 
                 }
 
-
             static char ret[XL_MAX_STR_LEN] ;
-
             ObjectHandler::stringToChar(returnValue, ret) ;
-
             return ret ;
-
 
         } catch (std::exception & e) {
 
-
                 static char ret[XL_MAX_STR_LEN] ;
-
                 ObjectHandler::RepositoryXL::instance().logError(e.what(), functionCall) ;
-
                 ObjectHandler::stringToChar(std::string(e.what()), ret) ;
-
                 return ret ;
 
-
             }
-
 
     } ;

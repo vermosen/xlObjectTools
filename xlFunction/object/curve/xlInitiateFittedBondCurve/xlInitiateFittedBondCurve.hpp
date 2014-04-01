@@ -9,40 +9,23 @@
 #ifndef xl_initiate_fitted_bond_curve
 #define xl_initiate_fitted_bond_curve
 
-
 #include <qlo/conversions/coercehandle.hpp>
-
 #include <qlo/bonds.hpp>
 
-
 #include <ohxl/repositoryxl.hpp>
-
 #include <ohxl/conversions/validations.hpp>
-
 #include <ohxl/conversions/opertovector.hpp>
 
-
 #include <ql/pricingengines/bond/bondfunctions.hpp>
-
-
-#include <qle/math/fittingMethod/stochasticSvenssonFitting/stochasticSvenssonFitting.hpp>
-
-#include <qle/math/fittingMethod/stochasticSvenssonFitting/stochasticSvenssonFittingConstraint.hpp>
-
+#include <ql/experimental/math/fittingMethod/stochasticSvenssonFitting/stochasticSvenssonFitting.hpp>
+#include <ql/experimental/math/fittingMethod/stochasticSvenssonFitting/stochasticSvenssonFittingConstraint.hpp>
 
 #include <bot/curve/fittedBondDiscountCurve/fittedBondDiscountCurveObject.hpp>
-
-#include <bot/math/ublasMatrix/ublasMatrixObject.hpp>
-
+#include <bot/math/matrix/MatrixObject.hpp>
 #include <bot/math/fittingMethod/stochasticFitting/stochasticFittingObject.hpp>
-
 #include <bot/factory/currency/currencyFactory.hpp>
-
 #include <bot/factory/calendar/calendarFactory.hpp>
-
 #include <bot/factory/bondSelectionRule/bondSelectionRuleFactory.hpp>
-
-
 
         /* fitting de la forme NSS */
 DLLEXPORT char * xlInitiateFittedBondCurve (const char * objectID_,
