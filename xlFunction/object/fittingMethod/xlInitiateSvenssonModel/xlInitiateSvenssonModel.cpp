@@ -25,59 +25,44 @@ DLLEXPORT xloper * xlInitiateSvenssonModel (const char * objectID_,
 
          try {
 
-
                 QL_ENSURE(! functionCall->calledByFunctionWizard(), "") ;
             
-
                     // validation des xlopers
-                ObjectHandler::validateRange(trigger_, "trigger") ;
-
-                ObjectHandler::validateRange(constraintSet_, "constraint Set") ;
-
-                ObjectHandler::validateRange(startVector_, "start Vector") ;
-
-                ObjectHandler::validateRange(startRandomMatrix_, "start Random Matrix") ;
-
-                ObjectHandler::validateRange(cyclesPerThread_, "cycles Per Thread") ;
-
-                ObjectHandler::validateRange(totalCycles_, "total Cycles") ;
-
-                ObjectHandler::validateRange(maxEvaluationPerCycle_, "max Evaluation Per Cycle") ;
-
-                ObjectHandler::validateRange(accuracy_, "accuracy") ;
-
+                ObjectHandler::validateRange(trigger_,				 "trigger"				   ),
+                ObjectHandler::validateRange(constraintSet_,		 "constraint Set"		   ),
+                ObjectHandler::validateRange(startVector_,			 "start Vector"			   ),
+                ObjectHandler::validateRange(startRandomMatrix_,	 "start Random Matrix"	   ),
+                ObjectHandler::validateRange(cyclesPerThread_,		 "cycles Per Thread"       ),
+                ObjectHandler::validateRange(totalCycles_,			 "total Cycles"			   ),
+                ObjectHandler::validateRange(maxEvaluationPerCycle_, "max Evaluation Per Cycle"),
+                ObjectHandler::validateRange(accuracy_,				 "accuracy"				   );
 
                     // les XLOPER
-                ObjectHandler::ConvertOper myOper1(* constraintSet_), 
-                                           myOper2(* startVector_),
-                                           myOper3(* startRandomMatrix_),
-                                           myOper4(* cyclesPerThread_),
-                                           myOper5(* totalCycles_),
+                ObjectHandler::ConvertOper myOper1(* constraintSet_		   ), 
+                                           myOper2(* startVector_		   ),
+                                           myOper3(* startRandomMatrix_	   ),
+                                           myOper4(* cyclesPerThread_      ),
+                                           myOper5(* totalCycles_		   ),
                                            myOper6(* maxEvaluationPerCycle_),
-                                           myOper7(* accuracy_) ;
+                                           myOper7(* accuracy_			   );
                 
-
-
-                boost::numeric::ublas::matrix<double> startVector(6, 1, 0.0) ;
-
+                QuantLib::Array startVector(6, 0.0) ;
 
                     // vecteur initial
                 if (! myOper2.missing()) {
                 
-                
                               // on récupère les matrices
                         OH_GET_REFERENCE (tempVector,
                                           static_cast<std::string>(myOper2),
-                                          QuantLibAddin::ublasMatrixObject,
-                                          boost::numeric::ublas::matrix<double>) ;
+                                          QuantLibAddin::matrixObject,
+                                          QuantLib::Matrix) ;
 
                             // contrôles sur les matrices
-                        QL_REQUIRE(tempVector->size2() == 1 && tempVector->size1() == 6,
-                                   "parameters vector is expected to be 6 * 1 size") ;  
-
+                        QL_REQUIRE(tempVector->columns() == 1 && 
+								   tempVector->rows() == 6,
+                                   "parameters vector is expected to be 6 * 1 size");
 
                         startVector = * tempVector ;
-
                     
                     }
 
