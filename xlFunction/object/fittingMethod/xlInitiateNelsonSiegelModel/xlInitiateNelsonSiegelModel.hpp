@@ -9,35 +9,23 @@
 #ifndef xl_initiate_svensson_model
 #define xl_initiate_svensson_model
 
-
-
 #include <qlo/conversions/coercehandle.hpp>
 
-
 #include <ohxl/repositoryxl.hpp>
-
 #include <ohxl/conversions/validations.hpp>
-
 #include <ohxl/convert_oper.hpp>
-
 #include <ohxl/conversions/scalartooper.hpp>
 
-
-#include <qle/math/fittingMethod/stochasticSvenssonFitting/stochasticSvenssonFitting.hpp>
-
+#include <ql/experimental/math/fittingMethod/stochasticSvenssonFitting/stochasticSvenssonFitting.hpp>
 
 #include <bot/factory/constraint/constraintFactory.hpp>
-
 #include <bot/math/fittingMethod/stochasticFitting/stochasticFittingObject.hpp>
-
-#include <bot/math/ublasMatrix/ublasMatrixObject.hpp>
-
+#include <bot/math/matrix/matrixObject.hpp>
 
 DLLEXPORT xloper * xlInitiateNelsonSiegelModel (const char * objectID_,
                                                 const xloper * startVector_,
                                                 const xloper * lambda_,
                                                 const xloper * accuracy_,
                                                 xloper * trigger_) ;
-
 
 #endif
