@@ -32,26 +32,18 @@ DLLEXPORT xloper * xlRecoverFittingParameters (const char * curveId_,
             QuantLib::Array returnVector = curveTempPtr->fitResults().solution() ;
 
             static OPER returnOper ;
-
-			// todo: gerer la nouvelle conversion
-            ObjectHandler::MatrixToOper<QuantLib::Array>(returnVector, returnOper) ;
+			
+            ObjectHandler::VectorToOper(returnVector, returnOper) ;
 
             return & returnOper ;
 
-
         } catch (std::exception & e) {
 
-
                 ObjectHandler::RepositoryXL::instance().logError(e.what(), functionCall) ;
-
                 static XLOPER returnOper ;
-
                 ObjectHandler::scalarToOper(e.what(), returnOper) ;
-
                 return & returnOper ;
 
-
             }
-
 
     } ;

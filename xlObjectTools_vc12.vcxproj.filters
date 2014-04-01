@@ -854,9 +854,6 @@
     <ClInclude Include="bot\leg\activeLeg.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="bot\math\conversion\ublasMatrixToOper.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="bot\math\covarianceEWMA\covarianceEWMA.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -1533,6 +1530,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="bot\math\operToMatrix\operToMatrix.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot\math\conversion\matrixToOper.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -11,36 +11,22 @@
 
 #include <vector>
 
-
 #include <ohxl/repositoryxl.hpp>
-
 #include <ohxl/conversions/opertovector.hpp>
-
 #include <ohxl/conversions/validations.hpp>
 
-
 #include <ql/math/randomnumbers/mt19937uniformrng.hpp>
-
 #include <ql/math/optimization/levenbergmarquardt.hpp>
 
-
 #include <bot/math/Matrix/MatrixObject.hpp>
-
 #include <bot/math/MatrixtoOper/MatrixtoOper.hpp>
-
 #include <bot/factory/constraint/constraintFactory.hpp>
-
 #include <bot/tools/timeSeries/TimeSeriesObject.hpp>
 
-
 #include <qle/math/efficientFrontier/meanVarianceCostFunction.hpp>
-
 #include <qle/math/efficientFrontier/efficientFrontierConstraint.hpp>
-
 #include <qle/math/conversion/arrayToMatrix.hpp>
-
 #include <qle/math/conversion/MatrixToArray.hpp>
-
 
         /* fonction de calcul de la frontière efficiente contrainte */
 DLLEXPORT xloper * xlEfficientConstrainedFrontier(const char * returnVectorId_,
