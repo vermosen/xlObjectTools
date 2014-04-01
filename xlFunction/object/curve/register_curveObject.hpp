@@ -13,10 +13,8 @@
 
 #include <xlsdk/xlsdkdefines.hpp>
 
-#include <xlFunction/object/curve/xlInitiateSwapCurveUnitedStates/register_xlInitiateSwapCurveUnitedStates.hpp>
 #include <xlFunction/object/curve/xlInitiateShiftedCurve/register_xlInitiateShiftedCurve.hpp>
 #include <xlFunction/object/curve/xlInitiateFittedBondDiscountCurve/register_xlInitiateFittedBondDiscountCurve.hpp>
-#include <xlFunction/object/curve/xlInitiateSwapCurveAustralia/register_xlInitiateSwapCurveAustralia.hpp>
 #include <xlFunction/object/curve/xlInitiateInterpolatedCurve/register_xlInitiateInterpolatedCurve.hpp>
 
 #include <xlFunction/object/curve/helpers/xlInitiateDepositBootstrapHelper/register_xlInitiateDepositBootstrapHelper.hpp>
@@ -27,11 +25,6 @@
 #include <xlFunction/object/curve/helpers/xlInitiateOvernightIndexedBootstrapHelper/register_xlInitiateOvernightIndexedBootstrapHelper.hpp>
 
 inline void register_curve(const XLOPER & xDll) {
-
-            /**/
-			//registerxlInitiateSwapCurveUnitedStates(xDll) ;
-			//registerxlInitiateSwapCurveAustralia(xDll) ;
-            /**/
 
 			registerxlInitiateShiftedCurve(xDll) ;
             registerxlInitiateFittedBondDiscountCurve(xDll) ;
@@ -46,11 +39,6 @@ inline void register_curve(const XLOPER & xDll) {
     } ;
 
 inline void unregister_curve(const XLOPER & xDll) {
-            
-			/**/
-			//unregisterxlInitiateSwapCurveUnitedStates(xDll) ;
-            //unregisterxlInitiateSwapCurveAustralia(xDll) ;
-			/**/
 			
 			unregisterxlInitiateShiftedCurve(xDll) ;
             unregisterxlInitiateFittedBondDiscountCurve(xDll) ;
