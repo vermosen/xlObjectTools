@@ -1532,7 +1532,7 @@
     <ClInclude Include="bot\math\operToMatrix\operToMatrix.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="bot\math\conversion\matrixToOper.hpp">
+    <ClInclude Include="bot\math\matrixToOper\matrixToOper.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

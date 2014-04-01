@@ -385,7 +385,7 @@
     <ClInclude Include="bot\leg\floatLegAustralia\floatLegAustraliaValueObject.hpp" />
     <ClInclude Include="bot\leg\floatLegUnitedStates\floatLegUnitedStatesObject.hpp" />
     <ClInclude Include="bot\leg\floatLegUnitedStates\floatLegUnitedStatesValueObject.hpp" />
-    <ClInclude Include="bot\math\conversion\matrixToOper.hpp" />
+    <ClInclude Include="bot\math\matrixToOper\matrixToOper.hpp" />
     <ClInclude Include="bot\math\covarianceEWMA\covarianceEWMA.hpp" />
     <ClInclude Include="bot\math\fittingMethod\stochasticFitting\stochasticFittingHelper.hpp" />
     <ClInclude Include="bot\math\fittingMethod\stochasticFitting\stochasticFittingObject.hpp" />

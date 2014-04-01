@@ -9,8 +9,8 @@
 #ifndef matrix_to_oper_hpp
 #define matrix_to_oper_hpp
 
-#include <boost/numeric/ublas/matrix.hpp>
-#include <boost/numeric/ublas/vector.hpp>
+//#include <boost/numeric/ublas/matrix.hpp>
+//#include <boost/numeric/ublas/vector.hpp>
 
 #include <ohxl/conversions/scalartooper.hpp>
 
@@ -58,7 +58,7 @@ namespace ObjectHandler {
 
 	}
 
-	template <class T>
+	/*template <class T>
 	void MatrixToOper(const boost::numeric::ublas::matrix<T> & vv,
 		OPER & xMatrix,
 		bool dllToFree = true) {
@@ -97,7 +97,7 @@ namespace ObjectHandler {
 			scalarToOper(static_cast<T>(vv(i)),
 			xMatrix.val.array.lparray[i], dllToFree, false);
 
-	}
+	}*/
 
 }
 
