@@ -12,19 +12,12 @@
 #include <vector>
 
 #include <ohxl/repositoryxl.hpp>
-
 #include <ohxl/conversions/opertovector.hpp>
-
 #include <ohxl/conversions/validations.hpp>
 
 #include <bot/math/MatrixtoOper/MatrixtoOper.hpp>
-
-#include <qle/math/timeSeries/deltaTimeSeries/deltaTimeSeries.hpp>
-
 #include <bot/tools/timeSeries/TimeSeriesObject.hpp>
-
 #include <bot/math/covarianceEWMA/covarianceEWMA.hpp>
-
 #include <bot/math/meanEWMA/meanEWMA.hpp>
 
         /* fonction de calcul de la correlation de plusieurs series */

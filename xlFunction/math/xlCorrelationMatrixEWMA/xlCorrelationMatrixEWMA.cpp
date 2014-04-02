@@ -147,7 +147,7 @@ boost::shared_ptr<ObjectHandler::FunctionCall> functionCall(
             }
 
             /* création de la matrice de variance covariance */
-        boost::numeric::::matrix<double> correlationMatrix(
+        QuantLib::Matrix correlationMatrix(
 			nTimeSeriesVector.size(), nTimeSeriesVector.size()) ;
         
 		for (unsigned int i = 0 ; i < nTimeSeriesVector.size() ; i++) {
@@ -155,12 +155,12 @@ boost::shared_ptr<ObjectHandler::FunctionCall> functionCall(
             for (unsigned int j = 0 ; j <= i ; j++) {
 
 
-                    correlationMatrix(i, j) = covarianceEWMA(nTimeSeriesVector[i], 
+                    correlationMatrix[i][j] = covarianceEWMA(nTimeSeriesVector[i], 
 														     nTimeSeriesVector[j], 
 														     QuantLib::Date(static_cast<QuantLib::BigInteger>(* startDate_)),
 														     decay_) ;
 
-                    correlationMatrix(j, i) = correlationMatrix(i, j) ;
+					correlationMatrix[j][i] = correlationMatrix[i][j];
 
 
                 }
@@ -168,7 +168,7 @@ boost::shared_ptr<ObjectHandler::FunctionCall> functionCall(
             }
 
             /* création de la matrice de retour */
-        boost::numeric::::matrix<double> returnMatrix(
+        QuantLib::Matrix returnMatrix(
 			nTimeSeriesVector.size(), nTimeSeriesVector.size()) ;
         
 		for (unsigned int i = 0 ; i < nTimeSeriesVector.size() ; i++) {
@@ -176,10 +176,10 @@ boost::shared_ptr<ObjectHandler::FunctionCall> functionCall(
             for (unsigned int j = 0 ; j <= i ; j++) {
 
 
-                    returnMatrix(i, j) = correlationMatrix(i, j) 
-                        / pow(correlationMatrix(i, i) * correlationMatrix(j, j), 0.5) ;
+					returnMatrix[i][j] = correlationMatrix[i][j]
+						/ pow(correlationMatrix[i][i] * correlationMatrix[j][j], 0.5);
 
-                    returnMatrix(j, i) = returnMatrix(i, j) ;
+					returnMatrix[j][i] = returnMatrix[i][j];
 
 
                 }
@@ -188,7 +188,7 @@ boost::shared_ptr<ObjectHandler::FunctionCall> functionCall(
 
         static OPER returnOper ;
 
-        ObjectHandler::MatrixToOper<double>(returnMatrix, returnOper) ;
+        ObjectHandler::MatrixToOper(returnMatrix, returnOper) ;
         
 		return & returnOper ;
 
