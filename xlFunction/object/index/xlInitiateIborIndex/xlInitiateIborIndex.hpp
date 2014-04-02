@@ -15,7 +15,7 @@
 #include <ohxl/conversions/scalartooper.hpp>
 
 #include <qlo/indexes/iborindex.hpp>
-#include <qlo/valueobjects/vo_index.hpp>
+//#include <qlo/valueobjects/vo_index.hpp>
 
 #include <bot/index/iborIndex/iborIndexObject.hpp>
 #include <bot/factory/period/periodFactory.hpp>

@@ -24,17 +24,12 @@ DLLEXPORT char * xlInitiateIborIndex (const char * objectId_,
 
      try {
 
-
             QL_ENSURE(! functionCall->calledByFunctionWizard(), "") ;
 
-
                 /* initialisation de la session */
-            ObjectHandler::validateRange(trigger_, "trigger") ;
-
-            ObjectHandler::validateRange(bdc_, "bdc") ;
-
-            ObjectHandler::validateRange(endOfMonth_, "end of month") ;
-
+            ObjectHandler::validateRange(trigger_,    "trigger"     );
+            ObjectHandler::validateRange(bdc_,        "bdc"         );
+            ObjectHandler::validateRange(endOfMonth_, "end of month");
 
                 /* conversion des xloper */
             ObjectHandler::ConvertOper myOper1(* bdc_),
@@ -72,7 +67,7 @@ DLLEXPORT char * xlInitiateIborIndex (const char * objectId_,
                                                    bdc,
                                                    endOfMonth,
                                                    ObjectHandler::daycountFactory()(dayCounter_),
-                                                   QuantLib::RelinkableHandle<QuantLib::YieldTermStructure>(), // pas forwardable pour l'instant
+                                                   QuantLib::RelinkableHandle<QuantLib::YieldTermStructure>(),
                                                    true)) ;
 
                 /* on insère les fixings */
@@ -81,7 +76,6 @@ DLLEXPORT char * xlInitiateIborIndex (const char * objectId_,
                                     true,
                                     true) ;
 
-
             // stockage de l'objet
             std::string returnValue =
                 ObjectHandler::RepositoryXL::instance().storeObject(std::string(objectId_),
@@ -89,19 +83,14 @@ DLLEXPORT char * xlInitiateIborIndex (const char * objectId_,
                                                                     true) ; // on force la réécriture
 
             static char ret[XL_MAX_STR_LEN] ;
-
             ObjectHandler::stringToChar(returnValue, ret) ;
-
             return ret ;
 
         } catch (std::exception & e) {
 
                 static char ret[XL_MAX_STR_LEN] ;
-
                 ObjectHandler::RepositoryXL::instance().logError(e.what(), functionCall) ;
-
                 ObjectHandler::stringToChar(e.what(), ret) ;
-
                 return ret ;
 
         }
