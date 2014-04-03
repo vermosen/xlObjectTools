@@ -13,6 +13,7 @@
 #include <ohxl/repositoryxl.hpp>
 
 #include <bot/math/matrix/matrixObject.hpp>
+#include <bot/math/operToMatrix/operToMatrix.hpp>
 
 #include <ql/errors.hpp>
 

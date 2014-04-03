@@ -395,10 +395,6 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
     </ClInclude>
-    <ClInclude Include="bot\math\ublasMatrixToOper\ublasMatrixToOper.hpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-    </ClInclude>
     <ClInclude Include="bot\math\matrix\matrixObject.hpp" />
     <ClInclude Include="bot\math\matrix\matrixValueObject.hpp" />
     <ClInclude Include="bot\serialization\create\create_all.hpp" />

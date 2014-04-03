@@ -7,7 +7,7 @@
  */
 
 #include <xlFunction/object/math/xlInitiateMatrix/xlInitiateMatrix.hpp>
-#include <ohxl/conversions/opertomatrix.hpp>
+
 
         /* fonction de calcul de la moyenne EWMA d'une série suivant un processus log-normal */
 DLLEXPORT char * xlInitiateMatrix(const char * objectID_,
@@ -46,9 +46,7 @@ boost::shared_ptr<ObjectHandler::FunctionCall> functionCall(
                                                                     true) ;
 
             static char ret[XL_MAX_STR_LEN] ;
-
             ObjectHandler::stringToChar(returnValue, ret) ;
-
             return ret ;
 
     } catch (std::exception & e) {
@@ -56,7 +54,6 @@ boost::shared_ptr<ObjectHandler::FunctionCall> functionCall(
             static char ret[XL_MAX_STR_LEN] ;
             ObjectHandler::RepositoryXL::instance().logError(e.what(), functionCall) ;
             ObjectHandler::stringToChar(e.what(), ret) ;
-
             return ret ;
 
     }

@@ -12,7 +12,7 @@
 #include <vector>
 
 #include <ohxl/repositoryxl.hpp>
-#include <ohxl/conversions/opertovector.hpp>
+//#include <ohxl/conversions/opertovector.hpp>
 #include <ohxl/conversions/validations.hpp>
 
 #include <ql/math/randomnumbers/mt19937uniformrng.hpp>

@@ -869,9 +869,6 @@
     <ClInclude Include="bot\math\meanEWMA\meanEWMA.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="bot\math\ublasMatrixToOper\ublasMatrixToOper.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="bot\serialization\create\create_all.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>

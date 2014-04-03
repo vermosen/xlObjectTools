@@ -15,7 +15,7 @@
 #include <ohxl/conversions/validations.hpp>
 #include <ohxl/repositoryxl.hpp>
 
-#include <bot/math/ublasMatrixToOper/ublasMatrixToOper.hpp>
+#include <bot/math/matrixToOper/matrixToOper.hpp>
 #include <bot/curve/fittedBondDiscountCurve/fittedBondDiscountCurveObject.hpp>
 
         /* permet la récupération du vecteur des paramètres de fitting */
