@@ -42,9 +42,9 @@ DLLEXPORT char * xlInitiateFittedBondDiscountCurve (const char * objectID_,
                 /* création de la rule de sélection des bonds */
             ObjectHandler::ConvertOper myOper1(* bondSelectionRule_) ;
 
-            QuantLibExtended::bondSelectionRule myRule = 
+            QuantLib::bondSelectionRule myRule = 
 					(myOper1.missing() ?
-                     QuantLibExtended::activeRule() : 
+                     QuantLib::activeRule() : 
                      ObjectHandler::bondSelectionRuleFactory()(
                          static_cast<std::string>(myOper1))) ;
 
@@ -126,7 +126,7 @@ DLLEXPORT char * xlInitiateFittedBondDiscountCurve (const char * objectID_,
                     OH_GET_REFERENCE(fittingMethodPtr,
                                      fittingMethodID_,
                                      QuantLibAddin::stochasticFittingObject,
-                                     QuantLibExtended::stochasticFittingHelper)
+                                     QuantLib::stochasticFittingHelper)
 
                         /* Construction du value object */
                     boost::shared_ptr<QuantLibAddin::ValueObjects::fittedBondDiscountCurveValueObject> curveValueObject(
@@ -159,19 +159,14 @@ DLLEXPORT char * xlInitiateFittedBondDiscountCurve (const char * objectID_,
                 }
 
             static char ret[XL_MAX_STR_LEN] ;
-
             ObjectHandler::stringToChar(returnValue, ret) ;
-
             return ret ;
 
         } catch (std::exception & e) {
 
-                static char ret[XL_MAX_STR_LEN] ;
-
+				static char ret[XL_MAX_STR_LEN] ;
                 ObjectHandler::RepositoryXL::instance().logError(e.what(), functionCall) ;
-
                 ObjectHandler::stringToChar(std::string(e.what()), ret) ;
-
                 return ret ;
 
             }

@@ -17,14 +17,12 @@
 #include <ohxl/conversions/opertovector.hpp>
 
 #include <ql/pricingengines/bond/bondfunctions.hpp>
-
-#include <qle/math/fittingMethod/stochasticSvenssonFitting/stochasticSvenssonFitting.hpp>
-#include <qle/math/fittingMethod/stochasticSvenssonFitting/stochasticSvenssonFittingConstraint.hpp>
+#include <ql/experimental/math/fittingMethod/stochasticSvenssonFitting/stochasticSvenssonFitting.hpp>
+#include <ql/experimental/math/fittingMethod/stochasticSvenssonFitting/stochasticSvenssonFittingConstraint.hpp>
 
 #include <bot/curve/fittedBondDiscountCurve/fittedBondDiscountCurveObject.hpp>
 #include <bot/math/fittingMethod/stochasticFitting/stochasticFittingObject.hpp>
 #include <bot/factory/calendar/calendarFactory.hpp>
-#include <bot/math/ublasMatrix/ublasMatrixObject.hpp>
 #include <bot/factory/bondSelectionRule/bondSelectionRuleFactory.hpp>
 
         /* fitting de la forme NSS */

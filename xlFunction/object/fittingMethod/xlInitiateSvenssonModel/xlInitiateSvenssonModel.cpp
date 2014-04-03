@@ -68,36 +68,28 @@ DLLEXPORT xloper * xlInitiateSvenssonModel (const char * objectID_,
 
 
                     // matrice de perturbation
-                boost::numeric::ublas::matrix<double> startMatrix(6, 6, 0.0) ;
+                QuantLib::Matrix startMatrix(6, 6, 0.0) ;
 
-				startMatrix(0, 0) = 1 ;
-
-				startMatrix(1, 1) = 1 ;
-
-				startMatrix(2, 2) = 1 ;
-
-				startMatrix(3, 3) = 1 ;
-
-				startMatrix(4, 4) = 1 ;
-
-				startMatrix(5, 5) = 1 ;
+				startMatrix[0][0] = 1;
+				startMatrix[1][1] = 1;
+				startMatrix[2][2] = 1;
+				startMatrix[3][3] = 1;
+				startMatrix[4][4] = 1;
+				startMatrix[5][5] = 1;
 
                 if (! myOper3.missing()) {
                 
-                
                               // on récupère les matrices
                         OH_GET_REFERENCE (tempMatrix,
-                                           static_cast<std::string>(myOper3),
-                                          QuantLibAddin::ublasMatrixObject,
-                                          boost::numeric::ublas::matrix<double>) ;
+                                          static_cast<std::string>(myOper3),
+                                          QuantLibAddin::matrixObject,
+                                          QuantLib::Matrix) ;
 
                             // contrôles sur les matrices
                         QL_REQUIRE(tempMatrix->size2() == 6 && tempMatrix->size1() == 6,
                                    "random matrix is expected to be 6*6 size") ;  
 
-
                         startMatrix = * tempMatrix ;
-
                     
                     }
 
@@ -106,8 +98,8 @@ DLLEXPORT xloper * xlInitiateSvenssonModel (const char * objectID_,
                     QuantLib::NoConstraint() : 
                 ObjectHandler::constraintFactory()(static_cast<std::string>(myOper1))) ;
 
-                boost::shared_ptr<QuantLibExtended::stochasticSimplexFittedBondDiscountCurve::fittingMethod> myFittingMethod(
-                    new QuantLibExtended::stochasticSvenssonFitting(myConstraint)) ;
+                boost::shared_ptr<QuantLib::stochasticSimplexFittedBondDiscountCurve::fittingMethod> myFittingMethod(
+                    new QuantLib::stochasticSvenssonFitting(myConstraint)) ;
 
 
                     // instanciation de la méthode de fitting
@@ -135,23 +127,15 @@ DLLEXPORT xloper * xlInitiateSvenssonModel (const char * objectID_,
                                                                         true) ; // on force la réécriture
 
             static XLOPER returnOper ;
-
             ObjectHandler::scalarToOper(returnValue, returnOper) ;
-
             return & returnOper ;
-
 
         } catch (std::exception & e) {
 
-
                 ObjectHandler::RepositoryXL::instance().logError(e.what(), functionCall) ;
-
                 static XLOPER returnOper ;
-
                 ObjectHandler::scalarToOper(std::string(e.what()), returnOper) ;
-
                 return & returnOper ;
-
 
             }
 
