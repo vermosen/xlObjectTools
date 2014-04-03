@@ -25,9 +25,8 @@ boost::shared_ptr<ObjectHandler::FunctionCall> functionCall(
             ObjectHandler::validateRange(trigger_, "trigger") ;
 
                 /* conversion des xloper */
-            //QuantLib::Matrix inputMatrix 
-			std::vector<std::vector<double> > inputMatrix
-			= ObjectHandler::operToMatrix<double>(*matrix_, std::string("matrix_")) ;
+			QuantLib::Matrix inputMatrix
+			= ObjectHandler::operToMatrix(*matrix_, std::string("matrix_")) ;
 			
                 // value object
             boost::shared_ptr<QuantLibAddin::ValueObjects::matrixValueObject> myMatrixValueObject(

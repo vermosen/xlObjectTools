@@ -10,17 +10,12 @@
 #define xl_initiate_aussie_note
 
 #include <ohxl/repositoryxl.hpp>
-
 #include <ohxl/conversions/validations.hpp>
-
 #include <ohxl/convert_oper.hpp>
-
 #include <ohxl/conversions/scalartooper.hpp>
 
-
-#include <bot/instruments/bond/aussieNote/aussieNoteObject.hpp>
-
-#include <bot/instruments/bond/aussieNote/aussieNoteValueObject.hpp>
+#include <bot/instruments/bond/australianTreasuryNote/australianTreasuryNoteObject.hpp>
+#include <bot/instruments/bond/australianTreasuryNote/australianTreasuryNoteValueObject.hpp>
 
     /* enregistre un aussieNote */
 DLLEXPORT xloper * xlInitiateAussieNote (const char * objectID_,

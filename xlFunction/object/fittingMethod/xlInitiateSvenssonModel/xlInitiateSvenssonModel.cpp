@@ -62,7 +62,7 @@ DLLEXPORT xloper * xlInitiateSvenssonModel (const char * objectID_,
 								   tempVector->rows() == 6,
                                    "parameters vector is expected to be 6 * 1 size");
 
-                        startVector = * tempVector ;
+                        startVector = tempVector->array() ;
                     
                     }
 
@@ -86,7 +86,8 @@ DLLEXPORT xloper * xlInitiateSvenssonModel (const char * objectID_,
                                           QuantLib::Matrix) ;
 
                             // contrôles sur les matrices
-                        QL_REQUIRE(tempMatrix->size2() == 6 && tempMatrix->size1() == 6,
+                        QL_REQUIRE(tempMatrix->columns() == 6 && 
+								   tempMatrix->rows() == 6,
                                    "random matrix is expected to be 6*6 size") ;  
 
                         startMatrix = * tempMatrix ;

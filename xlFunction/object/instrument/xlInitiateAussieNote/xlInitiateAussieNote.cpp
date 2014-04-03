@@ -61,13 +61,13 @@ DLLEXPORT xloper * xlInitiateAussieNote (const char * objectID_,
                                          
 
                 // Construction du value object
-            boost::shared_ptr<QuantLibAddin::ValueObjects::aussieNoteValueObject> myBondValueObject(
-                new QuantLibAddin::ValueObjects::aussieNoteValueObject(objectID_,
+            boost::shared_ptr<QuantLibAddin::ValueObjects::australianTreasuryNoteValueObject> myBondValueObject(
+				new QuantLibAddin::ValueObjects::australianTreasuryNoteValueObject(objectID_,
                                                                        true)) ;
 
                 // instanciation de l'instrument
-            boost::shared_ptr<QuantLibAddin::aussieNoteObject> myBondObject(
-                new QuantLibAddin::aussieNoteObject(myBondValueObject,
+            boost::shared_ptr<QuantLibAddin::australianTreasuryNoteObject> myBondObject(
+				new QuantLibAddin::australianTreasuryNoteObject(myBondValueObject,
                                                     issueDate,
                                                     effectiveDate,
                                                     firstCouponDate,
@@ -83,21 +83,16 @@ DLLEXPORT xloper * xlInitiateAussieNote (const char * objectID_,
                                                                     true) ; // on force la réécriture
 
             static XLOPER returnOper ;
-
             ObjectHandler::scalarToOper(returnValue, returnOper) ;
-
             return & returnOper ;
 
         } catch (std::exception & e) {
 
                 ObjectHandler::RepositoryXL::instance().logError(e.what(), functionCall) ;
-
                 static XLOPER returnOper ;
-
                 ObjectHandler::scalarToOper(e.what(), returnOper) ;
-
                 return & returnOper ;
 
-            }
+			}
 
     } ;
