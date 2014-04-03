@@ -12,18 +12,12 @@
 #include <qlo/conversions/coercehandle.hpp>
 
 #include <ohxl/repositoryxl.hpp>
-
 #include <ohxl/conversions/validations.hpp>
 
 #include <ql/math/matrixutilities/symmetricschurdecomposition.hpp>
 
-#include <bot/math/ublasMatrix/ublasMatrixObject.hpp>
-
+#include <bot/math/matrix/matrixObject.hpp>
 #include <bot/math/ublasMatrixtoOper/ublasMatrixtoOper.hpp>
-
-#include <qle/math/conversion/ublasMatrixToMatrix.hpp>
-
-#include <qle/math/conversion/matrixToUblasMatrix.hpp>
 
         /* fonction de calcul de la correlation de deux series */
 DLLEXPORT xloper * xlSchurEigenVector(const char * objectID_,

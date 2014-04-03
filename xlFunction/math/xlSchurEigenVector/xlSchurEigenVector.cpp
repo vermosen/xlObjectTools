@@ -23,35 +23,25 @@ DLLEXPORT xloper * xlSchurEigenVector(const char * objectID_,
         ObjectHandler::validateRange(trigger_, "trigger") ;
 
             // on récupère la matrice
-        OH_GET_REFERENCE(matrixObjectPtr, 
-						 objectID_, 
-						 QuantLibAddin::ublasMatrixObject,
-						 boost::numeric::ublas::matrix<double>)
+		OH_GET_REFERENCE(matrixObjectPtr,
+			objectID_,
+			QuantLibAddin::matrixObject,
+			QuantLib::Matrix)
 
-        QuantLib::SymmetricSchurDecomposition schur(
-            QuantLibExtended::ublasMatrixToMatrix(* matrixObjectPtr)) ;
+		QuantLib::SymmetricSchurDecomposition schur(*matrixObjectPtr);
 
             // valeurs de retour
         static OPER returnOper ;
-
-        ObjectHandler::ublasMatrixToOper<double>(
-            QuantLibExtended::matrixToUblasMatrix(schur.eigenvectors()), returnOper) ;
-
+        ObjectHandler::MatrixToOper(schur.eigenvectors(), returnOper) ;
         return & returnOper ;
 
     } catch (std::exception & e) {
 
-
             ObjectHandler::RepositoryXL::instance().logError(e.what(), functionCall) ;
-
             static OPER returnOper ;
-        
 			returnOper.xltype = xltypeErr ;
-
 			returnOper.val.err = xlerrNA ;
-
 			return & returnOper ;
-
 
     }
 
