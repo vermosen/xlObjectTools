@@ -20,13 +20,9 @@ DLLEXPORT xloper * xlGaussianRandom (const char * meanVector_,
 
             #ifdef _DEBUG
 
-
                 _CrtSetDbgFlag(_CRTDBG_LEAK_CHECK_DF|_CRTDBG_ALLOC_MEM_DF) ;  
-
                 _CrtSetReportMode(_CRT_WARN, _CRTDBG_MODE_FILE) ;
-
                 _CrtSetReportFile(_CRT_WARN, _CRTDBG_FILE_STDOUT) ;
-
 
             #endif
 
@@ -36,55 +32,44 @@ DLLEXPORT xloper * xlGaussianRandom (const char * meanVector_,
             ObjectHandler::validateRange(trigger_, "trigger") ;
 
                 // on récupère les matrices
-            OH_GET_OBJECT (meanVectorObject, meanVector_, QuantLibAddin::MatrixObject)
-                boost::shared_ptr<boost::numeric::::matrix<double> > meanVectorPtr ;
-                meanVectorObject->getLibraryObject (meanVectorPtr) ;
+			OH_GET_REFERENCE(meanVectorPtr,
+							 meanVector_,
+							 QuantLibAddin::matrixObject,
+							 QuantLib::Matrix)
 
-            OH_GET_OBJECT (stdDevMatrixObject, stdDevMatrixObject_, QuantLibAddin::MatrixObject)
-                boost::shared_ptr<boost::numeric::::matrix<double> > stdDevMatrixPtr ;
-                stdDevMatrixObject->getLibraryObject (stdDevMatrixPtr) ;
+			OH_GET_REFERENCE(stdDevMatrixPtr,
+							 stdDevMatrixObject_,
+							 QuantLibAddin::matrixObject,
+							 QuantLib::Matrix)
 
                 // contrôles
-            QL_REQUIRE(meanVectorPtr->size2() == 1, "mean vector have to be a column vector") ;
-
-            QL_REQUIRE(stdDevMatrixPtr->size1() == stdDevMatrixPtr->size2(), "non-square std deviation matrix") ;
-            
-            QL_REQUIRE(meanVectorPtr->size1() == stdDevMatrixPtr->size1(), "inconsistent data") ;
+			QL_REQUIRE(meanVectorPtr->columns() == 1,						   "mean vector have to be a column vector");
+            QL_REQUIRE(stdDevMatrixPtr->rows()  == stdDevMatrixPtr->columns(), "non-square std deviation matrix"       );
+			QL_REQUIRE(meanVectorPtr->rows()    == stdDevMatrixPtr->rows(),	   "inconsistent data"					   );
 
                 // construction du vecteur de nombres aléatoires
             QuantLib::MersenneTwisterUniformRng twister ;
 
-            boost::shared_ptr<QuantLibExtended::boxMullerGaussianVectorRng<QuantLib::MersenneTwisterUniformRng> > myGenerator(
-                new QuantLibExtended::boxMullerGaussianVectorRng<QuantLib::MersenneTwisterUniformRng>(
-                * meanVectorPtr, * stdDevMatrixPtr, twister)) ;
+            boost::shared_ptr<QuantLib::boxMullerGaussianVectorRng<QuantLib::MersenneTwisterUniformRng> > myGenerator(
+                new QuantLib::boxMullerGaussianVectorRng<QuantLib::MersenneTwisterUniformRng>(
+                meanVectorPtr->array(), * stdDevMatrixPtr, twister)) ;
 
-            boost::numeric::::matrix<double> returnMatrix = myGenerator->nextVector().value ;
+            QuantLib::Array returnMatrix = myGenerator->nextVector().value ;
 
                 // résultat
             static OPER returnOper ;
-
-            ObjectHandler::MatrixToOper<double>(returnMatrix, returnOper) ;
-
+            ObjectHandler::VectorToOper(returnMatrix, returnOper) ;
             return & returnOper ;
-
-
 
             // gestion des erreurs
         } catch (std::exception & e) {
 
-
                 ObjectHandler::RepositoryXL::instance().logError(e.what(), functionCall) ;
-
                 static OPER returnOper ;
-
                 returnOper.xltype = xltypeErr ;
-
                 returnOper.val.err = xlerrNA ;
-
                 return & returnOper ;
 
-
             }
-
 
     } ;
