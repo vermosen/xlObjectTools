@@ -25,22 +25,21 @@ DLLEXPORT xloper * xlSchurForm(const char * objectID_,
 				// on récupère la matrice
 			OH_GET_REFERENCE(matrixObjectPtr, 
 							 objectID_, 
-							 QuantLibAddin::ublasMatrixObject,
-							 boost::numeric::ublas::matrix<double>)
+							 QuantLibAddin::matrixObject,
+							 QuantLib::Matrix)
 
 				// Schur (la conversion doit disparaitre à terme)
-			QuantLib::SymmetricSchurDecomposition schur(
-				QuantLibExtended::ublasMatrixToMatrix(* matrixObjectPtr)) ;
+			QuantLib::SymmetricSchurDecomposition schur(* matrixObjectPtr);
 
 				// matrice de retour
-			boost::numeric::ublas::matrix<double> returnMatrix (
+			QuantLib::Matrix returnMatrix (
 				schur.eigenvalues().size(), schur.eigenvalues().size(), 0.0) ;
 
 			for (unsigned int i = 0 ; i < schur.eigenvalues().size() ; i++)
-					returnMatrix(i, i) = schur.eigenvalues()[i] ;
+					returnMatrix[i][i] = schur.eigenvalues()[i] ;
 
 			static OPER returnOper ;
-			ObjectHandler::ublasMatrixToOper(returnMatrix, returnOper) ;
+			ObjectHandler::MatrixToOper(returnMatrix, returnOper);
 
 			return & returnOper ;
 
