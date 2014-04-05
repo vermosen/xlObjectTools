@@ -175,6 +175,7 @@
     <ClCompile Include="bot\math\fittingMethod\stochasticFitting\stochasticFittingHelper.cpp" />
     <ClCompile Include="bot\math\fittingMethod\stochasticFitting\stochasticFittingObject.cpp" />
     <ClCompile Include="bot\math\fittingMethod\stochasticFitting\stochasticFittingValueObject.cpp" />
+    <ClCompile Include="bot\math\matrixToOper\matrixToOper.cpp" />
     <ClCompile Include="bot\math\meanEWMA\meanEWMA.cpp" />
     <ClCompile Include="bot\math\matrix\matrixObject.cpp" />
     <ClCompile Include="bot\math\matrix\matrixValueObject.cpp" />

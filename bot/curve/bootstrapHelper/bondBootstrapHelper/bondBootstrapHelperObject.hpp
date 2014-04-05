@@ -6,8 +6,8 @@
  *
  */
 
-#ifndef bond_bootstrap_helper_object
-#define bond_bootstrap_helper_object
+#ifndef bot_bond_bootstrap_helper_object
+#define bot_bond_bootstrap_helper_object
 
 #include <qlo/ratehelpers.hpp>
 

@@ -32,7 +32,8 @@ DLLEXPORT xloper * xlSchurEigenVector(const char * objectID_,
 
             // valeurs de retour
         static OPER returnOper ;
-        ObjectHandler::MatrixToOper(schur.eigenvectors(), returnOper) ;
+		QuantLib::Matrix s = schur.eigenvectors();
+        ObjectHandler::MatrixToOper(s, returnOper) ;
         return & returnOper ;
 
     } catch (std::exception & e) {

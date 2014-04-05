@@ -17,7 +17,7 @@
 #include <ql/math/matrixutilities/symmetricschurdecomposition.hpp>
 
 #include <bot/math/matrix/matrixObject.hpp>
-#include <bot/math/ublasMatrixtoOper/ublasMatrixtoOper.hpp>
+#include <bot/math/matrixtoOper/matrixtoOper.hpp>
 
         /* fonction de calcul de la correlation de deux series */
 DLLEXPORT xloper * xlSchurEigenVector(const char * objectID_,

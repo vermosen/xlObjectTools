@@ -9,10 +9,9 @@
 #ifndef xl_efficient_constrained_frontier
 #define xl_efficient_constrained_frontier
 
-#include <vector>
+//#include <vector>
 
 #include <ohxl/repositoryxl.hpp>
-//#include <ohxl/conversions/opertovector.hpp>
 #include <ohxl/conversions/validations.hpp>
 
 #include <ql/math/randomnumbers/mt19937uniformrng.hpp>

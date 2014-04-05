@@ -597,6 +597,9 @@
     <ClCompile Include="bot\math\matrix\matrixValueObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="bot\math\matrixToOper\matrixToOper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bot\curve\bootstrapHelper\bondBootstrapHelper\bondBootstrapHelperObject.hpp">
