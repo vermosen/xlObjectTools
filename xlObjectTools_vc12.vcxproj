@@ -74,13 +74,19 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;XLOBJECTTOOLS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(GITHUB)/quantlib/ObjectHandler/lib;$(GITHUB)/quantlib/QuantLib/lib;$(GITHUB)/quantlib/QuantLibAddin/lib;$(GITHUB)/quantlib/log4cxx/msvc/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(GITHUB)\quantlib\log4cxx\msvc\lib;$(GITHUB)\quantlib\quantlibaddin\lib\;$(GITHUB)\quantlib\ObjectHandler\lib</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <ImportLibrary>$(OutDir)$(TargetName).lib;</ImportLibrary>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;Ws2_32.lib;advapi32.lib;QuantLib-vc120-mt-s.lib;QuantLibObjects-vc120-mt-s-1_2_0.lib;ObjectHandler-xllib-vc120-mt-s-1_2_0.lib;log4cxxs-vc120-mt-s-0_10_0.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
