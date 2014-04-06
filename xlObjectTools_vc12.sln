@@ -5,9 +5,7 @@ VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QuantLib", "..\quantlib\QuantLib\QuantLib_vc12.vcxproj", "{AD0A27DA-91DA-46A2-ACBD-296C419ED3AA}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QuantLibExtended", "..\..\Visual Studio 2012\Projects\QuantLibExtended\QuantLibExtended.vcxproj", "{964C7C99-EE9D-4A4D-B840-163D9FEB4B69}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xlObjectTools_vc12", "xlObjectTools_vc12.vcxproj", "{B225AFF0-E0EC-42EF-A998-0494CA3C0F7F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xlObjectTools", "xlObjectTools_vc12.vcxproj", "{B225AFF0-E0EC-42EF-A998-0494CA3C0F7F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,12 +23,6 @@ Global
 		{AD0A27DA-91DA-46A2-ACBD-296C419ED3AA}.Release|Win32.Build.0 = Release (static runtime)|Win32
 		{AD0A27DA-91DA-46A2-ACBD-296C419ED3AA}.Release|x64.ActiveCfg = Release (static runtime)|x64
 		{AD0A27DA-91DA-46A2-ACBD-296C419ED3AA}.Release|x64.Build.0 = Release (static runtime)|x64
-		{964C7C99-EE9D-4A4D-B840-163D9FEB4B69}.Debug|Win32.ActiveCfg = Debug|Win32
-		{964C7C99-EE9D-4A4D-B840-163D9FEB4B69}.Debug|Win32.Build.0 = Debug|Win32
-		{964C7C99-EE9D-4A4D-B840-163D9FEB4B69}.Debug|x64.ActiveCfg = Debug|Win32
-		{964C7C99-EE9D-4A4D-B840-163D9FEB4B69}.Release|Win32.ActiveCfg = Release|Win32
-		{964C7C99-EE9D-4A4D-B840-163D9FEB4B69}.Release|Win32.Build.0 = Release|Win32
-		{964C7C99-EE9D-4A4D-B840-163D9FEB4B69}.Release|x64.ActiveCfg = Release|Win32
 		{B225AFF0-E0EC-42EF-A998-0494CA3C0F7F}.Debug|Win32.ActiveCfg = Debug|Win32
 		{B225AFF0-E0EC-42EF-A998-0494CA3C0F7F}.Debug|Win32.Build.0 = Debug|Win32
 		{B225AFF0-E0EC-42EF-A998-0494CA3C0F7F}.Debug|x64.ActiveCfg = Debug|Win32

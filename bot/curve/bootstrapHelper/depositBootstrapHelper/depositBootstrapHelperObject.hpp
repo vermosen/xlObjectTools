@@ -6,8 +6,8 @@
  *
  */
 
-#ifndef deposit_bootstrap_helper_object
-#define deposit_bootstrap_helper_object
+#ifndef bot_deposit_bootstrap_helper_object
+#define bot_deposit_bootstrap_helper_object
 
 #include <qlo/ratehelpers.hpp>
 
@@ -17,6 +17,7 @@
 #include <ql/termStructures/yield/depositBootstrapHelper.hpp>
 
 #include <bot/curve/bootstrapHelper/depositBootstrapHelper/depositBootstrapHelperValueObject.hpp>
+
 namespace QuantLibAddin {
 
         class depositBootstrapHelperObject : public RateHelper {

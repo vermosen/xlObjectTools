@@ -7,34 +7,25 @@
  */
 
 
-#ifndef bond_bootstrap_helper_value_object_hpp
-#define bond_bootstrap_helper_value_object_hpp
+#ifndef bot_bond_bootstrap_helper_value_object_hpp
+#define bot_bond_bootstrap_helper_value_object_hpp
 
 #include <vector>
-
 #include <string>
-
 #include <set>
 
-
 #include <boost/serialization/map.hpp>
-
 #include <boost/algorithm/string/case_conv.hpp>
 
-
 #include <oh/valueobject.hpp>
-
 
 namespace QuantLibAddin { namespace ValueObjects {
 
     class bondBootstrapHelperValueObject : public ObjectHandler::ValueObject {
 
-
         friend class boost::serialization::access ;
 
-
     public :
-
 
         inline bondBootstrapHelperValueObject() {} ;
 
@@ -49,17 +40,13 @@ namespace QuantLibAddin { namespace ValueObjects {
 
         void setSystemProperty(const std::string & name, const ObjectHandler::property_t & value) ;
 
-
     protected :
 
-
         static const char * mPropertyNames[] ;
-
         static std::set<std::string> mSystemPropertyNames ;
-
         bool permanent_ ;
 
-        template<class Archive>
+		template<class Archive>
         void serialize(Archive& ar, const unsigned int) {
         boost::serialization::void_cast_register<bondBootstrapHelperValueObject, ObjectHandler::ValueObject>(this, this) ;
 

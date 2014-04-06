@@ -48,7 +48,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>$(IncludePath);$(GITHUB)\quantlib\QuantLib;$(GITHUB)\quantlib\ObjectHandler;$(GITHUB)\quantlib\QuantLibAddin;.</IncludePath>
-    <LibraryPath>$(GITHUB)\quantlib\ObjectHandler\lib;$(LibraryPath);$(GITHUB)\quantlib\QuantLib\lib;$(GITHUB)\quantlib\QuantLibAddin\lib</LibraryPath>
+    <LibraryPath>$(LibraryPath);$(GITHUB)\quantlib\ObjectHandler\lib;$(LibraryPath);$(GITHUB)\quantlib\QuantLib\lib;$(GITHUB)\quantlib\QuantLibAddin\lib</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -80,6 +80,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(GITHUB)/quantlib/ObjectHandler/lib;$(GITHUB)/quantlib/QuantLib/lib;$(GITHUB)/quantlib/QuantLibAddin/lib;$(GITHUB)/quantlib/log4cxx/msvc/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

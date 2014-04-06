@@ -9,10 +9,11 @@
 #ifndef bot_bond_bootstrap_helper_object
 #define bot_bond_bootstrap_helper_object
 
-#include <qlo/ratehelpers.hpp>
-
 #include <ql/instruments/bond.hpp>
+#include <ql/quote.hpp>
 #include <ql/termstructures/yield/bondhelpers.hpp>
+
+#include <qlo/ratehelpers.hpp>
 
 #include <bot/curve/bootstrapHelper/bondBootstrapHelper/bondBootstrapHelperValueObject.hpp>
 
