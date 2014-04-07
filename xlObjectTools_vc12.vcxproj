@@ -43,12 +43,17 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>$(IncludePath);$(GITHUB)\quantlib\QuantLib;$(GITHUB)\quantlib\ObjectHandler;$(GITHUB)\quantlib\QuantLibAddin;.</IncludePath>
-    <LibraryPath>C:\Users\vermosen\Documents\GitHub\quantlib\ObjectHandler\lib;$(LibraryPath);C:\Users\vermosen\Documents\GitHub\quantlib\QuantLib\lib;C:\Users\vermosen\Documents\GitHub\quantlib\QuantLibAddin\lib</LibraryPath>
+    <LibraryPath>$(LibraryPath);$(GITHUB)\quantlib\ObjectHandler\lib;$(LibraryPath);$(GITHUB)\quantlib\QuantLib\lib;$(GITHUB)\quantlib\QuantLibAddin\lib</LibraryPath>
+    <OutDir>$(SolutionDir)\xll\</OutDir>
+    <TargetName>$(ProjectName)-debug</TargetName>
+    <TargetExt>.xll</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>$(IncludePath);$(GITHUB)\quantlib\QuantLib;$(GITHUB)\quantlib\ObjectHandler;$(GITHUB)\quantlib\QuantLibAddin;.</IncludePath>
     <LibraryPath>$(LibraryPath);$(GITHUB)\quantlib\ObjectHandler\lib;$(LibraryPath);$(GITHUB)\quantlib\QuantLib\lib;$(GITHUB)\quantlib\QuantLibAddin\lib</LibraryPath>
+    <OutDir>$(SolutionDir)\xll\</OutDir>
+    <TargetExt>.xll</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -58,10 +63,16 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;XLOBJECTTOOLS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <UndefinePreprocessorDefinitions>_UNICODE;UNICODE</UndefinePreprocessorDefinitions>
+      <AdditionalOptions>-D_SCL_SECURE_NO_WARNINGS %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(GITHUB)\quantlib\log4cxx\msvc\lib;$(GITHUB)\quantlib\quantlibaddin\lib\;$(GITHUB)\quantlib\ObjectHandler\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;Ws2_32.lib;advapi32.lib;QuantLib-vc120-mt-s.lib;QuantLibObjects-vc120-mt-s-1_2_0.lib;ObjectHandler-xllib-vc120-mt-s-1_2_0.lib;log4cxxs-vc120-mt-s-0_10_0.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -76,6 +87,7 @@
       <SDLCheck>true</SDLCheck>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <UndefinePreprocessorDefinitions>_UNICODE;UNICODE</UndefinePreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
