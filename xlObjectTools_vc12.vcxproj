@@ -71,8 +71,8 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(GITHUB)\quantlib\log4cxx\msvc\lib;$(GITHUB)\quantlib\quantlibaddin\lib\;$(GITHUB)\quantlib\ObjectHandler\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>odbc32.lib;odbccp32.lib;Ws2_32.lib;advapi32.lib;QuantLib-vc120-mt-s.lib;QuantLibObjects-vc120-mt-s-1_2_0.lib;ObjectHandler-xllib-vc120-mt-s-1_2_0.lib;log4cxxs-vc120-mt-s-0_10_0.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;Ws2_32.lib;advapi32.lib;QuantLib-vc120-mt-sgd.lib;QuantLibObjects-vc120-mt-sgd-1_2_0.lib;ObjectHandler-vc120-mt-sgd-1_2_0.lib;ObjectHandler-xllib-vc120-mt-sgd-1_2_0.lib;log4cxxs-vc120-mt-sgd-0_10_0.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

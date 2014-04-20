@@ -29,12 +29,9 @@ namespace QuantLibAddin { namespace ValueObjects {
 
     class interestRateSwapBootstrapHelperValueObject2 : public ObjectHandler::ValueObject {
 
-
         friend class boost::serialization::access ;
 
-
     public :
-
 
         inline interestRateSwapBootstrapHelperValueObject2() {} ;
 
@@ -42,23 +39,15 @@ namespace QuantLibAddin { namespace ValueObjects {
                                                     const bool permanent) ;
 
         const std::set<std::string>& getSystemPropertyNames() const ;
-
         std::vector<std::string> getPropertyNamesVector() const ;
-
         ObjectHandler::property_t getSystemProperty(const std::string &) const ;
-
-        void setSystemProperty(const std::string & name, const ObjectHandler::property_t & value) ;
-
+		void setSystemProperty(const std::string & name, const ObjectHandler::property_t & value) ;
 
     protected :
 
-
         static const char * mPropertyNames[] ;
-
         static std::set<std::string> mSystemPropertyNames ;
-
         bool permanent_ ;
-
         template<class Archive>
         void serialize(Archive& ar, const unsigned int) {
         boost::serialization::void_cast_register<interestRateSwapBootstrapHelperValueObject2, ObjectHandler::ValueObject>(this, this) ;
