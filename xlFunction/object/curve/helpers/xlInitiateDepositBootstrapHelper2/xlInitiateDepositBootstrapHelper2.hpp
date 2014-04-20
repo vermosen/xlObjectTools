@@ -24,7 +24,7 @@
 #include <ql/time/calendars/unitedstates.hpp>
 #include <ql/handle.hpp>
 
-        /* enregistre un helper pour un dépôt */
+/* register a deposit for curve fitting */
 DLLEXPORT xloper * xlInitiateDepositBootstrapHelper2 (const char * objectId_,
                                                       const char * tenor_,
 													  const xloper * calendar_,
