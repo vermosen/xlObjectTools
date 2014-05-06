@@ -645,6 +645,9 @@
     <ClInclude Include="xlFunction\swap\xlSwapRollDown\register_xlSwapRollDown.hpp" />
     <ClInclude Include="xlFunction\swap\xlSwapRollDown\xlSwapRollDown.hpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="workbooks\LiborModel.xlsx" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
