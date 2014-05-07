@@ -69,7 +69,7 @@ DLLEXPORT xloper * xlInitiateDepositBootstrapHelper2 (const char * objectId_,
 						valueDate,
 						calendar.advance(valueDate, ObjectHandler::periodFactory()(tenor_)),
 						calendar,
-						 settlementDays,
+						settlementDays,
 						QuantLib::Unadjusted));
 
                     // creates the helper
