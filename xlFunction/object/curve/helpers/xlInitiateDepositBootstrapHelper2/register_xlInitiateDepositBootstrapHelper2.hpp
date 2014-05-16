@@ -27,7 +27,7 @@ inline void registerxlInitiateDepositBootstrapHelper2(const XLOPER & xDll) {
 			  TempStrNoSize("\x21""Number of business days to settle"),
               TempStrNoSize("\x0C""Deposit rate"),
 			  TempStrNoSize("\x0E""Daycount basis"),
-              TempStrNoSize("\x09""trigger  "));
+              TempStrNoSize("\x1B""Trigger for recalculation  "));
 
     }
 
@@ -52,7 +52,7 @@ inline void unregisterxlInitiateDepositBootstrapHelper2(const XLOPER & xDll) {
 			TempStrNoSize("\x21""Number of business days to settle"),
 			TempStrNoSize("\x0C""Deposit rate"),
 			TempStrNoSize("\x0E""Daycount basis"),
-			TempStrNoSize("\x09""trigger  "));
+			TempStrNoSize("\x1B""Trigger for recalculation  "));
 
         Excel4(xlfRegisterId, & xlRegID, 2, & xDll,
             TempStrNoSize("\x21""xlInitiateDepositBootstrapHelper2")) ;

@@ -21,10 +21,10 @@ inline void registerxlInitiateDepositBootstrapHelper(const XLOPER & xDll) {
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x43""Cette fonction instancie un dépôt pour l'interpolation d'une courbe"),
-            TempStrNoSize("\x19""L'identifiant de l'object"),
+            TempStrNoSize("\x11""Object Identifer"),
             TempStrNoSize("\x16""L'identifiant du dépot"),
             TempStrNoSize("\x10""Le prix du dépôt"),
-            TempStrNoSize("\x09""trigger  ")) ;
+            TempStrNoSize("\x1B""Trigger for recalculation  ")) ;
 
     }
 
@@ -43,10 +43,10 @@ inline void unregisterxlInitiateDepositBootstrapHelper(const XLOPER & xDll) {
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x43""Cette fonction instancie un dépôt pour l'interpolation d'une courbe"),
-            TempStrNoSize("\x19""L'identifiant de l'object"),
+            TempStrNoSize("\x11""Object Identifer"),
             TempStrNoSize("\x16""L'identifiant du dépot"),
             TempStrNoSize("\x10""Le prix du dépôt"),
-            TempStrNoSize("\x09""trigger  ")) ;
+            TempStrNoSize("\x1B""Trigger for recalculation  ")) ;
 
         Excel4(xlfRegisterId, & xlRegID, 2, & xDll,
             TempStrNoSize("\x20""xlInitiateDepositBootstrapHelper")) ;

@@ -21,7 +21,7 @@ inline void registerxlRecoverFittingParameters(const XLOPER & xDll) {
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x5E""Cette fonction extrait les paramètres de calcul de la courbe de Nelson-Siegel-Svensson pointée"),
-            TempStrNoSize("\x19""L'identifiant de l'object"),
+            TempStrNoSize("\x11""Object Identifer"),
             TempStrNoSize("\x17""Déclanche le recalcul  ")) ;
 
     }
@@ -41,7 +41,7 @@ inline void unregisterxlRecoverFittingParameters(const XLOPER & xDll) {
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x5E""Cette fonction extrait les paramètres de calcul de la courbe de Nelson-Siegel-Svensson pointée"),
-            TempStrNoSize("\x19""L'identifiant de l'object"),
+            TempStrNoSize("\x11""Object Identifer"),
             TempStrNoSize("\x17""Déclanche le recalcul  ")) ;
 
         Excel4(xlfRegisterId, & xlRegID, 2, & xDll,

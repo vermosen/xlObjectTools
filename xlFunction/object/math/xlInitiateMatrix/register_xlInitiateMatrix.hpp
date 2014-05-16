@@ -21,7 +21,7 @@ inline void registerxlInitiateMatrix(const XLOPER & xDll) {
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x24""Cette fonction instancie une matrice"),
-            TempStrNoSize("\x19""L'identifiant de l'object"),
+            TempStrNoSize("\x11""Object Identifer"),
             TempStrNoSize("\x17""La matrice à instancier"),
             TempStrNoSize("\x17""Déclenche le recalcul  ")) ;
 
@@ -42,7 +42,7 @@ inline void unregisterxlInitiateMatrix(const XLOPER & xDll) {
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x24""Cette fonction instancie une matrice"),
-            TempStrNoSize("\x19""L'identifiant de l'object"),
+            TempStrNoSize("\x11""Object Identifer"),
             TempStrNoSize("\x17""La matrice à instancier"),
             TempStrNoSize("\x17""Déclenche le recalcul  ")) ;
 

@@ -21,7 +21,7 @@ inline void registerxlInitiateFittedBondDiscountCurve(const XLOPER & xDll) {
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x53""Cette fonction instancie une courbe ajustée pour les instruments passés en argument"),
-            TempStrNoSize("\x19""L'identifiant de l'object"),
+            TempStrNoSize("\x11""Object Identifer"),
             TempStrNoSize("\x11""La date de calcul"),
             TempStrNoSize("\x21""La date de règlement de la courbe"),
             TempStrNoSize("\x23""Les instruments composant la courbe"),
@@ -29,7 +29,7 @@ inline void registerxlInitiateFittedBondDiscountCurve(const XLOPER & xDll) {
             TempStrNoSize("\x22""La devise de cotation de la courbe"),
             TempStrNoSize("\x17""La méthode d'ajustement"),
 			TempStrNoSize("\x1F""La règle de selection des titres"),
-            TempStrNoSize("\x09""trigger  ")) ;
+            TempStrNoSize("\x1B""Trigger for recalculation  ")) ;
 
     }
 
@@ -49,7 +49,7 @@ inline void unregisterxlInitiateFittedBondDiscountCurve(const XLOPER & xDll) {
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x53""Cette fonction instancie une courbe ajustée pour les instruments passés en argument"),
-            TempStrNoSize("\x19""L'identifiant de l'object"),
+            TempStrNoSize("\x11""Object Identifer"),
             TempStrNoSize("\x11""La date de calcul"),
             TempStrNoSize("\x21""La date de règlement de la courbe"),
             TempStrNoSize("\x23""Les instruments composant la courbe"),
@@ -57,7 +57,7 @@ inline void unregisterxlInitiateFittedBondDiscountCurve(const XLOPER & xDll) {
             TempStrNoSize("\x22""La devise de cotation de la courbe"),
             TempStrNoSize("\x17""La méthode d'ajustement"),
 			TempStrNoSize("\x1F""La règle de selection des titres"),
-            TempStrNoSize("\x09""trigger  ")) ;
+            TempStrNoSize("\x1B""Trigger for recalculation  ")) ;
 
         Excel4(xlfRegisterId, & xlRegID, 2, & xDll,
             TempStrNoSize("\x21""xlInitiateFittedBondDiscountCurve")) ;

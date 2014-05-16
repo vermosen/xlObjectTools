@@ -21,7 +21,7 @@ inline void registerxlInitiateFittedBondCurve(const XLOPER & xDll) {
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x53""Cette fonction instancie une courbe ajustée pour les instruments passés en argument"),
-            TempStrNoSize("\x19""L'identifiant de l'object"),
+            TempStrNoSize("\x11""Object Identifer"),
             TempStrNoSize("\x11""La date de calcul"),
             TempStrNoSize("\x1F""Le nombre de jours de règlement"),
             TempStrNoSize("\x23""Les instruments composant la courbe"),
@@ -29,7 +29,7 @@ inline void registerxlInitiateFittedBondCurve(const XLOPER & xDll) {
             TempStrNoSize("\x22""La devise de cotation de la courbe"),
             TempStrNoSize("\x17""La méthode d'ajustement"),
             TempStrNoSize("\x20""La règle de sélection des titres"),
-            TempStrNoSize("\x09""trigger  ")) ;
+            TempStrNoSize("\x1B""Trigger for recalculation  ")) ;
 
     }
 
@@ -48,7 +48,7 @@ inline void unregisterxlInitiateFittedBondCurve(const XLOPER & xDll) {
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x53""Cette fonction instancie une courbe ajustée pour les instruments passés en argument"),
-            TempStrNoSize("\x19""L'identifiant de l'object"),
+            TempStrNoSize("\x11""Object Identifer"),
             TempStrNoSize("\x11""La date de calcul"),
             TempStrNoSize("\x1F""Le nombre de jours de règlement"),
             TempStrNoSize("\x23""Les instruments composant la courbe"),
@@ -56,7 +56,7 @@ inline void unregisterxlInitiateFittedBondCurve(const XLOPER & xDll) {
             TempStrNoSize("\x22""La devise de cotation de la courbe"),
             TempStrNoSize("\x17""La méthode d'ajustement"),
             TempStrNoSize("\x20""La règle de sélection des titres"),
-            TempStrNoSize("\x09""trigger  ")) ;
+            TempStrNoSize("\x1B""Trigger for recalculation  ")) ;
 
         Excel4(xlfRegisterId, & xlRegID, 2, & xDll,
             TempStrNoSize("\x19""xlInitiateFittedBondCurve")) ;

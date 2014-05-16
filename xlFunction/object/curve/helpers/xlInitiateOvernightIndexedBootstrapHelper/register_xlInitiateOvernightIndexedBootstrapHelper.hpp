@@ -21,11 +21,11 @@ inline void registerxlInitiateOvernightIndexedBootstrapHelper(const XLOPER & xDl
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x46""Cette fonction instancie un swap OIS pour l'interpolation d'une courbe"),
-            TempStrNoSize("\x19""L'identifiant de l'object"),
+            TempStrNoSize("\x11""Object Identifer"),
             TempStrNoSize("\x18""L'identifiant de l'index"),
 			TempStrNoSize("\x1B""La date de maturité du swap"),
             TempStrNoSize("\x0F""Le taux du swap"),
-            TempStrNoSize("\x09""trigger  ")) ;
+            TempStrNoSize("\x1B""Trigger for recalculation  ")) ;
 
 
     }
@@ -45,11 +45,11 @@ inline void unregisterxlInitiateOvernightIndexedBootstrapHelper(const XLOPER & x
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x46""Cette fonction instancie un swap OIS pour l'interpolation d'une courbe"),
-            TempStrNoSize("\x19""L'identifiant de l'object"),
+            TempStrNoSize("\x11""Object Identifer"),
             TempStrNoSize("\x18""L'identifiant de l'index"),
 			TempStrNoSize("\x1B""La date de maturité du swap"),
             TempStrNoSize("\x0F""Le taux du swap"),
-            TempStrNoSize("\x09""trigger  ")) ;
+            TempStrNoSize("\x1B""Trigger for recalculation  ")) ;
 
         Excel4(xlfRegisterId, & xlRegID, 2, & xDll,
             TempStrNoSize("\x29""xlInitiateOvernightIndexedBootstrapHelper")) ;

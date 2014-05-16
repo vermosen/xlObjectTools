@@ -27,7 +27,7 @@ inline void registerxlInitiateOvernightIndex(const XLOPER & xDll) {
             TempStrNoSize("\x21""Les jours de règlement de l'index"),
             TempStrNoSize("\x19""Le calendrier des fixings"),
             TempStrNoSize("\x10""La base annuelle"),
-            TempStrNoSize("\x09""trigger  ")) ;
+            TempStrNoSize("\x1B""Trigger for recalculation  ")) ;
 
 
     }
@@ -52,7 +52,7 @@ inline void unregisterxlInitiateOvernightIndex(const XLOPER & xDll) {
             TempStrNoSize("\x21""Les jours de règlement de l'index"),
             TempStrNoSize("\x19""Le calendrier des fixings"),
             TempStrNoSize("\x10""La base annuelle"),
-            TempStrNoSize("\x09""trigger  ")) ;
+            TempStrNoSize("\x1B""Trigger for recalculation  ")) ;
 
         Excel4(xlfRegisterId, & xlRegID, 2, & xDll,
             TempStrNoSize("\x1A""xlInitiateOvernightIndex")) ;

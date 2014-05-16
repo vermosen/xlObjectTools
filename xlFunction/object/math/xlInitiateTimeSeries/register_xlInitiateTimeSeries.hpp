@@ -21,7 +21,7 @@ inline void registerxlInitiateTimeSeries(const XLOPER & xDll) {
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x2D""Cette fonction instancie une serie temporelle"),
-            TempStrNoSize("\x19""L'identifiant de l'object"),
+            TempStrNoSize("\x11""Object Identifer"),
             TempStrNoSize("\x12""La plage des dates"),
             TempStrNoSize("\x14""La plage des données"),
             TempStrNoSize("\x17""Déclenche le recalcul  ")) ;
@@ -43,7 +43,7 @@ inline void unregisterxlInitiateTimeSeries(const XLOPER & xDll) {
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x2D""Cette fonction instancie une serie temporelle"),
-            TempStrNoSize("\x19""L'identifiant de l'object"),
+            TempStrNoSize("\x11""Object Identifer"),
             TempStrNoSize("\x12""La plage des dates"),
             TempStrNoSize("\x14""La plage des données"),
             TempStrNoSize("\x17""Déclenche le recalcul  ")) ;

@@ -21,12 +21,12 @@ inline void registerxlInitiateInterestRate(const XLOPER & xDll) {
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x2F""Cette fonction instancie une convention de taux"),
-            TempStrNoSize("\x19""L'identifiant de l'object"),
+            TempStrNoSize("\x11""Object Identifer"),
             TempStrNoSize("\x10""La base annuelle"),
             TempStrNoSize("\x1B""La composition des intérêts"),
             TempStrNoSize("\x16""La fréquence de coupon"),
             TempStrNoSize("\x2A""La convention des jours ouvrés à appliquer"),
-            TempStrNoSize("\x09""trigger  ")) ;
+            TempStrNoSize("\x1B""Trigger for recalculation  ")) ;
 
     }
 
@@ -45,12 +45,12 @@ inline void unregisterxlInitiateInterestRate(const XLOPER & xDll) {
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x2F""Cette fonction instancie une convention de taux"),
-            TempStrNoSize("\x19""L'identifiant de l'object"),
+            TempStrNoSize("\x11""Object Identifer"),
             TempStrNoSize("\x10""La base annuelle"),
             TempStrNoSize("\x1B""La composition des intérêts"),
             TempStrNoSize("\x16""La fréquence de coupon"),
             TempStrNoSize("\x2A""La convention des jours ouvrés à appliquer"),
-            TempStrNoSize("\x09""trigger  ")) ;
+            TempStrNoSize("\x1B""Trigger for recalculation  ")) ;
 
 
         Excel4(xlfRegisterId, & xlRegID, 2, & xDll,

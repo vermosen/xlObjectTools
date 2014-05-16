@@ -21,7 +21,7 @@ inline void registerxlCurveZeroRate(const XLOPER & xDll) {
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x4A""Cette fonction extrait le taux zero coupon bond basis de la courbe pointée"),
-            TempStrNoSize("\x19""L'identifiant de l'object"),
+            TempStrNoSize("\x11""Object Identifer"),
             TempStrNoSize("\x1C""La date d'évaluation du taux"),
             TempStrNoSize("\x29""L'indentifiant de la convention de calcul"),
             TempStrNoSize("\x17""Déclanche le recalcul  ")) ;
@@ -43,7 +43,7 @@ inline void unregisterxlCurveZeroRate(const XLOPER & xDll) {
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x4A""Cette fonction extrait le taux zero coupon bond basis de la courbe pointée"),
-            TempStrNoSize("\x19""L'identifiant de l'object"),
+            TempStrNoSize("\x11""Object Identifer"),
             TempStrNoSize("\x1C""La date d'évaluation du taux"),
             TempStrNoSize("\x29""L'indentifiant de la convention de calcul"),
             TempStrNoSize("\x17""Déclanche le recalcul  ")) ;

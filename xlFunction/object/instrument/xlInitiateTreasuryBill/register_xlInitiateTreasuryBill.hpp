@@ -21,7 +21,7 @@ inline void registerxlInitiateTreasuryBill(const XLOPER & xDll) {
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x3D""Cette fonction instancie un instrument monétaire du trésor US"),
-            TempStrNoSize("\x19""L'identifiant de l'object"),
+            TempStrNoSize("\x11""Object Identifer"),
             TempStrNoSize("\x1B""La date d'émission du titre"),
             TempStrNoSize("\x1C""La date de maturité du titre"),
             TempStrNoSize("\x17""Déclenche le recalcul  ")) ;
@@ -43,7 +43,7 @@ inline void unregisterxlInitiateTreasuryBill(const XLOPER & xDll) {
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x3D""Cette fonction instancie un instrument monétaire du trésor US"),
-            TempStrNoSize("\x19""L'identifiant de l'object"),
+            TempStrNoSize("\x11""Object Identifer"),
             TempStrNoSize("\x1B""La date d'émission du titre"),
             TempStrNoSize("\x1C""La date de maturité du titre"),
             TempStrNoSize("\x17""Déclenche le recalcul  ")) ;

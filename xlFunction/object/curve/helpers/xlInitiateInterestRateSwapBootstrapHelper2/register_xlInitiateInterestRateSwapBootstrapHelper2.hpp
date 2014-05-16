@@ -21,7 +21,7 @@ inline void registerxlInitiateInterestRateSwapBootstrapHelper2(const XLOPER & xD
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x41""Cette fonction qualifie un swap pour l'interpolation d'une courbe"),
-            TempStrNoSize("\x19""L'identifiant de l'object"),
+            TempStrNoSize("\x11""Object Identifer"),
             TempStrNoSize("\x10""Le ténor du swap"),
 			TempStrNoSize("\x1A""Le calendrier de référence"),
 			TempStrNoSize("\x1F""Le nombre de jours de règlement"),
@@ -32,7 +32,7 @@ inline void registerxlInitiateInterestRateSwapBootstrapHelper2(const XLOPER & xD
             TempStrNoSize("\x27""La base de la jambe variable (optionel)"),
 			TempStrNoSize("\x29""Le taux de référence de la jambe variable"),
             TempStrNoSize("\x2A""L'identifiant de la courbe d'actualisation"),
-            TempStrNoSize("\x09""trigger  ")) ;
+            TempStrNoSize("\x1B""Trigger for recalculation  ")) ;
 
     }
 
@@ -52,7 +52,7 @@ inline void unregisterxlInitiateInterestRateSwapBootstrapHelper2(const XLOPER & 
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x41""Cette fonction qualifie un swap pour l'interpolation d'une courbe"),
-            TempStrNoSize("\x19""L'identifiant de l'object"),
+            TempStrNoSize("\x11""Object Identifer"),
             TempStrNoSize("\x10""Le ténor du swap"),
 			TempStrNoSize("\x1A""Le calendrier de référence"),
 			TempStrNoSize("\x1F""Le nombre de jours de règlement"),
@@ -63,7 +63,7 @@ inline void unregisterxlInitiateInterestRateSwapBootstrapHelper2(const XLOPER & 
             TempStrNoSize("\x27""La base de la jambe variable (optionel)"),
 			TempStrNoSize("\x29""Le taux de référence de la jambe variable"),
             TempStrNoSize("\x2A""L'identifiant de la courbe d'actualisation"),
-            TempStrNoSize("\x09""trigger  ")) ;
+            TempStrNoSize("\x1B""Trigger for recalculation  ")) ;
 
         Excel4(xlfRegisterId, & xlRegID, 2, & xDll,
             TempStrNoSize("\x2A""xlInitiateInterestRateSwapBootstrapHelper2")) ;

@@ -21,10 +21,10 @@ inline void registerxlInitiateBondBootstrapHelper(const XLOPER & xDll) {
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x43""Cette fonction instancie un titre pour l'interpolation d'une courbe"),
-            TempStrNoSize("\x19""L'identifiant de l'object"),
+            TempStrNoSize("\x11""Object Identifer"),
             TempStrNoSize("\x16""L'identifiant du titre"),
             TempStrNoSize("\x10""Le prix du titre"),
-            TempStrNoSize("\x09""trigger  ")) ;
+            TempStrNoSize("\x1B""Trigger for recalculation  ")) ;
 
     }
 
@@ -43,10 +43,10 @@ inline void unregisterxlInitiateBondBootstrapHelper(const XLOPER & xDll) {
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x43""Cette fonction instancie un titre pour l'interpolation d'une courbe"),
-            TempStrNoSize("\x19""L'identifiant de l'object"),
+            TempStrNoSize("\x11""Object Identifer"),
             TempStrNoSize("\x16""L'identifiant du titre"),
             TempStrNoSize("\x10""Le prix du titre"),
-            TempStrNoSize("\x09""trigger  ")) ;
+            TempStrNoSize("\x1B""Trigger for recalculation  ")) ;
 
         Excel4(xlfRegisterId, & xlRegID, 2, & xDll,
             TempStrNoSize("\x1D""xlInitiateBondBootstrapHelper")) ;

@@ -21,11 +21,11 @@ inline void registerxlInitiateInterestRateSwapBootstrapHelper(const XLOPER & xDl
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x41""Cette fonction qualifie un swap pour l'interpolation d'une courbe"),
-            TempStrNoSize("\x19""L'identifiant de l'object"),
+            TempStrNoSize("\x11""Object Identifer"),
             TempStrNoSize("\x15""L'identifiant du swap"),
             TempStrNoSize("\x13""La cotation du swap"),
             TempStrNoSize("\x2A""L'identifiant de la courbe d'actualisation"),
-            TempStrNoSize("\x09""trigger  ")) ;
+            TempStrNoSize("\x1B""Trigger for recalculation  ")) ;
 
     }
 
@@ -44,11 +44,11 @@ inline void unregisterxlInitiateInterestRateSwapBootstrapHelper(const XLOPER & x
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x41""Cette fonction qualifie un swap pour l'interpolation d'une courbe"),
-            TempStrNoSize("\x19""L'identifiant de l'object"),
+            TempStrNoSize("\x11""Object Identifer"),
             TempStrNoSize("\x15""L'identifiant du swap"),
             TempStrNoSize("\x13""La cotation du swap"),
             TempStrNoSize("\x2A""L'identifiant de la courbe d'actualisation"),
-            TempStrNoSize("\x09""trigger  ")) ;
+            TempStrNoSize("\x1B""Trigger for recalculation  ")) ;
 
         Excel4(xlfRegisterId, & xlRegID, 2, & xDll,
             TempStrNoSize("\x29""xlInitiateInterestRateSwapBootstrapHelper")) ;
