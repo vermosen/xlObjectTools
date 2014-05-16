@@ -10,14 +10,12 @@
 #define xl_initiate_time_series
 
 #include <ohxl/repositoryxl.hpp>
-
 #include <ohxl/conversions/opertovector.hpp>
-
 #include <ohxl/conversions/validations.hpp>
 
 #include <bot/tools/timeSeries/TimeSeriesObject.hpp>
 
-        /* enregistre une serie temporelle réelle */
+// registers a time series object
 DLLEXPORT char * xlInitiateTimeSeries (const char * objectID_,
                                        const xloper * date_,
                                        const xloper * data_,
