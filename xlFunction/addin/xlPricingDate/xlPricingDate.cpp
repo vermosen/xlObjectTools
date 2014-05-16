@@ -13,31 +13,31 @@ DLLEXPORT double xlPricingDate (xloper * date_,
                                 xloper * trigger_) {
 
          boost::shared_ptr<ObjectHandler::FunctionCall> functionCall(
-            new ObjectHandler::FunctionCall("xlPricingDate")) ;
+            new ObjectHandler::FunctionCall("xlPricingDate"));
 
          try {
 
-                QL_ENSURE(! functionCall->calledByFunctionWizard(), "") ;
+                QL_ENSURE(! functionCall->calledByFunctionWizard(), "");
 
-                    /* recherche de code erreur */
-                ObjectHandler::validateRange(date_, "date") ;
+                ObjectHandler::validateRange(date_, "date");			// validate ranges
+				ObjectHandler::validateRange(trigger_, "trigger");
 
-                ObjectHandler::validateRange(trigger_, "trigger") ;
+                ObjectHandler::ConvertOper myOper(* date_);				// convert xlOpers
 
-                    /* les XLOPER */
-                ObjectHandler::ConvertOper myOper(* date_) ;
+				(!myOper.missing() ?									
 
-                if (! myOper.missing())
+				QuantLib::Settings::instance().evaluationDate() =
+					QuantLib::Date(static_cast<long>(myOper)) :
 
-                        QuantLib::Settings::instance().evaluationDate() = 
-                            QuantLib::Date(static_cast<long>(myOper)) ;
+				QuantLib::Settings::instance().evaluationDate() =		// default on today
+					QuantLib::Date().todaysDate());
 
-                return QuantLib::Settings::instance().evaluationDate().value().serialNumber() ;
+                return QuantLib::Settings::instance().evaluationDate().value().serialNumber();
 
             } catch (std::exception & e) {
 
-                    ObjectHandler::RepositoryXL::instance().logError(e.what(), functionCall) ;
-                    return 0.0 ;
+                    ObjectHandler::RepositoryXL::instance().logError(e.what(), functionCall);
+					return 0.0;
 
             }
 
