@@ -60,15 +60,16 @@ DLLEXPORT char * xlInitiateTimeSeries (const char * objectID_,
 		for (std::vector<QuantLib::Date>::iterator It = date.begin(); It != date.end(); ++It)
 			data.push_back(myTempSeries[* It]) ;
 
-		QuantLib::TimeSeries<QuantLib::Real> finalSeries(date.begin(), 
-															date.end(), 
-															data.begin()) ;
+		QuantLib::TimeSeries<QuantLib::Real> finalSeries(
+			date.begin(), 
+			date.end(), 
+			data.begin());
 
 		// build the value object
 		boost::shared_ptr<QuantLibAddin::ValueObjects::TimeSeriesValueObject> myTimeSeriesValueObject(
 		new QuantLibAddin::ValueObjects::TimeSeriesValueObject(objectID_,
 																"double",
-																true)) ;
+																true));
 
 		// creates the series
 		boost::shared_ptr<QuantLibAddin::TimeSeriesObject<QuantLib::Real>> myTimeSeriesObject(
@@ -76,11 +77,11 @@ DLLEXPORT char * xlInitiateTimeSeries (const char * objectID_,
 																finalSeries,
 																true)) ;
 
-			// stockage de l'objet
+		// object storage, enforce rewriting
 		std::string returnValue =
 			ObjectHandler::RepositoryXL::instance().storeObject(objectID_, 
 																myTimeSeriesObject, 
-																true) ; // on force la réécriture
+																true);
 
 		static char ret[XL_MAX_STR_LEN] ;
 		ObjectHandler::stringToChar(returnValue, ret) ;
