@@ -35,7 +35,7 @@ DLLEXPORT int xlAutoOpen() {
                 Excel(xlGetName, & xDll, 0);
                 ObjectHandler::Configuration::instance().init() ;
 
-                    // factory registering
+                // factory registering
                 registerCalendars() ;
                 registerDayCounter() ;
                 registerFrequency() ;
@@ -47,7 +47,7 @@ DLLEXPORT int xlAutoOpen() {
                 registerConstraint() ;
                 registerBondSelectionRule() ;
 
-                    // Excel functions registering
+                // Excel functions registering
                 registerAll(xDll) ;
                 Excel(xlFree, 0, 1, & xDll) ;
                 return 1 ;
@@ -60,7 +60,6 @@ DLLEXPORT int xlAutoOpen() {
                 Excel(xlcAlert, 0, 1, TempStrStl(err.str())) ;
                 Excel(xlFree, 0, 1, & xDll) ;
                 return 0 ;
-
 
         } catch (...) {
 
