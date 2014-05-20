@@ -10,53 +10,51 @@
 
 inline void registerxlInitiateOvernightIndex(const XLOPER & xDll) {
 
+	// register the fonction xlInitiateOvernightIndex
+	Excel(xlfRegister, 0, 16, &xDll,
+		TempStrNoSize("\x1A""xlInitiateOvernightIndex"),
+		TempStrNoSize("\x08""CCPPCCP#"),
+		TempStrNoSize("\x16""OBJECT.OVERNIGHT.INDEX"),
+		TempStrNoSize("\x48""object indentifier,fixings,settlement days,calendar,annual basis,trigger"),
+		TempStrNoSize("\x01""1"),
+		TempStrNoSize("\x16""xlObjectTools - Object"),
+		TempStrNoSize("\x00"""),
+		TempStrNoSize("\x00"""),
+		TempStrNoSize("\x28""This function creates an overnight index"),
+		TempStrNoSize("\x11""Object identifier"),
+		TempStrNoSize("\x12""Fixing time series"),
+		TempStrNoSize("\x1B""Settlment dayx of the index"),
+		TempStrNoSize("\x0F""Fixing calendar"),
+		TempStrNoSize("\x19""Annual basis of the index"),
+		TempStrNoSize("\x19""Trigger for recalculation"));
 
-             // Enregistre la fonction xlInitiateOvernightIndex
-        Excel(xlfRegister, 0, 16, & xDll,
-            TempStrNoSize("\x1A""xlInitiateOvernightIndex"),
-            TempStrNoSize("\x08""CCPPCCP#"),
-            TempStrNoSize("\x18""INSTANCE.INDEX.OVERNIGHT"),
-            TempStrNoSize("\x5F""Identifiant de l'objet,historique de fixing,jours de règlement,calendrier,base annuelle,trigger"),
-            TempStrNoSize("\x01""1"),
-            TempStrNoSize("\x17""xlObjectTools - Object"),
-            TempStrNoSize("\x00"""),
-            TempStrNoSize("\x00"""),
-            TempStrNoSize("\x2B""Cette fonction instancie un index overnight"),
-            TempStrNoSize("\x18""L'identifiant de l'objet"),
-            TempStrNoSize("\x16""Historique des fixings"),
-            TempStrNoSize("\x21""Les jours de règlement de l'index"),
-            TempStrNoSize("\x19""Le calendrier des fixings"),
-            TempStrNoSize("\x10""La base annuelle"),
-            TempStrNoSize("\x1B""Trigger for recalculation  ")) ;
-
-
-    }
+}
 
 inline void unregisterxlInitiateOvernightIndex(const XLOPER & xDll) {
 
-        XLOPER xlRegID ;
+    XLOPER xlRegID ;
 
-             // Enregistre la fonction xlInitiateOvernightIndex
-        Excel(xlfRegister, 0, 16, & xDll,
-            TempStrNoSize("\x1A""xlInitiateOvernightIndex"),
-            TempStrNoSize("\x08""CCPPCCP#"),
-            TempStrNoSize("\x18""INSTANCE.INDEX.OVERNIGHT"),
-            TempStrNoSize("\x5F""Identifiant de l'objet,historique de fixing,jours de règlement,calendrier,base annuelle,trigger"),
-            TempStrNoSize("\x01""1"),
-            TempStrNoSize("\x17""xlObjectTools - Object"),
-            TempStrNoSize("\x00"""),
-            TempStrNoSize("\x00"""),
-            TempStrNoSize("\x2B""Cette fonction instancie un index overnight"),
-            TempStrNoSize("\x18""L'identifiant de l'objet"),
-            TempStrNoSize("\x16""Historique des fixings"),
-            TempStrNoSize("\x21""Les jours de règlement de l'index"),
-            TempStrNoSize("\x19""Le calendrier des fixings"),
-            TempStrNoSize("\x10""La base annuelle"),
-            TempStrNoSize("\x1B""Trigger for recalculation  ")) ;
+	// unregister the fonction xlInitiateOvernightIndex
+	Excel(xlfRegister, 0, 16, &xDll,
+		TempStrNoSize("\x1A""xlInitiateOvernightIndex"),
+		TempStrNoSize("\x08""CCPPCCP#"),
+		TempStrNoSize("\x16""OBJECT.OVERNIGHT.INDEX"),
+		TempStrNoSize("\x48""object indentifier,fixings,settlement days,calendar,annual basis,trigger"),
+		TempStrNoSize("\x01""1"),
+		TempStrNoSize("\x16""xlObjectTools - Object"),
+		TempStrNoSize("\x00"""),
+		TempStrNoSize("\x00"""),
+		TempStrNoSize("\x28""This function creates an overnight index"),
+		TempStrNoSize("\x11""Object identifier"),
+		TempStrNoSize("\x12""Fixing time series"),
+		TempStrNoSize("\x1B""Settlment dayx of the index"),
+		TempStrNoSize("\x0F""Fixing calendar"),
+		TempStrNoSize("\x19""Annual basis of the index"),
+		TempStrNoSize("\x19""Trigger for recalculation"));
 
-        Excel4(xlfRegisterId, & xlRegID, 2, & xDll,
-            TempStrNoSize("\x1A""xlInitiateOvernightIndex")) ;
+    Excel4(xlfRegisterId, & xlRegID, 2, & xDll,
+        TempStrNoSize("\x1A""xlInitiateOvernightIndex"));
 
-        Excel4(xlfUnregister, 0, 1, & xlRegID) ;
+    Excel4(xlfUnregister, 0, 1, & xlRegID);
 
-    }
+}

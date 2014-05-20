@@ -8,8 +8,7 @@
 
 #include <xlFunction/object/curve/helpers/xlInitiateDepositFutureBootstrapHelper/xlInitiateDepositFutureBootstrapHelper.hpp>
 
-
-        /* enregistre un helper pour un depôt */
+	/* register a helper for a eurodollar future */
 DLLEXPORT xloper * xlInitiateDepositFutureBootstrapHelper (const char * objectId_,
 														   const char * immCode_,
 														   const char * iborIndex_,
@@ -25,47 +24,41 @@ DLLEXPORT xloper * xlInitiateDepositFutureBootstrapHelper (const char * objectId
 
         QL_ENSURE(! functionCall->calledByFunctionWizard(), "") ;
 
-        ObjectHandler::validateRange(										// validate ranges
-			trigger_, "trigger") ;					
-		ObjectHandler::validateRange(
-			convexityAdjustmentQuote_, "convexity Adjustment Quote") ;
-		ObjectHandler::validateRange(
-			meanRevertingQuote_, "mean Reverting Handle") ;
-
+		// validate ranges
+		ObjectHandler::validateRange(trigger_                 , "trigger"                   );														
+		ObjectHandler::validateRange(convexityAdjustmentQuote_, "convexity Adjustment Quote");		
+		ObjectHandler::validateRange(meanRevertingQuote_      , "mean Reverting Handle"     );
 					
 		ObjectHandler::ConvertOper myOper1(* convexityAdjustmentQuote_),	// xlOper conversion
-									myOper2(* meanRevertingQuote_) ;
-
-        boost::shared_ptr<QuantLib::Quote> convexityAdjustmentQuote(
-            new QuantLib::SimpleQuote(myOper1.missing() ? 
-				0.0 : static_cast<double>(myOper1))) ;
-
-        boost::shared_ptr<QuantLib::Handle<QuantLib::Quote> > convexityAdjustmentQuoteHandle(
-            new QuantLib::Handle<QuantLib::Quote>(convexityAdjustmentQuote)) ;
-
-        boost::shared_ptr<QuantLib::Quote> meanRevertingQuote(
-            new QuantLib::SimpleQuote(myOper2.missing() ? 
-				0.0 : static_cast<double>(myOper2))) ;
-
-        boost::shared_ptr<QuantLib::Handle<QuantLib::Quote> > meanRevertingQuoteHandle(
-            new QuantLib::Handle<QuantLib::Quote>(convexityAdjustmentQuote)) ;
+								   myOper2(* meanRevertingQuote_      );
 
 		OH_GET_REFERENCE(iborIndexPtr,										// retrieve the LIBOR rate
-							iborIndex_, 
-							QuantLibAddin::iborIndexObject, 
-							QuantLib::IborIndex)
+			iborIndex_,
+			QuantLibAddin::iborIndexObject,
+			QuantLib::IborIndex)
 
-        boost::shared_ptr<QuantLib::Quote> myQuote(							// build the quote
-            new QuantLib::SimpleQuote(* futureQuote_)) ;
+		// convexity adjustment handle
+        boost::shared_ptr<QuantLib::Handle<QuantLib::Quote> > convexityAdjustmentQuoteHandle(
+			new QuantLib::Handle<QuantLib::Quote>(
+				new QuantLib::SimpleQuote(myOper1.missing() ?
+					0.0 : static_cast<double>(myOper1))));
 
+		// mean reverting handle
+        boost::shared_ptr<QuantLib::Handle<QuantLib::Quote> > meanRevertingQuoteHandle(
+			new QuantLib::Handle<QuantLib::Quote>(
+				new QuantLib::SimpleQuote(myOper2.missing() ?
+					0.0 : static_cast<double>(myOper2))));
+
+		// future price handle
         boost::shared_ptr<QuantLib::Handle<QuantLib::Quote> > myQuoteHandle(
-            new QuantLib::Handle<QuantLib::Quote>(myQuote)) ;
+			new QuantLib::Handle<QuantLib::Quote>(
+				new QuantLib::SimpleQuote(*futureQuote_)));
 				
 		// build the value object
 		boost::shared_ptr<QuantLibAddin::ValueObjects::depositFutureBootstrapHelperValueObject> myDepositFutureValueObject(
 			new QuantLibAddin::ValueObjects::depositFutureBootstrapHelperValueObject(
 			objectId_, true));
-                
+            
 		// create the object
         boost::shared_ptr<QuantLibAddin::depositFutureBootstrapHelperObject> myDepositFutureObject(
             new QuantLibAddin::depositFutureBootstrapHelperObject(

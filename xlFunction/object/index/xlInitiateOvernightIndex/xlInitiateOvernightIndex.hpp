@@ -10,28 +10,19 @@
 #define xl_initiate_overnight_index
 
 #include <ohxl/repositoryxl.hpp>
-
 #include <ohxl/conversions/validations.hpp>
-
 #include <ohxl/convert_oper.hpp>
-
 #include <ohxl/conversions/scalartooper.hpp>
 
-
 #include <qlo/indexes/iborindex.hpp>
-
 #include <qlo/valueobjects/vo_index.hpp>
 
-
 #include <bot/index/overnightIndex/overnightIndexObject.hpp>
-
 #include <bot/factory/calendar/calendarFactory.hpp>
-
 #include <bot/factory/daycounter/daycountFactory.hpp>
-
 #include <bot/tools/timeSeries/TimeSeriesObject.hpp>
 
-        /* enregistre un index forecaste avec ses fixings */
+	/* registers an overnight index */
 DLLEXPORT char * xlInitiateOvernightIndex (const char * objectId_,
                                            const xloper * indexHistoryId_,
                                            const xloper * settlementDays_,
