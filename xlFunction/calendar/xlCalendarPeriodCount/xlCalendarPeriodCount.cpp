@@ -8,71 +8,61 @@
 
 #include <xlFunction/calendar/xlCalendarPeriodCount/xlCalendarPeriodCount.hpp>
 
-        /* Fonction de calcul des gaps */
+	// calculate gap end
 DLLEXPORT double xlCalendarPeriodCount (xloper * calculationDate_, 
                                         const char * period_,
                                         xloper * calendar_,
                                         xloper * endDateConvention_,
                                         xloper * endOfMonth_) {
 
-    boost::shared_ptr<ObjectHandler::FunctionCall> functionCall(
-        new ObjectHandler::FunctionCall("xlCalendarPeriodCount")) ;
+boost::shared_ptr<ObjectHandler::FunctionCall> functionCall(
+    new ObjectHandler::FunctionCall("xlCalendarPeriodCount")) ;
 
-     try {
+    try {
 
+        QL_ENSURE(! functionCall->calledByFunctionWizard(), "") ; 
 
-            QL_ENSURE(! functionCall->calledByFunctionWizard(), "") ; 
+        ObjectHandler::validateRange(calculationDate_  , "calculation Date"   );	// range validation
+        ObjectHandler::validateRange(calendar_         , "calendar"           );
+        ObjectHandler::validateRange(endDateConvention_, "end Date Convention");
+        ObjectHandler::validateRange(endOfMonth_       , "end of Month"       );
 
-                /* recherche de code erreur */
-            ObjectHandler::validateRange(calculationDate_, "calculation Date") ;
+        ObjectHandler::ConvertOper myOper1(* calculationDate_),						// xloper
+                                    myOper2(* calendar_),
+                                    myOper3(* endDateConvention_),
+                                    myOper4(* endOfMonth_) ;
 
-            ObjectHandler::validateRange(calendar_, "calendar") ;
+        QuantLib::Date calculationDate(												// calculation date
+            myOper1.missing() ?
+            QuantLib::Date() :
+            QuantLib::Date(static_cast<QuantLib::BigInteger>(myOper1))) ;
 
-            ObjectHandler::validateRange(endDateConvention_, "end Date Convention") ;
+        QuantLib::Calendar calendar(												// calendar
+            myOper2.missing() ?
+            QuantLib::WeekendsOnly() :
+            ObjectHandler::calendarFactory()(static_cast<std::string>(myOper2))) ;
 
-            ObjectHandler::validateRange(endOfMonth_, "end of Month") ;
+        QuantLib::BusinessDayConvention endDateConvention(							// business day convention
+            myOper3.missing() ?
+            QuantLib::Unadjusted :
+            ObjectHandler::businessDayConventionFactory()(static_cast<std::string>(myOper3))) ;
 
-                /* les XLOPER */
-            ObjectHandler::ConvertOper myOper1(* calculationDate_), 
-                                       myOper2(* calendar_),
-                                       myOper3(* endDateConvention_),
-                                       myOper4(* endOfMonth_) ;
+        bool endOfMonth(															// EOM rule
+            myOper4.missing() ?
+            false :
+            static_cast<bool>(myOper4)) ;
 
-            QuantLib::Date calculationDate(
-                myOper1.missing() ?
-                QuantLib::Date() :
-                QuantLib::Date(static_cast<QuantLib::BigInteger>(myOper1))) ;
+        return calendar.advance(calculationDate,									// period has to be provided
+                                ObjectHandler::periodFactory()(period_),
+                                endDateConvention,
+                                endOfMonth).serialNumber() ;
 
-            QuantLib::Calendar calendar(
-                myOper2.missing() ?
-                QuantLib::WeekendsOnly() :
-                ObjectHandler::calendarFactory()(static_cast<std::string>(myOper2))) ;
+    } catch (std::exception & e) {
 
-            QuantLib::BusinessDayConvention endDateConvention(
-                myOper3.missing() ?
-                QuantLib::Unadjusted :
-                ObjectHandler::businessDayConventionFactory()(static_cast<std::string>(myOper3))) ;
-
-            bool endOfMonth(
-                myOper4.missing() ?
-                false :
-                static_cast<bool>(myOper4)) ;
-
-            return calendar.advance(calculationDate,
-                                    ObjectHandler::periodFactory()(period_), // la période n'est pas optionnelle ! 
-                                    endDateConvention,
-                                    endOfMonth).serialNumber() ;
-
-
-        } catch (std::exception & e) {
-
-
-                ObjectHandler::RepositoryXL::instance().logError(e.what(), functionCall) ;
-
-                return 0.0 ;
-
-
-            }
+        ObjectHandler::RepositoryXL::instance().logError(e.what(), functionCall) ;
+        return 0.0 ;
 
     }
+
+}
 
