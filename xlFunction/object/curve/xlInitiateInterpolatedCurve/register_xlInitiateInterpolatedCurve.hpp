@@ -10,49 +10,47 @@
 
 inline void registerxlInitiateInterpolatedCurve(const XLOPER & xDll) {
 
-             // Enregistre la fonction xlInitiateIntepolatedCurve
-        Excel(xlfRegister, 0, 15, & xDll,
-            TempStrNoSize("\x1B""xlInitiateInterpolatedCurve"),
-            TempStrNoSize("\x07""CCPCPP#"),
-            TempStrNoSize("\x1A""INSTANCE.COURBE.INTERPOLEE"),
-            TempStrNoSize("\x42""Identifiant de l'objet,Date de calcul,calendrier,Helpers,Trigger"),
-            TempStrNoSize("\x01""1"),
-            TempStrNoSize("\x17""xlObjectTools - Object"),
-            TempStrNoSize("\x00"""),
-            TempStrNoSize("\x00"""),
-            TempStrNoSize("\x62""Cette fonction instancie une courbe de taux interpolée à partir des instruments passés en argument"),
-            TempStrNoSize("\x11""Object Identifer"),
-            TempStrNoSize("\x11""La date de calcul"),
-            TempStrNoSize("\x1A""Le calendrier de la courbe"),
-            TempStrNoSize("\x1B""Les helpers des instruments"),
-            TempStrNoSize("\x15""déclenche le calcul  ")) ;
+            // register the function xlInitiateIntepolatedCurve
+    Excel(xlfRegister, 0, 14, & xDll,
+        TempStrNoSize("\x1B""xlInitiateInterpolatedCurve"),
+        TempStrNoSize("\x06""CCPPP#"),
+		TempStrNoSize("\x18""OBJECT.CURVE.INTERPOLATE"),
+		TempStrNoSize("\x32""object indentifier,calculation date,helper,trigger"),
+		TempStrNoSize("\x01""1"),
+		TempStrNoSize("\x16""xlObjectTools - Object"),
+		TempStrNoSize("\x00"""),
+		TempStrNoSize("\x00"""),
+		TempStrNoSize("\x2B""This function creates an interpolated curve"),
+		TempStrNoSize("\x11""Object identifier"),
+		TempStrNoSize("\x14""The calculation date"),
+		TempStrNoSize("\x14""The curve components"),
+		TempStrNoSize("\x19""Trigger for recalculation"));
 
-    }
+}
 
 inline void unregisterxlInitiateInterpolatedCurve(const XLOPER & xDll) {
 
-        XLOPER xlRegID ;
+    XLOPER xlRegID ;
 
-             // libère la fonction xlInitiateIntepolatedCurve
-        Excel(xlfRegister, 0, 15, & xDll,
-            TempStrNoSize("\x1B""xlInitiateInterpolatedCurve"),
-            TempStrNoSize("\x07""CCPCPP#"),
-            TempStrNoSize("\x1A""INSTANCE.COURBE.INTERPOLEE"),
-            TempStrNoSize("\x42""Identifiant de l'objet,Date de calcul,calendrier,Helpers,Trigger"),
-            TempStrNoSize("\x01""1"),
-            TempStrNoSize("\x17""xlObjectTools - Object"),
-            TempStrNoSize("\x00"""),
-            TempStrNoSize("\x00"""),
-            TempStrNoSize("\x62""Cette fonction instancie une courbe de taux interpolée à partir des instruments passés en argument"),
-            TempStrNoSize("\x11""Object Identifer"),
-            TempStrNoSize("\x11""La date de calcul"),
-            TempStrNoSize("\x1A""Le calendrier de la courbe"),
-            TempStrNoSize("\x1B""Les helpers des instruments"),
-            TempStrNoSize("\x15""déclenche le calcul  ")) ;
+		// unregister the function xlInitiateIntepolatedCurve
+	Excel(xlfRegister, 0, 14, &xDll,
+		TempStrNoSize("\x1B""xlInitiateInterpolatedCurve"),
+		TempStrNoSize("\x06""CCPPP#"),
+		TempStrNoSize("\x18""OBJECT.CURVE.INTERPOLATE"),
+		TempStrNoSize("\x32""object indentifier,calculation date,helper,trigger"),
+		TempStrNoSize("\x01""1"),
+		TempStrNoSize("\x16""xlObjectTools - Object"),
+		TempStrNoSize("\x00"""),
+		TempStrNoSize("\x00"""),
+		TempStrNoSize("\x2B""This function creates an interpolated curve"),
+		TempStrNoSize("\x11""Object identifier"),
+		TempStrNoSize("\x14""The calculation date"),
+		TempStrNoSize("\x14""The curve components"),
+		TempStrNoSize("\x19""Trigger for recalculation"));
 
-        Excel4(xlfRegisterId, & xlRegID, 2, & xDll,
-            TempStrNoSize("\x1B""xlInitiateInterpolatedCurve")) ;
+    Excel4(xlfRegisterId, & xlRegID, 2, & xDll,
+        TempStrNoSize("\x1B""xlInitiateInterpolatedCurve")) ;
 
-        Excel4(xlfUnregister, 0, 1, & xlRegID) ;
+    Excel4(xlfUnregister, 0, 1, & xlRegID) ;
 
-    }
+}
