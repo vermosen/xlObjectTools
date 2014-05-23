@@ -11,7 +11,7 @@
 
 #include <xlsdk/xlsdkdefines.hpp>
 
-#include <xlFunction/object/curve/register_curveObject.hpp>
+#include <xlFunction/object/yieldCurve/register_curveObject.hpp>
 
 #include <xlFunction/object/interestRateConvention/register_interestRateConvention.hpp>
 

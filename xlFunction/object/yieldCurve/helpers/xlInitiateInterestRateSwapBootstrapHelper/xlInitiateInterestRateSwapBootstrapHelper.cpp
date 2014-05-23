@@ -6,7 +6,7 @@
  *
  */
 
-#include <xlFunction/object/curve/helpers/xlInitiateInterestRateSwapBootstrapHelper/xlInitiateInterestRateSwapBootstrapHelper.hpp>
+#include <xlFunction/object/yieldCurve/helpers/xlInitiateInterestRateSwapBootstrapHelper/xlInitiateInterestRateSwapBootstrapHelper.hpp>
 
         /* enregistre un helper pour un swap de taux */
 DLLEXPORT xloper * xlInitiateInterestRateSwapBootstrapHelper (const char * objectId_,

@@ -6,16 +6,16 @@
  *
  */
 
-#include <xlFunction/object/curve/helpers/xlInitiateDepositBootstrapHelper/xlInitiateDepositBootstrapHelper.hpp>
+#include <xlFunction/object/yieldCurve/helpers/xlInitiateBondBootstrapHelper/xlInitiateBondBootstrapHelper.hpp>
 
         /* enregistre un helper pour un depôt */
-DLLEXPORT xloper * xlInitiateDepositBootstrapHelper (const char * objectId_,
-                                                     const char * depositId_,
-                                                     const double * depositPrice_,
-                                                     const xloper * trigger_) {
+DLLEXPORT xloper * xlInitiateBondBootstrapHelper (const char * objectId_,
+                                                  const char * bondId_,
+                                                  const double * bondPrice_,
+                                                  const xloper * trigger_) {
     
         boost::shared_ptr<ObjectHandler::FunctionCall> functionCall(
-            new ObjectHandler::FunctionCall("xlInitiateDepositBootstrapHelper")) ;
+            new ObjectHandler::FunctionCall("xlInitiateBondBootstrapHelper")) ;
 
          try {
 
@@ -25,15 +25,15 @@ DLLEXPORT xloper * xlInitiateDepositBootstrapHelper (const char * objectId_,
                 ObjectHandler::validateRange(trigger_, "trigger") ;
 
 
-                OH_GET_REFERENCE(depositPtr,
-                                 depositId_,
-                                 QuantLibAddin::depositObject,
-                                 QuantLib::deposit)
+                OH_GET_REFERENCE(bondPtr,
+                                 bondId_,
+                                 QuantLibAddin::Bond,
+                                 QuantLib::Bond)
 
 
                     // creation de la quote
                 boost::shared_ptr<QuantLib::Quote> myQuote(
-                    new QuantLib::SimpleQuote(* depositPrice_)) ;
+                    new QuantLib::SimpleQuote(* bondPrice_)) ;
 
 
                     // création du handler
@@ -41,21 +41,22 @@ DLLEXPORT xloper * xlInitiateDepositBootstrapHelper (const char * objectId_,
 
 
                     // creation du value object
-                boost::shared_ptr<QuantLibAddin::ValueObjects::depositBootstrapHelperValueObject> depositValueObject(
-                    new QuantLibAddin::ValueObjects::depositBootstrapHelperValueObject(objectId_,
+                boost::shared_ptr<QuantLibAddin::ValueObjects::bondBootstrapHelperValueObject> bondValueObject(
+                    new QuantLibAddin::ValueObjects::bondBootstrapHelperValueObject(objectId_,
                                                                                        true)) ;
 
+
                     // creation du helper
-                boost::shared_ptr<QuantLibAddin::depositBootstrapHelperObject> depositBootstrapObject(
-                    new QuantLibAddin::depositBootstrapHelperObject(depositValueObject,
-                                                                    depositPtr,
-                                                                    quoteHandler,
-                                                                    true)) ;
+                boost::shared_ptr<QuantLibAddin::bondBootstrapHelperObject> bondBootstrapObject(
+                    new QuantLibAddin::bondBootstrapHelperObject(bondValueObject,
+                                                                 bondPtr,
+                                                                 quoteHandler,
+                                                                 true)) ;
 
                     // stockage de l'objet
                 std::string returnValue =
                     ObjectHandler::RepositoryXL::instance().storeObject(objectId_,
-                                                                        depositBootstrapObject,
+                                                                        bondBootstrapObject,
                                                                         true) ; // on force la réécriture
 
 

@@ -6,7 +6,7 @@
  *
  */
 
-#include <xlFunction/object/curve/xlInitiateFittedBondCurve/xlInitiateFittedBondCurve.hpp>
+#include <xlFunction/object/yieldCurve/xlInitiateFittedBondCurve/xlInitiateFittedBondCurve.hpp>
 
         /* fitting paramétrique d'une courbe */
 DLLEXPORT char * xlInitiateFittedBondCurve (const char * objectID_,

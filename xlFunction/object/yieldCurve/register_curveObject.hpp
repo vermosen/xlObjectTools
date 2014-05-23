@@ -13,16 +13,16 @@
 
 #include <xlsdk/xlsdkdefines.hpp>
 
-#include <xlFunction/object/curve/xlInitiateShiftedCurve/register_xlInitiateShiftedCurve.hpp>
-#include <xlFunction/object/curve/xlInitiateFittedBondDiscountCurve/register_xlInitiateFittedBondDiscountCurve.hpp>
-#include <xlFunction/object/curve/xlInitiateInterpolatedCurve/register_xlInitiateInterpolatedCurve.hpp>
+#include <xlFunction/object/yieldCurve/xlInitiateShiftedCurve/register_xlInitiateShiftedCurve.hpp>
+#include <xlFunction/object/yieldCurve/xlInitiateFittedBondDiscountCurve/register_xlInitiateFittedBondDiscountCurve.hpp>
+#include <xlFunction/object/yieldCurve/xlInitiateInterpolatedCurve/register_xlInitiateInterpolatedCurve.hpp>
 
-#include <xlFunction/object/curve/helpers/xlInitiateDepositBootstrapHelper/register_xlInitiateDepositBootstrapHelper.hpp>
-#include <xlFunction/object/curve/helpers/xlInitiateDepositBootstrapHelper2/register_xlInitiateDepositBootstrapHelper2.hpp>
-#include <xlFunction/object/curve/helpers/xlInitiateDepositFutureBootstrapHelper/register_xlInitiateDepositFutureBootstrapHelper.hpp>
-#include <xlFunction/object/curve/helpers/xlInitiateInterestRateSwapBootstrapHelper/register_xlInitiateInterestRateSwapBootstrapHelper.hpp>
-#include <xlFunction/object/curve/helpers/xlInitiateInterestRateSwapBootstrapHelper2/register_xlInitiateInterestRateSwapBootstrapHelper2.hpp>
-#include <xlFunction/object/curve/helpers/xlInitiateOvernightIndexedBootstrapHelper/register_xlInitiateOvernightIndexedBootstrapHelper.hpp>
+#include <xlFunction/object/yieldCurve/helpers/xlInitiateDepositBootstrapHelper/register_xlInitiateDepositBootstrapHelper.hpp>
+#include <xlFunction/object/yieldCurve/helpers/xlInitiateDepositBootstrapHelper2/register_xlInitiateDepositBootstrapHelper2.hpp>
+#include <xlFunction/object/yieldCurve/helpers/xlInitiateDepositFutureBootstrapHelper/register_xlInitiateDepositFutureBootstrapHelper.hpp>
+#include <xlFunction/object/yieldCurve/helpers/xlInitiateInterestRateSwapBootstrapHelper/register_xlInitiateInterestRateSwapBootstrapHelper.hpp>
+#include <xlFunction/object/yieldCurve/helpers/xlInitiateInterestRateSwapBootstrapHelper2/register_xlInitiateInterestRateSwapBootstrapHelper2.hpp>
+#include <xlFunction/object/yieldCurve/helpers/xlInitiateOvernightIndexedBootstrapHelper/register_xlInitiateOvernightIndexedBootstrapHelper.hpp>
 
 inline void register_curve(const XLOPER & xDll) {
 

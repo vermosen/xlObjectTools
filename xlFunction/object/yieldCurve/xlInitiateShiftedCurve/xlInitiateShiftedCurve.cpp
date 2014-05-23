@@ -6,7 +6,7 @@
  *
  */
 
-#include <xlFunction/object/curve/xlInitiateShiftedCurve/xlInitiateShiftedCurve.hpp>
+#include <xlFunction/object/yieldCurve/xlInitiateShiftedCurve/xlInitiateShiftedCurve.hpp>
 
         /* fonction permettant de créer une courbe shiftée */
 DLLEXPORT char * xlShiftedCurve (const char * shiftedCurveID_,

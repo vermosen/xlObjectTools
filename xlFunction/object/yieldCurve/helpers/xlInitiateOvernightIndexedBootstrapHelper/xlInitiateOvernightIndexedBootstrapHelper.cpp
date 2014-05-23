@@ -6,7 +6,7 @@
  *
  */
 
-#include <xlFunction/object/curve/helpers/xlInitiateOvernightIndexedBootstrapHelper/xlInitiateOvernightIndexedBootstrapHelper.hpp>
+#include <xlFunction/object/yieldCurve/helpers/xlInitiateOvernightIndexedBootstrapHelper/xlInitiateOvernightIndexedBootstrapHelper.hpp>
 
         /* enregistre un helper pour un swap OIS */
 DLLEXPORT xloper * xlInitiateOvernightIndexedBootstrapHelper (const char * objectId_,

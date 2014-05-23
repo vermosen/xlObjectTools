@@ -6,7 +6,7 @@
  *
  */
 
-#include <xlFunction/object/curve/helpers/xlInitiateDepositBootstrapHelper2/xlInitiateDepositBootstrapHelper2.hpp>
+#include <xlFunction/object/yieldCurve/helpers/xlInitiateDepositBootstrapHelper2/xlInitiateDepositBootstrapHelper2.hpp>
 
 /* register a deposit for curve fitting */
 DLLEXPORT xloper * xlInitiateDepositBootstrapHelper2 (const char * objectId_,

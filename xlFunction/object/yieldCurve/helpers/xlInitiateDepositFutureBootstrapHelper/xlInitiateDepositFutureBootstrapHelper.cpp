@@ -6,7 +6,7 @@
  *
  */
 
-#include <xlFunction/object/curve/helpers/xlInitiateDepositFutureBootstrapHelper/xlInitiateDepositFutureBootstrapHelper.hpp>
+#include <xlFunction/object/yieldCurve/helpers/xlInitiateDepositFutureBootstrapHelper/xlInitiateDepositFutureBootstrapHelper.hpp>
 
 	/* register a helper for a eurodollar future */
 DLLEXPORT xloper * xlInitiateDepositFutureBootstrapHelper (const char * objectId_,

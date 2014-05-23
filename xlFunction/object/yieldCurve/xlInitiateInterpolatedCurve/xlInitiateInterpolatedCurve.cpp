@@ -6,7 +6,7 @@
  *
  */
 
-#include <xlFunction/object/curve/xlInitiateInterpolatedCurve/xlInitiateInterpolatedCurve.hpp>
+#include <xlFunction/object/yieldCurve/xlInitiateInterpolatedCurve/xlInitiateInterpolatedCurve.hpp>
 
 	// register an interpolated curve object
 DLLEXPORT char * xlInitiateInterpolatedCurve(const char * objectID_       ,
