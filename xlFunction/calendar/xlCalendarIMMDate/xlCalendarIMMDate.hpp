@@ -10,20 +10,14 @@
 #define xl_calendar_imm_date
 
 #include <ql/time/imm.hpp>
-
 #include <ql/errors.hpp>
 
-
 #include <ohxl/repositoryxl.hpp>
-
 #include <ohxl/conversions/validations.hpp>
-
 #include <ohxl/convert_oper.hpp>
-
 #include <ohxl/conversions/scalartooper.hpp>
 
-
-        /* Fonction de calcul des businessDay d'un jour ouvré */
+	// compute the date corresponding to the IMM code
 DLLEXPORT double xlCalendarIMMDate (xloper * calculationDate_,
                                     char * immCode_) ;
 

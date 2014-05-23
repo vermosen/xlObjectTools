@@ -8,42 +8,34 @@
 
 #include "xlCalendarIMMDate.hpp"
 
-            /*Fonction de calcul des business date*/
+// compute the date corresponding to the IMM code
 DLLEXPORT double xlCalendarIMMDate (xloper * calculationDate_, 
                                     char * immCode_) {
 
+    boost::shared_ptr<ObjectHandler::FunctionCall> functionCall(
+        new ObjectHandler::FunctionCall("xlCalendarIMMDate"));
 
-        boost::shared_ptr<ObjectHandler::FunctionCall> functionCall(
-            new ObjectHandler::FunctionCall("xlCalendarIMMDate")) ;
+        try {
 
+            QL_ENSURE(! functionCall->calledByFunctionWizard(), "");
 
-         try {
+            ObjectHandler::validateRange(calculationDate_, "calculation Date");
 
+            ObjectHandler::ConvertOper myOper(* calculationDate_);
 
-                QL_ENSURE(! functionCall->calledByFunctionWizard(), "") ;
+            QuantLib::Date calculationDate(
+                myOper.missing() ?
+                QuantLib::Date() :
+                QuantLib::Date(static_cast<QuantLib::BigInteger>(myOper)));
 
-                ObjectHandler::validateRange(calculationDate_, "calculation Date") ;
+            return QuantLib::Date(
+                QuantLib::IMM::date(std::string(immCode_), calculationDate)).serialNumber();
 
-                ObjectHandler::ConvertOper myOper(* calculationDate_) ;
+        } catch (std::exception & e) {
 
-                QuantLib::Date calculationDate(
-                    myOper.missing() ?
-                    QuantLib::Date() :
-                    QuantLib::Date(static_cast<QuantLib::BigInteger>(myOper))) ;
+            ObjectHandler::RepositoryXL::instance().logError(e.what(), functionCall);
+            return 0;
 
-                return QuantLib::Date(
-                    QuantLib::IMM::date(std::string(immCode_), calculationDate)).serialNumber() ;
+        }
 
-
-            } catch (std::exception & e) {
-
-
-                    ObjectHandler::RepositoryXL::instance().logError(e.what(), functionCall) ;
-
-                    return 0 ;
-
-
-            }
-
-
-    }
+}
