@@ -23,13 +23,15 @@ DLLEXPORT double xlCalendarIMMDate (xloper * calculationDate_,
 
             ObjectHandler::ConvertOper myOper(* calculationDate_);
 
-            QuantLib::Date calculationDate(
+            QuantLib::Date calculationDate(									// calculation date
                 myOper.missing() ?
                 QuantLib::Date() :
                 QuantLib::Date(static_cast<QuantLib::BigInteger>(myOper)));
 
-            return QuantLib::Date(
-                QuantLib::IMM::date(std::string(immCode_), calculationDate)).serialNumber();
+            return QuantLib::Date(											// next IMM date
+                QuantLib::IMM::date(
+					std::string(immCode_), 
+					calculationDate)).serialNumber();
 
         } catch (std::exception & e) {
 
