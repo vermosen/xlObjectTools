@@ -10,45 +10,45 @@
 
 inline void registerxlCurveForwardRate(const XLOPER & xDll) {
 
-             // Enregistre la fonction xlCurveForwardRate
-        Excel(xlfRegister, 0, 15, & xDll,
-            TempStrNoSize("\x12""xlCurveForwardRate"),
-            TempStrNoSize("\x07""BCEECP#"),
-            TempStrNoSize("\x13""COURBE.TAUX.FORWARD"),
-            TempStrNoSize("\x31""Identifiant de la courbe,t1,t2,convention,trigger"),
-            TempStrNoSize("\x01""1"),
-            TempStrNoSize("\x1C""xlObjectTools - Yield Curve"),
-            TempStrNoSize("\x00"""),
-            TempStrNoSize("\x00"""),
-            TempStrNoSize("\x3B""Cette fonction extrait le taux forward de la courbe pointée"),
-            TempStrNoSize("\x11""Object Identifer"),
-            TempStrNoSize("\x2A""La date de positionnement de l'observation"),
-            TempStrNoSize("\x26""La date de terminaison du taux forward"),
-            TempStrNoSize("\x29""L'indentifiant de la convention de calcul"),
-            TempStrNoSize("\x17""Déclenche le recalcul  ")) ;
+		// Register the function xlCurveForwardRate
+	Excel(xlfRegister, 0, 15, &xDll,
+		TempStrNoSize("\x12""xlCurveForwardRate"),
+		TempStrNoSize("\x07""BCEECP#"),
+		TempStrNoSize("\x12""CURVE.FORWARD.RATE"),
+		TempStrNoSize("\x31""curve identifier,time 1,time 2,convention,trigger"),
+		TempStrNoSize("\x01""1"),
+		TempStrNoSize("\x1B""xlObjectTools - Yield Curve"),
+		TempStrNoSize("\x00"""),
+		TempStrNoSize("\x00"""),
+		TempStrNoSize("\x43""This function computes the forward rate for the corresponding dates"),
+		TempStrNoSize("\x10""Curve identifier"),
+		TempStrNoSize("\x10""The forward date"),
+		TempStrNoSize("\x11""The maturity date"),
+		TempStrNoSize("\x20""The identifier of the convention"),
+		TempStrNoSize("\x1B""Trigger for recalculation  "));
 
-    }
+}
 
 inline void unregisterxlCurveForwardRate(const XLOPER & xDll) {
 
         XLOPER xlRegID ;
 
-             // Enregistre la fonction xlCurveForwardRate
-        Excel(xlfRegister, 0, 15, & xDll,
-            TempStrNoSize("\x12""xlCurveForwardRate"),
-            TempStrNoSize("\x07""BCEECP#"),
-            TempStrNoSize("\x13""COURBE.TAUX.FORWARD"),
-            TempStrNoSize("\x31""Identifiant de la courbe,t1,t2,convention,trigger"),
-            TempStrNoSize("\x01""1"),
-            TempStrNoSize("\x1C""xlObjectTools - Yield Curve"),
-            TempStrNoSize("\x00"""),
-            TempStrNoSize("\x00"""),
-            TempStrNoSize("\x3B""Cette fonction extrait le taux forward de la courbe pointée"),
-            TempStrNoSize("\x11""Object Identifer"),
-            TempStrNoSize("\x2A""La date de positionnement de l'observation"),
-            TempStrNoSize("\x26""La date de terminaison du taux forward"),
-            TempStrNoSize("\x29""L'indentifiant de la convention de calcul"),
-            TempStrNoSize("\x17""Déclenche le recalcul  ")) ;
+		// Unregister the function xlCurveForwardRate
+		Excel(xlfRegister, 0, 15, &xDll,
+			TempStrNoSize("\x12""xlCurveForwardRate"),
+			TempStrNoSize("\x07""BCEECP#"),
+			TempStrNoSize("\x12""CURVE.FORWARD.RATE"),
+			TempStrNoSize("\x31""curve identifier,time 1,time 2,convention,trigger"),
+			TempStrNoSize("\x01""1"),
+			TempStrNoSize("\x1B""xlObjectTools - Yield Curve"),
+			TempStrNoSize("\x00"""),
+			TempStrNoSize("\x00"""),
+			TempStrNoSize("\x43""This function computes the forward rate for the corresponding dates"),
+			TempStrNoSize("\x10""Curve identifier"),
+			TempStrNoSize("\x10""The forward date"),
+			TempStrNoSize("\x11""The maturity date"),
+			TempStrNoSize("\x20""The identifier of the convention"),
+			TempStrNoSize("\x1B""Trigger for recalculation  "));
 
         Excel4(xlfRegisterId, & xlRegID, 2, & xDll,
             TempStrNoSize("\x12""xlCurveForwardRate")) ;

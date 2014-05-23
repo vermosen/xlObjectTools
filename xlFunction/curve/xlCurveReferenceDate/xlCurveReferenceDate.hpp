@@ -10,15 +10,12 @@
 #define xl_curve_reference_date
 
 #include <qlo/conversions/coercetermstructure.hpp>
-
 #include <qlo/conversions/coercehandle.hpp>
 
 #include <ohxl/conversions/validations.hpp>
-
 #include <ohxl/repositoryxl.hpp>
 
-
-        /* fournit la date de référence de la courbe */
+	// Provides the reference date of the curve
 DLLEXPORT double xlCurveReferenceDate (const char * curveId_,
                                        xloper * trigger_) ;
 

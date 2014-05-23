@@ -8,59 +8,53 @@
 
 #include <xlFunction/curve/xlCurveForwardRate/xlCurveForwardRate.hpp>
 
-        /* Fonction de calcul du taux forward */
+	// Calculate a forward rate
 DLLEXPORT double xlCurveForwardRate (const char * curveId_,
                                      const double * t1_,
                                      const double * t2_,
                                      const char * conventionId_,
                                      xloper * trigger_) {
 
-         boost::shared_ptr<ObjectHandler::FunctionCall> functionCall(
-            new ObjectHandler::FunctionCall("xlCurveForwardRate")) ;
+    boost::shared_ptr<ObjectHandler::FunctionCall> functionCall(
+		new ObjectHandler::FunctionCall("xlCurveForwardRate")) ;
 
-         try {
+    try {
 
+        QL_ENSURE(! functionCall->calledByFunctionWizard(), "") ;
 
-                QL_ENSURE(! functionCall->calledByFunctionWizard(), "") ;
+            /* conversions et création du daycounter */
+        QuantLib::Date t1(static_cast<QuantLib::BigInteger>(* t1_)) ;
+        QuantLib::Date t2(static_cast<QuantLib::BigInteger>(* t2_)) ;
 
-                    /* conversions et création du daycounter */
-                QuantLib::Date t1(static_cast<QuantLib::BigInteger>(* t1_)) ;
+            // trigger pour provoquer le recalcul
+        ObjectHandler::validateRange(trigger_, "trigger") ;
 
-                QuantLib::Date t2(static_cast<QuantLib::BigInteger>(* t2_)) ;
+            // on récupère la convention
+        OH_GET_REFERENCE(conventionPtr, 
+                            conventionId_, 
+                            QuantLibAddin::interestRateConventionObject, 
+                            QuantLib::InterestRate)
 
-                    // trigger pour provoquer le recalcul
-                ObjectHandler::validateRange(trigger_, "trigger") ;
+            // on récupère la courbe des taux
+        OH_GET_OBJECT(CurvePtr, curveId_, ObjectHandler::Object)
 
-                    // on récupère la convention
-                OH_GET_REFERENCE(conventionPtr, 
-                                 conventionId_, 
-                                 QuantLibAddin::interestRateConventionObject, 
-                                 QuantLib::InterestRate)
+        QuantLib::Handle<QuantLib::YieldTermStructure> YieldCurveLibObj =
+            QuantLibAddin::CoerceHandle<QuantLibAddin::YieldTermStructure, QuantLib::YieldTermStructure>()(CurvePtr) ;
 
-                    // on récupère la courbe des taux
-                OH_GET_OBJECT(CurvePtr, curveId_, ObjectHandler::Object)
+        QL_ENSURE(t1 >= YieldCurveLibObj->referenceDate() && t2 >= t1, 
+                    "invalid date !") ;
 
-                QuantLib::Handle<QuantLib::YieldTermStructure> YieldCurveLibObj =
-                    QuantLibAddin::CoerceHandle<QuantLibAddin::YieldTermStructure, QuantLib::YieldTermStructure>()(CurvePtr) ;
+        return YieldCurveLibObj->forwardRate(t1, t2,
+                                                conventionPtr->dayCounter(),
+                                                conventionPtr->compounding(),
+                                                conventionPtr->frequency(), 
+                                                false);
 
-                QL_ENSURE(t1 >= YieldCurveLibObj->referenceDate() && t2 >= t1, 
-                          "invalid date !") ;
+    } catch (std::exception & e) {
 
-                return YieldCurveLibObj->forwardRate(t1, t2,
-                                                     conventionPtr->dayCounter(),
-                                                     conventionPtr->compounding(),
-                                                     conventionPtr->frequency(), 
-                                                     false) ;
-
-            } catch (std::exception & e) {
-
-
-                    ObjectHandler::RepositoryXL::instance().logError(e.what(), functionCall) ;
-
-                    return 0.0 ;
-
-
-            }
-
+        ObjectHandler::RepositoryXL::instance().logError(e.what(), functionCall);
+        return 0.0;
 
     }
+
+}
