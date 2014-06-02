@@ -8,13 +8,13 @@
 
 #include <xlsdk/xlsdkdefines.hpp>
 
-inline void registerxlInitiateBondBootstrapHelper(const XLOPER & xDll) {
+inline void registerxlInitiateSwaptionHelper(const XLOPER & xDll) {
 
-             // Enregistre la fonction xlInitiateBondBootstrapHelper
+		// register the function xlInitiateSwaptionHelper
         Excel(xlfRegister, 0, 14, & xDll,
-            TempStrNoSize("\x1D""xlInitiateBondBootstrapHelper"),
+            TempStrNoSize("\x1D""xlInitiateSwaptionHelper"),
             TempStrNoSize("\x06""PCCEP#"),
-            TempStrNoSize("\x1B""INSTANCE.INTERPOLATION.BOND"),
+            TempStrNoSize("\x1B""OBJECT.VOLATILITY.SURFACE.SWAPTION.HELPER"),
             TempStrNoSize("\x38""Identifiant de l'objet,Identifiant du titre,Prix,Trigger"),
             TempStrNoSize("\x01""1"),
             TempStrNoSize("\x17""xlObjectTools - Object"),
@@ -28,13 +28,13 @@ inline void registerxlInitiateBondBootstrapHelper(const XLOPER & xDll) {
 
     }
 
-inline void unregisterxlInitiateBondBootstrapHelper(const XLOPER & xDll) {
+inline void unregisterxlInitiateSwaptionHelper(const XLOPER & xDll) {
 
         XLOPER xlRegID ;
 
-             // supprime la fonction xlInitiateBondBootstrapHelper
+		// unregister the function xlInitiateSwaptionHelper
         Excel(xlfRegister, 0, 14, & xDll,
-            TempStrNoSize("\x1D""xlInitiateBondBootstrapHelper"),
+            TempStrNoSize("\x1D""xlInitiateSwaptionHelper"),
             TempStrNoSize("\x06""PCCEP#"),
             TempStrNoSize("\x1B""INSTANCE.INTERPOLATION.BOND"),
             TempStrNoSize("\x38""Identifiant de l'objet,Identifiant du titre,Prix,Trigger"),
