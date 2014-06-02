@@ -11,28 +11,17 @@
 
 
 #include <ohxl/convert_oper.hpp>
-
 #include <ohxl/repositoryxl.hpp>
-
 #include <ohxl/conversions/validations.hpp>
-
 #include <ohxl/conversions/scalartooper.hpp>
 
-
 #include <bot/factory/calendar/calendarFactory.hpp>
-
 #include <bot/factory/frequency/frequencyFactory.hpp>
-
 #include <bot/factory/businessDayConvention/businessDayConventionFactory.hpp>
-
 #include <bot/factory/daycounter/daycountFactory.hpp>
-
 #include <bot/factory/period/periodFactory.hpp>
-
 #include <bot/index/iborIndex/iborIndexObject.hpp>
-
 #include <bot/curve/bootstrapHelper/interestRateSwapBootstrapHelper2/interestRateSwapBootstrapHelperObject2.hpp>
-
 
 #include <qlo/termstructures.hpp>
 

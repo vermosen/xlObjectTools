@@ -7,8 +7,8 @@
  */
 
 
-#ifndef bot_bond_bootstrap_helper_value_object_hpp
-#define bot_bond_bootstrap_helper_value_object_hpp
+#ifndef bot_swaption_helper_value_object_hpp
+#define bot_swaption_helper_value_object_hpp
 
 #include <vector>
 #include <string>
@@ -21,15 +21,15 @@
 
 namespace QuantLibAddin { namespace ValueObjects {
 
-    class bondBootstrapHelperValueObject : public ObjectHandler::ValueObject {
+    class swaptionHelperValueObject : public ObjectHandler::ValueObject {
 
         friend class boost::serialization::access ;
 
     public :
 
-        inline bondBootstrapHelperValueObject() {} ;
+        inline swaptionHelperValueObject() {} ;
 
-        bondBootstrapHelperValueObject(const std::string & ObjectId,
+        swaptionHelperValueObject(const std::string & ObjectId,
                                        const bool permanent) ;
 
         const std::set<std::string>& getSystemPropertyNames() const ;
@@ -48,7 +48,7 @@ namespace QuantLibAddin { namespace ValueObjects {
 
 		template<class Archive>
         void serialize(Archive& ar, const unsigned int) {
-        boost::serialization::void_cast_register<bondBootstrapHelperValueObject, ObjectHandler::ValueObject>(this, this) ;
+        boost::serialization::void_cast_register<swaptionHelperValueObject, ObjectHandler::ValueObject>(this, this) ;
 
             ar  & boost::serialization::make_nvp("ObjectId", objectId_)
                 & boost::serialization::make_nvp("ClassName", className_)

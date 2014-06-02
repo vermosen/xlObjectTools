@@ -6,31 +6,38 @@
  *
  */
 
-#ifndef bot_bond_bootstrap_helper_object
-#define bot_bond_bootstrap_helper_object
+#ifndef bot_swaption_helper_object
+#define bot_swaption_helper_object
 
-#include <ql/instruments/bond.hpp>
-#include <ql/quote.hpp>
-#include <ql/termstructures/yield/bondhelpers.hpp>
+#include <ql/models/shortrate/calibrationhelpers/swaptionhelper.hpp>
 
-#include <qlo/ratehelpers.hpp>
+#include <qlo/calibrationhelper.hpp>
 
-#include <bot/curve/bootstrapHelper/bondBootstrapHelper/bondBootstrapHelperValueObject.hpp>
+#include <bot/volatilitySurface/helpers/swaptionHelper/swaptionHelperValueObject.hpp>
 
 namespace QuantLibAddin {
 
-        class bondBootstrapHelperObject : public RateHelper {
+	class SwaptionHelperObject : public CalibrationHelper {
+	
+	public:
+	
+		SwaptionHelperObject(
+			const boost::shared_ptr<ObjectHandler::ValueObject>& properties,
+			const QuantLib::Period & maturity,
+			const QuantLib::Period & length,
+			const QuantLib::Handle<QuantLib::Quote> & volatility,
+			const boost::shared_ptr<QuantLib::IborIndex> & index,
+			const QuantLib::Period & fixedLegTenor,
+			const QuantLib::DayCounter & fixedLegDayCounter,
+			const QuantLib::DayCounter & floatingLegDayCounter,
+			const QuantLib::Handle<QuantLib::YieldTermStructure>& termStructure,
+			QuantLib::CalibrationHelper::CalibrationErrorType errorType,
+			const QuantLib::Real strike = QuantLib::Null<QuantLib::Real>(),
+			const QuantLib::Real nominal = 1.0,
+			bool permanent = true);
 
-            public :
+	};
 
-                bondBootstrapHelperObject(
-					boost::shared_ptr<QuantLibAddin::ValueObjects::bondBootstrapHelperValueObject> & valueObject,
-                    const boost::shared_ptr<QuantLib::Bond> & bond,
-                    const QuantLib::Handle<QuantLib::Quote> & bondPrice,
-                    const bool permanent) ;
-
-            } ;
-
-    }
+}
 
 #endif

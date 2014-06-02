@@ -1,34 +1,34 @@
 /*
  *  xlObjectTools
  *
- *  Created by Jean-Matthieu VERMOSEN on 31/05/09
+ *  Created by Jean-Matthieu VERMOSEN on 02/06/14
  *  Copyright 2009. All rights reserved.
  *
  */
 
-
-#include <bot/curve/bootstrapHelper/bondBootstrapHelper/bondBootstrapHelperValueObject.hpp>
+#include <bot/volatilitySurface/helpers/swaptionHelper/swaptionHelperValueObject.hpp>
 
 namespace QuantLibAddin { namespace ValueObjects {
 
-    const char * bondBootstrapHelperValueObject::mPropertyNames[] = {
+    const char * swaptionHelperValueObject::mPropertyNames[] = {
+
         // The two values below are not desired in the return value of ohObjectPropertyNames().
         // For now we just comment them out as this seems not to break anything.
-        //"ClassName",
+        "ClassName",
         "ObjectId"
 
     } ;
 
-    std::set<std::string> bondBootstrapHelperValueObject::mSystemPropertyNames(
+    std::set<std::string> swaptionHelperValueObject::mSystemPropertyNames(
         mPropertyNames, mPropertyNames + sizeof(mPropertyNames) / sizeof(const char*)) ;
 
-    const std::set<std::string>& bondBootstrapHelperValueObject::getSystemPropertyNames() const {
+    const std::set<std::string>& swaptionHelperValueObject::getSystemPropertyNames() const {
 
         return mSystemPropertyNames ;
 
     }
 
-    std::vector<std::string> bondBootstrapHelperValueObject::getPropertyNamesVector() const {
+    std::vector<std::string> swaptionHelperValueObject::getPropertyNamesVector() const {
 
         std::vector<std::string> ret(
             mPropertyNames, mPropertyNames + sizeof(mPropertyNames) / sizeof(const char*)) ;
@@ -39,7 +39,7 @@ namespace QuantLibAddin { namespace ValueObjects {
 
     }
 
-    ObjectHandler::property_t bondBootstrapHelperValueObject::getSystemProperty(const std::string & name) const {
+    ObjectHandler::property_t swaptionHelperValueObject::getSystemProperty(const std::string & name) const {
         std::string nameUpper = boost::algorithm::to_upper_copy(name) ;
 
         if(strcmp(nameUpper.c_str(), "OBJECTID") == 0)
@@ -60,7 +60,7 @@ namespace QuantLibAddin { namespace ValueObjects {
 
     }
 
-    void bondBootstrapHelperValueObject::setSystemProperty(const std::string & name, const ObjectHandler::property_t & value) {
+    void swaptionHelperValueObject::setSystemProperty(const std::string & name, const ObjectHandler::property_t & value) {
 
         std::string nameUpper = boost::algorithm::to_upper_copy(name) ;
 
@@ -82,11 +82,11 @@ namespace QuantLibAddin { namespace ValueObjects {
     }
 
         /* constructeur */
-    bondBootstrapHelperValueObject::bondBootstrapHelperValueObject(const std::string & ObjectId,
+    swaptionHelperValueObject::swaptionHelperValueObject(const std::string & ObjectId,
                                              bool permanent) :
 
         ObjectHandler::ValueObject(ObjectId, 
-                                   "bondBootstrapHelperValueObject",
+                                   "swaptionHelperValueObject",
                                    permanent),
         permanent_(permanent) {}
 

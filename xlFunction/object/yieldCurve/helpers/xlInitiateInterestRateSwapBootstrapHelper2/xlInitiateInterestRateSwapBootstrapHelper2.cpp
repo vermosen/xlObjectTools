@@ -31,19 +31,12 @@ DLLEXPORT xloper * xlInitiateInterestRateSwapBootstrapHelper2 (const char * obje
 
                     // trigger pour provoquer le recalcul
                 ObjectHandler::validateRange(trigger_, "trigger") ;
-
 				ObjectHandler::validateRange(settlementDays_, "settlement Days") ;
-
                 ObjectHandler::validateRange(discountCurve_, "discount Curve") ;
-
 				ObjectHandler::validateRange(fixedFrequency_, "fixed Frequency") ;
-
 				ObjectHandler::validateRange(fixedDayCount_, "fixed DayCount") ;
-
 				ObjectHandler::validateRange(floatFrequency_, "float Frequency") ;
-
 				ObjectHandler::validateRange(floatDayCount_, "float DayCount") ;
-
 
                     /* récupération des oper */
 				ObjectHandler::ConvertOper myOper1(* settlementDays_),
@@ -59,13 +52,9 @@ DLLEXPORT xloper * xlInitiateInterestRateSwapBootstrapHelper2 (const char * obje
 					ObjectHandler::calendarFactory()(static_cast<std::string>(calendar_)) ;
 
 				boost::shared_ptr<QuantLib::Frequency> fixedFrequency, floatFrequency ;
-
 				boost::shared_ptr<QuantLib::DayCounter> fixedDayCount, floatDaycount ;
-
 				boost::shared_ptr<QuantLib::Period> fwdPeriod ;
-
 				QuantLib::Period swapPeriod = ObjectHandler::periodFactory()(tenor_) ;
-
 
 					/* gestion des données statiques par défaut */
 				if (swapCalendar.name() == "US government bond market" /*|| swapCalendar.name() == "USD" TODO pour LIBOR*/) {
@@ -92,20 +81,14 @@ DLLEXPORT xloper * xlInitiateInterestRateSwapBootstrapHelper2 (const char * obje
 							static_cast<QuantLib::BigInteger>(myOper1), QuantLib::Days)) ;
 
 						fixedFrequency = tempFixedFrequency ;
-
 						floatFrequency = tempFloatFrequency ;
-
 						fixedDayCount = tempFixedDayCount ;
-
 						floatDaycount = tempFloatDayCount ;
-
 						fwdPeriod = tempFwdPeriod ;
-
 				
 					}
 
 				else if (swapCalendar.name() == "EUR" /*|| swapCalendar.name() == "USD" TODO pour LIBOR*/) {
-
 
 						boost::shared_ptr<QuantLib::Frequency> tempFixedFrequency(
 							new QuantLib::Frequency(myOper3.missing() ? QuantLib::Annual : 
@@ -128,28 +111,20 @@ DLLEXPORT xloper * xlInitiateInterestRateSwapBootstrapHelper2 (const char * obje
 							static_cast<QuantLib::BigInteger>(myOper1), QuantLib::Days)) ;
 
 						fixedFrequency = tempFixedFrequency ;
-
 						floatFrequency = tempFloatFrequency ;
-
 						fixedDayCount = tempFixedDayCount ;
-
 						floatDaycount = tempFloatDayCount ;
-
 						fwdPeriod = tempFwdPeriod ;
-
 
 					}
 
 				else {
-				
-				
+			
 						QL_FAIL("unmanaged calendar") ;
-				
 				
 					}
 
-
-                    /* gestion de la courbe de discounting */
+				/* gestion de la courbe de discounting */
 				boost::shared_ptr<QuantLib::Handle<QuantLib::YieldTermStructure> > discountHandle(
 					new QuantLib::Handle<QuantLib::YieldTermStructure>) ;
 
