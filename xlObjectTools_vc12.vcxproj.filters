@@ -1559,7 +1559,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="workbooks\LiborModel.xlsx" />
-    <None Include="workbooks\trading spreadsheet.xlsm" />
     <None Include="workbooks\hexadecimal converter.xlsx" />
     <None Include="workbooks\yieldCurveBuilding.xlsx" />
   </ItemGroup>
