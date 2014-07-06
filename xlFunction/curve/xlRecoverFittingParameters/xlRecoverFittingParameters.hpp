@@ -20,6 +20,6 @@
 
         /* permet la récupération du vecteur des paramètres de fitting */
 DLLEXPORT xloper * xlRecoverFittingParameters (const char * curveId_,
-                                               const xloper * trigger_) ;
+                                               const xloper * trigger_);
 
 #endif
