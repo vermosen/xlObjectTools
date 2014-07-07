@@ -10,29 +10,30 @@
 
 inline void registerxlInitiateInterestRateSwapBootstrapHelper2(const XLOPER & xDll) {
 
-             // Enregistre la fonction xlInitiateInterestRateSwapBootstrapHelper2
-        Excel(xlfRegister, 0, 22, & xDll,
-            TempStrNoSize("\x2A""xlInitiateInterestRateSwapBootstrapHelper2"),
-            TempStrNoSize("\x0E""PCCCPPPEPPCPP#"),
-            TempStrNoSize("\x1C""INSTANCE.INTERPOLATION.SWAP2"),
-            TempStrNoSize("\xC9""Identifiant de l'objet,tenor,calendrier,jours de règlement,fréquence jambe fixe,base jambe fixe,taux fixe,fréquence jambe flottante,base jambe flottante,taux de référence,courbe d'actualisation,trigger"),
-            TempStrNoSize("\x01""1"),
-            TempStrNoSize("\x17""xlObjectTools - Object"),
-            TempStrNoSize("\x00"""),
-            TempStrNoSize("\x00"""),
-            TempStrNoSize("\x41""Cette fonction qualifie un swap pour l'interpolation d'une courbe"),
-            TempStrNoSize("\x11""Object Identifer"),
-            TempStrNoSize("\x10""Le ténor du swap"),
-			TempStrNoSize("\x1A""Le calendrier de référence"),
-			TempStrNoSize("\x1F""Le nombre de jours de règlement"),
-			TempStrNoSize("\x28""La fréquence de la jambe fixe (optionel)"),
-			TempStrNoSize("\x23""La base de la jambe fixe (optionel)"),
-			TempStrNoSize("\x14""Le taux fixe du swap"),
-			TempStrNoSize("\x2C""La fréquence de la jambe variable (optionel)"),
-            TempStrNoSize("\x27""La base de la jambe variable (optionel)"),
-			TempStrNoSize("\x29""Le taux de référence de la jambe variable"),
-            TempStrNoSize("\x2A""L'identifiant de la courbe d'actualisation"),
-            TempStrNoSize("\x1B""Trigger for recalculation  ")) ;
+             // registers the function xlInitiateInterestRateSwapBootstrapHelper2
+	Excel(xlfRegister, 0, 22, &xDll,
+		TempStrNoSize("\x2A""xlInitiateInterestRateSwapBootstrapHelper2"),
+		TempStrNoSize("\x0E""PCCCPPPEPPCPP#"),
+		TempStrNoSize("\x18""OBJECT.CURVE.HELPER.SWAP"),
+		TempStrNoSize("\xBB""Object Id,tenor,calendar,settlement days,fixed leg frequency,fixed leg daycount basis,fixed leg rate,float leg frequency,float leg daycount basis,reference index,discounting curve,trigger"),
+		TempStrNoSize("\x01""1"),
+		TempStrNoSize("\x16""xlObjectTools - Object"),
+		TempStrNoSize("\x00"""),
+		TempStrNoSize("\x00"""),
+		TempStrNoSize("\x4C""This function creates an interest rate swap helper for interpolation purpose"),
+		TempStrNoSize("\x15""The helper identifier"),
+		TempStrNoSize("\x1E""The maturity tenor of the swap"),
+		TempStrNoSize("\x13""Settlement calendar"),
+		TempStrNoSize("\x0F""Settlement days"),
+		TempStrNoSize("\x23""The frequency of the fixed rate leg"),
+		TempStrNoSize("\x2D""The daycount convention of the fixed rate leg"),
+		TempStrNoSize("\x1A""The fixed rate of the swap"),
+		TempStrNoSize("\x21""The frequency of the floating leg"),
+		TempStrNoSize("\x2A""The daycount convention of the floting leg"),
+		TempStrNoSize("\x1A""The fixed rate of the swap"),
+		TempStrNoSize("\x27""The reference index of the floating leg"),
+		TempStrNoSize("\x20""The discounting curve (optional)"),
+		TempStrNoSize("\x19""Trigger for recalculation"));
 
     }
 
@@ -41,29 +42,30 @@ inline void unregisterxlInitiateInterestRateSwapBootstrapHelper2(const XLOPER & 
 
         XLOPER xlRegID ;
 
-             // supprime la fonction xlInitiateInterestRateSwapBootstrapHelper2
-        Excel(xlfRegister, 0, 22, & xDll,
-            TempStrNoSize("\x2A""xlInitiateInterestRateSwapBootstrapHelper2"),
-            TempStrNoSize("\x0E""PCCCPPPEPPCPP#"),
-            TempStrNoSize("\x1C""INSTANCE.INTERPOLATION.SWAP2"),
-            TempStrNoSize("\xC9""Identifiant de l'objet,tenor,calendrier,jours de règlement,fréquence jambe fixe,base jambe fixe,taux fixe,fréquence jambe flottante,base jambe flottante,taux de référence,courbe d'actualisation,trigger"),
-            TempStrNoSize("\x01""1"),
-            TempStrNoSize("\x17""xlObjectTools - Object"),
-            TempStrNoSize("\x00"""),
-            TempStrNoSize("\x00"""),
-            TempStrNoSize("\x41""Cette fonction qualifie un swap pour l'interpolation d'une courbe"),
-            TempStrNoSize("\x11""Object Identifer"),
-            TempStrNoSize("\x10""Le ténor du swap"),
-			TempStrNoSize("\x1A""Le calendrier de référence"),
-			TempStrNoSize("\x1F""Le nombre de jours de règlement"),
-			TempStrNoSize("\x28""La fréquence de la jambe fixe (optionel)"),
-			TempStrNoSize("\x23""La base de la jambe fixe (optionel)"),
-			TempStrNoSize("\x14""Le taux fixe du swap"),
-			TempStrNoSize("\x2C""La fréquence de la jambe variable (optionel)"),
-            TempStrNoSize("\x27""La base de la jambe variable (optionel)"),
-			TempStrNoSize("\x29""Le taux de référence de la jambe variable"),
-            TempStrNoSize("\x2A""L'identifiant de la courbe d'actualisation"),
-            TempStrNoSize("\x1B""Trigger for recalculation  ")) ;
+		// unregisters the function xlInitiateInterestRateSwapBootstrapHelper2
+		Excel(xlfRegister, 0, 22, &xDll,
+			TempStrNoSize("\x2A""xlInitiateInterestRateSwapBootstrapHelper2"),
+			TempStrNoSize("\x0E""PCCCPPPEPPCPP#"),
+			TempStrNoSize("\x18""OBJECT.CURVE.HELPER.SWAP"),
+			TempStrNoSize("\xBB""Object Id,tenor,calendar,settlement days,fixed leg frequency,fixed leg daycount basis,fixed leg rate,float leg frequency,float leg daycount basis,reference index,discounting curve,trigger"),
+			TempStrNoSize("\x01""1"),
+			TempStrNoSize("\x16""xlObjectTools - Object"),
+			TempStrNoSize("\x00"""),
+			TempStrNoSize("\x00"""),
+			TempStrNoSize("\x4C""This function creates an interest rate swap helper for interpolation purpose"),
+			TempStrNoSize("\x15""The helper identifier"),
+			TempStrNoSize("\x1E""The maturity tenor of the swap"),
+			TempStrNoSize("\x13""Settlement calendar"),
+			TempStrNoSize("\x0F""Settlement days"),
+			TempStrNoSize("\x23""The frequency of the fixed rate leg"),
+			TempStrNoSize("\x2D""The daycount convention of the fixed rate leg"),
+			TempStrNoSize("\x1A""The fixed rate of the swap"),
+			TempStrNoSize("\x21""The frequency of the floating leg"),
+			TempStrNoSize("\x2A""The daycount convention of the floting leg"),
+			TempStrNoSize("\x1A""The fixed rate of the swap"),
+			TempStrNoSize("\x27""The reference index of the floating leg"),
+			TempStrNoSize("\x20""The discounting curve (optional)"),
+			TempStrNoSize("\x19""Trigger for recalculation"));
 
         Excel4(xlfRegisterId, & xlRegID, 2, & xDll,
             TempStrNoSize("\x2A""xlInitiateInterestRateSwapBootstrapHelper2")) ;
