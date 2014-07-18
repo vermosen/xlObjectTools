@@ -655,6 +655,7 @@
   <ItemGroup>
     <None Include="workbooks\hexadecimal converter.xlsx" />
     <None Include="workbooks\LiborModel.xlsx" />
+    <None Include="workbooks\trading_workbook.xlsm" />
     <None Include="workbooks\yieldCurveBuilding.xlsx" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

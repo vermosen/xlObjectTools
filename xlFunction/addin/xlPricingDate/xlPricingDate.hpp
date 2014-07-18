@@ -9,13 +9,13 @@
 #ifndef xl_pricing_date
 #define xl_pricing_date
 
-#include <qlo/conversions/coercetermstructure.hpp>
-#include <qlo/conversions/coercehandle.hpp>
-
 #include <ohxl/repositoryxl.hpp>
 #include <ohxl/conversions/validations.hpp>
 #include <ohxl/convert_oper.hpp>
 #include <ohxl/conversions/scalartooper.hpp>
+
+#include <ql/errors.hpp>
+#include <ql/settings.hpp>
 
         /* permet de fixer/récupérer la date de pricing */
 DLLEXPORT double xlPricingDate (xloper * date_,

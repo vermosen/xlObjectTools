@@ -17,7 +17,7 @@ inline void registerxlPricingDate(const XLOPER & xDll) {
 		TempStrNoSize("\x12""ADDIN.PRICING.DATE"),
 		TempStrNoSize("\x0C""date,trigger"),
 		TempStrNoSize("\x01""1"),
-		TempStrNoSize("\x16""xlObjectTools - addin"),
+		TempStrNoSize("\x15""xlObjectTools - addin"),
 		TempStrNoSize("\x00"""),
 		TempStrNoSize("\x00"""),
 		TempStrNoSize("\x39""This function sets system's pricing date (default: today)"),
