@@ -8,48 +8,47 @@
 
 #include <xlFunction/bond/xlGetCashFlowDates/xlGetCashFlowDates.hpp>
 
-        /* fonction de récupération des dates de paiement d'un instrument */
-DLLEXPORT xloper * xlGetCashFlowDates (const char * objectID_,
-                                       xloper * trigger_) {
-    
+// retrieve the cashflow dates of a bond
+DLLEXPORT xloper * xlGetCashFlowDates (
+	const char * objectID_,
+    xloper * trigger_) {
 
-        boost::shared_ptr<ObjectHandler::FunctionCall> functionCall(
-            new ObjectHandler::FunctionCall("xlGetCashFlowDates")) ;
+    boost::shared_ptr<ObjectHandler::FunctionCall> functionCall(
+        new ObjectHandler::FunctionCall("xlGetCashFlowDates")) ;
 
+    try {
 
-        try {
+        QL_ENSURE(! functionCall->calledByFunctionWizard(), "") ;
+        ObjectHandler::validateRange(trigger_, "trigger") ;		// validate trigger range
+        std::vector<double> returnVector ;						// date vector in excel format
 
+        OH_GET_UNDERLYING(myBond, 
+                            objectID_, 
+                            QuantLibAddin::Bond, 
+                            QuantLib::Bond)
 
-            QL_ENSURE(! functionCall->calledByFunctionWizard(), "") ;
+        returnVector.push_back(myBond.issueDate().serialNumber()) ;
 
-                // trigger pour provoquer le recalcul
-            ObjectHandler::validateRange(trigger_, "trigger") ;
+        for (unsigned int i = 0 ;								// retrieve cashflow dates
+				i < myBond.cashflows().size() - 1 ; i++)
+                
+			returnVector.push_back(
+				myBond.cashflows()[i]->date().serialNumber()) ;
 
-                // le vecteur des dates
-            std::vector<double> returnVector ;
+        static OPER returnOper ;
+        ObjectHandler::vectorToOper<double>(returnVector, returnOper) ;
+        return & returnOper ;
 
-            OH_GET_UNDERLYING(myBond, 
-                              objectID_, 
-                              QuantLibAddin::Bond, 
-                              QuantLib::Bond)
+    } catch (std::exception & e) {
 
-            returnVector.push_back(myBond.issueDate().serialNumber()) ;
+		// error
+		ObjectHandler::RepositoryXL::instance().logError(e.what(), functionCall);
+		static XLOPER returnOper;
+		returnOper.xltype = xltypeErr;
+		returnOper.val.err = xlerrValue;
+		return &returnOper;
 
-            for (unsigned int i = 0 ; i < myBond.cashflows().size() - 1 ; i++)
+    }
 
-                            // recupération des dates
-                        returnVector.push_back(myBond.cashflows()[i]->date().serialNumber()) ;
-
-            static OPER returnOper ;
-            ObjectHandler::vectorToOper<double>(returnVector, returnOper) ;
-            return & returnOper ;
-
-        } catch (std::exception & e) {
-
-                ObjectHandler::RepositoryXL::instance().logError(e.what(), functionCall) ;
-                return 0 ;
-
-            }
-
-    } ;
+} ;
 
