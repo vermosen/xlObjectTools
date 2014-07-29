@@ -8,28 +8,38 @@
 
 #include <xlFunction/calendar/xlCalendarBusinessDate/xlCalendarBusinessDate.hpp>
 
-            /*Fonction de calcul des business date*/
-DLLEXPORT double xlCalendarBusinessDate (double * calculationDate_, 
-                                         char * calendarID_,
-                                         long * spotDays_) {
+// calculates the date corresponding to a 
+// number of business days in a given calendar
+DLLEXPORT xloper * xlCalendarBusinessDate(
+	double * calculationDate_,
+	char * calendarID_,
+	long * spotDays_) {
 
     boost::shared_ptr<ObjectHandler::FunctionCall> functionCall(
         new ObjectHandler::FunctionCall("xlCalendarBusinessDate")) ;
 
-     try {
+    try {
 
-            QL_ENSURE(! functionCall->calledByFunctionWizard(), "") ;
+        QL_ENSURE(! functionCall->calledByFunctionWizard(), "") ;
 
-            return ObjectHandler::calendarFactory()(calendarID_).advance(QuantLib::Date(static_cast<QuantLib::BigInteger>(* calculationDate_)),
-                                                                         * spotDays_,
-                                                                         QuantLib::Days).serialNumber() ;
+        double returnValue = ObjectHandler::calendarFactory()(calendarID_).advance(
+			QuantLib::Date(static_cast<QuantLib::BigInteger>(* calculationDate_)),
+            * spotDays_,
+            QuantLib::Days).serialNumber() ;
+		
+		static XLOPER returnOper;
+		ObjectHandler::scalarToOper(returnValue, returnOper);
+		return &returnOper;
 
-        } catch (std::exception & e) {
+    } catch (std::exception & e) {
 
-                ObjectHandler::RepositoryXL::instance().logError(e.what(), functionCall) ;
+		// error
+		ObjectHandler::RepositoryXL::instance().logError(e.what(), functionCall);
+		static XLOPER returnOper;
+		returnOper.xltype = xltypeErr;
+		returnOper.val.err = xlerrValue;
+		return &returnOper;
 
-                return 0.0 ;
-
-            }
+    }
 
 }       

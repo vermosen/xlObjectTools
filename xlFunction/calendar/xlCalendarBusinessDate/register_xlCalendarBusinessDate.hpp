@@ -10,20 +10,20 @@
 
 inline void registerxlCalendarBusinessDate(const XLOPER & xDll) {
 
-            // Enregistre la fonction xlBusinessDate
+        // registers the function xlBusinessDate
         Excel(xlfRegister, 0, 13, & xDll,
             TempStrNoSize("\x16""xlCalendarBusinessDate"),
-            TempStrNoSize("\x05""BECN#"),
-            TempStrNoSize("\x17""CALENDRIER.JOURS.OUVRES"),
-            TempStrNoSize("\x22""Date de départ,devise,jours ouvrés"),
+            TempStrNoSize("\x05""PECN#"),
+            TempStrNoSize("\x16""CALENDAR.BUSINESS.DAYS"),
+            TempStrNoSize("\x24""starting date,calendar,business days"),
             TempStrNoSize("\x01""1"),
             TempStrNoSize("\x19""xlObjectTools - Calendar"),
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x00"""),
-            TempStrNoSize("\x50""Cette fonction calcule la date correspondant au nombre de jours ouvrés spécifiés"),
-            TempStrNoSize("\x11""La date de départ"),
-            TempStrNoSize("\x09""La devise"),
-            TempStrNoSize("\x25""Le nombre le jours ouvrés à ajouter  ")) ;
+            TempStrNoSize("\x60""This function calculates the date corresponding to a number of business days in a given calendar"),
+            TempStrNoSize("\x11""The starting date"),
+            TempStrNoSize("\x0C""The calendar"),
+            TempStrNoSize("\x24""The number of business days to add  ")) ;
 
     }
 
@@ -31,20 +31,21 @@ inline void unregisterxlCalendarBusinessDate(const XLOPER & xDll) {
 
         XLOPER xlRegID ;
 
-            // libère la fonction xlBusinessDate
-        Excel(xlfRegister, 0, 13, & xDll,
-            TempStrNoSize("\x16""xlCalendarBusinessDate"),
-            TempStrNoSize("\x05""BECN#"),
-            TempStrNoSize("\x17""CALENDRIER.JOURS.OUVRES"),
-            TempStrNoSize("\x22""Date de départ,devise,jours ouvrés"),
-            TempStrNoSize("\x01""1"),
-            TempStrNoSize("\x19""xlObjectTools - Calendar"),
-            TempStrNoSize("\x00"""),
-            TempStrNoSize("\x00"""),
-            TempStrNoSize("\x50""Cette fonction calcule la date correspondant au nombre de jours ouvrés spécifiés"),
-            TempStrNoSize("\x11""La date de départ"),
-            TempStrNoSize("\x09""La devise"),
-            TempStrNoSize("\x25""Le nombre le jours ouvrés à ajouter  ")) ;
+		// unregisters the function xlBusinessDate
+		Excel(xlfRegister, 0, 13, &xDll,
+			TempStrNoSize("\x16""xlCalendarBusinessDate"),
+			TempStrNoSize("\x05""PECN#"),
+			TempStrNoSize("\x16""CALENDAR.BUSINESS.DAYS"),
+			TempStrNoSize("\x24""starting date,calendar,business days"),
+			TempStrNoSize("\x01""1"),
+			TempStrNoSize("\x19""xlObjectTools - Calendar"),
+			TempStrNoSize("\x00"""),
+			TempStrNoSize("\x00"""),
+			TempStrNoSize("\x60""This function calculates the date corresponding to a number of business days in a given calendar"),
+			TempStrNoSize("\x11""The starting date"),
+			TempStrNoSize("\x0C""The calendar"),
+			TempStrNoSize("\x24""The number of business days to add  "));
+
 
         Excel4(xlfRegisterId, & xlRegID, 2, & xDll,
             TempStrNoSize("\x16""xlCalendarBusinessDate")) ;

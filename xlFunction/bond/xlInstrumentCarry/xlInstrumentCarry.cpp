@@ -64,11 +64,11 @@ DLLEXPORT xloper * xlInstrumentCarry (const char * instrumentId_,
 
     } catch (std::exception & e) {
 
-                ObjectHandler::RepositoryXL::instance().logError(e.what(), functionCall) ;
-                static XLOPER returnOper ;
-                returnOper.xltype = xltypeErr ;
-                returnOper.val.err = xlerrValue ;
-                return & returnOper ;
+                ObjectHandler::RepositoryXL::instance().logError(e.what(), functionCall);
+                static XLOPER returnOper;
+                returnOper.xltype = xltypeErr;
+                returnOper.val.err = xlerrValue;
+                return & returnOper;
 
     }
 

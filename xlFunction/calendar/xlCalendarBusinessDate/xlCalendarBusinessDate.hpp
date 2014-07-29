@@ -11,14 +11,17 @@
 
 #include <ql/time/calendar.hpp>
 
-#include <ohxl/repositoryxl.hpp>
-
 #include <bot/factory/calendar/calendarFactory.hpp>
 
+#include <ohxl/conversions/scalartooper.hpp>
+#include <ohxl/conversions/validations.hpp>
+#include <ohxl/repositoryxl.hpp>
 
-        /* Fonction de calcul des businessDay d'un jour ouvré */
-DLLEXPORT double xlCalendarBusinessDate (double * calculationDate_,
-                                         char * calendarID_,
-                                         long * spotDays_) ;
+// calculates the date corresponding to a 
+// number of business days in a given calendar
+DLLEXPORT xloper * xlCalendarBusinessDate (
+	double * calculationDate_,
+    char * calendarID_,
+    long * spotDays_);
 
 #endif
