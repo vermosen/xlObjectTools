@@ -8,34 +8,36 @@
 
 #include <xlFunction/calendar/xlCalendarDaycount/xlCalendarDaycount.hpp>
 
-        /*Fonction de calcul des daycount basis*/
-DLLEXPORT double xlCalendarDaycount (double * calculationDate_, 
-                                     double * endDate_,
-                                     char * daycountBasis_) {
+// calculates the corresponding daycount basis
+DLLEXPORT xloper * xlCalendarDaycount (double * calculationDate_, 
+                                       double * endDate_,
+                                       char * daycountBasis_) {
 
+    boost::shared_ptr<ObjectHandler::FunctionCall> functionCall(
+        new ObjectHandler::FunctionCall("xlCalendarDaycount"));
 
-        boost::shared_ptr<ObjectHandler::FunctionCall> functionCall(
-            new ObjectHandler::FunctionCall("xlCalendarDaycount")) ;
+    try {
 
+        QL_ENSURE(! functionCall->calledByFunctionWizard(), "");
+				
+		double returnValue = ObjectHandler::daycountFactory()(daycountBasis_).yearFraction(
+			QuantLib::Date(static_cast<QuantLib::BigInteger>(*calculationDate_)),
+			QuantLib::Date(static_cast<QuantLib::BigInteger>(*endDate_)));
 
-        try {
+		static XLOPER returnOper;
+		ObjectHandler::scalarToOper(returnValue, returnOper);
+		return &returnOper;
 
+    } catch (std::exception & e) {
 
-                QL_ENSURE(! functionCall->calledByFunctionWizard(), "") ;
-
-                return ObjectHandler::daycountFactory()(daycountBasis_).yearFraction(QuantLib::Date(static_cast<QuantLib::BigInteger>(* calculationDate_)),
-                                                                                     QuantLib::Date(static_cast<QuantLib::BigInteger>(* endDate_))) ;
-
-
-            } catch (std::exception & e) {
-
-
-                    ObjectHandler::RepositoryXL::instance().logError(e.what(), functionCall) ;
-
-                    return 0 ;
-
-
-                }
-
+		// error
+		ObjectHandler::RepositoryXL::instance().logError(e.what(), functionCall);
+		static XLOPER returnOper;
+		returnOper.xltype = xltypeErr;
+		returnOper.val.err = xlerrValue;
+		return &returnOper;
 
     }
+
+
+}

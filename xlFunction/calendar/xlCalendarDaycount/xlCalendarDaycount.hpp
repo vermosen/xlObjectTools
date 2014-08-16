@@ -9,15 +9,17 @@
 #ifndef xl_calendar_daycount
 #define xl_calendar_daycount
 
-#include <ohxl/repositoryxl.hpp>
-
 #include <ql/time/daycounter.hpp>
 
 #include <bot/factory/daycounter/daycountFactory.hpp>
 
-        /*Fonction de calcul des daycount basis*/
-DLLEXPORT double xlCalendarDaycount (double * calculationDate_, 
-                                     double * endDate_,
-                                     char * daycountBasis_) ;
+#include <ohxl/conversions/scalartooper.hpp>
+#include <ohxl/conversions/validations.hpp>
+#include <ohxl/repositoryxl.hpp>
+
+// calculates the corresponding daycount basis
+DLLEXPORT xloper * xlCalendarDaycount(double * calculationDate_,
+                                      double * endDate_,
+                                      char * daycountBasis_) ;
 
 #endif
