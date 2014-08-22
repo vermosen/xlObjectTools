@@ -10,26 +10,26 @@
 
 inline void registerxlInitiateFittedBondDiscountCurve(const XLOPER & xDll) {
 
-             // Enregistre la fonction xlInitiateFittedBondCurve
+        // Register the function xlInitiateFittedBondDiscountCurve
         Excel(xlfRegister, 0, 19, & xDll,
             TempStrNoSize("\x21""xlInitiateFittedBondDiscountCurve"),
-            TempStrNoSize("\x0B""CCPPPPCCCP#"),
-            TempStrNoSize("\x17""INSTANCE.COURBE.AJUSTEE"),
-            TempStrNoSize("\x84""Identifiant de l'objet,Date de calcul,Date de règlement,Identifiants des instruments,cotations,calendrier,méthode de fitting,trigger"),
+            TempStrNoSize("\x0B""CCPPPPCCPP#"),
+            TempStrNoSize("\x17""INSTANCE.AJUSTED.CURVE"),
+            TempStrNoSize("\x84""object identifier,calculation date,settlement date,instrument identifiers,quotes,calendar,fitting method,bond selection rule,trigger"),
             TempStrNoSize("\x01""1"),
-            TempStrNoSize("\x15""xlObjectTools - Test"),
+            TempStrNoSize("\x17""xlObjectTools - Object"),
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x00"""),
-            TempStrNoSize("\x53""Cette fonction instancie une courbe ajustée pour les instruments passés en argument"),
-            TempStrNoSize("\x11""Object Identifer"),
-            TempStrNoSize("\x11""La date de calcul"),
-            TempStrNoSize("\x21""La date de règlement de la courbe"),
-            TempStrNoSize("\x23""Les instruments composant la courbe"),
-            TempStrNoSize("\x26""Le vecteur de cotation des instruments"),
-            TempStrNoSize("\x22""La devise de cotation de la courbe"),
-            TempStrNoSize("\x17""La méthode d'ajustement"),
-			TempStrNoSize("\x1F""La règle de selection des titres"),
-            TempStrNoSize("\x1B""Trigger for recalculation  ")) ;
+            TempStrNoSize("\x3F""This function creates a curve fitted on the selected intruments"),
+            TempStrNoSize("\x15""The object identifier"),
+            TempStrNoSize("\x14""The calculation date"),
+            TempStrNoSize("\x20""The settlement date of the curve"),
+            TempStrNoSize("\x25""The instruments used to fit the curve"),
+            TempStrNoSize("\x1D""The quotes of the instruments"),
+            TempStrNoSize("\x19""The calendar of the curve"),
+            TempStrNoSize("\x18""The curve fitting method"),
+			TempStrNoSize("\x1D""The instrument selection rule"),
+            TempStrNoSize("\x1B""Trigger for recalculation  "));
 
     }
 
@@ -38,26 +38,26 @@ inline void unregisterxlInitiateFittedBondDiscountCurve(const XLOPER & xDll) {
 
         XLOPER xlRegID ;
 
-             // supprime la fonction xlInitiateFittedBondCurve
-        Excel(xlfRegister, 0, 19, & xDll,
-            TempStrNoSize("\x21""xlInitiateFittedBondDiscountCurve"),
-            TempStrNoSize("\x0B""CCPPPPCCCP#"),
-            TempStrNoSize("\x17""INSTANCE.COURBE.AJUSTEE"),
-            TempStrNoSize("\x84""Identifiant de l'objet,Date de calcul,Date de règlement,Identifiants des instruments,cotations,calendrier,méthode de fitting,trigger"),
-            TempStrNoSize("\x01""1"),
-            TempStrNoSize("\x15""xlObjectTools - Test"),
-            TempStrNoSize("\x00"""),
-            TempStrNoSize("\x00"""),
-            TempStrNoSize("\x53""Cette fonction instancie une courbe ajustée pour les instruments passés en argument"),
-            TempStrNoSize("\x11""Object Identifer"),
-            TempStrNoSize("\x11""La date de calcul"),
-            TempStrNoSize("\x21""La date de règlement de la courbe"),
-            TempStrNoSize("\x23""Les instruments composant la courbe"),
-            TempStrNoSize("\x26""Le vecteur de cotation des instruments"),
-            TempStrNoSize("\x22""La devise de cotation de la courbe"),
-            TempStrNoSize("\x17""La méthode d'ajustement"),
-			TempStrNoSize("\x1F""La règle de selection des titres"),
-            TempStrNoSize("\x1B""Trigger for recalculation  ")) ;
+		// Unregister the function xlInitiateFittedBondDiscountCurve
+		Excel(xlfRegister, 0, 19, &xDll,
+			TempStrNoSize("\x21""xlInitiateFittedBondDiscountCurve"),
+			TempStrNoSize("\x0B""CCPPPPCCPP#"),
+			TempStrNoSize("\x17""INSTANCE.AJUSTED.CURVE"),
+			TempStrNoSize("\x84""object identifier,calculation date,settlement date,instrument identifiers,quotes,calendar,fitting method,bond selection rule,trigger"),
+			TempStrNoSize("\x01""1"),
+			TempStrNoSize("\x17""xlObjectTools - Object"),
+			TempStrNoSize("\x00"""),
+			TempStrNoSize("\x00"""),
+			TempStrNoSize("\x3F""This function creates a curve fitted on the selected intruments"),
+			TempStrNoSize("\x15""The object identifier"),
+			TempStrNoSize("\x14""The calculation date"),
+			TempStrNoSize("\x20""The settlement date of the curve"),
+			TempStrNoSize("\x25""The instruments used to fit the curve"),
+			TempStrNoSize("\x1D""The quotes of the instruments"),
+			TempStrNoSize("\x19""The calendar of the curve"),
+			TempStrNoSize("\x18""The curve fitting method"),
+			TempStrNoSize("\x1D""The instrument selection rule"),
+			TempStrNoSize("\x1B""Trigger for recalculation  "));
 
         Excel4(xlfRegisterId, & xlRegID, 2, & xDll,
             TempStrNoSize("\x21""xlInitiateFittedBondDiscountCurve")) ;

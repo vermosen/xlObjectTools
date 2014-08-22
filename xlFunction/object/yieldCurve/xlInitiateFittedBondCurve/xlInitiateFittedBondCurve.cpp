@@ -6,16 +6,16 @@
  *
  */
 
-#include <xlFunction/object/yieldCurve/xlInitiateFittedBondCurve/xlInitiateFittedBondCurve.hpp>
+#include "xlFunction/object/yieldCurve/xlInitiateFittedBondCurve/xlInitiateFittedBondCurve.hpp"
 
-        /* fitting paramétrique d'une courbe */
-DLLEXPORT char * xlInitiateFittedBondCurve (const char * objectID_,
-                                            const double * calculationDate_,
-                                            const double * settlementDays_,
-                                            const xloper * instruments_,
-                                            const xloper * quote_,
-                                            const char * currencyId_,
-                                            const char * fittingMethodId_,
+// parametric fitted curve
+DLLEXPORT char * xlInitiateFittedBondCurve (const char *   objectID_         ,
+                                            const double * calculationDate_  ,
+                                            const double * settlementDays_   ,
+                                            const xloper * instruments_      ,
+                                            const xloper * quote_            ,
+                                            const char *   currencyId_       ,
+                                            const char *   fittingMethodId_  ,
                                             const xloper * bondSelectionRule_,
                                             const xloper * trigger_) {
 
@@ -24,17 +24,14 @@ DLLEXPORT char * xlInitiateFittedBondCurve (const char * objectID_,
 
         try {
 
-
             QL_ENSURE(! functionCall->calledByFunctionWizard(), "") ;
 
-                /* contrôle sur les codes erreur */
-            ObjectHandler::validateRange(trigger_,           "trigger") ;
-            ObjectHandler::validateRange(instruments_,       "instruments") ;
-            ObjectHandler::validateRange(quote_,             "quote") ;
-            ObjectHandler::validateRange(bondSelectionRule_, "bond selection rule") ;
+            ObjectHandler::validateRange(trigger_,           "trigger"            );	// validate range
+            ObjectHandler::validateRange(instruments_,       "instruments"        );
+            ObjectHandler::validateRange(quote_,             "quote"              );
+            ObjectHandler::validateRange(bondSelectionRule_, "bond selection rule");
 
-                /* création de la rule de sélection des bonds */
-            ObjectHandler::ConvertOper myOper1(* bondSelectionRule_) ;
+			ObjectHandler::ConvertOper myOper1(*bondSelectionRule_);					// bond selection rule oper
 
             QuantLib::bondSelectionRule myRule = 
 					(myOper1.missing() ?
@@ -42,8 +39,7 @@ DLLEXPORT char * xlInitiateFittedBondCurve (const char * objectID_,
                      ObjectHandler::bondSelectionRuleFactory()(
                          static_cast<std::string>(myOper1))) ;
 
-                /* création des dates et des calendriers */
-            QuantLib::Currency curveCurrency =
+            QuantLib::Currency curveCurrency =											// creates dates and currency
                 ObjectHandler::currencyFactory()(currencyId_) ;
 
             QuantLib::Calendar curveCalendar =

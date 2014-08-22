@@ -272,7 +272,10 @@
     <ClCompile Include="xlFunction\object\yieldCurve\helpers\xlInitiateInterestRateSwapBootstrapHelper2\xlInitiateInterestRateSwapBootstrapHelper2.cpp" />
     <ClCompile Include="xlFunction\object\yieldCurve\helpers\xlInitiateInterestRateSwapBootstrapHelper\xlInitiateInterestRateSwapBootstrapHelper.cpp" />
     <ClCompile Include="xlFunction\object\yieldCurve\helpers\xlInitiateOvernightIndexedBootstrapHelper\xlInitiateOvernightIndexedBootstrapHelper.cpp" />
-    <ClCompile Include="xlFunction\object\yieldCurve\xlInitiateFittedBondCurve\xlInitiateFittedBondCurve.cpp" />
+    <ClCompile Include="xlFunction\object\yieldCurve\xlInitiateFittedBondCurve\xlInitiateFittedBondCurve.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="xlFunction\object\yieldCurve\xlInitiateFittedBondDiscountCurve\xlInitiateFittedBondDiscountCurve.cpp" />
     <ClCompile Include="xlFunction\object\yieldCurve\xlInitiateInterpolatedCurve\xlInitiateInterpolatedCurve.cpp" />
     <ClCompile Include="xlFunction\object\yieldCurve\xlInitiateShiftedCurve\xlInitiateShiftedCurve.cpp" />
@@ -559,8 +562,14 @@
     <ClInclude Include="xlFunction\object\yieldCurve\helpers\xlInitiateOvernightIndexedBootstrapHelper\register_xlInitiateOvernightIndexedBootstrapHelper.hpp" />
     <ClInclude Include="xlFunction\object\yieldCurve\helpers\xlInitiateOvernightIndexedBootstrapHelper\xlInitiateOvernightIndexedBootstrapHelper.hpp" />
     <ClInclude Include="xlFunction\object\yieldCurve\register_curveObject.hpp" />
-    <ClInclude Include="xlFunction\object\yieldCurve\xlInitiateFittedBondCurve\register_xlInitiateFittedBondCurve.hpp" />
-    <ClInclude Include="xlFunction\object\yieldCurve\xlInitiateFittedBondCurve\xlInitiateFittedBondCurve.hpp" />
+    <ClInclude Include="xlFunction\object\yieldCurve\xlInitiateFittedBondCurve\register_xlInitiateFittedBondCurve.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="xlFunction\object\yieldCurve\xlInitiateFittedBondCurve\xlInitiateFittedBondCurve.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="xlFunction\object\yieldCurve\xlInitiateFittedBondDiscountCurve\register_xlInitiateFittedBondDiscountCurve.hpp" />
     <ClInclude Include="xlFunction\object\yieldCurve\xlInitiateFittedBondDiscountCurve\xlInitiateFittedBondDiscountCurve.hpp" />
     <ClInclude Include="xlFunction\object\yieldCurve\xlInitiateInterpolatedCurve\register_xlInitiateInterpolatedCurve.hpp" />

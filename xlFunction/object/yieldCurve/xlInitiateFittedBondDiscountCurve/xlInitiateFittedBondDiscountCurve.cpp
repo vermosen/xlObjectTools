@@ -6,136 +6,114 @@
  *
  */
 
-#include <xlFunction/object/yieldCurve/xlInitiateFittedBondDiscountCurve/xlInitiateFittedBondDiscountCurve.hpp>
+#include "xlFunction/object/yieldCurve/xlInitiateFittedBondDiscountCurve/xlInitiateFittedBondDiscountCurve.hpp"
 
-	/* fitting paramétrique d'une courbe */
-DLLEXPORT char * xlInitiateFittedBondDiscountCurve (const char * objectID_,
-                                                    xloper * evaluationDate_,
-                                                    xloper * settlementDate_,
-                                                    xloper * instruments_,
-                                                    xloper * quote_,
-                                                    const char * calendarID_,
-                                                    const char * fittingMethodID_,
+// parametric fitted curve
+DLLEXPORT char * xlInitiateFittedBondDiscountCurve (const char * objectID_           ,
+													const xloper * evaluationDate_   ,
+                                                    const xloper * settlementDate_   ,
+                                                    const xloper * instruments_      ,
+                                                    const xloper * quote_            ,
+                                                    const char * calendarID_         ,
+                                                    const char * fittingMethodID_    ,
 													const xloper * bondSelectionRule_,
-                                                    xloper * trigger_) {
+                                                    const xloper * trigger_) {
 
         boost::shared_ptr<ObjectHandler::FunctionCall> functionCall(
-            new ObjectHandler::FunctionCall("xlInitiateFittedBondDiscountCurve")) ;
+            new ObjectHandler::FunctionCall("xlInitiateFittedBondDiscountCurve"));
 
         try {
 
+            QL_ENSURE(! functionCall->calledByFunctionWizard(), "");						// called by wizard ?
 
-            QL_ENSURE(! functionCall->calledByFunctionWizard(), "") ;
+            ObjectHandler::validateRange(trigger_,           "trigger"            );	// validate range
+			ObjectHandler::validateRange(settlementDate_,    "settlement Date"    );
+            ObjectHandler::validateRange(instruments_,       "instruments"        );
+            ObjectHandler::validateRange(quote_,             "quotes"             );
+            ObjectHandler::validateRange(bondSelectionRule_, "bond selection rule");
 
+            ObjectHandler::ConvertOper myOper1(* bondSelectionRule_);					// bond selection rule oper
 
-                /* trigger pour provoquer le recalcul */
-            ObjectHandler::validateRange(trigger_, "trigger") ;
-
-            ObjectHandler::validateRange(settlementDate_, "settlement Date") ;
-
-            ObjectHandler::validateRange(instruments_, "instruments") ;
-
-            ObjectHandler::validateRange(quote_, "quotes") ;
-
-            ObjectHandler::validateRange(bondSelectionRule_, "bond selection rule") ;
-
-                /* création de la rule de sélection des bonds */
-            ObjectHandler::ConvertOper myOper1(* bondSelectionRule_) ;
-
-            QuantLib::bondSelectionRule myRule = 
+            QuantLib::bondSelectionRule myRule =										// the rule
 					(myOper1.missing() ?
                      QuantLib::activeRule() : 
                      ObjectHandler::bondSelectionRuleFactory()(
-                         static_cast<std::string>(myOper1))) ;
+                         static_cast<std::string>(myOper1)));
 
-                /* pointeurs sur les dates et calendriers */
-            QuantLib::Calendar curveCalendar 
-                = ObjectHandler::calendarFactory()(calendarID_) ;
+            QuantLib::Calendar curveCalendar											// calendar
+                = ObjectHandler::calendarFactory()(calendarID_);
 
-                /* evaluation Date */
-            ObjectHandler::ConvertOper oper1(* evaluationDate_) ;
+            ObjectHandler::ConvertOper oper1(* evaluationDate_);						// evaluation date
 
             QuantLib::Date evaluationDate(oper1.missing() ? 
                 QuantLib::Date() : 
-                static_cast<QuantLib::Date>(oper1)) ;
+                static_cast<QuantLib::Date>(oper1));
 
-            std::string returnValue ;
+            std::vector<std::string> instruments =										// instrument ids
+				ObjectHandler::operToVector<std::string>(
+					* instruments_, "instruments");
 
-                /* conversion des xloper */
-            std::vector<std::string> instruments = ObjectHandler::operToVector<std::string>(
-                * instruments_, "instruments") ;
+            std::vector<QuantLib::Real> quote =											// quotes
+				ObjectHandler::operToVector<double>(
+					* quote_, "quote");
 
-            std::vector<QuantLib::Real> quote = ObjectHandler::operToVector<double>(
-                * quote_, "quote") ;
+            std::vector<boost::shared_ptr<QuantLib::BondHelper> > instrumentsObject;	// helpers
 
-            std::vector<boost::shared_ptr<QuantLib::BondHelper> > instrumentsObject ;
-
-                // Récupération des instruments
-            for (unsigned int i = 0 ; i < instruments.size() ; i++) {
+            for (unsigned int i = 0 ; i < instruments.size() ; i++) {					// capture individual bonds
 
 				try {
 
-						// récupération du Bond
-                    OH_GET_REFERENCE(instrumentPtr, 
+                    OH_GET_REFERENCE(instrumentPtr,										// get a reference
                                      instruments[i],
                                      QuantLibAddin::Bond, 
                                      QuantLib::Bond)
 
-                        // la cotation
-                    if (quote[i] != 0.0 && instrumentPtr->isTradable()) { 
+                    if (quote[i] != 0.0 && instrumentPtr->isTradable()) {				// valid quote ?
 
-                                // la cotation
-                            boost::shared_ptr<QuantLib::Quote> noteQuote(
-                                new QuantLib::SimpleQuote (quote[i])) ;
-
-                                // le Handler
-                            QuantLib::RelinkableHandle<QuantLib::Quote> quoteHandle ;
+                            QuantLib::RelinkableHandle<QuantLib::Quote> quoteHandle;	// the handler
                             
-                            quoteHandle.linkTo(noteQuote) ;
+							quoteHandle.linkTo(boost::shared_ptr<QuantLib::Quote>(		// link to the quote
+								new QuantLib::SimpleQuote(quote[i])));
 
-                                // le Helper
-                            boost::shared_ptr<QuantLib::BondHelper> noteHelper(
-                                new QuantLib::BondHelper(quoteHandle, instrumentPtr)) ; // suppose être le cp
+							boost::shared_ptr<QuantLib::BondHelper> noteHelper(			// the helper
+								new QuantLib::BondHelper(quoteHandle, instrumentPtr));
 
-                                // stockage du Helper
-                            instrumentsObject.push_back(noteHelper) ;
-
+                            instrumentsObject.push_back(noteHelper);					// helper storage
 
                         }
 
-					}
-				catch(...) {}
+					} catch (...) {}													// nothing on exception
 
                 }
 
-                /* settlement Date */
-            ObjectHandler::ConvertOper oper2(* settlementDate_) ;
+            ObjectHandler::ConvertOper oper2(* settlementDate_);						// settlement date
 
             QuantLib::Date settlementDate(oper2.missing() ? 
                 instrumentsObject[0]->bond()->settlementDate(evaluationDate) : 
-                static_cast<QuantLib::Date>(oper2)) ;
+                static_cast<QuantLib::Date>(oper2));
 
-                /* selecting the right fitting method */
-            OH_GET_OBJECT(fittingMethodTemp, 
-						  fittingMethodID_, 
-						  ObjectHandler::Object) 
+			OH_GET_OBJECT(fittingMethodTemp,											// fitting method selection
+				fittingMethodID_,
+				ObjectHandler::Object)
 
-                /* Svensson model with stochastic fitting method */
-            if (fittingMethodTemp->properties()->className() == "stochasticSvenssonFittingValueObject") {
+			std::string returnValue;
+
+            if (fittingMethodTemp->properties()->className()								// svensson ?
+				== "stochasticSvenssonFittingValueObject") {
                     
                     OH_GET_REFERENCE(fittingMethodPtr,
                                      fittingMethodID_,
                                      QuantLibAddin::stochasticFittingObject,
                                      QuantLib::stochasticFittingHelper)
 
-                        /* Construction du value object */
+                    // build the value object
                     boost::shared_ptr<QuantLibAddin::ValueObjects::fittedBondDiscountCurveValueObject> curveValueObject(
-                        new QuantLibAddin::ValueObjects::fittedBondDiscountCurveValueObject(objectID_,
-                                                                                            settlementDate.serialNumber(),
-                                                                                            true)) ;
+                        new QuantLibAddin::ValueObjects::fittedBondDiscountCurveValueObject(
+							objectID_,
+                            settlementDate.serialNumber(),
+                            true));
 
-                        /* instanciating the curve */
-                    boost::shared_ptr<ObjectHandler::Object> myNSSCurve(
+                    boost::shared_ptr<ObjectHandler::Object> myNSSCurve(				// instancing the curve
                         new QuantLibAddin::fittedBondDiscountCurveObject(
                             curveValueObject,
                             settlementDate,
@@ -150,8 +128,7 @@ DLLEXPORT char * xlInitiateFittedBondDiscountCurve (const char * objectID_,
                             1.000,
                             true)) ;
 
-                        /* putting object in the repository */
-                    returnValue =
+					returnValue =											// the value to return
                         ObjectHandler::RepositoryXL::instance().storeObject(objectID_,
                                                                             myNSSCurve,
                                                                             true) ;
@@ -159,15 +136,15 @@ DLLEXPORT char * xlInitiateFittedBondDiscountCurve (const char * objectID_,
                 }
 
             static char ret[XL_MAX_STR_LEN] ;
-            ObjectHandler::stringToChar(returnValue, ret) ;
-            return ret ;
+			ObjectHandler::stringToChar(returnValue, ret);
+            return ret;
 
         } catch (std::exception & e) {
 
-				static char ret[XL_MAX_STR_LEN] ;
-                ObjectHandler::RepositoryXL::instance().logError(e.what(), functionCall) ;
-                ObjectHandler::stringToChar(std::string(e.what()), ret) ;
-                return ret ;
+				static char ret[XL_MAX_STR_LEN];
+                ObjectHandler::RepositoryXL::instance().logError(e.what(), functionCall);
+                ObjectHandler::stringToChar(std::string(e.what()), ret);
+                return ret;
 
             }
 
