@@ -414,9 +414,6 @@
     <ClCompile Include="xlFunction\experimental\xlEfficientConstrainedFrontier\xlEfficientConstrainedFrontier.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="xlFunction\experimental\xlInitiateSwapCurve\xlInitiateSwapCurve.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="xlFunction\math\statistics\xlKalmanFilter\xlKalmanFilter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -607,6 +604,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="bot\volatilitySurface\helpers\swaptionHelper\swaptionHelperValueObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlFunction\experimental\xlKalmanFilter\xlEfficientConstrainedFrontier.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -1142,12 +1142,6 @@
     <ClInclude Include="xlFunction\experimental\xlEfficientConstrainedFrontier\xlEfficientConstrainedFrontier.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="xlFunction\experimental\xlInitiateSwapCurve\register_xlInitiateSwapCurve.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="xlFunction\experimental\xlInitiateSwapCurve\xlInitiateSwapCurve.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="xlFunction\experimental\register_experimental.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -1554,6 +1548,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="bot\volatilitySurface\helpers\swaptionHelper\swaptionHelperValueObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\experimental\xlKalmanFilter\xlEfficientConstrainedFrontier.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xlFunction\experimental\xlKalmanFilter\register_xlKalman.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

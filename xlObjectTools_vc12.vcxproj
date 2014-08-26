@@ -252,7 +252,7 @@
     <ClCompile Include="xlFunction\curve\xlFittingRSquare\xlFittingRSquare.cpp" />
     <ClCompile Include="xlFunction\curve\xlRecoverFittingParameters\xlRecoverFittingParameters.cpp" />
     <ClCompile Include="xlFunction\experimental\xlEfficientConstrainedFrontier\xlEfficientConstrainedFrontier.cpp" />
-    <ClCompile Include="xlFunction\experimental\xlInitiateSwapCurve\xlInitiateSwapCurve.cpp" />
+    <ClCompile Include="xlFunction\experimental\xlKalmanFilter\xlEfficientConstrainedFrontier.cpp" />
     <ClCompile Include="xlFunction\Main.cpp" />
     <ClCompile Include="xlFunction\math\statistics\xlKalmanFilter\xlKalmanFilter.cpp" />
     <ClCompile Include="xlFunction\math\xlCorrelationMatrixEWMA\xlCorrelationMatrixEWMA.cpp" />
@@ -519,8 +519,8 @@
     <ClInclude Include="xlFunction\experimental\register_experimental.hpp" />
     <ClInclude Include="xlFunction\experimental\xlEfficientConstrainedFrontier\register_xlEfficientConstrainedFrontier.hpp" />
     <ClInclude Include="xlFunction\experimental\xlEfficientConstrainedFrontier\xlEfficientConstrainedFrontier.hpp" />
-    <ClInclude Include="xlFunction\experimental\xlInitiateSwapCurve\register_xlInitiateSwapCurve.hpp" />
-    <ClInclude Include="xlFunction\experimental\xlInitiateSwapCurve\xlInitiateSwapCurve.hpp" />
+    <ClInclude Include="xlFunction\experimental\xlKalmanFilter\register_xlKalman.hpp" />
+    <ClInclude Include="xlFunction\experimental\xlKalmanFilter\xlEfficientConstrainedFrontier.hpp" />
     <ClInclude Include="xlFunction\Main.hpp" />
     <ClInclude Include="xlFunction\math\register_math.hpp" />
     <ClInclude Include="xlFunction\math\statistics\register_statistics.hpp" />

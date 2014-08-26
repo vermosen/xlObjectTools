@@ -13,22 +13,12 @@
 
 #include <xlFunction/experimental/xlEfficientConstrainedFrontier/register_xlEfficientConstrainedFrontier.hpp>
 
-//#include <xlFunction/experimental/xlInitiateFittedBondDiscountCurve/register_xlInitiateFittedBondDiscountCurve.hpp>
-
-#include <xlFunction/experimental/xlInitiateSwapCurve/register_xlInitiateSwapCurve.hpp>
-
-
 inline void register_experimental(const XLOPER & xDll) {
     
 
                     // register experimental
-            registerxlEfficientConstrainedFrontier(xDll) ;
-
-            //registerxlInitiateFittedBondDiscountCurve(xDll) ;
-
-            registerxlInitiateSwapCurve(xDll) ;
-   
-    
+            registerxlEfficientConstrainedFrontier(xDll);
+       
     } ;
 
 inline void unregister_experimental(const XLOPER & xDll) {
@@ -36,11 +26,6 @@ inline void unregister_experimental(const XLOPER & xDll) {
 
                     // unregister experimental
             unregisterxlEfficientConstrainedFrontier(xDll) ;
-
-            //unregisterxlInitiateFittedBondDiscountCurve(xDll) ;
-
-            unregisterxlInitiateSwapCurve(xDll) ;
-   
     
     } ;
 
