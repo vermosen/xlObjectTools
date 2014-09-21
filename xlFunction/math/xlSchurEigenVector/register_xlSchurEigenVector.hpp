@@ -10,19 +10,19 @@
 
 inline void registerxlSchurEigenVector(const XLOPER & xDll) {
 
-             // Enregistre la fonction xlSchurEigenVector
+        // register the function xlSchurEigenVector
         Excel(xlfRegister, 0, 12, & xDll,
             TempStrNoSize("\x12""xlSchurEigenVector"),
             TempStrNoSize("\x04""PCP#"),
-            TempStrNoSize("\x16""VECTEURS.PROPRES.SCHUR"),
-            TempStrNoSize("\x1F""identifiant de l'object,trigger"),
+            TempStrNoSize("\x25""SCHUR.EIGEN.VECTOR"),
+            TempStrNoSize("\x19""matrix identifier,trigger"),
             TempStrNoSize("\x01""1"),
             TempStrNoSize("\x15""xlObjectTools - Math"),
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x00"""),
-            TempStrNoSize("\x48""Cette fonction fournit les vecteurs propres de la décomposition de Schur"),
-            TempStrNoSize("\x26""Identifiant de la matrice à décomposer"),
-            TempStrNoSize("\x17""Déclanche le recalcul  ")) ;
+            TempStrNoSize("\x3D""This function provide the Schur decomposition's eigen vectors"),
+            TempStrNoSize("\x17""The matrix to decompose"),
+			TempStrNoSize("\x25""Triggers the computation (optional)  "));
 
     }
 
@@ -30,19 +30,19 @@ inline void unregisterxlSchurEigenVector(const XLOPER & xDll) {
 
         XLOPER xlRegID ;
 
-             // Enregistre la fonction xlSchurEigenVector
-        Excel(xlfRegister, 0, 12, & xDll,
-            TempStrNoSize("\x12""xlSchurEigenVector"),
-            TempStrNoSize("\x04""PCP#"),
-            TempStrNoSize("\x16""VECTEURS.PROPRES.SCHUR"),
-            TempStrNoSize("\x1F""identifiant de l'object,trigger"),
-            TempStrNoSize("\x01""1"),
-            TempStrNoSize("\x15""xlObjectTools - Math"),
-            TempStrNoSize("\x00"""),
-            TempStrNoSize("\x00"""),
-            TempStrNoSize("\x48""Cette fonction fournit les vecteurs propres de la décomposition de Schur"),
-            TempStrNoSize("\x26""Identifiant de la matrice à décomposer"),
-            TempStrNoSize("\x17""Déclanche le recalcul  ")) ;
+		// release the function xlSchurEigenVector
+		Excel(xlfRegister, 0, 12, &xDll,
+			TempStrNoSize("\x12""xlSchurEigenVector"),
+			TempStrNoSize("\x04""PCP#"),
+			TempStrNoSize("\x25""SCHUR.EIGEN.VECTOR"),
+			TempStrNoSize("\x19""matrix identifier,trigger"),
+			TempStrNoSize("\x01""1"),
+			TempStrNoSize("\x15""xlObjectTools - Math"),
+			TempStrNoSize("\x00"""),
+			TempStrNoSize("\x00"""),
+			TempStrNoSize("\x3D""This function provide the Schur decomposition's eigen vectors"),
+			TempStrNoSize("\x17""The matrix to decompose"),
+			TempStrNoSize("\x25""Triggers the computation (optional)  "));
 
         Excel4(xlfRegisterId, & xlRegID, 2, & xDll,
             TempStrNoSize("\x12""xlSchurEigenVector")) ;

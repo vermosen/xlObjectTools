@@ -10,20 +10,20 @@
 
 inline void registerxlInstrumentAccruedAmount(const XLOPER & xDll) {
 
-             // Enregistre la fonction xlTNoteTheoreticalPrice
+             // register the function xlInstrumentAccruedAmount
         Excel(xlfRegister, 0, 13, & xDll,
             TempStrNoSize("\x19""xlInstrumentAccruedAmount"),
             TempStrNoSize("\x05""PCPP#"),
-            TempStrNoSize("\x19""INSTRUMENT.COUPON.COURU"),
-            TempStrNoSize("\x39""Identifiant de l'instrument,date de règlement,déclencheur"),
+            TempStrNoSize("\x13""BOND.ACCRUAL.AMOUNT"),
+            TempStrNoSize("\x27""bond identifier,settlement date,trigger"),
             TempStrNoSize("\x01""1"),
             TempStrNoSize("\x15""xlObjectTools - Bond"),
             TempStrNoSize("\x00"""),
             TempStrNoSize("\x00"""),
-            TempStrNoSize("\x36""Cette fonction calcule le coupon couru d'un instrument"),
-            TempStrNoSize("\x16""Le nom de l'instrument"),
-            TempStrNoSize("\x24""La date de règlement de l'instrument"),
-            TempStrNoSize("\x1C""Le déclencheur du recalcul  ")) ;
+            TempStrNoSize("\x57""This function gives the accrual amount of a given instrument on a given settlement date"),
+            TempStrNoSize("\x13""The bond identifier"),
+            TempStrNoSize("\x25""The settlement date of the instrument"),
+			TempStrNoSize("\x25""Triggers the computation (optional)  "));
 
     }
 
@@ -31,19 +31,20 @@ inline void unregisterxlInstrumentAccruedAmount(const XLOPER & xDll) {
 
         XLOPER xlRegID ;
 
-        Excel(xlfRegister, 0, 13, & xDll,
-            TempStrNoSize("\x19""xlInstrumentAccruedAmount"),
-            TempStrNoSize("\x05""PCPP#"),
-            TempStrNoSize("\x19""INSTRUMENT.COUPON.COURU"),
-            TempStrNoSize("\x39""Identifiant de l'instrument,date de règlement,déclencheur"),
-            TempStrNoSize("\x01""1"),
-            TempStrNoSize("\x15""xlObjectTools - Bond"),
-            TempStrNoSize("\x00"""),
-            TempStrNoSize("\x00"""),
-            TempStrNoSize("\x36""Cette fonction calcule le coupon couru d'un instrument"),
-            TempStrNoSize("\x16""Le nom de l'instrument"),
-            TempStrNoSize("\x24""La date de règlement de l'instrument"),
-            TempStrNoSize("\x1C""Le déclencheur du recalcul  ")) ;
+		// release the function xlInstrumentAccruedAmount
+		Excel(xlfRegister, 0, 13, &xDll,
+			TempStrNoSize("\x19""xlInstrumentAccruedAmount"),
+			TempStrNoSize("\x05""PCPP#"),
+			TempStrNoSize("\x13""BOND.ACCRUAL.AMOUNT"),
+			TempStrNoSize("\x27""bond identifier,settlement date,trigger"),
+			TempStrNoSize("\x01""1"),
+			TempStrNoSize("\x15""xlObjectTools - Bond"),
+			TempStrNoSize("\x00"""),
+			TempStrNoSize("\x00"""),
+			TempStrNoSize("\x57""This function gives the accrual amount of a given instrument on a given settlement date"),
+			TempStrNoSize("\x13""The bond identifier"),
+			TempStrNoSize("\x25""The settlement date of the instrument"),
+			TempStrNoSize("\x25""Triggers the computation (optional)  "));
 
         Excel4(xlfRegisterId, & xlRegID, 2, & xDll,
             TempStrNoSize("\x19""xlInstrumentAccruedAmount")) ;

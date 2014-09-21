@@ -8,7 +8,7 @@
 
 #include <xlFunction/math/xlSchurEigenVector/xlSchurEigenVector.hpp>
 
-        /* fonction de calcul de la forme de Schur d'une matrice */
+// compute and returns Schur decomposition's eigen vector of a matrix
 DLLEXPORT xloper * xlSchurEigenVector(const char * objectID_,
                                       const xloper * trigger_) {
     
@@ -17,33 +17,29 @@ DLLEXPORT xloper * xlSchurEigenVector(const char * objectID_,
 
      try {
 
-        QL_ENSURE(! functionCall->calledByFunctionWizard(), "") ;
+        QL_ENSURE(! functionCall->calledByFunctionWizard(), "");
 
-            // initialisation de la session
-        ObjectHandler::validateRange(trigger_, "trigger") ;
+        ObjectHandler::validateRange(trigger_, "trigger");					// validate range
 
-            // on récupère la matrice
-		OH_GET_REFERENCE(matrixObjectPtr,
+		OH_GET_REFERENCE(matrixObjectPtr,									// get the matrix object
 			objectID_,
 			QuantLibAddin::matrixObject,
 			QuantLib::Matrix)
 
-		QuantLib::SymmetricSchurDecomposition schur(*matrixObjectPtr);
+		QuantLib::SymmetricSchurDecomposition schur(*matrixObjectPtr);		// launch the decomposition
 
-            // valeurs de retour
-        static OPER returnOper ;
+        static OPER returnOper;												// return value
 		QuantLib::Matrix s = schur.eigenvectors();
-        ObjectHandler::MatrixToOper(s, returnOper) ;
-        return & returnOper ;
+        ObjectHandler::MatrixToOper(s, returnOper);
+        return & returnOper;
 
     } catch (std::exception & e) {
 
-            ObjectHandler::RepositoryXL::instance().logError(e.what(), functionCall) ;
-            static OPER returnOper ;
-			returnOper.xltype = xltypeErr ;
-			returnOper.val.err = xlerrNA ;
-			return & returnOper ;
+        ObjectHandler::RepositoryXL::instance().logError(e.what(), functionCall);
+        static OPER returnOper;
+		returnOper.xltype = xltypeErr;
+		returnOper.val.err = xlerrNA;
+		return & returnOper;
 
     }
-
-} ;
+};

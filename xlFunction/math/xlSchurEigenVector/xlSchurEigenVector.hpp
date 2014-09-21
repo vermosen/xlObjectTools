@@ -19,7 +19,7 @@
 #include <bot/math/matrix/matrixObject.hpp>
 #include <bot/math/matrixtoOper/matrixtoOper.hpp>
 
-        /* fonction de calcul de la correlation de deux series */
+// compute and returns Schur decomposition's eigen vector of a matrix
 DLLEXPORT xloper * xlSchurEigenVector(const char * objectID_,
                                       const xloper * trigger_) ;
 
