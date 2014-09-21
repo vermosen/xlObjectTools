@@ -1549,9 +1549,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="workbooks\LiborModel.xlsx" />
-    <None Include="workbooks\hexadecimal converter.xlsx" />
     <None Include="workbooks\yieldCurveBuilding.xlsx" />
     <None Include="workbooks\trading_workbook.xlsm" />
+    <None Include="workbooks\register functions.xlsx" />
+    <None Include="workbooks\libor model.xlsm" />
   </ItemGroup>
 </Project>

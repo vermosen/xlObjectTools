@@ -659,8 +659,8 @@
     <ClInclude Include="xlFunction\swap\xlSwapRollDown\xlSwapRollDown.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="workbooks\hexadecimal converter.xlsx" />
-    <None Include="workbooks\LiborModel.xlsx" />
+    <None Include="workbooks\libor model.xlsm" />
+    <None Include="workbooks\register functions.xlsx" />
     <None Include="workbooks\trading_workbook.xlsm" />
     <None Include="workbooks\yieldCurveBuilding.xlsx" />
   </ItemGroup>
