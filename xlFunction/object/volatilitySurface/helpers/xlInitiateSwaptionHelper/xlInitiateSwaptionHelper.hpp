@@ -28,13 +28,13 @@
 
 	// register a helper for a swaption from static data
 DLLEXPORT xloper * xlInitiateSwaptionHelper(const char * objectId_,
-											const char * maturity_,
-											const char * length_,
+											const double * maturity_,
+											const double * length_,
 											const double * volatility_,
 											const char * index_,
-											const char * fixedLegTenor_,
-											const char * fixedLegDaycounter_,
-											const char * floatLegDaycounter_,
+											const xloper * fixedLegTenor_,
+											const xloper * fixedLegDaycounter_,
+											const xloper * floatLegDaycounter_,
 											const char * termStructure_,
 											const xloper * errorType_,
 											const xloper * strike_,

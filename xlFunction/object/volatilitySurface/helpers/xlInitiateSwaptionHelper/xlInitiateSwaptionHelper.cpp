@@ -10,18 +10,18 @@
 
 	// register a helper for a swaption
 DLLEXPORT xloper * xlInitiateSwaptionHelper(const char * objectId_,
-											const char * maturity_,
-											const char * length_,
+											const double * maturity_,
+											const double * length_,
 											const double * volatility_,
 											const char * index_,
-											const char * fixedLegTenor_,
-											const char * fixedLegDaycounter_,
-											const char * floatLegDaycounter_,
+											const xloper * fixedLegTenor_,
+											const xloper * fixedLegDaycounter_,
+											const xloper * floatLegDaycounter_,
 											const char * termStructure_,
 											const xloper * errorType_,
 											const xloper * strike_,
 											const xloper * nominal_,
-                                            const xloper * trigger_) {
+											const xloper * trigger_) {
     
    boost::shared_ptr<ObjectHandler::FunctionCall> functionCall(
         new ObjectHandler::FunctionCall("xlInitiateSwaptionHelper"));
@@ -30,35 +30,73 @@ DLLEXPORT xloper * xlInitiateSwaptionHelper(const char * objectId_,
 
         QL_ENSURE(! functionCall->calledByFunctionWizard(), "");
 
-		ObjectHandler::validateRange(errorType_, "errorType");			// validate range
-		ObjectHandler::validateRange(strike_, "strike");
-		ObjectHandler::validateRange(nominal_, "nominal");
-		ObjectHandler::validateRange(trigger_, "trigger");
+		// validate range
+		ObjectHandler::validateRange(fixedLegTenor_     , "fixedLegTenor"	  );  
+		ObjectHandler::validateRange(fixedLegDaycounter_, "fixedLegDaycounter");
+		ObjectHandler::validateRange(floatLegDaycounter_, "floatLegDaycounter");
+		ObjectHandler::validateRange(errorType_         , "errorType"		  );
+		ObjectHandler::validateRange(strike_			, "strike"			  );
+		ObjectHandler::validateRange(nominal_			, "nominal"			  );
+		ObjectHandler::validateRange(trigger_           , "trigger"		      );
 
-		ObjectHandler::ConvertOper myOper1(*errorType_),				// oper conversion
-			myOper2(*strike_),
-			myOper3(*nominal_);
+		ObjectHandler::ConvertOper fixedLegTenorOper(*fixedLegTenor_),	// oper conversion
+			fixedLegDaycounterOper(*fixedLegDaycounter_),
+			floatLegDaycounterOper(*floatLegDaycounter_),
+			errorTypeOper(*errorType_),
+			strikeOper(*strike_),
+			nominalOper(*nominal_);
 
-		QuantLib::Period maturity										// cpp data
-			= ObjectHandler::periodFactory()(maturity_);
-
-		QuantLib::Period length 
-			= ObjectHandler::periodFactory()(length_);
-
-		QuantLib::Handle<QuantLib::Quote> volatility(
+		QuantLib::Handle<QuantLib::Quote> volatility(					// convert volatility quotation
 			boost::shared_ptr<QuantLib::Quote>(
 				new QuantLib::SimpleQuote(*volatility_)));
 
 		// index
-		OH_GET_REFERENCE(
-			index,
+		OH_GET_REFERENCE(												// 
+			index_,
 			"index",
 			QuantLibAddin::iborIndexObject,
 			QuantLib::IborIndex)
 
-		// tenors and dc
-		QuantLib::Period fixedLegTenor 
-		= ObjectHandler::periodFactory()(fixedLegTenor_);
+		QuantLib::Period fixedLegTenor;
+		QuantLib::DayCounter fixedLegDayCounter;
+		QuantLib::DayCounter floatLegDayCounter;
+
+		// oper conversion
+		if (!fixedLegTenorOper.missing()) {								// fixedLegTenor
+		
+			fixedLegTenor
+				= ObjectHandler::periodFactory()(fixedLegTenorOper);
+
+		}
+		else {
+		
+			fixedLegTenor = QuantLib::Period(6, QuantLib::Months);
+		
+		}
+		
+		if (!fixedLegDaycounterOper.missing()) {						// fixedLegDaycounter
+
+			fixedLegDayCounter
+				= ObjectHandler::daycountFactory()(fixedLegDaycounterOper);
+
+		}
+		else {
+
+			fixedLegDayCounter = QuantLib::ActualActual();
+
+		}
+
+		if (!floatLegDaycounterOper.missing()) {						// floatLegDaycounter
+
+			floatLegDayCounter
+				= ObjectHandler::daycountFactory()(floatLegDaycounterOper);
+
+		}
+		else {
+
+			floatLegDayCounter = QuantLib::Actual360();
+
+		}
 
 		QuantLib::DayCounter fixedLegDayCounter 
 			= ObjectHandler::daycountFactory()(fixedLegDaycounter_);

@@ -6,7 +6,7 @@
  *
  */
 
-#include <xlfunction/math/statistics/xlKalmanFilter/xlKalmanFilter.hpp>
+#include <xlfunction/experimental/xlKalmanFilter/xlKalmanFilter.hpp>
 
 
         /* fonction de calcul de la matrice de variance-covariance d'un historique de taux */
@@ -20,20 +20,19 @@ boost::shared_ptr<ObjectHandler::FunctionCall> functionCall(
 
         QL_ENSURE(! functionCall->calledByFunctionWizard(), "") ;
 
-            /* déclaration du trigger */
+        // trigger declaration
         ObjectHandler::validateRange(trigger_, "trigger") ;
 
-            /* conversion des xloper */
+		// convert xloper
         std::vector<std::string> seriesId = ObjectHandler::operToVector<std::string>(* seriesId_, "seriesId") ;
 
-            /* contrôle sur les dimensions */
+		// dimension check
         QL_ENSURE(seriesId.size() != 2, "unconsistent data set") ;
 
-            /* on récupére les séries variationnelles */
+        // get the time series
         std::vector<QuantLib::TimeSeries<double> > timeSeriesVector ;
 
         for (std::vector<std::string>::const_iterator It = seriesId.begin() ; It != seriesId.end() ; ++It) {
-
 
                 OH_GET_REFERENCE(TimeSeriesPtr, 
 								 * It, 
@@ -42,10 +41,9 @@ boost::shared_ptr<ObjectHandler::FunctionCall> functionCall(
  
                 timeSeriesVector.push_back(* TimeSeriesPtr) ;
 
-
             }
 
-			/* création de la matrice de retour */
+		// return matrix
 		QuantLib::Matrix returnMatrix(1, 1, 0.0) ;
 
         static OPER returnOper ;
