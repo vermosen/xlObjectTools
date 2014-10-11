@@ -1547,6 +1547,9 @@
     <ClInclude Include="xlFunction\math\xlSchurEigenValues\xlSchurEigenValues.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="xlFunction\object\volatilitySurface\register_volatilitySurfaceObject.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="workbooks\yieldCurveBuilding.xlsx" />

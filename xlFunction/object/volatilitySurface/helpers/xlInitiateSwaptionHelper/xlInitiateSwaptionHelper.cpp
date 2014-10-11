@@ -10,8 +10,8 @@
 
 	// register a helper for a swaption
 DLLEXPORT xloper * xlInitiateSwaptionHelper(const char * objectId_,
+											const double * exercice_,
 											const double * maturity_,
-											const double * length_,
 											const double * volatility_,
 											const char * index_,
 											const xloper * fixedLegTenor_,
@@ -117,8 +117,8 @@ DLLEXPORT xloper * xlInitiateSwaptionHelper(const char * objectId_,
 		boost::shared_ptr<QuantLibAddin::SwaptionHelperObject> swaptionObject(
 			new QuantLibAddin::SwaptionHelperObject(
 				swaptionValueObject,
+				QuantLib::Date(static_cast<QuantLib::BigInteger>(*exercice_)),
 				QuantLib::Date(static_cast<QuantLib::BigInteger>(*maturity_)),
-				QuantLib::Date(static_cast<QuantLib::BigInteger>(*length_)),
 				volatility,
 				indexPtr,
 				fixedLegTenor,

@@ -544,6 +544,7 @@
     <ClInclude Include="xlFunction\object\curveTransform\xlInitiateCurveShift\xlInitiateCurveShift.hpp" />
     <ClInclude Include="xlFunction\object\volatilitySurface\helpers\xlInitiateSwaptionHelper\register_xlInitiateSwaptionHelper.hpp" />
     <ClInclude Include="xlFunction\object\volatilitySurface\helpers\xlInitiateSwaptionHelper\xlInitiateSwaptionHelper.hpp" />
+    <ClInclude Include="xlFunction\object\volatilitySurface\register_volatilitySurfaceObject.hpp" />
     <ClInclude Include="xlFunction\object\yieldCurve\helpers\xlInitiateBondBootstrapHelper\register_xlInitiateBondBootstrapHelper.hpp" />
     <ClInclude Include="xlFunction\object\yieldCurve\helpers\xlInitiateBondBootstrapHelper\xlInitiateBondBootstrapHelper.hpp" />
     <ClInclude Include="xlFunction\object\yieldCurve\helpers\xlInitiateDepositBootstrapHelper2\register_xlInitiateDepositBootstrapHelper2.hpp" />
