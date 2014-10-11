@@ -34,7 +34,6 @@ inline void registerxlInitiateSwaptionHelper(const XLOPER & xDll) {
 			TempStrNoSize("\x1A""The strike rate (optional)"),
 			TempStrNoSize("\x16""The nominal (optional)"));
 
-
     }
 
 inline void unregisterxlInitiateSwaptionHelper(const XLOPER & xDll) {

@@ -35,7 +35,7 @@ inline void register_object(const XLOPER & xDll) {
 		register_fittingMethod			(xDll);
 		register_volatilitySurface		(xDll);
 
-    } ;
+    };
 
 inline void unregister_object(const XLOPER & xDll) {
     
@@ -51,7 +51,7 @@ inline void unregister_object(const XLOPER & xDll) {
         unregister_fittingMethod		  (xDll);
 		unregister_volatilitySurface	  (xDll);
     
-    } ;
+    };
 
 
 #endif
