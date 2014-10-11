@@ -56,4 +56,36 @@ namespace QuantLibAddin {
 
 	}
 
+	SwaptionHelperObject::SwaptionHelperObject(
+		const boost::shared_ptr<ObjectHandler::ValueObject>& properties,
+		const QuantLib::Date & exerciceDate,
+		const QuantLib::Date & endDate,
+		const QuantLib::Handle<QuantLib::Quote> & volatility,
+		const boost::shared_ptr<QuantLib::IborIndex> & index,
+		const QuantLib::Period & fixedLegTenor,
+		const QuantLib::DayCounter & fixedLegDayCounter,
+		const QuantLib::DayCounter & floatingLegDayCounter,
+		const QuantLib::Handle<QuantLib::YieldTermStructure>& termStructure,
+		QuantLib::CalibrationHelper::CalibrationErrorType errorType,
+		const QuantLib::Real strike,
+		const QuantLib::Real nominal,
+		bool permanent) : CalibrationHelper(properties, permanent) {
+	
+		libraryObject_ = boost::shared_ptr<QuantLib::CalibrationHelper>(new
+			QuantLib::SwaptionHelper(
+				exerciceDate,
+				endDate,
+				volatility,
+				index,
+				fixedLegTenor,
+				fixedLegDayCounter,
+				floatingLegDayCounter,
+				termStructure,
+				errorType,
+				strike,
+				nominal));
+	
+	
+	}
+
 }

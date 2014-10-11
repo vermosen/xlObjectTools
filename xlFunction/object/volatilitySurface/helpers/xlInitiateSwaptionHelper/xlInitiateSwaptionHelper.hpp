@@ -11,6 +11,8 @@
 
 #include <ql/handle.hpp>
 #include <ql/quotes/simplequote.hpp>
+#include <ql/time/daycounters/actualactual.hpp>
+#include <ql/time/daycounters/actual360.hpp>
 
 #include <ohxl/convert_oper.hpp>
 #include <ohxl/repositoryxl.hpp>

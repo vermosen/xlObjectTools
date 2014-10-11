@@ -27,7 +27,7 @@ DLLEXPORT xloper * xlInitiateSwaptionHelper(const char * objectId_,
         new ObjectHandler::FunctionCall("xlInitiateSwaptionHelper"));
 
     try {
-
+		
         QL_ENSURE(! functionCall->calledByFunctionWizard(), "");
 
 		// validate range
@@ -50,94 +50,77 @@ DLLEXPORT xloper * xlInitiateSwaptionHelper(const char * objectId_,
 			boost::shared_ptr<QuantLib::Quote>(
 				new QuantLib::SimpleQuote(*volatility_)));
 
-		// index
-		OH_GET_REFERENCE(												// 
+		OH_GET_REFERENCE(												// index
+			indexPtr,
 			index_,
-			"index",
 			QuantLibAddin::iborIndexObject,
 			QuantLib::IborIndex)
 
-		QuantLib::Period fixedLegTenor;
-		QuantLib::DayCounter fixedLegDayCounter;
-		QuantLib::DayCounter floatLegDayCounter;
-
-		// oper conversion
-		if (!fixedLegTenorOper.missing()) {								// fixedLegTenor
-		
-			fixedLegTenor
-				= ObjectHandler::periodFactory()(fixedLegTenorOper);
-
-		}
-		else {
-		
-			fixedLegTenor = QuantLib::Period(6, QuantLib::Months);
-		
-		}
-		
-		if (!fixedLegDaycounterOper.missing()) {						// fixedLegDaycounter
-
-			fixedLegDayCounter
-				= ObjectHandler::daycountFactory()(fixedLegDaycounterOper);
-
-		}
-		else {
-
-			fixedLegDayCounter = QuantLib::ActualActual();
-
-		}
-
-		if (!floatLegDaycounterOper.missing()) {						// floatLegDaycounter
-
-			floatLegDayCounter
-				= ObjectHandler::daycountFactory()(floatLegDaycounterOper);
-
-		}
-		else {
-
-			floatLegDayCounter = QuantLib::Actual360();
-
-		}
-
-		QuantLib::DayCounter fixedLegDayCounter 
-			= ObjectHandler::daycountFactory()(fixedLegDaycounter_);
-
-		QuantLib::DayCounter floatLegDayCounter 
-			= ObjectHandler::daycountFactory()(floatLegDaycounter_);
-
-		// termstructure
-		OH_GET_REFERENCE(
+		OH_GET_REFERENCE(												// curve
 			termStructurePtr,
 			termStructure_,
 			QuantLibAddin::YieldTermStructure,
 			QuantLib::YieldTermStructure)
 
-		QuantLib::Handle<QuantLib::YieldTermStructure> termStructure(
+		QuantLib::Handle<QuantLib::YieldTermStructure> termStructure(	// create the handle
 			termStructurePtr);
 
-		// error type
-		QuantLib::CalibrationHelper::CalibrationErrorType errorType =
-			QuantLib::CalibrationHelper::ImpliedVolError;
+		QuantLib::Period fixedLegTenor;									// QL types
+		QuantLib::DayCounter fixedLegDayCounter;
+		QuantLib::DayCounter floatLegDayCounter;
+		QuantLib::SwaptionHelper::CalibrationErrorType errorType;
+		QuantLib::Real strike;
+		QuantLib::Real nominal;
+		
+		// xloper conversions
+		if (!fixedLegTenorOper.missing())								// fixedLegTenor
+			fixedLegTenor
+				= ObjectHandler::periodFactory()(fixedLegTenorOper);
+		else 
+			fixedLegTenor 
+				= QuantLib::Period(6, QuantLib::Months);
+		
+		if (!fixedLegDaycounterOper.missing())							// fixedLegDaycounter
+			fixedLegDayCounter
+				= ObjectHandler::daycountFactory()(fixedLegDaycounterOper);
+		else
+			fixedLegDayCounter 
+				= QuantLib::ActualActual(QuantLib::ActualActual::ISDA);
 
-		QuantLib::Real strike								// strike
-			= QuantLib::Null<QuantLib::Real>();
+		if (!floatLegDaycounterOper.missing())							// floatLegDaycounter
+			floatLegDayCounter
+			= ObjectHandler::daycountFactory()(floatLegDaycounterOper);
+		else
+			floatLegDayCounter = QuantLib::Actual360();
 
-		QuantLib::Real nominal								// nominal
-			= QuantLib::Null<QuantLib::Real>();
+		if (!errorTypeOper.missing())									// errorType
+			errorType													// ugly one <- would need a factory here
+			= static_cast<QuantLib::SwaptionHelper::CalibrationErrorType>((long)errorTypeOper);
+		else
+			errorType = QuantLib::SwaptionHelper::RelativePriceError;
 
-		// value object
+		(strikeOper.missing() ?											// strike
+			strike = QuantLib::Null<QuantLib::Real>() :
+			strike = strikeOper);
+
+		(nominalOper.missing() ?										// nominal
+			nominal = QuantLib::Null<QuantLib::Real>() :
+			nominal = nominalOper);
+
+																		// value object
 		boost::shared_ptr<QuantLibAddin::ValueObjects::swaptionHelperValueObject> swaptionValueObject(
 			new QuantLibAddin::ValueObjects::swaptionHelperValueObject(
 				objectId_,
                 true));
 		
-		// helper
-		boost::shared_ptr<QuantLibAddin::SwaptionHelperObject> bondBootstrapObject(
+																		// swaption object
+		boost::shared_ptr<QuantLibAddin::SwaptionHelperObject> swaptionObject(
 			new QuantLibAddin::SwaptionHelperObject(
 				swaptionValueObject,
-				maturity,
-				length,
+				QuantLib::Date(static_cast<QuantLib::BigInteger>(*maturity_)),
+				QuantLib::Date(static_cast<QuantLib::BigInteger>(*length_)),
 				volatility,
-				index,
+				indexPtr,
 				fixedLegTenor,
 				fixedLegDayCounter,
 				floatLegDayCounter,
@@ -146,14 +129,14 @@ DLLEXPORT xloper * xlInitiateSwaptionHelper(const char * objectId_,
 				strike,
 				nominal));
 
-		std::string returnValue =							// object storage
-			ObjectHandler::RepositoryXL::instance().storeObject(objectId_,
-			bondBootstrapObject,
-			true);
+		std::string returnValue =										// object storage
+			ObjectHandler::RepositoryXL::instance().storeObject(
+				objectId_,
+				swaptionObject,
+				true);
 
-        static XLOPER returnOper;
+        static XLOPER returnOper;										// return oper
         ObjectHandler::scalarToOper(returnValue, returnOper);
-
         return & returnOper;
 
     } catch (std::exception & e) {
@@ -161,7 +144,6 @@ DLLEXPORT xloper * xlInitiateSwaptionHelper(const char * objectId_,
             ObjectHandler::RepositoryXL::instance().logError(e.what(), functionCall);
             static XLOPER returnOper;
             ObjectHandler::scalarToOper(e.what(), returnOper);
-
 			return & returnOper;
 
     }

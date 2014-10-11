@@ -36,6 +36,21 @@ namespace QuantLibAddin {
 			const QuantLib::Real nominal = 1.0,
 			bool permanent = true);
 
+		SwaptionHelperObject(
+			const boost::shared_ptr<ObjectHandler::ValueObject>& properties,
+			const QuantLib::Date & exerciceDate,
+			const QuantLib::Date & endDate,
+			const QuantLib::Handle<QuantLib::Quote> & volatility,
+			const boost::shared_ptr<QuantLib::IborIndex> & index,
+			const QuantLib::Period & fixedLegTenor,
+			const QuantLib::DayCounter & fixedLegDayCounter,
+			const QuantLib::DayCounter & floatingLegDayCounter,
+			const QuantLib::Handle<QuantLib::YieldTermStructure>& termStructure,
+			QuantLib::CalibrationHelper::CalibrationErrorType errorType,
+			const QuantLib::Real strike = QuantLib::Null<QuantLib::Real>(),
+			const QuantLib::Real nominal = QuantLib::Null<QuantLib::Real>(),
+			bool permanent = true);
+
 	};
 
 }
