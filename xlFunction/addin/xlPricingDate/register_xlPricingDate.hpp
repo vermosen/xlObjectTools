@@ -40,7 +40,7 @@ inline void unregisterxlPricingDate(const XLOPER & xDll) {
         TempStrNoSize("\x16""xlObjectTools - addin"),
         TempStrNoSize("\x00"""),
         TempStrNoSize("\x00"""),
-        TempStrNoSize("\x39""This function sets system's pricing date (default: today)"),
+        TempStrNoSize("\x3B""This function sets the system pricing date (default: today)"),
         TempStrNoSize("\x10""Calculation date"),
         TempStrNoSize("\x07""trigger"));
 
