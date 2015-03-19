@@ -14,19 +14,20 @@
 #include <ohxl/convert_oper.hpp>
 #include <ohxl/conversions/scalartooper.hpp>
 
+#include <ql/pricingengines/bond/bondfunctions.hpp>
+#include <ql/interestrate.hpp>
+
 #include <qlo/conversions/coercehandle.hpp>
 #include <qlo/bonds.hpp>
 
-#include <ql/pricingengines/bond/bondfunctions.hpp>
-
 #include <bot/tools/interestRateConvention/interestRateConventionObject.hpp>
 
-        /* Fonction de calcul des différentes durations pour un intrument */
-DLLEXPORT xloper * xlInstrumentDV01 (const char * instrumentId_,
-                                     xloper * npvDate_,
-                                     xloper * settlementDate_,
-                                     const double * instrumentCleanPrice_,
-                                     const char * conventionId_,
-                                     xloper * trigger_) ;
+// computes bond DV01
+DLLEXPORT xloper * xlInstrumentDV01 (const char		* instrumentId_			,
+                                     xloper			* npvDate_				,
+                                     xloper			* settlementDate_		,
+                                     const double	* instrumentCleanPrice_	,
+                                     const char		* conventionId_			,
+                                     xloper			* trigger_				);
 
 #endif
