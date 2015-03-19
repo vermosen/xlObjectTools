@@ -1555,6 +1555,6 @@
     <None Include="workbooks\yieldCurveBuilding.xlsx" />
     <None Include="workbooks\register functions.xlsx" />
     <None Include="workbooks\libor model.xlsm" />
-    <None Include="workbooks\trading workbook.xlsm" />
+    <None Include="workbooks\trading_workbook.xlsm" />
   </ItemGroup>
 </Project>
